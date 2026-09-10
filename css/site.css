@@ -225,3 +225,14 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
   .pcard .tx{padding:14px 10px 0}
   .pcard .nm{font-size:14px}
 }
+
+/* 언어 전환 / language switch */
+.util .lang{display:flex;gap:8px;align-items:center;letter-spacing:.04em}
+.util .lang a{color:var(--muted);text-decoration:none;transition:color .2s}
+.util .lang a:hover{color:var(--ink)}
+.util .lang .on{color:var(--ink);font-weight:500}
+.util .lang .sep{opacity:.4}
+.mnav .lang{display:flex;gap:10px;padding:14px 0 2px;font-size:13px;letter-spacing:.04em;border-top:1px solid var(--line);margin-top:8px}
+.mnav .lang a{color:var(--muted)}
+.mnav .lang .on{color:var(--ink);font-weight:500}
+.mnav .lang .sep{opacity:.4}
