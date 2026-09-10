@@ -4,584 +4,219 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>COCODEMER · 코코드메르 — Designed for the skin</title>
-<meta name="description" content="코코드메르(COCODEMER)는 L-CODEMAR ELIXIR™ 기술을 기반으로 한 맞춤형 스킨케어 브랜드이자, 중동·유럽·중화권을 잇는 K-뷰티 B2B 글로벌 유통 기업입니다.">
-<meta name="keywords" content="코코드메르, COCODEMER, 맞춤형화장품, K-뷰티, K-Beauty, B2B, 화장품 수출, L-CODEMAR ELIXIR, 스킨코드">
-<link rel="canonical" href="https://www.cocodemer.co.kr/">
+<meta name="description" content="코코드메르는 자연에서 찾은 생명 에너지 L-CODEMAR ELIXIR™와 스킨 바이오 기술로 개인의 피부 특성에 맞춘 스킨케어를 설계합니다. K-뷰티 글로벌 B2B 유통.">
+<meta property="og:title" content="COCODEMER · 코코드메르 — Designed for the skin">
+<meta property="og:description" content="코코드메르는 자연에서 찾은 생명 에너지 L-CODEMAR ELIXIR™와 스킨 바이오 기술로 개인의 피부 특성에 맞춘 스킨케어를 설계합니다. K-뷰티 글로벌 B2B 유통.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="COCODEMER">
-<meta property="og:title" content="COCODEMER · 코코드메르 — Designed for the skin">
-<meta property="og:description" content="자연에서 찾은 생명 에너지, L-CODEMAR ELIXIR™. 맞춤형 스킨케어 브랜드 코코드메르.">
-<meta property="og:url" content="https://www.cocodemer.co.kr/">
-<meta property="og:image" content="https://www.cocodemer.co.kr/allproduct.jpg">
-<meta property="og:locale" content="ko_KR">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b3a32'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23c9a961' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
-<style>
-:root{
-  --ink:#1B3A32;--ink-2:#2E5248;--gold:#C0A062;--gold-lt:#D8C39A;
-  --paper:#FAF8F4;--paper-2:#F2EEE7;--line:#E2DBD0;--text:#2A2A28;--muted:#6E6A63;
-  --max:1180px;
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased;font-weight:300;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-.en{display:none}
-body.lang-en .ko{display:none}
-body.lang-en .en{display:revert}
-
-/* header */
-header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(250,248,244,.93);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
-header.scrolled{border-bottom-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:var(--max);margin:0 auto;padding:0 28px}
-.logo{font-family:var(--serif);font-size:1.5rem;letter-spacing:.34em;color:var(--ink);font-weight:500;padding-left:.34em}
-.logo small{display:block;font-family:var(--sans);font-size:.52rem;letter-spacing:.28em;color:var(--gold);margin-top:-4px;font-weight:400}
-.menu{display:flex;gap:30px;align-items:center}
-.menu a{font-size:.78rem;letter-spacing:.13em;color:var(--ink);position:relative;padding:6px 0;font-weight:400}
-.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.menu a:hover::after{width:100%}
-.tools{display:flex;gap:14px;align-items:center}
-.langbtn{font-size:.7rem;letter-spacing:.12em;border:1px solid var(--line);background:none;color:var(--muted);padding:6px 11px;cursor:pointer;font-family:var(--sans);transition:.25s}
-.langbtn:hover{border-color:var(--gold);color:var(--ink)}
-.store-btn{font-size:.72rem;letter-spacing:.16em;background:var(--ink);color:#fff;padding:10px 20px;transition:.25s}
-.store-btn:hover{background:var(--gold);color:var(--ink)}
-.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
-.burger span{display:block;width:22px;height:1px;background:var(--ink)}
-
-/* hero */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:radial-gradient(120% 90% at 30% 20%,#2E5248 0%,#1B3A32 45%,#11241D 100%);position:relative}
-.hero-txt{display:flex;flex-direction:column;justify-content:center;padding:118px 0 80px 0}
-.hero-txt .inner{max-width:620px;margin-left:auto;padding:0 52px 0 28px;width:100%}
-.hero-img{position:relative;overflow:hidden}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#11241D 0%,rgba(17,36,29,.55) 22%,rgba(17,36,29,.12) 60%,rgba(17,36,29,0) 100%)}
-.eyebrow{font-size:.66rem;letter-spacing:.4em;color:var(--gold-lt);margin-bottom:28px;text-transform:uppercase}
-.hero h1{font-family:var(--serif);color:#fff;font-weight:300;font-size:clamp(1.95rem,2.6vw,2.7rem);line-height:1.32;margin-bottom:26px}
-.hero h1 em{font-style:normal;color:var(--gold-lt)}
-.hero p.sub{color:rgba(255,255,255,.72);font-size:clamp(.9rem,1.1vw,1rem);font-weight:300}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
-.btn{display:inline-block;font-size:.75rem;letter-spacing:.17em;padding:15px 32px;border:1px solid var(--gold);color:var(--gold-lt);transition:.3s}
-.btn:hover{background:var(--gold);color:var(--ink)}
-.btn.solid{background:var(--gold);color:#1B3A32}
-.btn.solid:hover{background:transparent;color:var(--gold-lt)}
-.btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
-.btn.dark:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-
-/* sections */
-section{padding:clamp(72px,9vw,128px) 0}
-.sec-head{margin-bottom:52px;max-width:46em}
-.sec-num{font-family:var(--serif);font-size:.85rem;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}
-.sec-head h2{font-family:var(--serif);font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:16px}
-.sec-head .lede{color:var(--muted);font-size:1rem}
-.rule{width:44px;height:1px;background:var(--gold);margin-bottom:24px}
-.alt{background:var(--paper-2)}
-.dark{background:var(--ink);color:rgba(255,255,255,.82)}
-.dark .sec-head h2{color:#fff}
-.dark .sec-head .lede{color:rgba(255,255,255,.62)}
-.dark .sec-num{color:var(--gold-lt)}
-
-.grid{display:grid;gap:30px}
-.g2{grid-template-columns:repeat(2,1fr)}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g4{grid-template-columns:repeat(4,1fr)}
-
-.card{background:#fff;border:1px solid var(--line);padding:34px 30px;transition:.35s}
-.card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.card h3{font-family:var(--serif);font-size:1.28rem;font-weight:500;color:var(--ink);margin-bottom:6px}
-.card .sub{font-size:.64rem;letter-spacing:.24em;color:var(--gold);margin-bottom:16px;text-transform:uppercase}
-.card p{font-size:.89rem;color:var(--muted)}
-.dark .card{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.13)}
-.dark .card h3{color:#fff}
-.dark .card p{color:rgba(255,255,255,.62)}
-
-/* step card with photo */
-.step{background:#fff;border:1px solid var(--line);overflow:hidden;transition:.35s}
-.step:hover{border-color:var(--gold)}
-.step .ph{aspect-ratio:4/3;overflow:hidden;background:var(--paper-2)}
-.step .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.step:hover .ph img{transform:scale(1.04)}
-.step .tx{padding:24px 24px 28px}
-.step .sub{font-size:.62rem;letter-spacing:.24em;color:var(--gold);margin-bottom:8px}
-.step h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:8px}
-.step p{font-size:.85rem;color:var(--muted)}
-
-/* product category */
-.cat{background:#fff;border:1px solid var(--line);overflow:hidden;transition:.35s;display:block}
-.cat:hover{border-color:var(--gold);transform:translateY(-3px)}
-.cat .ph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:22px;background:#fff}
-.cat .ph img{max-height:100%;width:auto;object-fit:contain;transition:transform .5s}
-.cat:hover .ph img{transform:scale(1.05)}
-.cat .tx{border-top:1px solid var(--line);padding:16px 18px;text-align:center}
-.cat .num{font-family:var(--serif);font-size:.7rem;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:3px}
-.cat .nm{font-size:.86rem;color:var(--ink);font-weight:400}
-
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,76px);align-items:center}
-.figure{position:relative;overflow:hidden;background:var(--paper-2)}
-.figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
-.figure.tall img{aspect-ratio:4/5}
-.figure.contain{background:#fff;border:1px solid var(--line)}
-.figure.contain img{object-fit:contain;padding:26px;aspect-ratio:4/3}
-.figure .cap{position:absolute;left:0;bottom:0;padding:14px 18px;font-size:.6rem;letter-spacing:.2em;color:rgba(255,255,255,.72);background:linear-gradient(transparent,rgba(0,0,0,.5))}
-.wide-fig{margin-top:56px;border:1px solid var(--line);background:#fff}
-.wide-fig img{width:100%}
-.wide-fig.narrow{max-width:840px;margin-left:auto;margin-right:auto}
-.dark .wide-fig{border-color:rgba(255,255,255,.14);background:#fff}
-
-.body-copy p{margin-bottom:16px;color:var(--muted);font-size:.96rem}
-.body-copy p strong{color:var(--ink);font-weight:500}
-.dark .body-copy p{color:rgba(255,255,255,.7)}
-.dark .body-copy p strong{color:#fff}
-.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.pill{font-size:.72rem;border:1px solid var(--line);padding:8px 15px;color:var(--muted);background:#fff}
-.dark .pill{border-color:rgba(255,255,255,.18);background:transparent;color:rgba(255,255,255,.7)}
-
-.tl{border-left:1px solid rgba(255,255,255,.16);padding-left:28px;margin-top:8px}
-.tl li{list-style:none;position:relative;padding-bottom:26px}
-.tl li::before{content:"";position:absolute;left:-33px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
-.tl b{display:block;font-family:var(--serif);font-size:1.05rem;color:#fff;font-weight:500}
-.tl span{font-size:.78rem;color:rgba(255,255,255,.58)}
-
-.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px)}
-.info dl{display:grid;grid-template-columns:112px 1fr;gap:13px 18px;font-size:.92rem}
-.info dt{font-size:.66rem;letter-spacing:.2em;color:var(--gold);padding-top:5px}
-.info dd{color:var(--muted)}
-.info dd a:hover{color:var(--ink);border-bottom:1px solid var(--gold)}
-.cta-box{position:relative;overflow:hidden;color:#fff;padding:44px 38px;display:flex;flex-direction:column;justify-content:center;min-height:300px}
-.cta-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta-box .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,58,50,.86),rgba(17,36,29,.94))}
-.cta-box .ct{position:relative}
-.cta-box h3{font-family:var(--serif);font-size:1.55rem;font-weight:400;margin-bottom:12px}
-.cta-box p{color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:26px}
-
-footer{background:#11241D;color:rgba(255,255,255,.55);padding:58px 0 40px;font-size:.78rem}
-.f-top{display:flex;justify-content:space-between;align-items:flex-start;gap:34px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
-.f-logo{font-family:var(--serif);font-size:1.35rem;letter-spacing:.3em;color:#fff;font-weight:400}
-.f-sns{display:flex;gap:14px}
-.f-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;transition:.25s}
-.f-sns a:hover{border-color:var(--gold);background:rgba(192,160,98,.14)}
-.f-sns svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
-.f-biz{padding-top:24px;line-height:2;font-size:.74rem;color:rgba(255,255,255,.42)}
-.f-biz span{display:inline-block;margin-right:15px}
-.f-links{margin-top:14px}
-.f-links a{color:rgba(255,255,255,.6);font-size:.74rem}
-.f-links a:hover{color:var(--gold-lt)}
-.copy{margin-top:20px;font-size:.68rem;letter-spacing:.1em;color:rgba(255,255,255,.3)}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
-.reveal.in{opacity:1;transform:none}
-
-@media(max-width:1000px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-txt{order:2;padding:56px 0 70px}
-  .hero-txt .inner{margin:0 auto;padding:0 28px;max-width:var(--max)}
-  .hero-img{order:1;height:46vh;min-height:280px;margin-top:72px}
-  .hero-img::after{background:linear-gradient(180deg,rgba(17,36,29,.18),rgba(17,36,29,.72))}
-}
-@media(max-width:900px){
-  .g3,.g4{grid-template-columns:repeat(2,1fr)}
-  .split,.contact-grid{grid-template-columns:1fr}
-  .menu{position:fixed;inset:72px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:14px 0 26px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s;max-height:calc(100vh - 72px);overflow-y:auto}
-  .menu.open{transform:none}
-  .menu a{padding:14px 28px;width:100%;font-size:.86rem}
-  .burger{display:flex}
-}
-@media(max-width:640px){
-  .nav{padding:0 18px}.wrap{padding:0 20px}
-  .logo{font-size:1.05rem;letter-spacing:.2em;padding-left:.2em}
-  .logo small{font-size:.42rem;letter-spacing:.18em}
-  .tools{gap:8px}
-  .langbtn{padding:5px 8px;font-size:.64rem}
-  .store-btn{padding:8px 11px;font-size:.6rem;letter-spacing:.1em}
-  .hero h1{font-size:1.6rem;line-height:1.4}
-  .eyebrow{letter-spacing:.26em;font-size:.6rem}
-  .btn{padding:13px 22px;font-size:.7rem;letter-spacing:.12em}
-  .hero-txt .inner{padding:0 20px}
-}
-@media(max-width:560px){
-  .g2,.g3{grid-template-columns:1fr}
-  .g4{grid-template-columns:repeat(2,1fr)}
-  .info dl{grid-template-columns:1fr;gap:2px 0}
-  .info dt{padding-top:14px}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="img/mark-black.png">
 </head>
 <body>
-
-<header id="hdr">
-  <nav class="nav">
-    <a href="#top" class="logo">COCODEMER<small>DESIGNED FOR THE SKIN</small></a>
-    <div class="menu" id="menu">
-      <a href="#brand"><span class="ko">브랜드</span><span class="en">BRAND</span></a>
-      <a href="#tech"><span class="ko">원료·기술</span><span class="en">TECHNOLOGY</span></a>
-      <a href="#custom"><span class="ko">맞춤화장품</span><span class="en">CUSTOM-MADE</span></a>
-      <a href="#product"><span class="ko">제품</span><span class="en">PRODUCT</span></a>
-      <a href="#global"><span class="ko">글로벌·B2B</span><span class="en">GLOBAL B2B</span></a>
-      <a href="#contact"><span class="ko">문의</span><span class="en">CONTACT</span></a>
-    </div>
-    <div class="tools">
-      <button class="langbtn" id="langbtn" type="button">EN</button>
-      <a class="store-btn" id="storeLink" href="#contact" rel="noopener">STORE</a>
-      <button class="burger" id="burger" type="button" aria-label="menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html"><img class="wm" src="img/wm-black.png" alt="COCODEMER"></a>
+    <nav class="gnb"><a href="brand.html">BRAND</a><a href="products.html">PRODUCT</a><a href="technology.html">TECHNOLOGY</a><a href="b2b.html">B2B</a><a class="ext" href="https://smartstore.naver.com/cocodemer_official" target="_blank" rel="noopener">STORE</a></nav>
+    <div class="util"><span>KO</span></div>
+    <button class="burger" type="button" aria-label="메뉴" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </header>
+<nav class="mnav"><a href="brand.html">BRAND</a><a href="products.html">PRODUCT</a><a href="technology.html">TECHNOLOGY</a><a href="b2b.html">B2B</a><a class="ext" href="https://smartstore.naver.com/cocodemer_official" target="_blank" rel="noopener">STORE</a></nav>
 
-<!-- HERO -->
-<div class="hero" id="top">
-  <div class="hero-txt">
-    <div class="inner">
-      <p class="eyebrow">Seychelles Coco-de-Mer · Bio Technology</p>
-      <h1>
-        <span class="ko">모든 사람의 피부에 맞는<br>화장품은 없습니다.<br><em>당신의 피부에 맞게 디자인합니다.</em></span>
-        <span class="en">No single formula fits every skin.<br><em>We design cosmetics for yours.</em></span>
-      </h1>
-      <p class="sub">
-        <span class="ko">자연에서 찾은 생명 에너지 L-CODEMAR ELIXIR™와 스킨 바이오 기술로, 개인의 피부 특성에 맞춘 맞춤형 스킨케어를 설계합니다.</span>
-        <span class="en">Built on L-CODEMAR ELIXIR™ — a plant-derived bio-delivery technology — COCODEMER designs personalised skincare for each individual skin profile.</span>
-      </p>
-      <div class="hero-cta">
-        <a class="btn solid" href="#brand"><span class="ko">브랜드 알아보기</span><span class="en">DISCOVER THE BRAND</span></a>
-        <a class="btn" href="#global"><span class="ko">글로벌 B2B 문의</span><span class="en">GLOBAL B2B ENQUIRY</span></a>
-      </div>
+<main id="main">
+<div class="hero">
+  <div class="slides">
+    <img class="on" src="img/hero-1-allproduct.jpg" alt="">
+    <img src="img/hero-2-mask.jpg" alt="">
+    <img src="img/hero-3-custom.jpg" alt="">
+    <img src="img/hero-4-lab.jpg" alt="">
+  </div>
+  <div class="ov"></div>
+  <div class="in">
+    <p class="eyebrow">DESIGNED FOR THE SKIN</p>
+    <h2>모든 사람의 피부에 맞는 화장품은 없습니다.<br><b>당신의 피부에 맞게 디자인합니다.</b></h2>
+    <p>자연에서 찾은 생명 에너지 L-CODEMAR ELIXIR™와 스킨 바이오 기술로, 개인의 피부 특성에 맞춘 스킨케어를 설계합니다.</p>
+    <div class="cta">
+      <a class="btn onblack fill" href="brand.html">BRAND STORY</a>
+      <a class="btn onblack" href="b2b.html">GLOBAL B2B</a>
     </div>
   </div>
-  <div class="hero-img">
-    <img src="allproduct.jpg" alt="COCODEMER 전 제품 라인업">
+  <div class="dots"><button class="on" data-i="0" aria-label="1"></button><button data-i="1" aria-label="2"></button><button data-i="2" aria-label="3"></button><button data-i="3" aria-label="4"></button></div>
+</div>
+
+<nav class="quick">
+  <div class="quick-in">
+    <a href="brand.html"><span class="qe">BRAND</span><span class="qk">브랜드 스토리</span></a>
+    <a href="products.html"><span class="qe">PRODUCT</span><span class="qk">제품 보기</span></a>
+    <a href="https://smartstore.naver.com/cocodemer_official" target="_blank" rel="noopener"><span class="qe">STORE</span><span class="qk">스마트스토어</span></a>
+    <a href="b2b.html"><span class="qe">B2B</span><span class="qk">글로벌 유통 문의</span></a>
+  </div>
+</nav>
+
+<div class="notice-strip">
+  <div class="wrap">
+    <span class="lb">NOTICE</span>
+    <span class="tx">코코드메르 공식 홈페이지가 새롭게 열렸습니다. 제품 구매는 네이버 스마트스토어에서 가능합니다.</span>
   </div>
 </div>
 
-<!-- BRAND -->
-<section id="brand">
+<section>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">01 — BRAND</div>
-      <div class="rule"></div>
-      <h2>Connect Code of intrinsic Merit</h2>
-      <p class="lede">
-        <span class="ko">'자연이 만든 수많은 에너지'라는 뜻을 지닌 코코드메르는, 인간 내면의 존엄함과 본질적인 가치를 고민하고 자신만의 건강함과 아름다움을 찾아드립니다.</span>
-        <span class="en">COCODEMER — "the countless energies created by nature." A brand built around intrinsic human worth, and the health and beauty that belong to each individual.</span>
-      </p>
+    <div class="sec-top">
+      <div class="sec-en">BRAND</div><div class="rule"></div>
+      <h3 class="en-d">Connect Code of intrinsic Merit</h3>
+      <p class="lead">'자연이 만든 수많은 에너지'라는 뜻을 지닌 코코드메르는, 인간 내면의 존엄함과 본질적인 가치를 고민하고 자신만의 건강함과 아름다움을 찾아드립니다.</p>
     </div>
-    <div class="split reveal">
-      <div class="figure tall">
-        <img src="hero.jpg" alt="세이셸의 Coco-de-Mer 열매">
-        <div class="cap">SEYCHELLES COCO-DE-MER</div>
-      </div>
-      <div class="body-copy">
-        <p><strong><span class="ko">ORIGIN — 자연에서 찾은 생명 에너지</span><span class="en">ORIGIN — Life energy found in nature</span></strong></p>
-        <p>
-          <span class="ko">수년간의 연구를 통해 탄생시킨 코코드메르는 개개인의 내적·외적 환경에 따른 라이프스타일과 피부 특성에 맞춰 오로지 당신만의 솔루션을 통해 아름다운 피부를 선물합니다. 자연에서 찾은 L-CODEMAR ELIXIR™의 고귀한 식물 원료에 혁신적인 바이오 기술을 결합했습니다.</span>
-          <span class="en">Born of years of research, COCODEMER reads each individual's lifestyle and skin characteristics and answers them with a solution made for that person alone — pairing the botanical actives of L-CODEMAR ELIXIR™ with advanced bio-delivery technology.</span>
-        </p>
-        <p><strong><span class="ko">PROMISE — 완벽한 피부 균형의 조화</span><span class="en">PROMISE — The harmony of perfect skin balance</span></strong></p>
-        <p>
-          <span class="ko">우리의 피부는 내적·외적 요소가 다르기에 각 개인별 다른 특성을 지닙니다. 지금 이 순간에도 환경, 문화, 라이프스타일 등 여러 요인에 따라 당신의 피부는 끊임없이 변화하고 있습니다. 자연에서 찾은 피부 생명 에너지의 조합을 통해 피부 본연의 자생력과 건강함을 전달합니다.</span>
-          <span class="en">Skin differs from person to person, and changes continuously with environment, culture and lifestyle. Through a considered combination of naturally derived actives, COCODEMER restores the skin's own resilience and health.</span>
-        </p>
+    <div class="split">
+      <div class="fig"><img loading="lazy" src="img/hero.jpg" alt="세이셸 Coco-de-Mer"></div>
+      <div class="copy">
+        <div class="en">ORIGIN</div>
+        <h4>자연에서 찾은 생명 에너지</h4>
+        <p>수년간의 연구를 통해 탄생시킨 코코드메르는 개개인의 내적·외적 환경에 따른 라이프스타일과 피부 특성에 맞춰 오로지 당신만의 솔루션을 통해 아름다운 피부를 선물합니다.</p>
+        <p>자연에서 찾은 L-CODEMAR ELIXIR™의 고귀한 식물 원료에 혁신적인 바이오 기술을 결합했습니다.</p>
+        <a class="btn sm" href="brand.html">브랜드 스토리</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TECHNOLOGY -->
-<section id="tech" class="dark">
+<section class="dark">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">02 — TECHNOLOGY</div>
-      <div class="rule"></div>
-      <h2>L-CODEMAR ELIXIR™</h2>
-      <p class="lede">
-        <span class="ko">피부 가장 가까이 흡수되는 바이오 테크놀로지. 유네스코 자연유산 세이셸의 Coco-de-Mer에서 출발한 독자 원료 기술입니다.</span>
-        <span class="en">A bio-technology engineered for the closest possible delivery to skin — inspired by the Coco-de-Mer of the Seychelles, a UNESCO natural heritage.</span>
-      </p>
+    <div class="sec-top">
+      <div class="sec-en">TECHNOLOGY</div><div class="rule"></div>
+      <h3 class="en-d">L-CODEMAR ELIXIR™</h3>
+      <p class="lead">피부 가장 가까이 흡수되는 바이오 테크놀로지. 유네스코 자연유산 세이셸의 Coco-de-Mer에서 출발한 독자 원료 기술입니다.</p>
     </div>
-
-    <div class="split reveal">
-      <div class="figure contain" style="background:#111;border-color:rgba(255,255,255,.15)">
-        <img src="elixir.jpg" alt="L-CODEMAR ELIXIR 원료 구성도">
-      </div>
-      <div class="body-copy">
-        <p><strong><span class="ko">네 가지 축으로 완성한 독자 원료</span><span class="en">Four pillars of a proprietary complex</span></strong></p>
-        <p>
-          <span class="ko">젊음의 비약인 천연 아미노산이 풍부한 Coco-de-Mer를 모방한 <strong>코코넛수</strong>, 식물이 상처를 스스로 치유하기 위해 생성되는 <strong>피토스테롤</strong>, 탄탄한 피부 바탕을 만들어주는 <strong>20종의 아미노산</strong>과 <strong>허니 성분</strong>을 모두 담았습니다.</span>
-          <span class="en">Coconut water modelled on the amino-acid-rich Coco-de-Mer; phytosterol, the compound plants generate to heal their own wounds; twenty amino acids; and honey extract — combined into one complex.</span>
-        </p>
-        <p>
-          <span class="ko">오랜 시간에 걸친 피부 친화적 지질 멤브레인 연구를 통해 활성 성분을 안정적이고 효과적으로 전달하고, 난용성 물질의 가용화 기술을 결합하여 독보적인 L-CODEMAR ELIXIR™를 완성했습니다.</span>
-          <span class="en">Years of research into skin-compatible lipid membranes, combined with solubilisation technology for poorly soluble actives, produced L-CODEMAR ELIXIR™.</span>
-        </p>
-        <div class="pill-row">
-          <span class="pill"><span class="ko">지질 멤브레인 전달</span><span class="en">Lipid membrane delivery</span></span>
-          <span class="pill"><span class="ko">활성 성분 안정화</span><span class="en">Active stabilisation</span></span>
-          <span class="pill"><span class="ko">난용성 물질 가용화</span><span class="en">Solubilisation</span></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="wide-fig narrow reveal">
-      <img src="ingredients.jpg" alt="코코드메르 주요 원료 성분">
-    </div>
-  </div>
-</section>
-
-<!-- CUSTOM-MADE -->
-<section id="custom" class="alt">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">03 — CUSTOM-MADE</div>
-      <div class="rule"></div>
-      <h2><span class="ko">오로지 당신만을 위한 솔루션 처방</span><span class="en">A prescription made for one skin</span></h2>
-      <p class="lede">
-        <span class="ko">스킨 바이오 전문가의 처방을 통해 오로지 당신만의 피부를 위한 맞춤 화장품 서비스를 제공합니다. 피부 활성성분을 코드로 분류해 1:1 맞춤 조제 화장품을 완성합니다.</span>
-        <span class="en">Formulated one-to-one under the prescription of skin-bio specialists — actives classified as codes, compounded for a single skin.</span>
-      </p>
-    </div>
-
-    <div class="grid g4 reveal">
-      <div class="step">
-        <div class="ph"><img src="csti.jpg" alt="CSTI 피부 진단"></div>
-        <div class="tx">
-          <div class="sub">STEP 01</div>
-          <h3><span class="ko">피부 진단</span><span class="en">Diagnosis</span></h3>
-          <p><span class="ko">과학적 뷰티 진단(CSTI)으로 현재 피부 상태와 변화를 측정합니다.</span><span class="en">A scientific CSTI diagnosis measures current skin condition.</span></p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="ph"><img src="skincode-wall.jpg" alt="스킨 코드 활성성분"></div>
-        <div class="tx">
-          <div class="sub">STEP 02</div>
-          <h3><span class="ko">코드 분류</span><span class="en">Code Mapping</span></h3>
-          <p><span class="ko">피부 활성성분을 코드로 분류해 고민별 해결 조합을 설계합니다.</span><span class="en">Actives are classified as codes and matched to each concern.</span></p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="ph"><img src="compounding.jpg" alt="맞춤 화장품 조제"></div>
-        <div class="tx">
-          <div class="sub">STEP 03</div>
-          <h3><span class="ko">1:1 조제</span><span class="en">1:1 Compounding</span></h3>
-          <p><span class="ko">전문가가 설계한 맞춤 솔루션으로 나만의 제품을 조제합니다.</span><span class="en">A bespoke product is compounded to the specialist's design.</span></p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="ph"><img src="custom-cream.jpg" alt="맞춤 화장품 완성품"></div>
-        <div class="tx">
-          <div class="sub">STEP 04</div>
-          <h3><span class="ko">나만의 완성품</span><span class="en">My Custom Only One</span></h3>
-          <p><span class="ko">개인 취향의 향 선택까지 더해 세상에 하나뿐인 제품이 완성됩니다.</span><span class="en">A personal scent completes a product that exists only once.</span></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="wide-fig reveal">
-      <img src="skincode.jpg" alt="Skin Code Solutions 체계도">
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT -->
-<section id="product">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">04 — PRODUCT</div>
-      <div class="rule"></div>
-      <h2><span class="ko">최상의 뷰티 솔루션, 당신의 다음 화장품</span><span class="en">Your next skincare, considered</span></h2>
-      <p class="lede">
-        <span class="ko">클렌징부터 바이오 라인까지, 8개 카테고리로 구성된 코코드메르 스킨케어 컬렉션.</span>
-        <span class="en">Eight categories, from cleansing to the bio line — the COCODEMER skincare collection.</span>
-      </p>
-    </div>
-    <div class="grid g4 reveal">
-      <div class="cat"><div class="ph"><img src="cat-cleansing.jpg" alt="클렌징"></div><div class="tx"><span class="num">01</span><span class="nm"><span class="ko">클렌징</span><span class="en">Cleansing</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-mask.jpg" alt="스페셜 마스크"></div><div class="tx"><span class="num">02</span><span class="nm"><span class="ko">스페셜 마스크</span><span class="en">Special Mask</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-basic.jpg" alt="베이직 스킨케어"></div><div class="tx"><span class="num">03</span><span class="nm"><span class="ko">베이직 스킨케어</span><span class="en">Basic Skincare</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-special.jpg" alt="스페셜 스킨케어"></div><div class="tx"><span class="num">04</span><span class="nm"><span class="ko">스페셜 스킨케어</span><span class="en">Special Skincare</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-body.jpg" alt="핸드 앤 바디"></div><div class="tx"><span class="num">05</span><span class="nm"><span class="ko">핸드 &amp; 바디</span><span class="en">Hand &amp; Body</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-sun.jpg" alt="선케어"></div><div class="tx"><span class="num">06</span><span class="nm"><span class="ko">선케어</span><span class="en">Sun Care</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-bio.jpg" alt="바이오"></div><div class="tx"><span class="num">07</span><span class="nm"><span class="ko">바이오</span><span class="en">Bio</span></span></div></div>
-      <div class="cat"><div class="ph"><img src="cat-serum.jpg" alt="스킨 코드 세럼"></div><div class="tx"><span class="num">08</span><span class="nm"><span class="ko">스킨 코드 세럼</span><span class="en">Skin Code Serum</span></span></div></div>
-    </div>
-    <div class="split reveal" style="margin-top:70px">
-      <div class="figure">
-        <img src="bio-kv.jpg" alt="COCODEMER BIO Snow VC Spot Cream">
-      </div>
-      <div class="body-copy">
-        <p style="font-size:.66rem;letter-spacing:.24em;color:var(--gold);margin-bottom:14px">COCODEMER BIO</p>
-        <p style="font-family:var(--serif);font-size:1.75rem;color:var(--ink);line-height:1.3;margin-bottom:16px">Snow VC Spot Cream</p>
-        <p>
-          <span class="ko">퓨어 비타민C 안정화 기술(Pure Vitamin C Stabilization Technology)을 적용한 펜타이드-C 스팟 솔루션. 앰플 타입 디스펜서에 담아 필요한 부위에 국소적으로 사용하도록 설계했습니다.</span>
-          <span class="en">A Pentide-C spot solution built on Pure Vitamin C Stabilization Technology, dispensed from an ampoule-type applicator for targeted local use.</span>
-        </p>
-        <div class="pill-row">
-          <span class="pill">Pure Vitamin C Stabilization</span>
-          <span class="pill">Pentide-C</span>
-          <span class="pill">5 ml × 4ea</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-cta reveal" style="margin-top:52px">
-      <a class="btn dark" id="storeLink2" href="#contact" rel="noopener">
-        <span class="ko">온라인 스토어에서 구매하기</span><span class="en">SHOP ONLINE</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- GLOBAL B2B -->
-<section id="global" class="dark">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">05 — GLOBAL B2B</div>
-      <div class="rule"></div>
-      <h2><span class="ko">K-뷰티를 세계 시장으로 잇습니다</span><span class="en">Connecting K-Beauty to the world</span></h2>
-      <p class="lede">
-        <span class="ko">코코드메르는 자체 브랜드 운영과 함께, 유통 파트너십을 통해 중동·유럽·중화권 시장에 K-뷰티 제품을 공급하는 B2B 유통 사업을 전개하고 있습니다.</span>
-        <span class="en">Alongside its own brand, COCODEMER operates a B2B distribution business supplying K-Beauty products to the Middle East, Europe and Greater China through distribution partnerships.</span>
-      </p>
-    </div>
-
-    <div class="grid g3 reveal">
-      <div class="card">
-        <div class="sub">Sourcing</div>
-        <h3><span class="ko">브랜드 소싱</span><span class="en">Brand Sourcing</span></h3>
-        <p><span class="ko">국내 검증 브랜드·ODM 네트워크를 기반으로 바이어 요구에 맞는 제품 구성을 제안합니다.</span><span class="en">Product line-ups matched to buyer requirements, drawn from a vetted Korean brand and ODM network.</span></p>
-      </div>
-      <div class="card">
-        <div class="sub">Regulatory</div>
-        <h3><span class="ko">인증·서류</span><span class="en">Regulatory &amp; Docs</span></h3>
-        <p><span class="ko">EU CPNP, TFDA, NMPA 등 시장별 인허가와 수출 서류를 대응합니다.</span><span class="en">EU CPNP, TFDA, NMPA and market-specific registration and export documentation.</span></p>
-      </div>
-      <div class="card">
-        <div class="sub">Logistics</div>
-        <h3><span class="ko">수출 물류</span><span class="en">Export Logistics</span></h3>
-        <p><span class="ko">LCL 혼재 운송을 포함한 중소 물량 수출 실무를 직접 운영합니다.</span><span class="en">Hands-on export operations for small and mid-volume shipments, including LCL consolidation.</span></p>
-      </div>
-    </div>
-
-    <div class="split reveal" style="margin-top:68px">
-      <div>
-        <p style="font-size:.66rem;letter-spacing:.24em;color:var(--gold-lt);margin-bottom:22px">MILESTONES</p>
-        <ul class="tl">
-          <li><b><span class="ko">브랜드 정식 론칭</span><span class="en">Brand launch</span></b><span>2020</span></li>
-          <li><b><span class="ko">롯데월드몰 팝업스토어</span><span class="en">Lotte World Mall pop-up store</span></b><span>2021.08 – 2022.10</span></li>
-          <li><b><span class="ko">중국 베이징 매장 오픈</span><span class="en">Beijing store opening, China</span></b><span>2023.06</span></li>
-          <li><b><span class="ko">글로벌 B2B 유통 확대 — 중동·유럽·중화권</span><span class="en">Global B2B distribution — Middle East, Europe, Greater China</span></b><span>2024 –</span></li>
-        </ul>
-      </div>
-      <div class="figure">
-        <img src="lab.jpg" alt="코코드메르 조제 랩">
-        <div class="cap">COCODEMER LAB</div>
+    <div class="split wide">
+      <div class="fig"><img loading="lazy" src="img/elixir.jpg" alt="L-CODEMAR ELIXIR 구성" style="object-fit:contain;background:#000"></div>
+      <div class="copy">
+        <div class="en">FOUR PILLARS</div>
+        <h4>네 가지 축으로 완성한 독자 원료</h4>
+        <p>천연 아미노산이 풍부한 Coco-de-Mer를 모방한 코코넛수, 식물이 상처를 스스로 치유하기 위해 생성되는 피토스테롤, 탄탄한 피부 바탕을 만들어주는 20종의 아미노산과 허니 성분을 담았습니다.</p>
+        <p>피부 친화적 지질 멤브레인 연구와 난용성 물질의 가용화 기술을 결합해, 활성 성분을 안정적으로 피부에 전달합니다.</p>
+        <a class="btn sm onblack" href="technology.html">원료 · 기술 스토리</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="alt">
+<div class="film">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">06 — CONTACT</div>
-      <div class="rule"></div>
-      <h2><span class="ko">문의하기</span><span class="en">Get in touch</span></h2>
+    <div class="sec-en">BRAND FILM</div>
+    <h3>코코드메르가 피부를 바라보는 방식</h3>
+    <p class="lead">COCODEMER BRAND Promotional Video · 1분 56초</p>
+    <div class="frame" data-video="https://www.youtube.com/embed/5vqKD0Snohg" role="button" tabindex="0">
+      <img loading="lazy" src="img/brand.jpg" alt="브랜드 필름 재생">
+      <div class="play"><i></i><span>PLAY FILM</span></div>
     </div>
-    <div class="contact-grid reveal">
-      <div class="info">
-        <dl>
-          <dt>COMPANY</dt>
-          <dd><span class="ko">(주)코코드메르 · 대표이사 배성환</span><span class="en">COCODEMER Co., Ltd. · CEO Bae Sung Hwan</span></dd>
-          <dt>ADDRESS</dt>
-          <dd><span class="ko">서울특별시 마포구 월드컵북로 98, 2층 202-352호</span><span class="en">2F 202-352, 98 World Cup buk-ro, Mapo-gu, Seoul, Republic of Korea</span></dd>
-          <dt>EMAIL</dt>
-          <dd><a href="mailto:cocodemer@cocodemer.co.kr">cocodemer@cocodemer.co.kr</a></dd>
-          <dt>TEL</dt>
-          <dd><a href="tel:+821033079341">010-3307-9341</a></dd>
-          <dt>HOURS</dt>
-          <dd><span class="ko">10:30 – 19:30 (점심 12:00 – 13:00)</span><span class="en">10:30 – 19:30 (lunch 12:00 – 13:00)</span></dd>
-        </dl>
-      </div>
-      <div class="cta-box">
-        <img src="store-sign.jpg" alt="">
-        <div class="ov"></div>
-        <div class="ct">
-          <h3><span class="ko">B2B · 유통 파트너십</span><span class="en">B2B &amp; Distribution</span></h3>
-          <p><span class="ko">해외 유통, 국내 총판, 스파·에스테틱 채널 제휴 문의를 받고 있습니다. 취급 희망 카테고리와 목표 시장을 함께 보내주세요.</span><span class="en">We are open to overseas distribution, domestic wholesale and spa channel partnerships. Please include your target market and product categories.</span></p>
-          <div><a class="btn solid" href="mailto:cocodemer@cocodemer.co.kr?subject=Partnership%20Enquiry%20-%20COCODEMER"><span class="ko">제휴 문의</span><span class="en">ENQUIRE</span></a></div>
-        </div>
-      </div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">HERITAGE</div><div class="rule"></div>
+      <h3>맞춤 조제에서 <b>스킨 코드</b>로</h3>
+      <p class="lead">코코드메르는 오프라인 스튜디오에서 과학적 피부 진단(CSTI)으로 16가지 피부 타입을 구분하고, 활성 성분을 코드로 분류해 1:1 맞춤 조제 화장품을 만들었습니다. 현재 조제 서비스는 운영하지 않으며, 그 과정에서 축적한 진단 체계와 처방 로직은 스킨 코드 세럼 16종으로 이어졌습니다.</p>
     </div>
+    <div class="pgrid">
+      <div class="pcard"><div class="ph"><img loading="lazy" src="img/csti-station.jpg" alt="피부 진단"></div><div class="tx"><div class="cat">ARCHIVE 01</div><div class="nm">피부 진단</div><div class="nm-en">Diagnosis</div></div></div>
+      <div class="pcard"><div class="ph"><img loading="lazy" src="img/skincode-wall.jpg" alt="코드 분류"></div><div class="tx"><div class="cat">ARCHIVE 02</div><div class="nm">코드 분류</div><div class="nm-en">Code Mapping</div></div></div>
+      <div class="pcard"><div class="ph"><img loading="lazy" src="img/compounding.jpg" alt="1:1 조제"></div><div class="tx"><div class="cat">ARCHIVE 03</div><div class="nm">1:1 조제</div><div class="nm-en">Compounding</div></div></div>
+      <div class="pcard"><div class="ph"><img loading="lazy" src="img/custom-cream.jpg" alt="맞춤 완성품"></div><div class="tx"><div class="cat">ARCHIVE 04</div><div class="nm">맞춤 완성품</div><div class="nm-en">My Custom Only One</div></div></div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:14px;font-weight:300;margin-top:32px">※ 오프라인 맞춤 조제 서비스는 종료되었습니다. 진단 결과에 대응하는 처방은 스킨 코드 세럼 라인으로 제공됩니다.</p>
+    <div style="text-align:center;margin-top:22px"><a class="btn sm" href="products.html#serum">스킨 코드 세럼 16종 보기</a></div>
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">PRODUCT</div><div class="rule"></div>
+      <h3>최상의 뷰티 솔루션, <b>당신의 다음 화장품</b></h3>
+      <p class="lead">8개 카테고리 · 전 34종</p>
+    </div>
+    <div class="pgrid"><a class="pcard" href="products.html#cleansing">
+  <div class="ph"><img loading="lazy" src="img/cat-cleansing.jpg" alt="클렌징"></div>
+  <div class="tx"><div class="cat">01</div><div class="nm">클렌징</div>
+  <div class="nm-en">Cleansing · 3종</div></div></a><a class="pcard" href="products.html#mask">
+  <div class="ph"><img loading="lazy" src="img/cat-mask.jpg" alt="스페셜 마스크"></div>
+  <div class="tx"><div class="cat">02</div><div class="nm">스페셜 마스크</div>
+  <div class="nm-en">Special Mask · 2종</div></div></a><a class="pcard" href="products.html#basic">
+  <div class="ph"><img loading="lazy" src="img/cat-basic.jpg" alt="베이직 스킨케어"></div>
+  <div class="tx"><div class="cat">03</div><div class="nm">베이직 스킨케어</div>
+  <div class="nm-en">Basic Skincare · 2종</div></div></a><a class="pcard" href="products.html#special">
+  <div class="ph"><img loading="lazy" src="img/cat-special.jpg" alt="스페셜 스킨케어"></div>
+  <div class="tx"><div class="cat">04</div><div class="nm">스페셜 스킨케어</div>
+  <div class="nm-en">Special Skincare · 4종</div></div></a><a class="pcard" href="products.html#body">
+  <div class="ph"><img loading="lazy" src="img/cat-body.jpg" alt="핸드 &amp; 바디"></div>
+  <div class="tx"><div class="cat">05</div><div class="nm">핸드 &amp; 바디</div>
+  <div class="nm-en">Hand &amp; Body · 5종</div></div></a><a class="pcard" href="products.html#sun">
+  <div class="ph"><img loading="lazy" src="img/cat-sun.jpg" alt="선케어"></div>
+  <div class="tx"><div class="cat">06</div><div class="nm">선케어</div>
+  <div class="nm-en">Sun Care · 1종</div></div></a><a class="pcard" href="products.html#bio">
+  <div class="ph"><img loading="lazy" src="img/cat-bio.jpg" alt="바이오"></div>
+  <div class="tx"><div class="cat">07</div><div class="nm">바이오</div>
+  <div class="nm-en">Bio · 1종</div></div></a><a class="pcard" href="products.html#serum">
+  <div class="ph"><img loading="lazy" src="img/cat-serum.jpg" alt="스킨 코드 세럼"></div>
+  <div class="tx"><div class="cat">08</div><div class="nm">스킨 코드 세럼</div>
+  <div class="nm-en">Skin Code Serum · 16종</div></div></a></div>
+    <div style="text-align:center;margin-top:44px"><a class="btn" href="products.html">전체 제품 보기</a></div>
+  </div>
+</section>
+
+<div class="storeband">
+  <div class="wrap">
+    <div class="t"><div class="se">OFFICIAL STORE</div><h3>코코드메르 공식 스마트스토어</h3>
+    <p>제품 구매는 네이버 스마트스토어에서 진행됩니다. 홈페이지는 제품 정보를, 구매·결제·배송은 스토어가 담당합니다.</p></div>
+    <a class="btn onblack fill" href="https://smartstore.naver.com/cocodemer_official" target="_blank" rel="noopener">스마트스토어 바로가기 ↗</a>
+  </div>
+</div>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">GLOBAL B2B</div><div class="rule"></div>
+      <h3>K-뷰티를 <b>세계 시장으로</b> 잇습니다</h3>
+      <p class="lead">자체 브랜드 운영과 함께, 유통 파트너십을 통해 중동·유럽·중화권 시장에 K-뷰티 제품을 공급하는 B2B 유통 사업을 전개하고 있습니다.</p>
+    </div>
+    <div class="split wide">
+      <div class="copy">
+        <div class="en">CAPABILITIES</div>
+        <p><b style="font-weight:400;color:#fff">브랜드 소싱</b> — 국내 검증 브랜드·ODM 네트워크를 기반으로 바이어 요구에 맞는 제품 구성을 제안합니다.</p>
+        <p><b style="font-weight:400;color:#fff">인증 · 서류</b> — EU CPNP, TFDA, NMPA 등 시장별 인허가와 수출 서류를 대응합니다.</p>
+        <p><b style="font-weight:400;color:#fff">수출 물류</b> — LCL 혼재 운송을 포함한 중소 물량 수출 실무를 직접 운영합니다.</p>
+        <div style="margin-top:26px"><a class="btn sm onblack fill" href="b2b.html">B2B 문의</a></div>
+      </div>
+      <div class="fig"><img loading="lazy" src="img/hero-4-lab.jpg" alt="조제 랩"></div>
+    </div>
+  </div>
+</section>
+</main>
 <footer>
   <div class="wrap">
     <div class="f-top">
-      <div>
-        <div class="f-logo">COCODEMER</div>
-        <p style="margin-top:10px;font-size:.76rem;color:rgba(255,255,255,.45)">Designed for the skin</p>
-      </div>
-      <div class="f-sns">
-        <a href="https://www.instagram.com/cocodemer_kr/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 3.4a6.4 6.4 0 100 12.8 6.4 6.4 0 000-12.8zm0 10.5a4.1 4.1 0 110-8.2 4.1 4.1 0 010 8.2zm8.2-10.8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/channel/UC5tT3q-Jlp89Z03WJMJG8Ow" target="_blank" rel="noopener" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.8-.9-2.3-1C17.3 4 12 4 12 4s-5.3 0-7.8.2c-.5.1-1.4.1-2.3 1C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.2 7.6.2s5.3 0 7.8-.2c.5-.1 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.8 15.1V8.9l6.1 3.1-6.1 3.1z"/></svg>
-        </a>
-      </div>
+      <img class="wm-f" src="img/wm-black.png" alt="COCODEMER">
+      <nav class="f-nav">
+        <a href="brand.html">BRAND</a><a href="products.html">PRODUCT</a>
+        <a href="technology.html">TECHNOLOGY</a><a href="b2b.html">B2B</a>
+        <a href="https://smartstore.naver.com/cocodemer_official" target="_blank" rel="noopener">STORE</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </nav>
     </div>
     <div class="f-biz">
-      <span class="ko">(주)코코드메르</span><span class="en">COCODEMER Co., Ltd.</span>
-      <span><span class="ko">대표이사 배성환</span><span class="en">CEO Bae Sung Hwan</span></span>
-      <span><span class="ko">정보관리책임자 배성환</span><span class="en">Data Officer Bae Sung Hwan</span></span><br>
-      <span><span class="ko">서울특별시 마포구 월드컵북로 98, 2층 202-352호</span><span class="en">2F 202-352, 98 World Cup buk-ro, Mapo-gu, Seoul, Korea</span></span><br>
-      <span><span class="ko">사업자등록번호</span><span class="en">Business Reg. No.</span> 636-86-00929</span>
-      <span><span class="ko">통신판매업 신고번호 제2020-서울종로-2190호</span><span class="en">E-commerce Reg. No. 2020-Seoul Jongno-2190</span></span>
-      <span>TEL 010-3307-9341</span>
-      <span>E-MAIL cocodemer@cocodemer.co.kr</span>
+      <span>(주)코코드메르</span><span>대표이사 배성환</span><span>개인정보 보호책임자 배성환</span><br>
+      <span>서울특별시 마포구 월드컵북로 98, 2층 202-352호</span><br>
+      <span>사업자등록번호 636-86-00929</span><span>통신판매업 신고 제2020-서울종로-2190호</span><span>TEL 010-3307-9341</span><span>cocodemer@cocodemer.co.kr</span>
     </div>
-    <div class="f-links"><a href="privacy.html"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a></div>
-    <div class="copy">COPYRIGHT © COCODEMER. ALL RIGHTS RESERVED.</div>
+    <div class="f-copy">COPYRIGHT © COCODEMER CO., LTD. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
-
-<script>
-/* ── 스마트스토어 주소만 여기 한 줄 바꾸면 STORE 버튼 2곳이 모두 연결됩니다 ── */
-var STORE_URL = "https://smartstore.naver.com/cocodemer_official";
-
-(function(){
-  ["storeLink","storeLink2"].forEach(function(id){
-    var el=document.getElementById(id); if(!el) return;
-    if(STORE_URL){ el.href=STORE_URL; el.target="_blank"; }
-    else { el.href="#contact"; el.removeAttribute("target"); }
-  });
-
-  var btn=document.getElementById("langbtn"), saved=null;
-  try{saved=localStorage.getItem("cdm-lang");}catch(e){}
-  function setLang(l){
-    document.body.classList.toggle("lang-en", l==="en");
-    document.documentElement.lang = (l==="en"?"en":"ko");
-    btn.textContent = (l==="en"?"KO":"EN");
-    try{localStorage.setItem("cdm-lang",l);}catch(e){}
-  }
-  setLang(saved==="en"?"en":"ko");
-  btn.addEventListener("click",function(){ setLang(document.body.classList.contains("lang-en")?"ko":"en"); });
-
-  var hdr=document.getElementById("hdr"), menu=document.getElementById("menu"), burger=document.getElementById("burger");
-  window.addEventListener("scroll",function(){ hdr.classList.toggle("scrolled", window.scrollY>20); },{passive:true});
-  burger.addEventListener("click",function(){ menu.classList.toggle("open"); });
-  menu.addEventListener("click",function(e){ if(e.target.closest("a")) menu.classList.remove("open"); });
-
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
-  },{threshold:.1});
-  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
-})();
-</script>
+<script src="js/site.js"></script>
 </body>
 </html>
