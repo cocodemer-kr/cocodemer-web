@@ -2,19 +2,28 @@
 """COCODEMER — build the English (/en/) mirror from the Korean source pages."""
 import json, os, re, sys, glob, shutil
 from bs4 import BeautifulSoup, NavigableString
+from detail_pane import build_pane
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 I18N = os.path.join(ROOT, '_i18n')
 KO_RE = re.compile(r'[가-힣]')
 SITE = 'https://www.cocodemer.co.kr'
 
+# JSON files in _i18n/ that are data for other builders, not phrase books
+NOT_DICTS = {'ingredients.json', 'active_codes.json'}
+
+
 def load_dicts():
     d = {}
     for f in sorted(glob.glob(os.path.join(I18N, '*.json'))):
-        if os.path.basename(f).startswith('_'):
+        name = os.path.basename(f)
+        if name.startswith('_') or name in NOT_DICTS:
             continue
-        for k, v in json.load(open(f, encoding='utf-8')).items():
-            if k.startswith('_'):
+        data = json.load(open(f, encoding='utf-8'))
+        if not isinstance(data, dict):
+            continue
+        for k, v in data.items():
+            if k.startswith('_') or not isinstance(v, str):
                 continue
             d[k] = v
     return d
@@ -161,21 +170,28 @@ def build(src, depth):
         if h1 and h1.get_text(strip=True) == en.get_text(strip=True):
             en.decompose()
 
-    # the #p1 tab is a Korean sales image with the copy baked into the JPG.
-    # Its content is already carried, in English, by the #p2 Description pane —
-    # so drop it on EN pages and promote Description to the first/active tab.
+    # The #p1 tab is one tall JPG with the Korean copy baked into the pixels, so
+    # it can't be translated. Rebuild the same page in HTML instead: photography
+    # reused from the Korean JPG, copy taken from the English #p2 pane.
     p1 = soup.select_one('#p1')
     if p1 and p1.select_one('.detail-img'):
-        p1.decompose()
-        btn = soup.select_one('.tabs2 button[data-p="p1"]')
-        if btn:
-            btn.decompose()
-        for sel in ('.tabs2 button[data-p="p2"]', '#p2'):
-            el = soup.select_one(sel)
-            if el:
-                cls = el.get('class', [])
-                if 'on' not in cls:
-                    el['class'] = cls + ['on']
+        slug = os.path.splitext(os.path.basename(src))[0]
+        pane = build_pane(soup, slug, depth)
+        if pane:
+            p1.clear()
+            p1.append(BeautifulSoup(pane, 'html.parser'))
+        else:
+            # nothing to rebuild from — drop the tab rather than show Korean
+            p1.decompose()
+            btn = soup.select_one('.tabs2 button[data-p="p1"]')
+            if btn:
+                btn.decompose()
+            for sel in ('.tabs2 button[data-p="p2"]', '#p2'):
+                el = soup.select_one(sel)
+                if el:
+                    cls = el.get('class', [])
+                    if 'on' not in cls:
+                        el['class'] = cls + ['on']
 
     fix_paths(soup, depth)
 
