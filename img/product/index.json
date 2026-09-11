@@ -1,0 +1,410 @@
+{
+ "claire-blanc-cleansing-water": [
+  {
+   "file": "claire-blanc-cleansing-water.jpg",
+   "label": ""
+  },
+  {
+   "file": "claire-blanc-cleansing-water-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "claire-blanc-cleansing-water-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "claire-blanc-cleansing-cream": [
+  {
+   "file": "claire-blanc-cleansing-cream.jpg",
+   "label": ""
+  },
+  {
+   "file": "claire-blanc-cleansing-cream-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "claire-blanc-cleansing-cream-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "claire-blanc-cleansing-foam": [
+  {
+   "file": "claire-blanc-cleansing-foam.jpg",
+   "label": ""
+  },
+  {
+   "file": "claire-blanc-cleansing-foam-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "claire-blanc-cleansing-foam-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "lumiere-infusion-mist-serum": [
+  {
+   "file": "lumiere-infusion-mist-serum.jpg",
+   "label": ""
+  },
+  {
+   "file": "lumiere-infusion-mist-serum-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "lumiere-infusion-mist-serum-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "relaxing-body-cleansing-gel": [
+  {
+   "file": "relaxing-body-cleansing-gel.jpg",
+   "label": ""
+  },
+  {
+   "file": "relaxing-body-cleansing-gel-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "relaxing-body-cleansing-gel-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "relief-hydra-body-lotion": [
+  {
+   "file": "relief-hydra-body-lotion.jpg",
+   "label": ""
+  },
+  {
+   "file": "relief-hydra-body-lotion-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "relief-hydra-body-lotion-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-eye-contour-cream": [
+  {
+   "file": "meilleur-eye-contour-cream.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-eye-contour-cream-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-eye-contour-cream-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-uv-sun-protecter": [
+  {
+   "file": "meilleur-uv-sun-protecter.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-uv-sun-protecter-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-uv-sun-protecter-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-nourishing-cream": [
+  {
+   "file": "meilleur-nourishing-cream.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-nourishing-cream-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-nourishing-cream-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-concentrate-serum": [
+  {
+   "file": "meilleur-concentrate-serum.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-concentrate-serum-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-concentrate-serum-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-facial-emulsion": [
+  {
+   "file": "meilleur-facial-emulsion.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-facial-emulsion-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-facial-emulsion-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "meilleur-facial-toner": [
+  {
+   "file": "meilleur-facial-toner.jpg",
+   "label": ""
+  },
+  {
+   "file": "meilleur-facial-toner-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "meilleur-facial-toner-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "exfoliant-body-scrub": [
+  {
+   "file": "exfoliant-body-scrub.jpg",
+   "label": ""
+  },
+  {
+   "file": "exfoliant-body-scrub-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "exfoliant-body-scrub-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "hydra-velour-essential-mask": [
+  {
+   "file": "hydra-velour-essential-mask.jpg",
+   "label": ""
+  },
+  {
+   "file": "hydra-velour-essential-mask-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "hydra-velour-essential-mask-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "intense-vital-hand-cream": [
+  {
+   "file": "intense-vital-hand-cream.jpg",
+   "label": ""
+  },
+  {
+   "file": "intense-vital-hand-cream-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "intense-vital-hand-cream-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "purifiant-clay-mask": [
+  {
+   "file": "purifiant-clay-mask.jpg",
+   "label": ""
+  },
+  {
+   "file": "purifiant-clay-mask-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "purifiant-clay-mask-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "precieux-body-essence-oil": [
+  {
+   "file": "precieux-body-essence-oil.jpg",
+   "label": ""
+  },
+  {
+   "file": "precieux-body-essence-oil-2.jpg",
+   "label": "패키지"
+  },
+  {
+   "file": "precieux-body-essence-oil-3.jpg",
+   "label": "제형"
+  }
+ ],
+ "bio-snow-vc-spot-cream": [
+  {
+   "file": "bio-snow-vc-spot-cream.jpg",
+   "label": ""
+  },
+  {
+   "file": "bio-snow-vc-spot-cream-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-01-drnt": [
+  {
+   "file": "skin-code-serum-01-drnt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-01-drnt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-02-drpt": [
+  {
+   "file": "skin-code-serum-02-drpt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-02-drpt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-03-drnw": [
+  {
+   "file": "skin-code-serum-03-drnw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-03-drnw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-04-drpw": [
+  {
+   "file": "skin-code-serum-04-drpw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-04-drpw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-05-dsnt": [
+  {
+   "file": "skin-code-serum-05-dsnt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-05-dsnt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-06-dspt": [
+  {
+   "file": "skin-code-serum-06-dspt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-06-dspt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-07-dsnw": [
+  {
+   "file": "skin-code-serum-07-dsnw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-07-dsnw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-08-dspw": [
+  {
+   "file": "skin-code-serum-08-dspw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-08-dspw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-09-ornt": [
+  {
+   "file": "skin-code-serum-09-ornt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-09-ornt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-10-orpt": [
+  {
+   "file": "skin-code-serum-10-orpt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-10-orpt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-11-ornw": [
+  {
+   "file": "skin-code-serum-11-ornw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-11-ornw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-12-orpw": [
+  {
+   "file": "skin-code-serum-12-orpw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-12-orpw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-13-osnt": [
+  {
+   "file": "skin-code-serum-13-osnt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-13-osnt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-14-ospt": [
+  {
+   "file": "skin-code-serum-14-ospt.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-14-ospt-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-15-osnw": [
+  {
+   "file": "skin-code-serum-15-osnw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-15-osnw-2.jpg",
+   "label": "패키지"
+  }
+ ],
+ "skin-code-serum-16-ospw": [
+  {
+   "file": "skin-code-serum-16-ospw.jpg",
+   "label": ""
+  },
+  {
+   "file": "skin-code-serum-16-ospw-2.jpg",
+   "label": "패키지"
+  }
+ ]
+}
