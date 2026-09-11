@@ -65,3 +65,18 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
   var h=location.hash.replace('#','');
   if(h){ var m=document.querySelector('.filters button[data-f="'+h+'"]'); if(m) m.click(); }
 })();
+
+/* 제품 상세 이미지 갤러리 — 썸네일(누끼·패키지·제형)을 눌러 메인 이미지를 바꾼다 */
+(function(){
+  var thumbs = document.querySelector('.pd .gal-thumbs');
+  if (!thumbs) return;
+  var main = document.querySelector('.pd .gal-main img');
+  thumbs.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if (!b || !main) return;
+    main.src = b.dataset.src;
+    [].forEach.call(thumbs.querySelectorAll('button'), function(x){
+      x.classList.toggle('on', x === b);
+    });
+  });
+})();
