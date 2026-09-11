@@ -102,6 +102,9 @@ def set_util(soup, inner_html):
         util.append(BeautifulSoup(inner_html, 'html.parser'))
 
 def add_mobile_lang(soup, inner_html):
+    """Replace any existing .mnav .lang, then append — keeps rebuilds idempotent."""
+    for old in soup.select('.mnav .lang'):
+        old.decompose()
     mnav = soup.select_one('.mnav')
     if mnav:
         mnav.append(BeautifulSoup(inner_html, 'html.parser'))
@@ -152,7 +155,37 @@ def build(src, depth):
         if nm and nm.get_text(strip=True) == nm_en.get_text(strip=True):
             nm_en.decompose()
 
+    # product detail: the .en subtitle repeats the (now English) h1 -> drop it
+    for en in soup.select('.pd-info .en'):
+        h1 = en.find_previous_sibling('h1')
+        if h1 and h1.get_text(strip=True) == en.get_text(strip=True):
+            en.decompose()
+
+    # the #p1 tab is a Korean sales image with the copy baked into the JPG.
+    # Its content is already carried, in English, by the #p2 Description pane —
+    # so drop it on EN pages and promote Description to the first/active tab.
+    p1 = soup.select_one('#p1')
+    if p1 and p1.select_one('.detail-img'):
+        p1.decompose()
+        btn = soup.select_one('.tabs2 button[data-p="p1"]')
+        if btn:
+            btn.decompose()
+        for sel in ('.tabs2 button[data-p="p2"]', '#p2'):
+            el = soup.select_one(sel)
+            if el:
+                cls = el.get('class', [])
+                if 'on' not in cls:
+                    el['class'] = cls + ['on']
+
     fix_paths(soup, depth)
+
+    # swap in the English-lettered versions of the diagram images
+    for tag in soup.find_all('img'):
+        s = tag.get('src', '')
+        for ko_img, en_img in (('img/ingredients.jpg', 'img/ingredients-en.jpg'),
+                               ('img/skincode.jpg', 'img/skincode-en.jpg')):
+            if s.endswith(ko_img):
+                tag['src'] = s[: -len(ko_img)] + en_img
 
     # language switch + hreflang
     up = '../' * (depth - 1)
