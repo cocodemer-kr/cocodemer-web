@@ -1,0 +1,574 @@
+{
+ "bio-snow-vc-spot-cream": [
+  {
+   "file": "bio-snow-vc-spot-cream/00.jpg",
+   "y0": 2356,
+   "y1": 3030,
+   "h": 674
+  },
+  {
+   "file": "bio-snow-vc-spot-cream/01.jpg",
+   "y0": 4171,
+   "y1": 4527,
+   "h": 356
+  },
+  {
+   "file": "bio-snow-vc-spot-cream/02.jpg",
+   "y0": 7067,
+   "y1": 7545,
+   "h": 478
+  }
+ ],
+ "claire-blanc-cleansing-cream": [
+  {
+   "file": "claire-blanc-cleansing-cream/00.jpg",
+   "y0": 2621,
+   "y1": 3279,
+   "h": 658
+  },
+  {
+   "file": "claire-blanc-cleansing-cream/01.jpg",
+   "y0": 5091,
+   "y1": 5382,
+   "h": 291
+  },
+  {
+   "file": "claire-blanc-cleansing-cream/02.jpg",
+   "y0": 5767,
+   "y1": 6184,
+   "h": 417
+  },
+  {
+   "file": "claire-blanc-cleansing-cream/03.jpg",
+   "y0": 6748,
+   "y1": 7085,
+   "h": 337
+  }
+ ],
+ "claire-blanc-cleansing-foam": [
+  {
+   "file": "claire-blanc-cleansing-foam/00.jpg",
+   "y0": 2605,
+   "y1": 3215,
+   "h": 610
+  },
+  {
+   "file": "claire-blanc-cleansing-foam/01.jpg",
+   "y0": 5300,
+   "y1": 5709,
+   "h": 409
+  },
+  {
+   "file": "claire-blanc-cleansing-foam/02.jpg",
+   "y0": 6227,
+   "y1": 6715,
+   "h": 488
+  }
+ ],
+ "claire-blanc-cleansing-water": [
+  {
+   "file": "claire-blanc-cleansing-water/00.jpg",
+   "y0": 2665,
+   "y1": 3374,
+   "h": 709
+  },
+  {
+   "file": "claire-blanc-cleansing-water/01.jpg",
+   "y0": 5275,
+   "y1": 5683,
+   "h": 408
+  },
+  {
+   "file": "claire-blanc-cleansing-water/02.jpg",
+   "y0": 6376,
+   "y1": 6669,
+   "h": 293
+  },
+  {
+   "file": "claire-blanc-cleansing-water/03.jpg",
+   "y0": 7219,
+   "y1": 7569,
+   "h": 350
+  }
+ ],
+ "exfoliant-body-scrub": [
+  {
+   "file": "exfoliant-body-scrub/00.jpg",
+   "y0": 2525,
+   "y1": 3183,
+   "h": 658
+  },
+  {
+   "file": "exfoliant-body-scrub/01.jpg",
+   "y0": 5466,
+   "y1": 5941,
+   "h": 475
+  },
+  {
+   "file": "exfoliant-body-scrub/02.jpg",
+   "y0": 6447,
+   "y1": 6797,
+   "h": 350
+  }
+ ],
+ "hydra-velour-essential-mask": [
+  {
+   "file": "hydra-velour-essential-mask/00.jpg",
+   "y0": 2135,
+   "y1": 2492,
+   "h": 357
+  },
+  {
+   "file": "hydra-velour-essential-mask/01.jpg",
+   "y0": 2654,
+   "y1": 3245,
+   "h": 591
+  },
+  {
+   "file": "hydra-velour-essential-mask/02.jpg",
+   "y0": 5247,
+   "y1": 5704,
+   "h": 457
+  },
+  {
+   "file": "hydra-velour-essential-mask/03.jpg",
+   "y0": 6194,
+   "y1": 6717,
+   "h": 523
+  },
+  {
+   "file": "hydra-velour-essential-mask/04.jpg",
+   "y0": 7102,
+   "y1": 7567,
+   "h": 465
+  }
+ ],
+ "intense-vital-hand-cream": [
+  {
+   "file": "intense-vital-hand-cream/00.jpg",
+   "y0": 2703,
+   "y1": 3361,
+   "h": 658
+  }
+ ],
+ "lumiere-infusion-mist-serum": [
+  {
+   "file": "lumiere-infusion-mist-serum/00.jpg",
+   "y0": 2603,
+   "y1": 3282,
+   "h": 679
+  },
+  {
+   "file": "lumiere-infusion-mist-serum/01.jpg",
+   "y0": 5358,
+   "y1": 5881,
+   "h": 523
+  },
+  {
+   "file": "lumiere-infusion-mist-serum/02.jpg",
+   "y0": 6307,
+   "y1": 6830,
+   "h": 523
+  },
+  {
+   "file": "lumiere-infusion-mist-serum/03.jpg",
+   "y0": 7214,
+   "y1": 7719,
+   "h": 505
+  }
+ ],
+ "meilleur-concentrate-serum": [
+  {
+   "file": "meilleur-concentrate-serum/00.jpg",
+   "y0": 5014,
+   "y1": 5527,
+   "h": 513
+  },
+  {
+   "file": "meilleur-concentrate-serum/01.jpg",
+   "y0": 5962,
+   "y1": 6485,
+   "h": 523
+  },
+  {
+   "file": "meilleur-concentrate-serum/02.jpg",
+   "y0": 6870,
+   "y1": 7374,
+   "h": 504
+  }
+ ],
+ "meilleur-eye-contour-cream": [
+  {
+   "file": "meilleur-eye-contour-cream/00.jpg",
+   "y0": 2312,
+   "y1": 2639,
+   "h": 327
+  },
+  {
+   "file": "meilleur-eye-contour-cream/01.jpg",
+   "y0": 2823,
+   "y1": 3438,
+   "h": 615
+  },
+  {
+   "file": "meilleur-eye-contour-cream/02.jpg",
+   "y0": 5110,
+   "y1": 5633,
+   "h": 523
+  },
+  {
+   "file": "meilleur-eye-contour-cream/03.jpg",
+   "y0": 6016,
+   "y1": 6539,
+   "h": 523
+  },
+  {
+   "file": "meilleur-eye-contour-cream/04.jpg",
+   "y0": 6923,
+   "y1": 7428,
+   "h": 505
+  }
+ ],
+ "meilleur-facial-emulsion": [
+  {
+   "file": "meilleur-facial-emulsion/00.jpg",
+   "y0": 2623,
+   "y1": 3279,
+   "h": 656
+  },
+  {
+   "file": "meilleur-facial-emulsion/01.jpg",
+   "y0": 4876,
+   "y1": 5348,
+   "h": 472
+  },
+  {
+   "file": "meilleur-facial-emulsion/02.jpg",
+   "y0": 5960,
+   "y1": 6239,
+   "h": 279
+  },
+  {
+   "file": "meilleur-facial-emulsion/03.jpg",
+   "y0": 6671,
+   "y1": 7193,
+   "h": 522
+  },
+  {
+   "file": "meilleur-facial-emulsion/04.jpg",
+   "y0": 7578,
+   "y1": 8083,
+   "h": 505
+  }
+ ],
+ "meilleur-facial-toner": [
+  {
+   "file": "meilleur-facial-toner/00.jpg",
+   "y0": 2848,
+   "y1": 3353,
+   "h": 505
+  },
+  {
+   "file": "meilleur-facial-toner/01.jpg",
+   "y0": 5167,
+   "y1": 5644,
+   "h": 477
+  },
+  {
+   "file": "meilleur-facial-toner/02.jpg",
+   "y0": 6045,
+   "y1": 6568,
+   "h": 523
+  },
+  {
+   "file": "meilleur-facial-toner/03.jpg",
+   "y0": 7004,
+   "y1": 7469,
+   "h": 465
+  },
+  {
+   "file": "meilleur-facial-toner/04.jpg",
+   "y0": 7910,
+   "y1": 8327,
+   "h": 417
+  }
+ ],
+ "meilleur-nourishing-cream": [
+  {
+   "file": "meilleur-nourishing-cream/00.jpg",
+   "y0": 2328,
+   "y1": 2580,
+   "h": 252
+  },
+  {
+   "file": "meilleur-nourishing-cream/01.jpg",
+   "y0": 2757,
+   "y1": 3414,
+   "h": 657
+  },
+  {
+   "file": "meilleur-nourishing-cream/02.jpg",
+   "y0": 5641,
+   "y1": 6094,
+   "h": 453
+  },
+  {
+   "file": "meilleur-nourishing-cream/03.jpg",
+   "y0": 6544,
+   "y1": 7067,
+   "h": 523
+  },
+  {
+   "file": "meilleur-nourishing-cream/04.jpg",
+   "y0": 7452,
+   "y1": 7917,
+   "h": 465
+  }
+ ],
+ "meilleur-uv-sun-protecter": [
+  {
+   "file": "meilleur-uv-sun-protecter/00.jpg",
+   "y0": 2774,
+   "y1": 3385,
+   "h": 611
+  },
+  {
+   "file": "meilleur-uv-sun-protecter/01.jpg",
+   "y0": 5695,
+   "y1": 6161,
+   "h": 466
+  },
+  {
+   "file": "meilleur-uv-sun-protecter/02.jpg",
+   "y0": 6604,
+   "y1": 7127,
+   "h": 523
+  },
+  {
+   "file": "meilleur-uv-sun-protecter/03.jpg",
+   "y0": 7553,
+   "y1": 8076,
+   "h": 523
+  },
+  {
+   "file": "meilleur-uv-sun-protecter/04.jpg",
+   "y0": 8504,
+   "y1": 9009,
+   "h": 505
+  }
+ ],
+ "precieux-body-essence-oil": [
+  {
+   "file": "precieux-body-essence-oil/00.jpg",
+   "y0": 5004,
+   "y1": 5412,
+   "h": 408
+  }
+ ],
+ "purifiant-clay-mask": [
+  {
+   "file": "purifiant-clay-mask/00.jpg",
+   "y0": 2133,
+   "y1": 2480,
+   "h": 347
+  },
+  {
+   "file": "purifiant-clay-mask/01.jpg",
+   "y0": 2605,
+   "y1": 3264,
+   "h": 659
+  },
+  {
+   "file": "purifiant-clay-mask/02.jpg",
+   "y0": 5218,
+   "y1": 5509,
+   "h": 291
+  },
+  {
+   "file": "purifiant-clay-mask/03.jpg",
+   "y0": 5966,
+   "y1": 6446,
+   "h": 480
+  },
+  {
+   "file": "purifiant-clay-mask/04.jpg",
+   "y0": 7048,
+   "y1": 7413,
+   "h": 365
+  },
+  {
+   "file": "purifiant-clay-mask/05.jpg",
+   "y0": 7996,
+   "y1": 8273,
+   "h": 277
+  }
+ ],
+ "relaxing-body-cleansing-gel": [
+  {
+   "file": "relaxing-body-cleansing-gel/00.jpg",
+   "y0": 2597,
+   "y1": 3266,
+   "h": 669
+  },
+  {
+   "file": "relaxing-body-cleansing-gel/01.jpg",
+   "y0": 4727,
+   "y1": 5135,
+   "h": 408
+  },
+  {
+   "file": "relaxing-body-cleansing-gel/02.jpg",
+   "y0": 5744,
+   "y1": 6037,
+   "h": 293
+  },
+  {
+   "file": "relaxing-body-cleansing-gel/03.jpg",
+   "y0": 6565,
+   "y1": 6896,
+   "h": 331
+  }
+ ],
+ "relief-hydra-body-lotion": [
+  {
+   "file": "relief-hydra-body-lotion/00.jpg",
+   "y0": 2591,
+   "y1": 3260,
+   "h": 669
+  },
+  {
+   "file": "relief-hydra-body-lotion/01.jpg",
+   "y0": 4936,
+   "y1": 5389,
+   "h": 453
+  }
+ ],
+ "skin-code-serum-01-drnt": [
+  {
+   "file": "skin-code-serum-01-drnt/00.jpg",
+   "y0": 7493,
+   "y1": 7760,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-02-drpt": [
+  {
+   "file": "skin-code-serum-02-drpt/00.jpg",
+   "y0": 8397,
+   "y1": 8664,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-03-drnw": [
+  {
+   "file": "skin-code-serum-03-drnw/00.jpg",
+   "y0": 8639,
+   "y1": 8906,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-04-drpw": [
+  {
+   "file": "skin-code-serum-04-drpw/00.jpg",
+   "y0": 9494,
+   "y1": 9761,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-05-dsnt": [
+  {
+   "file": "skin-code-serum-05-dsnt/00.jpg",
+   "y0": 8456,
+   "y1": 8723,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-06-dspt": [
+  {
+   "file": "skin-code-serum-06-dspt/00.jpg",
+   "y0": 9379,
+   "y1": 9646,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-07-dsnw": [
+  {
+   "file": "skin-code-serum-07-dsnw/00.jpg",
+   "y0": 9652,
+   "y1": 9919,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-08-dspw": [
+  {
+   "file": "skin-code-serum-08-dspw/00.jpg",
+   "y0": 10513,
+   "y1": 10780,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-09-ornt": [
+  {
+   "file": "skin-code-serum-09-ornt/00.jpg",
+   "y0": 7634,
+   "y1": 7901,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-10-orpt": [
+  {
+   "file": "skin-code-serum-10-orpt/00.jpg",
+   "y0": 7487,
+   "y1": 7754,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-11-ornw": [
+  {
+   "file": "skin-code-serum-11-ornw/00.jpg",
+   "y0": 7795,
+   "y1": 8062,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-12-orpw": [
+  {
+   "file": "skin-code-serum-12-orpw/00.jpg",
+   "y0": 8661,
+   "y1": 8928,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-13-osnt": [
+  {
+   "file": "skin-code-serum-13-osnt/00.jpg",
+   "y0": 7567,
+   "y1": 7834,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-14-ospt": [
+  {
+   "file": "skin-code-serum-14-ospt/00.jpg",
+   "y0": 8379,
+   "y1": 8646,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-15-osnw": [
+  {
+   "file": "skin-code-serum-15-osnw/00.jpg",
+   "y0": 8737,
+   "y1": 9004,
+   "h": 267
+  }
+ ],
+ "skin-code-serum-16-ospw": [
+  {
+   "file": "skin-code-serum-16-ospw/00.jpg",
+   "y0": 9615,
+   "y1": 9882,
+   "h": 267
+  }
+ ]
+}
