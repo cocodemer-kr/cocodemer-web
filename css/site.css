@@ -280,6 +280,8 @@ figure.dx-it img{margin-bottom:20px}
 .ing-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:52px;align-items:start}
 .ing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .ing-card{display:flex;flex-direction:column;align-items:center;gap:10px;background:#fff;border:0;cursor:pointer;padding:22px 10px;font-family:inherit;text-align:center;transition:background .2s}
+/* display:flex 가 [hidden] 기본 스타일을 덮으므로 명시적으로 숨긴다 (그룹 필터) */
+.ing-card[hidden]{display:none}
 .ing-card:hover{background:var(--paper-2)}
 .ing-card.on{background:var(--black)}
 .ing-card .hx{width:46px;height:52px;flex:none;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
