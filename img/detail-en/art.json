@@ -1,0 +1,477 @@
+{
+ "bio-snow-vc-spot-cream": {
+  "hero": {
+   "h": 1230,
+   "gap": 0.624390243902439,
+   "tag": 0.8186991869918699,
+   "taglines": 3,
+   "dark": true,
+   "y": [
+    0,
+    1230
+   ]
+  },
+  "hl": {
+   "h": 932,
+   "top": 0.002145922746781116,
+   "col": 595,
+   "stack": true,
+   "cut": 1755,
+   "y": [
+    1317,
+    2249
+   ]
+  }
+ },
+ "claire-blanc-cleansing-cream": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.7035256410256411,
+   "tag": 0.8854166666666666,
+   "taglines": 2,
+   "dark": false,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": {
+   "h": 1100,
+   "top": 0.0,
+   "col": 364,
+   "stack": false,
+   "cut": 2219,
+   "y": [
+    1386,
+    2486
+   ]
+  }
+ },
+ "claire-blanc-cleansing-foam": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.7035256410256411,
+   "tag": 0.8854166666666666,
+   "taglines": 2,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "claire-blanc-cleansing-water": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.7035256410256411,
+   "tag": 0.8854166666666666,
+   "taglines": 2,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "exfoliant-body-scrub": {
+  "hero": {
+   "h": 1117,
+   "gap": 0.7251566696508505,
+   "tag": 0.8773500447627574,
+   "taglines": 2,
+   "y": [
+    12,
+    1129
+   ]
+  },
+  "hl": null
+ },
+ "hydra-velour-essential-mask": {
+  "hero": {
+   "h": 1155,
+   "gap": 0.6632034632034632,
+   "tag": 0.8735930735930736,
+   "taglines": 2,
+   "y": [
+    12,
+    1167
+   ]
+  },
+  "hl": null
+ },
+ "intense-vital-hand-cream": {
+  "hero": {
+   "h": 1157,
+   "gap": 0.6793431287813311,
+   "tag": 0.8764044943820225,
+   "taglines": 2,
+   "y": [
+    0,
+    1157
+   ]
+  },
+  "hl": null
+ },
+ "lumiere-infusion-mist-serum": {
+  "hero": {
+   "h": 1193,
+   "gap": 0.6797988264878457,
+   "tag": 0.8742665549036044,
+   "taglines": 2,
+   "y": [
+    12,
+    1205
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-concentrate-serum": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.7035256410256411,
+   "tag": 0.8854166666666666,
+   "taglines": 2,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-eye-contour-cream": {
+  "hero": {
+   "h": 1157,
+   "gap": 0.6698357821953328,
+   "tag": 0.8703543647363872,
+   "taglines": 2,
+   "y": [
+    12,
+    1169
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-facial-emulsion": {
+  "hero": {
+   "h": 1173,
+   "gap": 0.7357203751065644,
+   "tag": 0.8729752770673487,
+   "taglines": 2,
+   "y": [
+    12,
+    1185
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-facial-toner": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.7588141025641025,
+   "tag": 0.8854166666666666,
+   "taglines": 2,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-nourishing-cream": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.6698717948717948,
+   "tag": 0.8517628205128205,
+   "taglines": 3,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "meilleur-uv-sun-protecter": {
+  "hero": {
+   "h": 1179,
+   "gap": 0.6412213740458015,
+   "tag": 0.8379983036471587,
+   "taglines": 3,
+   "y": [
+    12,
+    1191
+   ]
+  },
+  "hl": null
+ },
+ "precieux-body-essence-oil": {
+  "hero": {
+   "h": 1117,
+   "gap": 0.683974932855864,
+   "tag": 0.9033124440465533,
+   "taglines": 1,
+   "y": [
+    12,
+    1129
+   ]
+  },
+  "hl": null
+ },
+ "purifiant-clay-mask": {
+  "hero": {
+   "h": 1174,
+   "gap": 0.747870528109029,
+   "y": [
+    12,
+    1186
+   ]
+  },
+  "hl": null
+ },
+ "relaxing-body-cleansing-gel": {
+  "hero": {
+   "h": 1248,
+   "gap": 0.6602564102564102,
+   "tag": 0.8581730769230769,
+   "taglines": 3,
+   "y": [
+    12,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "relief-hydra-body-lotion": {
+  "hero": {
+   "h": 1117,
+   "gap": 0.7251566696508505,
+   "tag": 0.8773500447627574,
+   "taglines": 2,
+   "y": [
+    12,
+    1129
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-common": {
+  "hero": {
+   "h": 1024,
+   "gap": 0.15625,
+   "tag": 0.2548828125,
+   "taglines": 6,
+   "y": [
+    0,
+    1024
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-01-drnt": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-02-drpt": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-03-drnw": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-04-drpw": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-05-dsnt": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-06-dspt": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-07-dsnw": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-08-dspw": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-09-ornt": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-10-orpt": {
+  "hero": {
+   "h": 1244,
+   "gap": 0.704983922829582,
+   "tag": 0.887459807073955,
+   "taglines": 2,
+   "y": [
+    17,
+    1261
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-11-ornw": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-12-orpw": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-13-osnt": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-14-ospt": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-15-osnw": {
+  "hero": {
+   "h": 1243,
+   "gap": 0.7055510860820595,
+   "tag": 0.8881737731295254,
+   "taglines": 2,
+   "y": [
+    17,
+    1260
+   ]
+  },
+  "hl": null
+ },
+ "skin-code-serum-16-ospw": {
+  "hero": {
+   "h": 1242,
+   "gap": 0.7053140096618358,
+   "tag": 0.8880837359098228,
+   "taglines": 2,
+   "y": [
+    18,
+    1260
+   ]
+  },
+  "hl": null
+ }
+}
