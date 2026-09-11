@@ -243,33 +243,63 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 .mnav .lang .sep{opacity:.4}
 
 /* 영문 제품 상세 (한글이 박힌 상세 이미지를 대신하는 재구성 레이아웃) */
-.dx{max-width:900px;margin:0 auto;text-align:center}
+/* 표지·하이라이트 판은 한글판 아트워크를 그대로 쓰고 글자만 영문으로 얹는다.
+   글자 크기는 판의 너비(900px 기준)에 맞춰 같이 줄고 늘어야 해서 cqw 를 쓴다. */
+.dx-art,.dx-hl{position:relative;container-type:inline-size;background:#fff}
+.dx-art img,.dx-hl img{width:100%;display:block}
+.dx-hero.dx-art{padding:0;margin-bottom:10px}
+.dx-hero.dx-art img{max-width:none;margin:0}
+.dx-hero.dx-art h2,.dx-hero.dx-art .dx-tag{position:absolute;left:0;right:0;
+  text-align:center;padding:0 6%;margin:0;color:#2b2b2b;max-width:none}
+.dx-hero.dx-art h2{font-size:21px;font-size:clamp(15px,2.4cqw,22px);font-weight:500;
+  letter-spacing:.02em;line-height:1.45;font-family:inherit}
+.dx-hero.dx-art .dx-tag{font-size:23px;font-size:clamp(13px,2.55cqw,23px);
+  font-weight:500;line-height:1.6;color:#2f2f2f}
+.dx-hero.dx-art.on-dark h2,.dx-hero.dx-art.on-dark .dx-tag{color:#fff}
+.dx-hl{margin:10px 0 0;padding:0}
+.dx-hl .in{position:absolute;left:5%;top:var(--t);width:var(--w);text-align:left}
+.dx-hl.dx-stack .in{position:static;width:auto;text-align:left;
+  background-size:100% 100%;background-repeat:no-repeat;padding:2.5cqw 5% 5cqw}
+.dx-hl h3{font-size:clamp(19px,5.1cqw,46px);font-weight:700;line-height:1.42;
+  letter-spacing:-.015em;margin:-.4cqw 0 0;color:#111}
+.dx-hl .pt{margin-top:6.9cqw}
+.dx-hl .pt b{display:block;font-size:clamp(12px,2.55cqw,23px);font-weight:700;
+  margin-bottom:1.5cqw;color:#111}
+.dx-hl .pt p{font-size:clamp(11px,2.45cqw,22px);font-weight:400;line-height:1.78;
+  color:#6d6d6d;margin:0}
+.dx{max-width:900px;margin:0 auto;text-align:center;container-type:inline-size}
 .dx img{width:100%;display:block}
-.dx-band,.dx-elixir{margin:0 0 64px}
-.dx-elixir{max-width:520px;margin-left:auto;margin-right:auto}
+.dx-band,.dx-elixir{margin:0 0 7cqw}
+.dx-elixir{max-width:52%;margin-left:auto;margin-right:auto}
 .dx-hero{background:#fff;padding:0 0 58px;margin-bottom:72px}
 .dx-hero img{max-width:560px;margin:0 auto 4px}
 .dx-hero h2{font-family:var(--serif);font-size:clamp(26px,3.6vw,38px);font-weight:400;letter-spacing:.02em;line-height:1.3;padding:0 24px}
 .dx-hero .dx-tag{margin:18px auto 0;max-width:34em;padding:0 24px;color:var(--ink-2);font-size:15.5px;font-weight:300;line-height:1.8}
-.dx-sec{text-align:left;padding:0 24px;margin-bottom:70px}
-.dx-sec .dx-lb{font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:16px}
-.dx-sec h3{font-size:clamp(21px,2.6vw,27px);font-weight:500;line-height:1.45;letter-spacing:-.01em;margin-bottom:30px}
-.dx-it{margin-bottom:34px}
+/* 본문도 한글 상세 이미지와 같은 크기로 — 900px 기준 치수를 cqw 로 옮겼다 */
+.dx-sec{text-align:left;padding:0 5%;margin-bottom:8.2cqw}
+.dx-sec .dx-lb{font-family:var(--serif);font-size:clamp(11px,1.5cqw,13px);letter-spacing:.16em;color:var(--muted);margin-bottom:2cqw}
+.dx-sec h3{font-size:clamp(20px,4.4cqw,40px);font-weight:700;line-height:1.4;letter-spacing:-.012em;margin-bottom:4.8cqw}
+.dx-it{margin-bottom:6.8cqw}
 .dx-it:last-child{margin-bottom:0}
-.dx-it b{display:block;font-size:17px;font-weight:500;margin-bottom:7px;line-height:1.5}
-.dx-it .dx-ing{display:block;font-size:13.5px;color:var(--muted);margin-bottom:10px;line-height:1.7}
-.dx-it p,.dx-sec>p{color:var(--ink-2);font-size:15px;font-weight:300;line-height:1.85}
-figure.dx-it{margin:0 0 46px}
-figure.dx-it img{margin-bottom:20px}
-.dx-sec .dx-note{font-size:13px;color:var(--muted);margin-top:14px;font-weight:300}
+.dx-it b{display:block;font-size:clamp(15px,3.2cqw,29px);font-weight:700;margin-bottom:1.4cqw;line-height:1.4}
+.dx-it .dx-ing{display:block;font-size:clamp(12px,2cqw,18px);color:#a2a2a2;margin-bottom:2.4cqw;line-height:1.6}
+.dx-it p,.dx-sec>p{color:#6d6d6d;font-size:clamp(13px,2.45cqw,22px);font-weight:400;line-height:1.78}
+.dx-num{display:grid;grid-template-columns:9.8cqw 1fr}
+.dx-num .n{font-size:clamp(24px,5.8cqw,52px);font-weight:300;line-height:1;color:#111}
+figure.dx-it{margin:0 0 6.4cqw}
+figure.dx-it img{margin-bottom:3.8cqw}
+.dx-sec .dx-note{font-size:clamp(11px,1.8cqw,16px);color:#a6a6a6;margin-top:2cqw;font-weight:400}
 .dx-code h3{text-align:left}
-.dx-chips{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:20px 26px;margin:0 0 40px;padding:0}
-.dx-chips li{display:flex;align-items:center;gap:13px}
-.dx-chips .hx{flex:none;width:46px;height:52px;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;letter-spacing:.02em;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.dx-chips .hl{font-size:15.5px;font-weight:500;line-height:1.4}
-.dx-sec ol{padding-left:20px;text-align:left;color:var(--ink-2);font-weight:300}
-.dx-sec ol li{margin-bottom:12px;line-height:1.8}
+.dx-chips{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:3.8cqw 2.7cqw;margin:0 0 6cqw;padding:0}
+.dx-chips li{display:flex;align-items:center;gap:1.8cqw}
+.dx-chips .hx{flex:none;width:6.2cqw;height:6.9cqw;min-width:34px;min-height:38px;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:clamp(13px,2.3cqw,21px);letter-spacing:.02em;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.dx-chips .hl{font-size:clamp(13px,2.45cqw,22px);font-weight:700;line-height:1.3}
+.dx-sec ol{padding-left:2.2cqw;text-align:left;color:#2f2f2f;font-weight:400;font-size:clamp(13px,2.45cqw,22px)}
+.dx-sec ol li{margin-bottom:2.4cqw;line-height:1.72}
 @media(max-width:760px){
+  /* 좁은 화면에선 글이 판보다 길어진다 — 겹치지 않게 사진 아래로 흘려보낸다 */
+  .dx-hero.dx-art{padding-bottom:7%}
+  .dx-hl .in{position:static;width:auto;padding:5% 5% 9%}
   .dx-hero{margin-bottom:52px;padding-bottom:44px}
   .dx-band,.dx-elixir{margin-bottom:48px}
   .dx-sec{margin-bottom:52px}
