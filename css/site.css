@@ -373,3 +373,80 @@ figure.dx-it img{margin-bottom:3.8cqw}
   .sys-grid{grid-template-columns:1fr}
   .sys-col .sd{min-height:0}
 }
+
+/* 프래그런스 — 하나의 숲, 여러 개의 상태 */
+.fr-lead{max-width:44em;margin:0 auto;text-align:center;color:var(--ink-2);font-size:16px;font-weight:300;line-height:1.95}
+.fr-lead .q{display:block;font-family:var(--serif);font-size:clamp(19px,2.2vw,25px);color:var(--ink);letter-spacing:.02em;margin-bottom:26px;line-height:1.5}
+.fr-origin{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.fr-origin img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.fr-origin .geo{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:18px}
+.fr-states{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-states .st{background:#fff;padding:30px 26px 28px}
+.fr-states .st .k{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.fr-states .st h4{font-size:17px;font-weight:500;margin:10px 0 12px}
+.fr-states .st p{font-size:14px;color:var(--ink-2);font-weight:300;line-height:1.8}
+.fr-scent + .fr-scent{border-top:1px solid var(--line);
+  padding-top:clamp(48px,6vw,78px);margin-top:clamp(48px,6vw,78px)}
+.fr-scent .in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.fr-scent.alt .in{direction:rtl}
+.fr-scent.alt .in > *{direction:ltr}
+.fr-scent img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.fr-scent .no{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.fr-scent h3{font-size:clamp(21px,2.4vw,27px);font-weight:400;font-family:var(--serif);letter-spacing:.02em;margin-bottom:8px}
+.fr-scent .kr{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:20px}
+.fr-scent .quote{font-size:15px;color:var(--ink);font-weight:300;line-height:1.85;padding-left:16px;border-left:1px solid var(--line);margin-bottom:20px}
+.fr-scent > .in p.desc{font-size:15px;color:var(--ink-2);font-weight:300;line-height:1.9}
+.fr-notes{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}
+.fr-notes th{text-align:left;font-family:var(--serif);font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:400;padding:11px 0;width:86px;vertical-align:top;border-top:1px solid var(--line-2)}
+.fr-notes td{padding:11px 0;color:var(--ink-2);font-weight:300;border-top:1px solid var(--line-2);line-height:1.7}
+.fr-cfg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-cfg .c{background:#fff;padding:34px 30px}
+.fr-cfg .c h4{font-family:var(--serif);font-size:19px;font-weight:400;letter-spacing:.02em}
+.fr-cfg .c .vol{font-size:13px;color:var(--muted);margin:6px 0 18px}
+.fr-cfg .c li{list-style:none;font-size:14px;color:var(--ink-2);font-weight:300;line-height:1.8;padding-left:13px;position:relative}
+.fr-cfg .c li::before{content:"·";position:absolute;left:0;color:var(--muted)}
+.fr-diff{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-diff .d{background:#fff;padding:26px 20px}
+.fr-diff .n{font-family:var(--serif);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.fr-diff p{font-size:14px;font-weight:300;line-height:1.75;margin-top:12px;color:var(--ink-2)}
+@media(max-width:860px){
+  .fr-origin,.fr-scent .in,.fr-cfg{grid-template-columns:1fr}
+  .fr-scent.alt .in{direction:ltr}
+  .fr-states,.fr-diff{grid-template-columns:1fr}
+}
+
+/* 컬렉션 소개 블록 — 카테고리 하나를 통째로 안내하는 가로형 카드 */
+.coll{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);transition:.3s}
+.coll:hover{box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.coll .ph{background:#fff;overflow:hidden}
+.coll .ph img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .55s}
+.coll:hover .ph img{transform:scale(1.03)}
+.coll .tx{background:#fff;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:center}
+.coll .k{font-family:var(--serif);font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:14px}
+.coll h4{font-size:clamp(16px,1.7vw,19px);font-weight:400;font-family:var(--serif);letter-spacing:.01em;line-height:1.6;margin-bottom:14px}
+.coll p{font-size:14.5px;color:var(--ink-2);font-weight:300;line-height:1.85}
+.coll .tag{display:inline-block;width:max-content;margin-top:22px;font-size:12px;letter-spacing:.04em;color:var(--ink);border:1px solid #cfcfcf;padding:7px 14px}
+@media(max-width:860px){.coll{grid-template-columns:1fr}}
+
+/* 테크놀로지 — 단계 흐름 */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:clamp(38px,5vw,58px)}
+.flow .fs{background:#0e0e0e;padding:26px 22px 24px}
+.flow .fn{font-family:var(--serif);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.45)}
+.flow .ft{font-size:15px;color:#fff;margin:11px 0 8px;line-height:1.5}
+.flow .fd{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.62)}
+section:not(.dark) .flow{background:var(--line);border-color:var(--line)}
+section:not(.dark) .flow .fs{background:#fff}
+section:not(.dark) .flow .fn{color:var(--muted)}
+section:not(.dark) .flow .ft{color:var(--ink)}
+section:not(.dark) .flow .fd{color:var(--ink-2)}
+/* 개발 중 기술 카드 */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.tcard{background:#fff;padding:34px 28px 30px}
+.tcard .tt{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.tcard .tk{display:block;width:max-content;margin:12px 0 16px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.tcard p{font-size:13.5px;font-weight:300;line-height:1.75;color:var(--ink-2);margin-bottom:12px}
+.tcard .tw{font-size:12.5px;color:var(--muted);font-weight:300;border-top:1px solid var(--line-2);padding-top:12px;margin-top:4px}
+.tnote{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:22px;line-height:1.7}
+.dark .tnote{color:rgba(255,255,255,.5)}
+@media(max-width:900px){.flow{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:1fr}}
+@media(max-width:560px){.flow{grid-template-columns:1fr}}

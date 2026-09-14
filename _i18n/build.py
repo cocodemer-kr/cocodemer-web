@@ -43,7 +43,18 @@ def _rule(key):
         sub = TR.get(rest) or _rule(rest)
         if sub:
             return 'COCODEMER ' + sub
-    for suffix, repl in ((' 상세 1', ' detail 1'), (' 상세 2', ' detail 2')):
+    m = re.match(r'^(.*) 상세 (\d+)$', key)          # 상세 1 … 상세 22
+    if m:
+        sub = TR.get(m.group(1)) or _rule(m.group(1))
+        if sub:
+            return f'{sub} detail {m.group(2)}'
+    m = re.match(r'^(.+?) — (.+)$', key)              # 제품명 — 한 줄 소개
+    if m:
+        a, b = (TR.get(x) or _rule(x) for x in m.groups())
+        if a and b:
+            return f'{a} — {b}'
+    for suffix, repl in ((' 제품', ' product shot'), (' 패키지', ' packaging'),
+                         (' 사용 모습', ' in use'), (' 제형', ' texture')):
         if key.endswith(suffix):
             base = key[: -len(suffix)]
             sub = TR.get(base) or _rule(base)
@@ -77,8 +88,10 @@ def fix_paths(soup, depth):
     Root-relative asset refs need one extra '../' per level below /en/ ... but
     because the KO source already carries the right depth for its own location,
     we only add ONE extra '../' (the /en/ level itself)."""
-    for tag in soup.find_all(['a', 'img', 'link', 'script', 'source']):
-        attr = 'href' if tag.name in ('a', 'link') else 'src'
+    # data-src carries the gallery's thumbnail targets, so it needs the same fix
+    for tag in soup.find_all(['a', 'img', 'link', 'script', 'source', 'button']):
+        attr = ('href' if tag.name in ('a', 'link')
+                else 'data-src' if tag.name == 'button' else 'src')
         v = tag.get(attr)
         if not v or v.startswith(('http://', 'https://', '#', 'mailto:', 'tel:', 'data:', '/')):
             continue
@@ -158,6 +171,12 @@ def build(src, depth):
     if soup.title and KO_RE.search(soup.title.string or ''):
         soup.title.string = tr(soup.title.string, src)
 
+    # 시스템 표의 영문 보조 줄도 번역된 이름과 겹치면 지운다
+    for pe in soup.select('.sys-col .pe'):
+        pn = pe.find_previous_sibling(class_='pn')
+        if pn and pn.get_text(strip=True) == pe.get_text(strip=True):
+            pe.decompose()
+
     # product cards: KO name row now holds the English name -> drop the duplicate
     for nm_en in soup.select('.pcard .nm-en'):
         nm = nm_en.find_previous_sibling(class_='nm')
@@ -236,8 +255,10 @@ def patch_ko(src, depth):
     open(p, 'w', encoding='utf-8').write(str(soup))
 
 if __name__ == '__main__':
-    targets = sys.argv[1:] or ['index.html', 'brand.html', 'products.html',
-                               'technology.html', 'b2b.html', 'privacy.html']
+    targets = sys.argv[1:] or (
+        ['index.html', 'brand.html', 'products.html', 'fragrance.html',
+         'technology.html', 'ingredients.html', 'b2b.html', 'privacy.html']
+        + sorted(glob.glob('product/*.html')))
     for t in targets:
         depth = 2 if t.startswith('product/') else 1
         build(t, depth)
