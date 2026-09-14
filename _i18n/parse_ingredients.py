@@ -20,12 +20,20 @@ GROUP_SHEETS = {'미백액티브': '미백', '주름액티브': '주름', '보�
 LABELS = ['원료소개', '효능요약', '원료 상세내용', '더 알아보기', '연관 처방제품']
 
 # Names are taken from the workbook's own efficacy line where it gives one, and
-# otherwise from the ingredient named in the introduction — cross-checked
-# against the ACTIVE CODE lines already printed on the product pages.
-# Three actives are named nowhere in the source; those are left blank rather
-# than guessed, and the page says so.
+# otherwise from the ingredient named in the introduction or the longer read —
+# cross-checked against the ACTIVE CODE lines already printed on the product
+# pages. Np and Pt are named only deep in their "더 알아보기" text; Ma is named
+# nowhere in the source and was confirmed by 배성환.
 NAMES = {
-    'NP': ('', ''), 'Pt': ('', ''), 'Ma': ('', ''),
+    # "…Nonapeptide-1 성분을 이용하여, Melanogenesis를 저해하도록…", and the
+    # sheet's own chart is labelled α-MSH + Nonapeptide-1 0.01%.
+    'NP': ('노나펩타이드-1', 'Nonapeptide-1'),
+    # "폴리펩타이드-11은 콜라겐과 엘라스틴의 생성을 촉진시켜…" — aFGF, the dermal
+    # counterpart to So (sh-Oligopeptide-1, EGF, epidermal).
+    'Pt': ('에스에이치폴리펩타이드-11', 'sh-Polypeptide-11'),
+    # centella-derived; the source says only "추출 성분 중 하나", and the code
+    # fits both madecassoside and madecassic acid. 배성환 confirmed madecassoside.
+    'Ma': ('마데카소사이드', 'Madecassoside'),
     'Ds': ('디메칠설폰', 'Dimethyl Sulfone'),
     'Hp': ('헤스페리딘', 'Hesperidin'),
     'Ta': ('트라넥삼산', 'Tranexamic Acid'),

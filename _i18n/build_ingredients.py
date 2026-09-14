@@ -194,8 +194,13 @@ SCRIPT = """
     [].forEach.call(this.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b);});
     cards.forEach(function(c){ c.hidden = !!g && c.dataset.group!==g; });
   });
-  var hash=decodeURIComponent(location.hash.replace('#',''));
-  if(hash) show(hash);
+  function fromHash(){
+    var h=decodeURIComponent(location.hash.replace('#',''));
+    if(h) show(h);
+  }
+  // also handle arriving from another link on the same page
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
 })();
 """
 

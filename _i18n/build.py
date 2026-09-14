@@ -256,7 +256,7 @@ def patch_ko(src, depth):
 
 if __name__ == '__main__':
     targets = sys.argv[1:] or (
-        ['index.html', 'brand.html', 'products.html', 'fragrance.html',
+        ['index.html', 'brand.html', 'products.html', 'fragrance.html', 'bio.html',
          'technology.html', 'ingredients.html', 'b2b.html', 'privacy.html']
         + sorted(glob.glob('product/*.html')))
     for t in targets:

@@ -3,8 +3,8 @@
   "id": "Np",
   "code": "Np",
   "group": "미백",
-  "name_ko": "",
-  "inci": "",
+  "name_ko": "노나펩타이드-1",
+  "inci": "Nonapeptide-1",
   "name_en": "",
   "intro": "멜라닌 색소 생성량을 줄여 피부의 색소침착을 억제하고 피부톤 미백효과를 주어 화사하고 깨끗한 피부톤 연출효과를 내는데 도움을 줍니다.",
   "benefits": [
@@ -14,7 +14,7 @@
   ],
   "deep": "",
   "source": "",
-  "pending_name": true,
+  "pending_name": false,
   "intro_en": "By lowering the amount of melanin the skin produces, it holds pigmentation in check and brightens the complexion, helping to create a clear, radiant skin tone.",
   "deep_en": "",
   "benefits_en": [
@@ -339,8 +339,8 @@
   "id": "Pt",
   "code": "Pt",
   "group": "주름",
-  "name_ko": "",
-  "inci": "",
+  "name_ko": "에스에이치폴리펩타이드-11",
+  "inci": "sh-Polypeptide-11",
   "name_en": "",
   "intro": "aFGF(섬유아세포성장인자, acdic Fibroblast Growth Factor)라는 이명으로 인체 유전자와 동일하게 합성된 것을 sh,인체 유전자와 동일하도록 재조합된 것을 rh라고 합니다. 차이점은 합성이냐 재조합이냐의 대한 생산 방법에 차이일 뿐 효능효과는 같습니다. 화장품에서는 일명 EGF, FGF 등의 성장인자(Growth factor)로 이용되며, 피부 재생 및 회복에 도움을 줍니다.",
   "benefits": [
@@ -350,7 +350,7 @@
   ],
   "deep": "",
   "source": "",
-  "pending_name": true,
+  "pending_name": false,
   "intro_en": "Also known as aFGF (acidic Fibroblast Growth Factor), it is designated sh when synthesised to be identical to the human gene, and rh when recombined to match the human gene. The only difference lies in the production method — synthesis or recombination — the benefits are the same. In cosmetics it is used as a growth factor, the family that includes EGF and FGF, and helps the skin regenerate and recover.",
   "deep_en": "",
   "benefits_en": [
@@ -791,8 +791,8 @@
   "id": "Ma",
   "code": "Ma",
   "group": "민감성",
-  "name_ko": "",
-  "inci": "",
+  "name_ko": "마데카소사이드",
+  "inci": "Madecassoside",
   "name_en": "",
   "intro": "병풀추출물의 추출 성분 중 하나로서 천연유기화합물입니다.",
   "benefits": [
@@ -802,7 +802,7 @@
   ],
   "deep": "",
   "source": "",
-  "pending_name": true,
+  "pending_name": false,
   "intro_en": "A naturally occurring organic compound and one of the constituents extracted from Centella Asiatica.",
   "deep_en": "",
   "benefits_en": [

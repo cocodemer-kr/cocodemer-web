@@ -6,6 +6,7 @@ as Korean text. For the English pages we rebuild the pane in HTML, so all we
 need from the JPG is the photography: the texture band and the ACTIVE CODE
 shots. This script finds those bands and writes them to img/detail-en/.
 """
+import glob
 import json
 import os
 import re
@@ -148,6 +149,20 @@ VERIFIED_CLEAN = {
     ('skin-code-serum-04-drpw', 9494, 9761),
 }
 
+# Bands whose Korean cannot be cropped away without losing the picture: a
+# product shot whose packaging copy is the subject, or a heading set into the
+# middle of the photograph. The English pane already leads with the clean
+# cutout, so these are simply left out rather than shipped with Korean on them.
+DROP = {
+    ('claire-blanc-cleansing-water', 0),    # "2 IN 1 클렌져" across the photo
+    ('hydra-velour-essential-mask', 0),     # jar shot, Korean label
+    ('meilleur-eye-contour-cream', 0),      # jar shot, Korean label
+    ('meilleur-nourishing-cream', 0),       # jar + carton, Korean copy
+    ('meilleur-uv-sun-protecter', 2),       # "자외선 & Sweat Proof" over the leaves
+    ('purifiant-clay-mask', 0),             # jar shot, Korean label
+    ('relief-hydra-body-lotion', 0),        # heading set into the texture shot
+}
+
 
 def trim_until_clean(im, b, e, step=40, limit=360, floor=230, tol=4):
     """Shave the edges back until OCR stops finding Korean.
@@ -215,15 +230,19 @@ def extract(slug):
             continue
         bands.append(cleaned)
 
-    os.makedirs(os.path.join(OUT, slug), exist_ok=True)
+    # One flat folder, <slug>-NN.jpg — a folder per product meant 34 separate
+    # uploads every time these were rebuilt.
+    os.makedirs(OUT, exist_ok=True)
+    for old in glob.glob(os.path.join(OUT, f'{slug}-*.jpg')):
+        os.remove(old)
     saved = []
     for i, (b, e) in enumerate(bands):
-        if e - b < 200:
+        if e - b < 200 or (slug, i) in DROP:
             continue
-        name = f'{i:02d}.jpg'
-        im.crop((0, b, 900, e)).save(os.path.join(OUT, slug, name),
+        name = f'{slug}-{i:02d}.jpg'
+        im.crop((0, b, 900, e)).save(os.path.join(OUT, name),
                                      quality=86, optimize=True)
-        saved.append({'file': f'{slug}/{name}', 'y0': b, 'y1': e, 'h': e - b})
+        saved.append({'file': name, 'y0': b, 'y1': e, 'h': e - b})
     return saved
 
 
