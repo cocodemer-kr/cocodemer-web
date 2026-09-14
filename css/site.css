@@ -121,6 +121,10 @@ section{padding:clamp(72px,9vw,128px) 0}
 
 /* product grid */
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+/* 판매중 품목이 아직 한둘일 때 — 빈 칸이 회색으로 남지 않게 칸 수를 내용에 맞춘다 */
+.pgrid.few{grid-template-columns:repeat(auto-fit,minmax(220px,300px));justify-content:center;
+  gap:20px;background:transparent;border:0}
+.pgrid.few .pcard{border:1px solid var(--line)}
 .pcard{background:#fff;padding:0 0 26px;transition:.3s;display:block}
 .pcard:hover{box-shadow:0 12px 40px rgba(0,0,0,.07)}
 .pcard .ph{aspect-ratio:1/1;overflow:hidden;background:#fff}
@@ -177,7 +181,7 @@ section{padding:clamp(72px,9vw,128px) 0}
 .pane{display:none;padding:44px 0}
 .pane.on{display:block}
 .detail-img{max-width:900px;margin:0 auto}
-.detail-img img{width:100%}
+.detail-img img{width:100%;display:block}
 
 .info-blocks{max-width:860px;margin:0 auto}
 .ib{border-top:1px solid var(--line);padding:30px 0}
@@ -346,3 +350,26 @@ figure.dx-it img{margin-bottom:3.8cqw}
 .ing-link a:hover{color:var(--ink);border-bottom-color:var(--ink)}
 .dx-chips li a{display:flex;align-items:center;gap:13px;color:inherit}
 .dx-chips li a:hover .hl{border-bottom:1px solid var(--ink)}
+
+/* 스킨케어 시스템 (Reset · Boost · Keep) — 라인업 구조를 먼저 보여 주고,
+   실제 판매 가능한 품목만 아래 그리드로 잇는다 */
+.sys{border-bottom:1px solid var(--line);padding-bottom:clamp(56px,7vw,92px)}
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sys-col{background:#fff;padding:34px 28px 30px}
+.sys-col .st{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:15px;letter-spacing:.14em}
+.sys-col .st .n{font-size:12px;color:var(--muted)}
+.sys-col .sd{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.7;margin:12px 0 22px;min-height:3.4em}
+.sys-col ul{list-style:none}
+.sys-col li{border-top:1px solid var(--line-2);padding:15px 0 14px}
+.sys-col li:last-child{padding-bottom:0}
+.sys-col .pn{display:block;font-size:15px;line-height:1.5}
+.sys-col .pe{display:block;font-size:12.5px;color:var(--muted);font-weight:300;margin-top:3px}
+.sys-col .tag{display:block;width:max-content;margin-top:9px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.sys-col a.on-sale .pn{border-bottom:1px solid var(--ink);display:inline-block}
+.sys-col a.on-sale .tag{color:var(--ink);border-color:#cfcfcf}
+.sys-col a.on-sale:hover .pn{border-bottom-color:transparent}
+.archive-note{font-size:13.5px;color:var(--muted);font-weight:300;line-height:1.8;margin-top:-28px;margin-bottom:34px}
+@media(max-width:860px){
+  .sys-grid{grid-template-columns:1fr}
+  .sys-col .sd{min-height:0}
+}
