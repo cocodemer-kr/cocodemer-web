@@ -450,3 +450,8 @@ section:not(.dark) .flow .fd{color:var(--ink-2)}
 .dark .tnote{color:rgba(255,255,255,.5)}
 @media(max-width:900px){.flow{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:1fr}}
 @media(max-width:560px){.flow{grid-template-columns:1fr}}
+
+/* 브랜드 스토리 */
+.brand-story{max-width:780px;margin:0 auto;text-align:center;color:var(--ink-2);font-weight:300;font-size:16px;line-height:2}
+.brand-story p+p{margin-top:26px}
+.brand-story .q{font-family:var(--serif);font-size:clamp(18px,2vw,22px);line-height:1.8;color:var(--ink);margin-bottom:34px}
