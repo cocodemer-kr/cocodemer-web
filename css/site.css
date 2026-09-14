@@ -466,3 +466,4 @@ section:not(.dark) .flow .fd{color:var(--ink-2)}
 .filmrow .play i{width:54px;height:54px}
 .filmrow .play span{display:none}
 @media(max-width:760px){.filmrow{grid-template-columns:1fr}}
+.lineup-note{margin-top:clamp(28px,3.5vw,40px);text-align:center;font-size:14px;font-weight:400;color:var(--muted);line-height:1.8}
