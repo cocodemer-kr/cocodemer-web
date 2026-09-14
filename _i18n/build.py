@@ -31,6 +31,9 @@ def load_dicts():
 TR = load_dicts()
 MISSING = {}
 
+# 브랜드 영상: 국문 영상 ID -> 영문 영상 ID
+VIDEO_KO_EN = {'5ir6BJHpLnA': '5vqKD0Snohg'}
+
 SERUM_RE = re.compile(r'^스킨 코드 세럼 (\d{2}) ([A-Z]{4})$')
 
 def _rule(key):
@@ -170,6 +173,13 @@ def build(src, depth):
             tag['aria-label'] = tr(tag['aria-label'], src)
     if soup.title and KO_RE.search(soup.title.string or ''):
         soup.title.string = tr(soup.title.string, src)
+
+    # 브랜드 영상은 국문판·영문판이 다른 영상이다
+    for fr in soup.select('[data-video]'):
+        v = fr.get('data-video', '')
+        for ko_id, en_id in VIDEO_KO_EN.items():
+            if ko_id in v:
+                fr['data-video'] = v.replace(ko_id, en_id)
 
     # 시스템 표의 영문 보조 줄도 번역된 이름과 겹치면 지운다
     for pe in soup.select('.sys-col .pe'):
