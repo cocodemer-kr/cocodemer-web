@@ -81,19 +81,20 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
   });
 })();
 
-/* 제품 라인 탭 — 스킨케어 / 프래그런스 / 바이오 / 아카이브 */
+/* 라인 탭 — PRODUCT / BRAND / B2B 공통 */
 (function(){
-  var tabs = document.querySelectorAll('.ltabs button');
+  var tabs = [].slice.call(document.querySelectorAll('.ltabs button[data-lp]'));
   if (!tabs.length) return;
-  var PANES = ['skincare','fragrance','bio','archive'];
+  var PANES = tabs.map(function(b){ return b.dataset.lp; });
   var FILTERS = ['all','cleansing','mask','basic','special','body','sun','serum'];
+  var FIRST = PANES[0];
   function open(name, push){
     if (PANES.indexOf(name) < 0) return false;
     tabs.forEach(function(b){ b.classList.toggle('on', b.dataset.lp === name); });
-    document.querySelectorAll('.lpane').forEach(function(p){
+    [].forEach.call(document.querySelectorAll('.lpane'), function(p){
       p.classList.toggle('on', p.id === 'lp-' + name);
     });
-    if (push) history.replaceState(null, '', location.pathname + (name==='skincare' ? '' : '#'+name));
+    if (push) history.replaceState(null, '', location.pathname + (name === FIRST ? '' : '#' + name));
     return true;
   }
   tabs.forEach(function(b){
@@ -102,18 +103,23 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
       window.scrollTo({top:0, behavior:'smooth'});
     });
   });
-  // 최초 진입: #archive 같은 탭 해시, 또는 #serum 같은 아카이브 필터 해시
-  var h = location.hash.replace('#','');
-  if (h) {
-    if (!open(h, false) && FILTERS.indexOf(h) >= 0) open('archive', false);
-  }
-  window.addEventListener('hashchange', function(){
+  // 패널 안의 "다른 탭으로" 버튼
+  [].forEach.call(document.querySelectorAll('[data-goto]'), function(b){
+    b.addEventListener('click', function(){
+      open(b.dataset.goto, true);
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+  function fromHash(){
     var k = location.hash.replace('#','');
+    if (!k) return;
     if (open(k, false)) return;
-    if (FILTERS.indexOf(k) >= 0) {
+    if (FILTERS.indexOf(k) >= 0 && PANES.indexOf('archive') >= 0) {
       open('archive', false);
       var fb = document.querySelector('.filters button[data-f="' + k + '"]');
       if (fb && !fb.classList.contains('on')) fb.click();
     }
-  });
+  }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
 })();

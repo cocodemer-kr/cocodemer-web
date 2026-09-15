@@ -265,10 +265,13 @@ def patch_ko(src, depth):
     open(p, 'w', encoding='utf-8').write(str(soup))
 
 if __name__ == '__main__':
+    # glob은 실행 위치가 아니라 저장소 루트 기준이어야 한다.
+    # (_i18n/ 안에서 실행하면 product/*.html 이 통째로 건너뛰어졌다)
     targets = sys.argv[1:] or (
         ['index.html', 'brand.html', 'products.html', 'fragrance.html', 'bio.html',
          'technology.html', 'ingredients.html', 'b2b.html', 'privacy.html']
-        + sorted(glob.glob('product/*.html')))
+        + sorted(os.path.relpath(x, ROOT).replace(os.sep, '/')
+                 for x in glob.glob(os.path.join(ROOT, 'product', '*.html'))))
     for t in targets:
         depth = 2 if t.startswith('product/') else 1
         build(t, depth)
