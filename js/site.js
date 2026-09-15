@@ -80,3 +80,35 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
     });
   });
 })();
+
+/* 제품 라인 탭 — 스킨케어 / 프래그런스 / 바이오 / 아카이브 */
+(function(){
+  var tabs = document.querySelectorAll('.ltabs button');
+  if (!tabs.length) return;
+  var PANES = ['skincare','fragrance','bio','archive'];
+  var FILTERS = ['all','cleansing','mask','basic','special','body','sun','serum'];
+  function open(name, push){
+    if (PANES.indexOf(name) < 0) return false;
+    tabs.forEach(function(b){ b.classList.toggle('on', b.dataset.lp === name); });
+    document.querySelectorAll('.lpane').forEach(function(p){
+      p.classList.toggle('on', p.id === 'lp-' + name);
+    });
+    if (push) history.replaceState(null, '', location.pathname + (name==='skincare' ? '' : '#'+name));
+    return true;
+  }
+  tabs.forEach(function(b){
+    b.addEventListener('click', function(){
+      open(b.dataset.lp, true);
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+  // 최초 진입: #archive 같은 탭 해시, 또는 #serum 같은 아카이브 필터 해시
+  var h = location.hash.replace('#','');
+  if (h) {
+    if (!open(h, false) && FILTERS.indexOf(h) >= 0) open('archive', false);
+  }
+  window.addEventListener('hashchange', function(){
+    var k = location.hash.replace('#','');
+    if (!open(k, false) && FILTERS.indexOf(k) >= 0) open('archive', false);
+  });
+})();
