@@ -50,6 +50,15 @@ COPY = {
         'note': '※ 위 내용은 완제품이 아닌 원료에 관한 설명입니다. '
                 '실제 제품의 배합 목적과 함량은 제품별 전성분 표기를 따릅니다.',
         'b2b': '원료·처방 문의',
+        'lc_h3': '코코 드 메르에서 나온 <b>독자 원료</b>',
+        'lc_lead': '코코드메르가 과거 맞춤형 라인업에서 개발한 독자 원료입니다. '
+                   '세이셸에서만 자라는 코코 드 메르 씨앗에서 출발했습니다.',
+        'lc_p1': '<b>코코넛수</b> — 천연 아미노산이 풍부한 코코 드 메르를 모방한 성분입니다.',
+        'lc_p2': '<b>피토스테롤</b> — 식물이 상처를 스스로 치유하기 위해 생성되는 성분입니다.',
+        'lc_p3': '<b>아미노산 20종 · 허니</b> — 탄탄한 피부 바탕을 만들어 줍니다.',
+        'lc_p4': '<b>전달 기술</b> — 지질 멤브레인 연구와 난용성 물질의 가용화 기술을 결합했습니다.',
+        'lc_note': '※ 지난 라인업 33종에 적용된 원료입니다. 해당 제품은 현재 판매되지 않으며, '
+                   '처방 기록은 보관하고 있습니다.',
     },
     'en': {
         'title': 'Ingredients · COCODEMER',
@@ -73,6 +82,17 @@ COPY = {
                 'finished product. The purpose and level at which each is used is '
                 "given in the individual product's ingredient declaration.",
         'b2b': 'Ingredient & formulation enquiry',
+        'lc_h3': 'A proprietary material from the <b>coco de mer</b>',
+        'lc_lead': 'A proprietary material COCODEMER developed during its bespoke years, '
+                   'starting from the seed of the coco de mer — a palm that grows only '
+                   'in the Seychelles.',
+        'lc_p1': '<b>Coconut water</b> — modelled on the coco de mer, rich in natural amino acids.',
+        'lc_p2': '<b>Phytosterol</b> — what a plant produces to heal its own wounds.',
+        'lc_p3': '<b>20 amino acids · honey</b> — builds a firm base for the skin.',
+        'lc_p4': '<b>Delivery</b> — lipid-membrane research combined with solubilisation '
+                 'of poorly soluble compounds.',
+        'lc_note': '* Used across the 33-piece archive. Those products are no longer sold; '
+                   'the formulation records are kept.',
     },
 }
 
@@ -148,6 +168,18 @@ def page_body(rows, lang):
 
     o = [f'<div class="pagehead"><img alt="" src="img/hero-4-lab.jpg"/>'
          f'<div class="t"><h1>{t["h1"]}</h1><p>{esc(t["sub"])}</p></div></div>',
+         # 독자 원료 — 현재 시스템의 기초로 오인되지 않도록 TECHNOLOGY가 아닌 이 페이지에 둔다
+         '<section class="sys" style="padding-top:52px"><div class="wrap">',
+         '<div class="sec-top"><div class="sec-en">L-CODEMAR ELIXIR&trade;</div>'
+         f'<div class="rule"></div><h3>{t["lc_h3"]}</h3>'
+         f'<p class="lead">{esc(t["lc_lead"])}</p></div>',
+         '<div class="split wide">',
+         '<div class="fig"><img alt="L-CODEMAR ELIXIR" loading="lazy" src="img/elixir.jpg"'
+         ' style="object-fit:contain;background:#000"/></div>',
+         '<div class="copy"><div class="en">FOUR PILLARS</div>',
+         f'<p>{t["lc_p1"]}</p><p>{t["lc_p2"]}</p><p>{t["lc_p3"]}</p><p>{t["lc_p4"]}</p>',
+         f'<p style="font-size:13px;color:var(--muted);margin-top:4px">{esc(t["lc_note"])}</p>',
+         '</div></div></div></section>',
          '<section><div class="wrap">',
          f'<p class="ing-lead">{esc(t["lead"])}</p>',
          '<div class="ing-tabs">' + ''.join(tabs) + '</div>',

@@ -65,6 +65,7 @@ a{color:inherit;text-decoration:none}
 .hero h2 b{font-weight:500}
 .hero p{font-size:clamp(15px,1.25vw,17px);color:rgba(255,255,255,.82);max-width:30em;font-weight:300;line-height:1.8;text-wrap:pretty}
 .hero .cta{margin-top:36px;display:flex;gap:10px;flex-wrap:wrap}
+.hero-cap{position:absolute;left:0;right:0;bottom:46px;text-align:center;z-index:3;font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.66);transition:opacity .4s ease}
 .hero .dots{position:absolute;left:0;right:0;bottom:32px;display:flex;justify-content:center;gap:9px;z-index:3}
 .hero .dots button{width:26px;height:2px;border:0;padding:0;background:rgba(255,255,255,.32);cursor:pointer;transition:.3s}
 .hero .dots button.on{background:#fff}
@@ -206,6 +207,8 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 .f-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid var(--line-2)}
 .f-nav{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
 .f-nav a:hover{color:var(--ink)}
+.privacy-link{font-weight:500;color:var(--ink)}
+.privacy-link:hover{border-bottom:1px solid var(--ink)}
 .f-biz{padding-top:24px;line-height:2;font-size:13px;font-weight:400;color:var(--muted)}
 .f-biz span{display:inline-block;margin-right:16px}
 .f-copy{margin-top:18px;font-size:12px;color:#b4b4b4}

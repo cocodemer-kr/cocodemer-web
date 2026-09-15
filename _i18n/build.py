@@ -165,6 +165,9 @@ def build(src, depth):
     for tag in soup.find_all(attrs={'content': True}):
         if KO_RE.search(tag['content']):
             tag['content'] = tr(tag['content'], src)
+    for tag in soup.find_all(attrs={'data-cap': True}):
+        if KO_RE.search(tag['data-cap']):
+            tag['data-cap'] = tr(tag['data-cap'], src)
     for tag in soup.find_all(attrs={'alt': True}):
         if KO_RE.search(tag['alt']):
             tag['alt'] = tr(tag['alt'], src)
