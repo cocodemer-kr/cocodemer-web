@@ -109,6 +109,11 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
   }
   window.addEventListener('hashchange', function(){
     var k = location.hash.replace('#','');
-    if (!open(k, false) && FILTERS.indexOf(k) >= 0) open('archive', false);
+    if (open(k, false)) return;
+    if (FILTERS.indexOf(k) >= 0) {
+      open('archive', false);
+      var fb = document.querySelector('.filters button[data-f="' + k + '"]');
+      if (fb && !fb.classList.contains('on')) fb.click();
+    }
   });
 })();
