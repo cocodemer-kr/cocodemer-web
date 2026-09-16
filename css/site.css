@@ -379,3 +379,67 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
   .colgrid.c4{grid-template-columns:1fr}
   .product-now .pn-cta .btn{width:100%}
 }
+
+/* BRAND 2026 — 01 BRAND PAGE */
+.pagehead.tall{height:clamp(320px,44vw,440px)}
+.pagehead.tall img{opacity:.62}
+.pagehead.tall::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,10,10,.30) 0%,rgba(10,10,10,.62) 100%)}
+.pagehead.tall .t{z-index:2}
+.pagehead .t .sec-en{color:rgba(255,255,255,.72);margin-bottom:16px}
+.pagehead .t h1{line-height:1.55;text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.split.rev{direction:rtl}
+.split.rev>*{direction:ltr}
+.split+.split{margin-top:clamp(48px,6vw,80px)}
+.evid.four{grid-template-columns:repeat(4,1fr)}
+.evid .lk{margin-top:8px;font-size:12.5px;font-weight:300;color:var(--ink-2);line-height:1.6}
+.dark .evid .ev{background:transparent}
+.dark .evid .n{color:#fff}
+.tnote{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7}
+.endgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.endcard{display:block;background:var(--paper-2);text-decoration:none;color:inherit}
+.endcard .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.endcard .tx{padding:30px 28px 34px;text-align:center}
+.endcard .tx p{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.8;margin:12px 0 22px}
+.endcard:hover .ph img{opacity:.88}
+@media (max-width:860px){
+  .evid.four{grid-template-columns:repeat(2,1fr)}
+  .split.rev{direction:ltr}
+  .endgrid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .evid.four{grid-template-columns:1fr}
+}
+
+/* BRAND 2026 — 크로스체크 2 반영 */
+/* §10 본문 한 단계 확대 (BRAND 페이지 한정) */
+.brandpage .sec-top .lead{font-size:clamp(15px,1.06vw,16.5px);line-height:1.88}
+.brandpage .copy p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.85;margin-bottom:17px}
+.brandpage .midcopy{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9}
+.brandpage .closing{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9}
+.brandpage .sys .sysline{font-size:clamp(15px,1.02vw,16px)}
+.brandpage .evid .lk{font-size:13.5px;line-height:1.7}
+/* §11 텍스트 중심 섹션 여백 15~20% 축소 */
+.brandpage #pov,.brandpage #next{padding-top:clamp(52px,6vw,78px);padding-bottom:clamp(52px,6vw,78px)}
+/* §8 NOTE 블록 */
+.note{margin-top:26px;padding:16px 18px;border-left:2px solid var(--line);background:var(--paper-2)}
+.note-lb{display:block;font-family:var(--serif);font-size:11px;letter-spacing:.18em;color:var(--muted);margin-bottom:7px}
+.note p{font-size:13.5px!important;font-weight:300;color:var(--muted);line-height:1.75;margin:0!important}
+/* §13 비활성 CTA */
+.btn.is-off{opacity:.42;cursor:default;pointer-events:none}
+/* §9 CSTI 이미지 — 잘리지 않게 + 탭 확대 */
+.chartwrap.zoom{position:relative;overflow:visible}
+.chartwrap.zoom img{width:100%!important;min-width:0!important;max-width:100%;height:auto;
+  object-fit:contain;cursor:zoom-in;display:block}
+.zoomhint{display:none;margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+.imgzoom{position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,.94);display:none;
+  align-items:center;justify-content:center;padding:14px;overflow:auto}
+.imgzoom.on{display:flex}
+.imgzoom img{max-width:none;width:auto;height:auto;min-width:760px;cursor:zoom-out}
+.imgzoom .x{position:fixed;top:14px;right:16px;z-index:10000;color:#fff;font-size:26px;line-height:1;
+  background:none;border:0;cursor:pointer;padding:8px}
+@media (max-width:860px){
+  .zoomhint{display:block}
+  .imgzoom img{min-width:900px}
+}

@@ -127,3 +127,24 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
   fromHash();
   window.addEventListener('hashchange', fromHash);
 })();
+
+// 이미지 확대 (CSTI 분류표 등)
+(function(){
+  var zs=document.querySelectorAll('.chartwrap.zoom img');
+  if(!zs.length) return;
+  var ov=document.createElement('div');
+  ov.className='imgzoom';
+  ov.innerHTML='<button class="x" aria-label="닫기" type="button">&times;</button><img alt="">';
+  document.body.appendChild(ov);
+  var big=ov.querySelector('img');
+  function close(){ ov.classList.remove('on'); document.body.style.overflow=''; }
+  zs.forEach(function(im){
+    im.addEventListener('click',function(){
+      big.src=im.currentSrc||im.src; big.alt=im.alt||'';
+      ov.classList.add('on'); ov.scrollLeft=(big.scrollWidth-ov.clientWidth)/2;
+      document.body.style.overflow='hidden';
+    });
+  });
+  ov.addEventListener('click',function(e){ if(e.target!==big||e.target===big) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
