@@ -13,7 +13,9 @@
   var sl=document.querySelectorAll('.hero .slides img'), dt=document.querySelectorAll('.hero .dots button'), i=0, timer;
   if(sl.length<2) return;
   var cap=document.getElementById('heroCap');
+  var hc=document.querySelectorAll('.hero .hcap');
   function go(n){ i=n; sl.forEach(function(x,k){x.classList.toggle('on',k===n)}); dt.forEach(function(x,k){x.classList.toggle('on',k===n)});
+    hc.forEach(function(x,k){x.classList.toggle('on',k===n)});
     if(cap){ var t=sl[n].getAttribute('data-cap'); if(t){ cap.style.opacity=0; setTimeout(function(){ cap.textContent=t; cap.style.opacity=1; },300); } } }
   function next(){ go((i+1)%sl.length); }
   dt.forEach(function(btn){ btn.addEventListener('click',function(){ go(+btn.dataset.i); clearInterval(timer); timer=setInterval(next,6000); }); });
