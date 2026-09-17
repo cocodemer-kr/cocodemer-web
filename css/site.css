@@ -873,3 +873,7 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 .rbk-fig{aspect-ratio:3/2;background:#fff;border:1px solid var(--line-2);margin-bottom:22px;overflow:hidden}
 .rbk-fig img{width:100%;height:100%;object-fit:contain;display:block}
 @media (max-width:1024px){ .rbk-fig{aspect-ratio:16/9} }
+
+/* HOME OUR HERITAGE — 03 SKIN CODE 카드 톤 정합 (01·02와 배경 계열 맞춤) */
+#archive .arc .ph.tone{background:#ccceD8}
+#archive .arc .ph.tone img{mix-blend-mode:multiply}
