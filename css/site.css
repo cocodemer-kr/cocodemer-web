@@ -47,7 +47,7 @@ a{color:inherit;text-decoration:none}
 .notice-strip .tx{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* page head */
-.pagehead{position:relative;height:260px;overflow:hidden;background:var(--black);display:flex;align-items:center;justify-content:center;text-align:center}
+.pagehead{position:relative;height:340px;overflow:hidden;background:var(--black);display:flex;align-items:center;justify-content:center;text-align:center}
 .pagehead img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 .pagehead .t{position:relative;color:#fff;padding:0 20px}
 .pagehead h1{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:400;letter-spacing:.06em}
@@ -218,7 +218,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
   .hdr-in{height:64px}
   .hero{aspect-ratio:auto;max-height:none;height:auto;min-height:0;padding:64px 0 84px}
   .hero .in{height:auto}
-  .pagehead{height:180px}
+  .pagehead{height:220px}
   .notice-strip .wrap{height:auto;padding-top:14px;padding-bottom:14px}
   .notice th,.notice td{display:block;width:auto;border-top:0}
   .notice tr{display:block;border-top:1px solid var(--line)}
@@ -381,7 +381,8 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 }
 
 /* BRAND 2026 — 01 BRAND PAGE */
-.pagehead.tall{height:clamp(320px,44vw,440px)}
+.pagehead.tall{height:340px}
+@media(max-width:640px){.pagehead.tall{height:220px}}
 .pagehead.tall img{opacity:.62}
 .pagehead.tall::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,rgba(10,10,10,.30) 0%,rgba(10,10,10,.62) 100%)}
@@ -877,3 +878,23 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 /* HOME OUR HERITAGE — 03 SKIN CODE 카드 톤 정합 (01·02와 배경 계열 맞춤) */
 #archive .arc .ph.tone{background:#ccceD8}
 #archive .arc .ph.tone img{mix-blend-mode:multiply}
+
+/* ── GLOBAL VISUAL QUALITY STANDARD (2026-09-17) ───────────────────────
+   내부 HERO 기본 규격 : Desktop/Tablet 340px · Mobile(<=640) 220px
+   (HOME main hero `.hero` 는 별도 시스템으로 유지)
+   아래는 이미지별 개별 조정. 이미지 파일 자체는 수정하지 않음.        */
+
+/* BRAND — 측정기와 모니터를 모두 프레임에 유지 + 모니터 그래프 위 타이틀 가독성 */
+.pagehead.ph-brand img{object-position:62% 40%;opacity:.50}
+.pagehead.ph-brand::after{background:linear-gradient(180deg,rgba(10,10,10,.42) 0%,rgba(10,10,10,.68) 100%)}
+
+/* SKIN CODE — 모바일 220px에서 인물 머리 상단 잘림 완화 (overlay 현행 유지) */
+.pagehead.ph-skincode img{object-position:50% 26%}
+
+/* FRAGRANCE — 코코 드 메르 열매 노출 + 밝은 숲 배경 위 타이틀 가독성 */
+.pagehead.ph-fragrance img{object-position:50% 35%;opacity:.45}
+
+/* HERITAGE 01·CUSTOMIZED — compounding.jpg(682x512) 원본 비율 유지.
+   4/5 강제 시 1.33x 업스케일 + 가로 40% 잘림 → 4/3 로 0.80x 다운스케일, 잘림 0.
+   같은 섹션의 다른 이미지에는 적용하지 않음.                            */
+#customized .split.rev .fig img{aspect-ratio:4/3}
