@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>PRODUCT · 코코드메르 전 제품</title>
-<meta content="Reset · Boost · Keep 스킨케어와 COCODEMER의 현재 제품, 향후 컬렉션을 소개합니다. 과거 맞춤형 화장품의 기록은 ARCHIVE에서 확인할 수 있습니다." name="description"/>
-<meta content="PRODUCT · 코코드메르 전 제품" property="og:title"/>
-<meta content="Reset · Boost · Keep 스킨케어와 COCODEMER의 현재 제품, 향후 컬렉션을 소개합니다. 과거 맞춤형 화장품의 기록은 ARCHIVE에서 확인할 수 있습니다." property="og:description"/>
+<title>SKINCARE · COCODEMER — Reset · Boost · Keep</title>
+<meta content="피부를 먼저 보는 COCODEMER의 Reset · Boost · Keep 스킨케어. 현재 판매 중인 Aqua Quick Bubble Mask와 앞으로 이어질 스킨케어 제품을 소개합니다." name="description"/>
+<meta content="SKINCARE · COCODEMER — Reset · Boost · Keep" property="og:title"/>
+<meta content="피부를 먼저 보는 COCODEMER의 Reset · Boost · Keep 스킨케어. 현재 판매 중인 Aqua Quick Bubble Mask와 앞으로 이어질 스킨케어 제품을 소개합니다." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="COCODEMER" property="og:site_name"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -15,7 +14,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Noto+Serif:wght@400;500&amp;family=Noto+Serif+KR:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
 <link href="css/site.css" rel="stylesheet"/>
 <link href="img/mark-black.png" rel="icon"/>
-<link href="https://www.cocodemer.co.kr/products.html" hreflang="ko" rel="alternate"/><link href="https://www.cocodemer.co.kr/en/products.html" hreflang="en" rel="alternate"/><link href="https://www.cocodemer.co.kr/products.html" hreflang="x-default" rel="alternate"/><link href="https://www.cocodemer.co.kr/products.html" rel="canonical"/></head>
+<link href="https://www.cocodemer.co.kr/products.html" hreflang="ko" rel="alternate"/><link href="https://www.cocodemer.co.kr/en/products.html" hreflang="en" rel="alternate"/><link href="https://www.cocodemer.co.kr/products.html" hreflang="x-default" rel="alternate"/><link href="https://www.cocodemer.co.kr/products.html" rel="canonical"/>
+<script>
+/* 이전 products.html 해시 호환 — 실제로 존재했던 값만 처리 */
+(function(){
+  var MAP = {skincare:'products.html', fragrance:'fragrance.html', derma:'archive.html#dermo', archive:'archive.html'};
+  var k = location.hash.replace('#','');
+  if (!k) return;
+  var to = MAP[k];
+  if (!to) return;
+  if (to === 'products.html') { history.replaceState(null,'',location.pathname); return; }
+  location.replace(to);
+})();
+</script>
+</head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="hdr">
@@ -27,121 +39,158 @@
 </div>
 </header>
 <nav class="mnav"><a href="brand.html">BRAND</a><a class="cur" href="products.html">SKINCARE</a><a href="technology.html">TECHNOLOGY</a><a href="archive.html">ARCHIVE</a><a href="b2b.html">B2B</a><a class="ext" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a><div class="lang"><span class="on">KO</span><span class="sep">/</span><a href="en/products.html">EN</a></div></nav>
-<main id="main">
-<div class="pagehead">
-<img alt="" src="img/hero-1-allproduct.jpg"/>
-<div class="t"><h1>PRODUCTS</h1><p>스킨케어 · 프래그런스 · 더마코스메틱 · 아카이브</p></div>
+<main id="main" class="skincarepage">
+
+<!-- 01 HERO -->
+<div class="pagehead tall">
+  <img src="img/product/aqua-quick-bubble-mask-2.jpg" alt="">
+  <div class="t">
+    <div class="sec-en">SKINCARE</div>
+    <h1>RESET · BOOST · KEEP</h1>
+    <p>피부를 먼저 보고,<br>필요한 단계를 나눠 설계합니다.</p>
+  </div>
 </div>
-<nav aria-label="제품 라인" class="ltabs">
-<div class="ltabs-in">
-<button class="on" data-lp="skincare" type="button">SKINCARE<span class="c">리셋 · 부스트 · 킵</span></button>
-<button data-lp="fragrance" type="button">FRAGRANCE<span class="c">오 드 퍼퓸 · 솔리드 퍼퓸</span></button>
-<button data-lp="derma" type="button">DERMOCOSMETICS<span class="c">펜타이드 · 스팟 케어</span></button>
-<button data-lp="archive" type="button">ARCHIVE<span class="c">COCODEMER HERITAGE</span></button>
-</div>
-</nav>
-<div class="lpane on" id="lp-skincare">
-<section class="sys" style="padding-top:52px">
-<div class="wrap">
-<div class="sec-top" style="margin-bottom:44px">
-<div class="sec-en">SKINCARE SYSTEM</div>
-<h3>Reset · Boost · Keep</h3>
-<p class="lead">피부를 정돈하고, 필요한 성분을 적용하고, 그 상태를 유지합니다. 한 사람의 피부에 맞춰 제품을 만들던 경험을 세 단계의 스킨케어로 다시 구성했습니다.</p>
-</div>
-<div class="sys-grid">
-<div class="sys-col">
-<div class="st"><span class="n">01</span> RESET</div>
-<p class="sd">피부를 다음 단계에 맞게 정돈합니다.</p>
-<ul>
-<li><span class="pn">마일드 클렌징 패드</span><span class="pe">Mild Cleansing Pad</span><span class="tag">COMING SOON</span></li>
-<li><span class="pn">필 리셋 세럼</span><span class="pe">Peel Reset Serum</span><span class="tag">COMING SOON</span></li>
-</ul>
-</div>
-<div class="sys-col">
-<div class="st"><span class="n">02</span> BOOST</div>
-<p class="sd">정돈된 피부에 필요한 성분을 적용합니다.</p>
-<ul>
-<li><a class="on-sale" href="product/aqua-quick-bubble-mask.html"><span class="pn">아쿠아 퀵버블 마스크</span><span class="pe">Aqua Quick Bubble Mask</span><span class="tag">AVAILABLE NOW</span></a></li>
-<li><span class="pn">래디언스 퀵버블 마스크</span><span class="pe">Radiance Quick Bubble Mask</span><span class="tag">COMING SOON</span></li>
-</ul>
-</div>
-<div class="sys-col">
-<div class="st"><span class="n">03</span> KEEP</div>
-<p class="sd">관리한 피부 상태를 유지합니다.</p>
-<ul>
-<li><span class="pn">킵 크림</span><span class="pe">Keep Cream</span><span class="tag">COMING SOON</span></li>
-</ul>
-</div>
-</div>
-</div>
+
+<!-- 02 AVAILABLE NOW -->
+<section id="current">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">AVAILABLE NOW</div><div class="rule"></div>
+      <h3 class="en-d">Aqua Quick Bubble Mask</h3>
+    </div>
+    <div class="split">
+      <div class="fig sq"><img src="img/product/aqua-quick-bubble-mask.jpg" alt="코코드메르 아쿠아 퀵버블 마스크" style="object-fit:contain;background:#fff"></div>
+      <div class="copy">
+        <span class="stage">BOOST</span>
+        <p>현재 COCODEMER에서 판매 중인<br>Reset · Boost · Keep 스킨케어의 BOOST 제품입니다.</p>
+        <p>흔들어 펌핑한 뒤 피부에 펴 바르고,<br>씻어내지 않고 사용하는 버블 마스크입니다.</p>
+        <p>Air-in System™의<br>버블 제형 기술을 적용했습니다.</p>
+        <div class="minispec">
+          <span>80 ml</span>
+          <span>No-Rinse Bubble Mask</span>
+          <span class="st">AVAILABLE NOW</span>
+        </div>
+        <div class="pd-cta" style="margin-top:28px">
+          <a class="btn fill" href="product/aqua-quick-bubble-mask.html">제품 자세히 보기</a>
+          <a class="btn" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">스토어에서 보기 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<section style="padding-top:clamp(56px,7vw,92px)">
-<div class="wrap">
-<div class="sec-top" style="margin-bottom:40px">
-<div class="sec-en">AVAILABLE NOW</div>
-<h3>현재 판매 중인 제품</h3>
-</div>
-<div class="pgrid few" style="max-width:940px;margin:0 auto">
-<a class="pcard" href="product/aqua-quick-bubble-mask.html"><div class="ph"><img alt="코코드메르 아쿠아 퀵버블 마스크" src="img/product/aqua-quick-bubble-mask.jpg"/></div><div class="tx"><div class="cat">MASK</div><div class="nm">아쿠아 퀵버블 마스크</div><div class="nm-en">Aqua Quick Bubble Mask</div><span class="tag store">AVAILABLE NOW</span></div></a>
-</div>
-</div>
+
+<!-- 03 RESET · BOOST · KEEP -->
+<section class="alt" id="system">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">SKINCARE SYSTEM</div><div class="rule"></div>
+      <h3>세 단계로 이어지는 스킨케어.</h3>
+      <p class="lead">RESET으로 먼저 정돈하고,<br><br>BOOST로 필요한 것을 더하고,<br><br>KEEP으로 좋은 상태가 오래 이어지도록.<br><br>COCODEMER는 스킨케어를<br>세 단계로 설계합니다.</p>
+    </div>
+
+    <div class="rbk">
+
+      <div class="rbk-col" id="reset">
+        <div class="rbk-fig"><img loading="lazy" src="img/skincare/reset-lineup.jpg" alt="마일드 클렌징 패드 · 필 리셋 세럼"></div>
+        <div class="rbk-h"><span class="n">01</span><span class="k">RESET</span></div>
+        <p class="rbk-d">다음 단계를 위해<br>피부를 먼저 정돈합니다.</p>
+        <div class="rbk-item">
+          <div class="nm">Mild Cleansing Pad</div>
+          <span class="st soon">COMING SOON</span>
+          <div class="tech"><span class="tl">RELATED TECHNOLOGY</span>Antipol-HiP™</div>
+        </div>
+        <div class="rbk-item">
+          <div class="nm">Peel Reset Serum</div>
+          <span class="st soon">COMING SOON</span>
+          <div class="tech"><span class="tl">RELATED TECHNOLOGY</span>VelvetiPeel™</div>
+        </div>
+      </div>
+
+      <div class="rbk-col" id="boost">
+        <div class="rbk-fig"><img loading="lazy" src="img/skincare/boost-lineup.jpg" alt="아쿠아 퀵버블 마스크 · 래디언스 퀵버블 마스크"></div>
+        <div class="rbk-h"><span class="n">02</span><span class="k">BOOST</span></div>
+        <p class="rbk-d">정돈된 피부에<br>필요한 것을 더합니다.</p>
+        <a class="rbk-item is-now" href="product/aqua-quick-bubble-mask.html">
+          <div class="nm">Aqua Quick Bubble Mask</div>
+          <span class="st">AVAILABLE NOW</span>
+          <div class="tech"><span class="tl">RELATED TECHNOLOGY</span>Air-in System™</div>
+        </a>
+        <div class="rbk-item">
+          <div class="nm">Radiance Quick Bubble Mask</div>
+          <span class="st soon">COMING SOON</span>
+          <div class="tech"><span class="tl">RELATED TECHNOLOGY</span>Air-in System™</div>
+        </div>
+      </div>
+
+      <div class="rbk-col" id="keep">
+        <div class="rbk-fig"><img loading="lazy" src="img/skincare/keep-lineup-web.webp" alt="킵 크림"></div>
+        <div class="rbk-h"><span class="n">03</span><span class="k">KEEP</span></div>
+        <p class="rbk-d">좋은 상태가<br>오래 이어지도록 합니다.</p>
+        <div class="rbk-item">
+          <div class="nm">Keep Cream</div>
+          <span class="st soon">COMING SOON</span>
+          <div class="tech"><span class="tl">RELATED TECHNOLOGY</span>Keep System™</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-</div>
-<div class="lpane" id="lp-fragrance">
-<section style="padding-top:clamp(56px,7vw,92px)">
-<div class="wrap">
-<div class="sec-top" style="margin-bottom:40px">
-<div class="sec-en">FRAGRANCE</div>
-<h3>One Forest, Multiple States</h3>
-<p class="lead">세이셸의 코코 드 메르 숲에서 시작한 컬렉션입니다. 같은 숲의 서로 다른 순간을 세 가지 향으로 나눴습니다.</p>
-</div>
-<a class="coll" href="fragrance.html">
-<div class="ph"><img alt="코코드메르 프래그런스 컬렉션" loading="lazy" src="img/fragrance/seychelles-memory.jpg"/></div>
-<div class="tx">
-<div class="k">EAU DE PARFUM 50ML · SOLID PERFUME 6G</div>
-<h4>Seychelles Memory · No Man's Forest · Sea Breeze Petals</h4>
-<p>EAU DE PARFUM 50ML · SOLID PERFUME 6G</p>
-<span class="tag">COMING SOON · 컬렉션 보기 →</span>
-</div>
-</a>
-</div>
+
+<!-- 04 THE SYSTEM -->
+<section id="the-system">
+  <div class="wrap">
+    <div class="sec-top" style="margin-bottom:34px">
+      <div class="sec-en">THE SYSTEM</div><div class="rule"></div>
+      <h3>제품마다,<br>필요한 기술은 다릅니다.</h3>
+      <p class="lead">RESET · BOOST · KEEP의 각 단계에는<br>제품 목적과 제형에 맞는 기술을 적용합니다.<br><br>현재 판매 중인 Aqua Quick Bubble Mask에는<br>Air-in System™을 적용하고 있습니다.</p>
+    </div>
+    <div style="text-align:center"><a class="btn sm" href="technology.html">TECHNOLOGY 보기</a></div>
+  </div>
 </section>
-</div>
-<div class="lpane" id="lp-derma">
-<section style="padding-top:clamp(56px,7vw,92px)">
-<div class="wrap">
-<div class="sec-top" style="margin-bottom:40px">
-<div class="sec-en">DERMOCOSMETICS</div>
-<h3>펜타이드 · 스팟 케어</h3>
-<p class="lead">펜타이드 소재를 기반으로 전개하는 라인입니다.</p>
-</div>
-<a class="coll" href="product/bio-snow-vc-spot-cream.html">
-<div class="ph"><img alt="코코드메르 바이오" loading="lazy" src="img/bio-card.jpg"/></div>
-<div class="tx">
-<div class="k">PENTIDE · SPOT CARE</div>
-<h4>스노우 브이씨 스팟 크림 세트</h4>
-<p>5ml × 4</p>
-<span class="tag">ARCHIVE · 자세히 보기 →</span>
-</div>
-</a>
-</div>
+
+<!-- 05 OTHER COLLECTIONS -->
+<section class="alt" id="collections">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="sec-en">OTHER COLLECTIONS</div><div class="rule"></div>
+    </div>
+    <div class="colgrid c3">
+      <a class="endcard" href="fragrance.html">
+        <div class="ph"><img loading="lazy" src="img/fragrance/seychelles-memory.jpg" alt="COCODEMER Fragrance Collection"></div>
+        <div class="tx">
+          <div class="sec-en">FRAGRANCE</div>
+          <h4>One Forest, Multiple States</h4>
+          <p>세 가지 향으로 이어지는<br>COCODEMER Fragrance Collection.</p>
+          <span class="st soon">COMING SOON</span>
+          <span class="btn sm">FRAGRANCE 보기</span>
+        </div>
+      </a>
+      <a class="endcard" href="archive.html#dermo">
+        <div class="ph"><img loading="lazy" src="img/bio-card.jpg" alt="COCODEMER BIO"></div>
+        <div class="tx">
+          <div class="sec-en">DERMOCOSMETICS ARCHIVE</div>
+          <h4>COCODEMER BIO</h4>
+          <p>별도로 개발했던<br>Dermocosmetics의 기록.</p>
+          <span class="st">ARCHIVE</span>
+          <span class="btn sm">ARCHIVE 보기</span>
+        </div>
+      </a>
+      <a class="endcard" href="archive.html">
+        <div class="ph"><img loading="lazy" src="img/arc-finished17.jpg" alt="COCODEMER HERITAGE"></div>
+        <div class="tx">
+          <div class="sec-en">COCODEMER HERITAGE</div>
+          <h4>ARCHIVE</h4>
+          <p>맞춤 조제와 완제품 17종,<br>Skin Code로 이어진 기록.</p>
+          <span class="st">ARCHIVE</span>
+          <span class="btn sm">ARCHIVE 보기</span>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>
-</div>
-<div class="lpane" id="lp-archive">
-<section id="archive" style="padding-top:clamp(56px,7vw,92px)">
-<div class="wrap">
-<div class="sec-top" style="margin-bottom:24px">
-<div class="sec-en">ARCHIVE</div>
-<h3>COCODEMER HERITAGE</h3>
-</div>
-<p class="archive-note">맞춤형 화장품을 운영하며 남은 제품과 처방의 기록입니다.</p>
-<div class="endgrid" style="margin-top:clamp(36px,4.5vw,56px)">
-<a class="endcard" href="archive.html#finished-products"><div class="ph"><img alt="맞춤 시스템과 함께 개발한 완제품" loading="lazy" src="img/arc-finished17.jpg"/></div><div class="tx"><div class="sec-en">17 FINISHED PRODUCTS</div><p>맞춤 시스템과 함께 개발한 완제품</p><span class="btn sm">ARCHIVE 보기</span></div></a>
-<a class="endcard" href="skin-code.html"><div class="ph"><img alt="COCODEMER Skin Type Indicator(CSTI) 16가지 피부 타입 분류표" loading="lazy" src="img/home-skincode-16types.png"/></div><div class="tx"><div class="sec-en">SKIN CODE</div><p>16 Skin Types<br/>Customized Prescription System</p><span class="btn sm">Skin Code 보기</span></div></a>
-</div>
-</div>
-</section>
-</div>
+
+<!-- 06 STORE -->
 <div class="storeband">
 <div class="wrap">
 <div class="t"><div class="se">STORE</div><h3>구매처 안내</h3>
@@ -149,6 +198,7 @@
 <a class="btn onblack fill" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">스토어에서 보기 ↗</a>
 </div>
 </div>
+
 </main>
 <footer>
 <div class="wrap">

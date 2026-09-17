@@ -795,3 +795,81 @@ section:not(.dark) .flow .fd{color:var(--ink-2)}
 
 /* ARCHIVE MATERIAL 캡션 */
 .figcap{margin-top:12px;font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.7;text-align:center}
+
+/* ===== SKINCARE 2026 — products.html 전용 ===== */
+
+.skincarepage .sec-top .lead,.skincarepage .copy p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.88}
+.skincarepage .copy p{margin-bottom:17px}
+
+/* PAGEHEAD 부제 */
+.pagehead.tall .t p{margin-top:18px;font-size:clamp(14px,1.1vw,16px);font-weight:300;line-height:1.8;color:rgba(255,255,255,.82)}
+
+/* AVAILABLE NOW — 단계 배지 */
+.skincarepage .copy .stage{display:inline-block;margin-bottom:20px;font-family:var(--serif);font-size:11px;
+  letter-spacing:.16em;color:var(--ink);border:1px solid var(--ink);padding:5px 14px}
+
+/* 간단 사양 */
+.minispec{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px;
+  padding-top:20px;border-top:1px solid var(--line)}
+.minispec span{font-size:13px;font-weight:300;color:var(--ink-2)}
+.minispec span+span:before{content:"·";margin-right:10px;color:var(--muted)}
+.minispec .st{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;color:var(--ink);
+  border:1px solid var(--line);padding:4px 10px}
+.minispec .st:before{content:none}
+
+/* RESET · BOOST · KEEP — 타이포그래피 카드 (제품 이미지 없음) */
+.rbk{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.rbk-col{background:var(--paper);padding:clamp(28px,3vw,40px) clamp(20px,2.2vw,30px);scroll-margin-top:96px;
+  display:flex;flex-direction:column}
+.rbk-h{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.rbk-h .n{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.rbk-h .k{font-family:var(--serif);font-size:clamp(15px,1.5vw,18px);letter-spacing:.14em;color:var(--ink)}
+.rbk-d{margin:18px 0 26px;font-size:14px;font-weight:300;color:var(--ink-2);line-height:1.8}
+.rbk-item{display:block;text-decoration:none;color:inherit;padding:20px 0;border-top:1px solid var(--line-2)}
+.rbk-item:first-of-type{border-top:0}
+.rbk-item .nm{font-size:15.5px;font-weight:400;line-height:1.5;color:var(--ink)}
+.rbk-item .st{display:inline-block;margin-top:11px;font-family:var(--serif);font-size:10.5px;
+  letter-spacing:.12em;color:var(--ink);border:1px solid var(--ink);padding:3px 9px}
+.rbk-item .st.soon{color:var(--muted);border-color:var(--line)}
+.rbk-item .tech{margin-top:14px;font-size:13px;font-weight:300;color:var(--ink-2)}
+.rbk-item .tech .tl{display:block;font-family:var(--serif);font-size:10px;letter-spacing:.14em;
+  color:var(--muted);margin-bottom:5px}
+a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
+
+/* OTHER COLLECTIONS — 3단 */
+.colgrid.c3{grid-template-columns:repeat(3,1fr)}
+.endcard .tx h4{font-size:16px;font-weight:400;line-height:1.5;margin-top:4px}
+.endcard .tx .st{display:inline-block;margin-bottom:18px;font-family:var(--serif);font-size:10.5px;
+  letter-spacing:.12em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+
+/* 제품 상세 하단 네비 블록 */
+.pdnav{border-top:1px solid var(--line);background:var(--paper-2)}
+.pdnav .wrap{padding-top:clamp(52px,6vw,78px);padding-bottom:clamp(52px,6vw,78px);text-align:center}
+.pdnav .sec-en{margin-bottom:14px}
+.pdnav h3{font-size:clamp(18px,2vw,23px);font-weight:500;line-height:1.5}
+.pdnav p{margin:16px auto 26px;max-width:34em;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.8}
+
+@media (max-width:1024px){
+  .rbk{grid-template-columns:1fr}
+  .colgrid.c3{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .rbk-col{scroll-margin-top:72px}
+}
+
+/* 제품 상세 — HERO 보조 문장 */
+.pd-body{margin-top:12px;font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.8}
+
+/* 제품 상세 — HOW TO USE 4단계 */
+.usesteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:6px}
+.ustep{background:var(--paper);padding:22px 14px;text-align:center;display:flex;flex-direction:column}
+.ustep .n{font-family:var(--serif);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:12px}
+.ustep .k{font-family:var(--serif);font-size:12px;letter-spacing:.1em;color:var(--ink);margin-bottom:9px}
+.ustep .d{font-size:13px;font-weight:300;color:var(--ink-2);line-height:1.65}
+@media (max-width:860px){ .usesteps{grid-template-columns:repeat(2,1fr)} }
+
+/* RESET · BOOST · KEEP — 제품 렌더 이미지 레이어 */
+.rbk-fig{aspect-ratio:3/2;background:#fff;border:1px solid var(--line-2);margin-bottom:22px;overflow:hidden}
+.rbk-fig img{width:100%;height:100%;object-fit:contain;display:block}
+@media (max-width:1024px){ .rbk-fig{aspect-ratio:16/9} }
