@@ -278,14 +278,16 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 
 /* collections */
 .colgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.col{background:#fff;padding:36px 24px 34px;display:flex;flex-direction:column;align-items:flex-start;min-height:250px}
+/* 상태 chip(COMING SOON / ARCHIVE) 제거 후 카드 하단이 비지 않도록
+   CTA 를 카드 바닥에 정렬하고 최소 높이를 chip 한 줄만큼 줄인다. */
+.col{background:#fff;padding:36px 24px 34px;display:flex;flex-direction:column;align-items:flex-start;min-height:206px}
 .col .ln{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
 .col .nm{font-size:16px;font-weight:400;line-height:1.5;color:var(--ink)}
 .col .sub{font-size:13px;color:var(--muted);font-weight:300;margin-top:5px}
 .col .st{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;padding:4px 10px;border:1px solid var(--line);color:var(--muted);margin-top:14px;margin-bottom:auto}
 .col .st.now{color:var(--ink);border-color:var(--ink)}
 .col .st.soon{color:var(--ink-2);border-color:#cfcfcf}
-.col .btn{margin-top:24px;width:100%}
+.col .btn{margin-top:auto;width:100%}
 
 /* b2b partnership */
 .b2bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
@@ -903,6 +905,24 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 /* FRAGRANCE — 코코 드 메르 열매 노출 + 밝은 숲 배경 위 타이틀 가독성 */
 .pagehead.ph-fragrance img{object-position:50% 35%;opacity:.45}
 
+/* ── GLOBAL IMAGE COMPOSITION PASS (2026-09-18) ─────────────────────────
+   내부 HERO 슬롯은 1440x440 = 3.27:1 인데 원본은 1.5~1.79:1 이다.
+   기본값(50% 50%)이면 세로 45~55%가 브라우저 자동 crop으로 잘려 나가
+   여러 페이지에서 "빈 벽만 남는" 밴드가 표시되고 있었다.
+   원본 전체를 밴드 단위로 훑어 페이지마다 피사체가 살아나는 구간을 지정한다.
+   원본 파일은 수정하지 않는다 — 표시 구간만 바꾼다.                       */
+
+/* TECHNOLOGY — 작업대·계측 장비 밴드 (기술) */
+.pagehead.ph-tech img{object-position:50% 60%}
+/* INGREDIENTS — 같은 원본에서 원료 병 선반 밴드 (원료). 두 페이지 화면이 갈라진다 */
+.pagehead.ph-ingr img{object-position:50% 35%}
+/* HERITAGE — 기본값에서는 빈 벽만 남았다. 구·맞춤 용기·드로퍼가 들어오는 하단 밴드 */
+.pagehead.ph-heritage img{object-position:50% 80%}
+/* B2B — 기본값에서는 회색 벽과 링 상단만 남았다. 제품군이 서 있는 하단 밴드 */
+.pagehead.ph-b2b img{object-position:50% 80%}
+/* BIO — 기본값에서는 빈 벽이었다. 모빌·용기·링이 함께 들어오는 하단 밴드 */
+.pagehead.ph-bio img{object-position:50% 80%}
+
 /* HERITAGE 01·CUSTOMIZED — compounding.jpg(682x512) 원본 비율 유지.
    4/5 강제 시 1.33x 업스케일 + 가로 40% 잘림 → 4/3 로 0.80x 다운스케일, 잘림 0.
    같은 섹션의 다른 이미지에는 적용하지 않음.                            */
@@ -933,17 +953,17 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
    contain 440 → 440x440, 0.49x 다운스케일, 잘림 0.
    배경 #FFFFFF 는 원본 배경색과 동일한 값(테두리 전수 샘플 rgb(255,255,255)).
    blur 확장·AI 생성 아님, 단색 CSS 배경.                              */
-.pagehead.hyb{height:440px;background:#FFFFFF;display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;justify-content:initial;text-align:left;overflow:hidden;
-  border-bottom:1px solid var(--line)}
+.pagehead.hyb{height:440px;background:#FFFFFF;display:grid;grid-template-columns:auto auto;
+  align-items:center;justify-content:center;column-gap:clamp(20px,3.6vw,68px);
+  text-align:left;overflow:hidden;border-bottom:1px solid var(--line)}
 .pagehead.hyb::after{display:none !important}
 /* 원본 900x900 중 피사체는 x 18~82% / y 16~97%. 흰 여백만 프레임 밖으로
    밀어내 피사체를 약 18% 크게 보이게 한다(520/440). 표시 배율 0.58x 로
    여전히 다운스케일이며 피사체는 상 13px·하 8px 여유를 두고 온전히 남는다. */
-.pagehead.hyb img{position:static;width:100%;height:520px;object-fit:contain;opacity:1;order:2;
-  align-self:start;margin-top:-70px}
+.pagehead.hyb img{position:static;width:auto;height:420px;object-fit:contain;opacity:1;order:2;
+  align-self:center;margin:0}
 .pagehead.hyb .t{position:relative;z-index:2;color:var(--ink);order:1;
-  padding:0 16px 0 clamp(24px,6vw,96px)}
+  padding:0;max-width:min(46vw,520px)}
 .pagehead.hyb .t .sec-en{color:var(--muted)}
 .pagehead.hyb .t h1{color:var(--ink);text-shadow:none}
 .pagehead.hyb .t p{color:var(--ink-2)}
@@ -952,9 +972,11 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
    left·bottom 을 풀어야 right 앵커가 동작한다. */
 @media(max-width:640px){
   .pagehead.hyb{height:220px;display:block;position:relative;padding:0;text-align:left;overflow:hidden}
+  /* 여백을 잘라낸 web-hero 자산은 프레임 = 피사체다. 기존 right:-42px 는
+     흰 여백을 밀어내려던 값이라 그대로 두면 손·팔이 화면 밖으로 잘린다.  */
   .pagehead.hyb img{position:absolute;inset:auto;left:auto;bottom:auto;
-    right:-42px;top:50%;transform:translateY(-50%);
-    height:232px;width:auto;margin-top:0;object-fit:contain}
+    right:-2px;top:50%;transform:translateY(-50%);
+    height:210px;width:auto;margin-top:0;object-fit:contain}
   .pagehead.hyb .t{position:absolute;left:18px;top:50%;transform:translateY(-50%);
     max-width:240px;padding:0;text-align:left}
   .pagehead.hyb .t .sec-en{font-size:10px;margin-bottom:7px}
