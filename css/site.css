@@ -175,6 +175,12 @@ section{padding:clamp(72px,9vw,128px) 0}
 .pane.on{display:block}
 .detail-img{max-width:900px;margin:0 auto}
 .detail-img img{width:100%}
+.detail-img video{width:100%;display:block;background:#fff}
+/* 세로형 실사용 영상 — 풀와이드 확대 없이 가운데 정렬 */
+.detail-demo{max-width:560px;margin:clamp(26px,4vw,48px) auto;padding:0}
+.detail-demo video{width:100%;display:block;background:#fff}
+.detail-demo figcaption{margin-top:12px;text-align:center;font-size:12.5px;font-weight:300;letter-spacing:.02em;color:var(--muted)}
+@media(max-width:640px){.detail-demo{max-width:100%}}
 
 .info-blocks{max-width:860px;margin:0 auto}
 .ib{border-top:1px solid var(--line);padding:30px 0}
@@ -459,9 +465,11 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 .arccat-h .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted)}
 .arccat-h .ln{font-family:var(--serif);font-size:clamp(14px,1.4vw,16px);letter-spacing:.12em;color:var(--ink)}
 .arcitems{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
-.arcitem{background:#fff;padding:0 0 22px;border:1px solid var(--line)}
+.arcitem{display:block;background:#fff;padding:0 0 22px;border:1px solid var(--line)}
 .arcitem .ph{aspect-ratio:1/1;overflow:hidden;background:#fff}
-.arcitem .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.arcitem .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s}
+a.arcitem:hover .ph img{transform:scale(1.04)}
+a.dermobox:hover .ph img{transform:scale(1.03)}
 .arcitem .tx{text-align:center;padding:16px 14px 0}
 .arcitem .cat{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
 .arcitem .nm{font-size:14px;font-weight:400;line-height:1.55;color:var(--ink)}
@@ -471,7 +479,8 @@ footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color
 /* DERMOCOSMETICS ARCHIVE — 메인 3축과 시각적으로 분리 */
 .dermobox{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:880px;margin:0 auto;
   border:1px solid var(--line);background:#fff}
-.dermobox .ph img{width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.dermobox .ph{overflow:hidden}
+.dermobox .ph img{width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform .55s}
 .dermobox .tx{padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .dermobox .cat{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--ink);margin-bottom:16px}
 .dermobox .tx p{font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.85;margin-bottom:14px}

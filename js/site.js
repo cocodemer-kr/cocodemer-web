@@ -148,3 +148,62 @@ document.querySelectorAll('.tabs2 button').forEach(function(b){
   ov.addEventListener('click',function(e){ if(e.target!==big||e.target===big) close(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
 })();
+
+
+/* 상세페이지 모션 슬라이스 — 원본 GIF 자리 복원.
+   화면에 들어올 때만 로드·재생 / 벗어나면 정지 / 탭이 숨으면 전부 정지 /
+   prefers-reduced-motion: reduce 환경에서는 재생하지 않고 poster(정지 이미지)만 보여준다.
+   ※ HTML 에 autoplay 속성을 두지 않는다 — autoplay 가 있으면 preload="none" 이 무시되어
+     페이지 진입 시 전체 영상이 한꺼번에 내려받아진다. 자동재생은 아래 IntersectionObserver 가 담당. */
+(function(){
+  var vs = [].slice.call(document.querySelectorAll('video.dv'));
+  if(!vs.length) return;
+
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var visible = [];                      // 현재 뷰포트 안에 있는 영상
+  function reduced(){ return !!(mq && mq.matches); }
+
+  function start(v){
+    if(reduced() || document.hidden) return;
+    if(v.preload !== 'auto'){ v.preload = 'auto'; v.load(); }
+    var pr = v.play(); if(pr && pr.catch) pr.catch(function(){});
+  }
+  function stop(v){ if(!v.paused) v.pause(); }
+
+  function applyReduced(){
+    if(reduced()){
+      vs.forEach(function(v){
+        v.preload = 'none';               // 내려받지도 않음 → poster 만 표시
+        stop(v);
+      });
+    } else {
+      visible.forEach(start);             // 설정을 되돌리면 보이는 것만 재개
+    }
+  }
+
+  if(!('IntersectionObserver' in window)){
+    if(reduced()) applyReduced(); else vs.forEach(function(v){ v.preload='metadata'; });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v = e.target, k = visible.indexOf(v);
+      if(e.isIntersecting){ if(k<0) visible.push(v); start(v); }
+      else { if(k>-1) visible.splice(k,1); stop(v); }
+    });
+  }, {rootMargin:'200px 0px'});
+  vs.forEach(function(v){ io.observe(v); });
+
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) vs.forEach(stop);   // 백그라운드 탭에서는 전부 정지
+    else visible.forEach(start);            // 돌아오면 뷰포트 안의 것만 재개
+  });
+
+  if(mq){
+    var onmq = function(){ applyReduced(); };
+    if(mq.addEventListener) mq.addEventListener('change', onmq);
+    else if(mq.addListener) mq.addListener(onmq);
+  }
+  applyReduced();
+})();
