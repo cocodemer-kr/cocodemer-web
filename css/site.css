@@ -1002,3 +1002,55 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
   .pagehead.ph-aqua .t p{font-size:11px;margin-top:8px;line-height:1.7}
   .pagehead.ph-aqua .aq{grid-template-columns:1fr 1fr;gap:2px}
   .pagehead.ph-aqua .aq img:nth-child(n+3){display:none}}
+
+/* ── 03 FRAGRANCE (2026-09-21) ─────────────────────────────────────
+   HERO: 왼쪽 톤 카피 칸 + 3개 향 EDP crop 3분할 (SKINCARE .ph-aqua 와 같은 구조).
+   EDP crop = 원본 렌더에서 병만 잘라낸 파생본(389x649). crop·축소만, 합성 없음.
+   톤은 사이트에서 이미 쓰는 웜 오프화이트(.prodplate 와 동일 값).        */
+.pagehead.ph-frag{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:minmax(calc(var(--lx) + 430px),1fr) auto;grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:left;
+  background:linear-gradient(176deg,#FBFAF8 0%,#F2EFEC 66%,#EBE7E3 100%)}
+/* 칸 폭 상한 310px: 넓은 화면에서 칸이 넓어지면 cover 가 병의 위아래를 자른다.
+   310px 이면 원본 세로의 85% 이상이 보여 캡·바닥이 온전하다.                */
+.pagehead.ph-frag::after{display:none !important}
+.pagehead.ph-frag .t{align-self:center;color:var(--ink);padding:0 32px 0 var(--lx);z-index:2}
+.pagehead.ph-frag .t .sec-en{color:var(--muted);margin-bottom:14px}
+.pagehead.ph-frag .t h1{color:var(--ink);text-shadow:none;line-height:1.3;font-size:clamp(22px,2.3vw,30px)}
+.pagehead.ph-frag .t p{color:var(--ink-2)}
+.pagehead.ph-frag .frs{display:grid;grid-template-columns:repeat(3,minmax(0,310px));grid-template-rows:100%;gap:2px;height:100%;min-width:0;min-height:0;overflow:hidden;background:#EBE7E3}
+.pagehead.ph-frag .frs img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:1;display:block;min-width:0}
+@media(max-width:1024px){.pagehead.ph-frag{grid-template-columns:minmax(calc(var(--lx) + 380px),1fr) auto}}
+@media(max-width:640px){.pagehead.ph-frag{height:220px;grid-template-columns:58% minmax(0,1fr)}
+  .pagehead.ph-frag .t{padding:0 12px 0 18px}
+  .pagehead.ph-frag .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-frag .t h1{font-size:16px;line-height:1.4;letter-spacing:.02em}
+  .pagehead.ph-frag .t p{font-size:11px;margin-top:8px;line-height:1.6}
+  .pagehead.ph-frag .frs{grid-template-columns:1fr;width:100%}
+  .pagehead.ph-frag .frs img:nth-child(n+2){display:none}}
+/* 본문 공통 — 사이트 .sec-top h3 와 같은 크기 체계를 h2 에 적용 */
+.fragrancepage .sec-top h2{font-size:clamp(20px,2.2vw,26px);font-weight:500;line-height:1.5}
+.fragrancepage .sec-top h2.en-d{font-weight:400;letter-spacing:.05em}
+.fragrancepage .fr-body{max-width:36em;margin:0 auto 18px;text-align:center;color:var(--ink-2);font-size:16px;font-weight:300;line-height:1.95}
+.fragrancepage .geo{text-align:center;font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:34px}
+/* 향 3종 — EDP crop 은 389px 원본이라 표시 폭을 360px 로 묶어 확대를 막는다 */
+.fragrancepage .fr-scent{padding:clamp(40px,5vw,64px) 0}
+.fragrancepage .fr-scent:first-of-type{padding-top:0}
+.fragrancepage .fr-edp{display:flex;justify-content:center;align-items:center}
+/* 교차 배치 — 전역 .alt 는 섹션 회색 배경 클래스라 쓰지 않고 .rev 로 방향만 뒤집는다 */
+.fragrancepage .fr-scent.rev .in{direction:rtl}
+.fragrancepage .fr-scent.rev .in > *{direction:ltr}
+.fragrancepage .fr-scent img{width:100%;max-width:360px;height:auto;aspect-ratio:389/649;object-fit:contain;display:block}
+.fragrancepage .fr-scent h2{font-size:clamp(22px,2.5vw,28px);font-weight:400;font-family:var(--serif);letter-spacing:.02em}
+.fragrancepage .fr-badge{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.12em;color:var(--ink);border:1px solid #cfcfcf;padding:4px 10px}
+.fragrancepage .fr-scent .lead{margin-top:18px;font-size:16px;color:var(--ink);font-weight:300;line-height:1.85}
+/* TWO FORMATS — 이미지 없이 타이포 블록 2개 */
+.fr-fmt{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);max-width:880px;margin:0 auto}
+.fr-fmt .f{background:#fff;padding:clamp(30px,4vw,48px) 30px;text-align:center}
+.fr-fmt .n{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.fr-fmt h3{font-family:var(--serif);font-size:clamp(18px,1.8vw,21px);font-weight:400;letter-spacing:.1em;margin-top:14px}
+.fr-fmt .v{font-size:15px;color:var(--ink);margin-top:10px}
+.fr-fmt .b{font-size:12px;letter-spacing:.1em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+.fr-close .fr-cta{text-align:center;margin-top:34px}
+@media(max-width:640px){.fr-fmt{grid-template-columns:1fr}}
+@media(max-width:860px){.fragrancepage .fr-scent.rev .in{direction:ltr}}
