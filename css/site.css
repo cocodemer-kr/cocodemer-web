@@ -1246,3 +1246,20 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
   .biopage .bio-terr li{grid-column:span 2}.biopage .bio-terr li:nth-child(n+4){grid-column:span 3}}
 @media(max-width:640px){.biopage .bio-terr{grid-template-columns:repeat(2,1fr)}
   .biopage .bio-terr li,.biopage .bio-terr li:nth-child(n+4){grid-column:auto}.biopage .bio-terr li:last-child{grid-column:1/-1}}
+
+/* ===== 05-R FINAL POLISH (2026-09-22) — append-only =====
+   HOME 1번 슬라이드 = img/home-hero-01-custom.jpg (세럼 맞춤형 라벨수정.jpg crop 1500,250,5300,3450)
+   BIO HERO = bio-hero-wide.jpg (첨부2 crop 600,1450,6720,4480) / bio-hero-mid.jpg (첨부2 crop 3620,1700,6720,4480) */
+.hero .slides img:nth-child(1){left:auto;right:0;width:49%;object-position:42% 50%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.hero:has(.slides img:nth-child(1).on){background:#121212}
+.hero:has(.slides img:nth-child(1).on) .ov{background:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,0) 60%)}
+@media(max-width:640px){
+  .hero .slides img:nth-child(1){width:100%;object-position:66% 50%;-webkit-mask-image:none;mask-image:none}
+  .hero:has(.slides img:nth-child(1).on) .ov{background:linear-gradient(90deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.35) 100%)}}
+.pagehead.ph-brand img{object-position:50% 56%;opacity:.58}
+.pagehead.ph-brand::after{background:linear-gradient(180deg,rgba(10,10,10,.34) 0%,rgba(10,10,10,.6) 100%)}
+.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 360px) minmax(0,1fr)}
+.pagehead.ph-bio2 .bc img{object-position:0% 60%}
+@media(max-width:1100px){.pagehead.ph-bio2 .bc img{object-position:50% 62%}}
+@media(max-width:640px){.pagehead.ph-bio2{grid-template-columns:56% minmax(0,1fr)}.pagehead.ph-bio2 .bc img{object-position:50% 50%}}
