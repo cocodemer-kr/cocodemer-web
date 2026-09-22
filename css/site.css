@@ -1163,3 +1163,86 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 .techpage .ing-card .nm{max-width:100%;overflow-wrap:anywhere}
 .techpage .ing-pane,.techpage .ing-layout>*{min-width:0}
 .techpage .ing-detail h2,.techpage .ing-detail .ing-inci,.techpage .ing-detail p,.techpage .ing-detail li{overflow-wrap:anywhere}
+
+/* ===== 05 COCODEMER BIO (2026-09-22) — append-only =====
+   HERO 사진: img/bio/bio-hero.jpg = 첨부2 crop(2600,1500,6720,4480) → 1800px
+              img/bio/bio-hero-m.jpg = 첨부1 crop(1067,1934,3736,5356) → 600px
+   규칙은 .biopage / .ph-bio2 / .skincarepage .colgrid.c2 / .dermobox .yr / .f-b2b / .pdnav-cta 로 한정. */
+.pagehead.ph-bio2{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr);grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:left;
+  background:linear-gradient(176deg,#FAFAFB 0%,#F0F0F3 66%,#E8E8EC 100%)}
+.pagehead.ph-bio2::after{display:none !important}
+.pagehead.ph-bio2 .t{align-self:center;color:var(--ink);padding:0 32px 0 var(--lx);z-index:2}
+.pagehead.ph-bio2 .t .sec-en{color:var(--muted);margin-bottom:14px}
+.pagehead.ph-bio2 .t h1{color:var(--ink);text-shadow:none;line-height:1.4;font-size:clamp(24px,2.3vw,32px);font-family:var(--sans);font-weight:500;letter-spacing:-.01em}
+.pagehead.ph-bio2 .t p{color:var(--ink-2);line-height:1.75}
+.pagehead.ph-bio2 .bc{height:100%;min-width:0;min-height:0;overflow:hidden}
+.pagehead.ph-bio2 .bc picture{display:block;height:100%}
+.pagehead.ph-bio2 .bc img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;object-position:50% 60%;opacity:1;display:block}
+@media(max-width:1024px){.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 400px) minmax(0,1fr)}
+  .pagehead.ph-bio2 .bc img{object-position:58% 60%}}
+@media(max-width:640px){.pagehead.ph-bio2{height:220px;grid-template-columns:56% minmax(0,1fr)}
+  .pagehead.ph-bio2 .t{padding:0 10px 0 18px}
+  .pagehead.ph-bio2 .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-bio2 .t h1{font-size:16px;line-height:1.45;letter-spacing:0}
+  .pagehead.ph-bio2 .t p{font-size:11px;margin-top:8px;line-height:1.6}
+  .pagehead.ph-bio2 .bc img{object-position:50% 50%}}
+.biopage .bio-gap{display:block;height:1.1em}
+.biopage .fr-lead{font-size:16px}
+.biopage .bio-terr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.biopage .bio-terr li{background:#fff;padding:34px 22px 32px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.biopage .bio-terr .no{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.biopage .bio-terr .en{font-family:var(--serif);font-size:15px;letter-spacing:.08em;color:var(--ink);line-height:1.45;min-height:2.9em}
+.biopage .bio-terr .ko{font-size:14px;font-weight:300;color:var(--ink-2)}
+.biopage .bio-terr-note{margin:clamp(34px,4vw,48px) auto 0;max-width:44em;text-align:center;font-size:15px;font-weight:400;color:var(--ink);line-height:1.9}
+.biopage .bio-terr-foot{text-align:center;margin-top:16px}
+.biopage .bio-steps .st .k{letter-spacing:.12em}
+.biopage .bio-vs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);max-width:960px;margin:0 auto}
+.biopage .bio-vs .side{background:#fff;padding:clamp(34px,4vw,52px) clamp(24px,3.4vw,44px);text-align:center}
+.biopage .bio-vs .brandnm{font-family:var(--serif);font-size:13px;letter-spacing:.16em;color:var(--muted)}
+.biopage .bio-vs .first{font-family:var(--serif);font-size:clamp(20px,2vw,24px);letter-spacing:.1em;color:var(--ink);margin:14px 0 18px}
+.biopage .bio-vs h4{font-size:17px;font-weight:500;margin-bottom:12px}
+.biopage .bio-vs p{font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.85}
+.biopage .bio-vs-note{text-align:center;margin-top:30px;font-size:15px;color:var(--ink-2);font-weight:300}
+.biopage .bio-first{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;max-width:1080px;margin:0 auto}
+.biopage .bio-first .ph{display:block;overflow:hidden;background:var(--paper-2)}
+.biopage .bio-first .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform .55s}
+.biopage .bio-first .ph:hover img{transform:scale(1.03)}
+.biopage .bio-first .yr{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.biopage .bio-first h4{font-family:var(--serif);font-size:clamp(20px,2vw,24px);font-weight:400;letter-spacing:.04em;margin:12px 0 6px}
+.biopage .bio-first .nm-ko{font-size:14px;color:var(--ink-2);font-weight:300}
+.biopage .bio-first p{margin:20px 0 18px;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85}
+.biopage .bio-first .spec{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.biopage .bio-first .spec li{font-size:12.5px;letter-spacing:.04em;color:var(--ink);border:1px solid var(--line);padding:5px 11px}
+.biopage .bio-first .stline{margin-bottom:22px}
+.biopage .bio-first .tag{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.biopage #future .sec-top{margin-bottom:0}
+@media(max-width:1000px){.biopage .bio-terr{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.biopage .bio-first{grid-template-columns:1fr}}
+@media(max-width:640px){.biopage br.pc{display:none}
+  .biopage .fr-lead{font-size:15px}
+  .biopage .bio-terr{grid-template-columns:repeat(2,1fr)}
+  .biopage .bio-terr li{padding:24px 16px 22px}
+  .biopage .bio-terr .en{font-size:13px}
+  .biopage .bio-vs{grid-template-columns:1fr}}
+/* SKINCARE OTHER COLLECTIONS 2단 (BIO 분리) */
+.skincarepage .colgrid.c2{grid-template-columns:repeat(2,1fr);max-width:960px;margin:0 auto}
+@media(max-width:640px){.skincarepage .colgrid.c2{grid-template-columns:1fr}}
+/* HERITAGE #dermo → COCODEMER BIO의 시작 */
+.dermobox .yr{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
+.dermobox .btn{margin-top:10px}
+/* footer B2B 문의 (사업자 정보 이메일 옆) */
+.f-biz a.f-b2b{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.f-biz a.f-b2b:hover{color:var(--ink)}
+/* 제품 상세 하단 버튼 2개 */
+.pdnav-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pagehead.ph-bio2 .t p .p2{display:block;margin-top:10px}
+.biopage .bio-terr .ko{overflow-wrap:anywhere}
+.biopage #future{padding:clamp(56px,7vw,96px) 0}
+@media(max-width:640px){.pagehead.ph-bio2 .t p .p2{display:none}}
+@media(min-width:641px){.pagehead.ph-bio2 .t p{font-size:14px}}
+@media(max-width:1000px){.biopage .bio-terr{grid-template-columns:repeat(6,1fr)}
+  .biopage .bio-terr li{grid-column:span 2}.biopage .bio-terr li:nth-child(n+4){grid-column:span 3}}
+@media(max-width:640px){.biopage .bio-terr{grid-template-columns:repeat(2,1fr)}
+  .biopage .bio-terr li,.biopage .bio-terr li:nth-child(n+4){grid-column:auto}.biopage .bio-terr li:last-child{grid-column:1/-1}}

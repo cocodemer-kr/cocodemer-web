@@ -18,7 +18,7 @@
 <script>
 /* 이전 products.html 해시 호환 — 실제로 존재했던 값만 처리 */
 (function(){
-  var MAP = {skincare:'products.html', fragrance:'fragrance.html', derma:'archive.html#dermo', archive:'archive.html'};
+  var MAP = {skincare:'products.html', fragrance:'fragrance.html', derma:'bio.html', archive:'archive.html'};
   var k = location.hash.replace('#','');
   if (!k) return;
   var to = MAP[k];
@@ -33,12 +33,12 @@
 <header class="hdr">
 <div class="hdr-in">
 <a href="index.html"><img alt="COCODEMER" class="wm" src="img/wm-black.png"/></a>
-<nav class="gnb"><a href="brand.html">BRAND</a><a class="cur" href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a><a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a><a href="b2b.html">B2B</a><a class="ext" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a></nav>
+<nav class="gnb"><a href="brand.html">BRAND</a><a class="cur" href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a><a href="bio.html">BIO</a><a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a><a class="ext" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a></nav>
 <div class="util"><div class="lang"><span class="on">KO</span><span class="sep">/</span><a href="en/products.html">EN</a></div></div>
 <button aria-expanded="false" aria-label="메뉴" class="burger" type="button"><span></span><span></span><span></span></button>
 </div>
 </header>
-<nav class="mnav"><a href="brand.html">BRAND</a><a class="cur" href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a><a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a><a href="b2b.html">B2B</a><a class="ext" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a><div class="lang"><span class="on">KO</span><span class="sep">/</span><a href="en/products.html">EN</a></div></nav>
+<nav class="mnav"><a href="brand.html">BRAND</a><a class="cur" href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a><a href="bio.html">BIO</a><a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a><a class="ext" href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a><div class="lang"><span class="on">KO</span><span class="sep">/</span><a href="en/products.html">EN</a></div></nav>
 <main id="main" class="skincarepage">
 
 <!-- 01 HERO -->
@@ -155,7 +155,7 @@
     <div class="sec-top">
       <div class="sec-en">OTHER COLLECTIONS</div><div class="rule"></div>
     </div>
-    <div class="colgrid c3">
+    <div class="colgrid c2">
       <a class="endcard" href="fragrance.html">
         <div class="ph"><img loading="lazy" src="img/fragrance/sea-breeze-petals.jpg" alt="COCODEMER Fragrance Collection"></div>
         <div class="tx">
@@ -163,15 +163,6 @@
           <h4>One Forest, Multiple States</h4>
           <p>세 가지 향으로 이어지는<br>COCODEMER Fragrance Collection.</p>
           <span class="btn sm">FRAGRANCE 보기</span>
-        </div>
-      </a>
-      <a class="endcard" href="archive.html#dermo">
-        <div class="ph"><img style="object-position:50% 65%" loading="lazy" src="img/product/bio-snow-vc-spot-cream-2.jpg" alt="COCODEMER BIO"></div>
-        <div class="tx">
-          <div class="sec-en">DERMOCOSMETICS ARCHIVE</div>
-          <h4>COCODEMER BIO</h4>
-          <p>별도로 개발했던<br>Dermocosmetics의 기록.</p>
-          <span class="btn sm">기록 보기</span>
         </div>
       </a>
       <a class="endcard" href="archive.html">
@@ -202,8 +193,8 @@
 <div class="f-top">
 <img alt="COCODEMER" class="wm-f" src="img/wm-black.png"/>
 <nav class="f-nav">
-<a href="brand.html">BRAND</a><a href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a>
-<a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a><a href="b2b.html">B2B</a>
+<a href="brand.html">BRAND</a><a href="products.html">SKINCARE</a><a href="fragrance.html">FRAGRANCE</a><a href="bio.html">BIO</a>
+<a href="technology.html">TECHNOLOGY</a><a href="archive.html">HERITAGE</a>
 <a href="https://smartstore.naver.com/cocodemerinternational" rel="noopener" target="_blank">STORE</a>
 <a href="https://www.instagram.com/cocodemer.official/" rel="noopener" target="_blank">INSTAGRAM</a>
 <a class="privacy-link" href="privacy.html">개인정보처리방침</a>
@@ -212,7 +203,7 @@
 <div class="f-biz">
 <span>(주)코코드메르</span><span>대표이사 배성환</span><span>개인정보 보호책임자 배성환</span><br/>
 <span>서울특별시 마포구 월드컵북로 98, 2층 202-352호</span><br/>
-<span>사업자등록번호 636-86-00929</span><span>통신판매업 신고 제2020-서울종로-2190호</span><span>TEL 010-3307-9341</span><span>cocodemer@cocodemer.co.kr</span>
+<span>사업자등록번호 636-86-00929</span><span>통신판매업 신고 제2020-서울종로-2190호</span><span>TEL 010-3307-9341</span><span>cocodemer@cocodemer.co.kr · <a class="f-b2b" href="b2b.html">B2B 문의</a></span>
 </div>
 <div class="f-copy">COPYRIGHT © COCODEMER CO., LTD. ALL RIGHTS RESERVED.</div>
 </div>
