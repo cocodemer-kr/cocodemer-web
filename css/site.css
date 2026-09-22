@@ -1263,3 +1263,36 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 .pagehead.ph-bio2 .bc img{object-position:0% 60%}
 @media(max-width:1100px){.pagehead.ph-bio2 .bc img{object-position:50% 62%}}
 @media(max-width:640px){.pagehead.ph-bio2{grid-template-columns:56% minmax(0,1fr)}.pagehead.ph-bio2 .bc img{object-position:50% 50%}}
+
+/* ===== 06-H HERO WIDE FIX (2026-09-22) — append-only =====
+   원인: split HERO 4종(.ph-aqua/.ph-frag/.ph-tech2/.ph-bio2)의 --lx 가
+   max(32px,(100vw-1240px)/2+32px) 라 1440 초과부터 화면이 넓어질수록 문구 칸만 커졌다.
+   → 1441px 이상에서 --lx 를 고정해 문구 칸 폭을 멈추고, 사진 칸이 나머지를 채운다.
+     (문구 폭 자체 = 칸 − lx − 32px 는 1440 과 동일. 1440 이하는 기존 규칙 그대로.)
+   FRAGRANCE 는 칸 폭 상한 310px(병 위아래 잘림 방지)을 1441+ 에서 풀고,
+   같은 원본 렌더(1376x768)에서 병 중심 700x768 로 넓게 자른 *-edp-wide.jpg 를 쓴다.
+   BRAND 는 object-position 대신 전용 crop img/brand/brand-hero-wide.jpg
+   (home-hero-01-measure.jpg crop 0,180,1920,800 → 1920x620) 사용. 1100px 이하는 기존 원본 컷(05-R 과 동일 50% 56%).
+   1500px 초과에서는 사진을 1500px 로 멈추고 가장자리를 배경색으로 페이드 — 440px 높이에서
+   측정기 전체(원본 y200~740)를 담으려면 사진 폭이 약 1500px 를 넘을 수 없다.           */
+.pagehead.ph-frag .frs picture{display:block;min-width:0;min-height:0;height:100%}
+@media(max-width:640px){
+  .pagehead.ph-frag .frs picture:nth-child(n+2){display:none}
+  .pagehead.ph-frag .frs picture img:nth-child(n){display:block}}
+@media(min-width:1441px){
+  .pagehead.ph-aqua,.pagehead.ph-frag,.pagehead.ph-tech2,.pagehead.ph-bio2{--lx:104px}
+  .pagehead.ph-frag{grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr)}
+  .pagehead.ph-frag .frs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pagehead.ph-aqua .aq{grid-template-rows:100%;min-height:0;overflow:hidden}
+  .pagehead.ph-tech2 .tc img{object-position:62% 6%}}
+.pagehead.ph-brand img{object-position:50% 20%}
+@media(max-width:1100px){.pagehead.ph-brand img{object-position:50% 56%}}
+@media(min-width:1501px){
+  .pagehead.ph-brand img{left:50%;right:auto;width:1500px;transform:translateX(-50%);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 70px,rgba(0,0,0,.5) 160px,rgba(0,0,0,.82) 250px,#000 330px,#000 calc(100% - 330px),rgba(0,0,0,.82) calc(100% - 250px),rgba(0,0,0,.5) calc(100% - 160px),rgba(0,0,0,.18) calc(100% - 70px),transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 70px,rgba(0,0,0,.5) 160px,rgba(0,0,0,.82) 250px,#000 330px,#000 calc(100% - 330px),rgba(0,0,0,.82) calc(100% - 250px),rgba(0,0,0,.5) calc(100% - 160px),rgba(0,0,0,.18) calc(100% - 70px),transparent 100%)}}
+/* BRAND 1501+ 바깥 배경: 순검정 대신 사진 좌·우 가장자리 평균색(#a9a69f / #acaa98)을 깔아
+   사진이 배경 속으로 녹아들게 한다. 위의 어두운 층(::after)은 그대로 덮여 명암은 사진부와 같다. */
+@media(min-width:1501px){.pagehead.ph-brand{background:linear-gradient(90deg,#a9a69f 0%,#acaa98 100%)}}
+/* BIO 1441+ 문구 칸: 공통(lx+430)보다 조금 넓게 — 두 문단 카피의 시각 무게 보정 */
+@media(min-width:1441px){.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 456px) minmax(0,1fr)}}
