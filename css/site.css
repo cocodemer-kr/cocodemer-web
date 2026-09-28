@@ -1406,3 +1406,70 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 
 /* ===== 07 HOME B2B SYNC (2026-09-22) — HOME #b2b 한정 ===== */
 @media(max-width:640px){#b2b br.pc{display:none}}
+
+/* ===== STEP 2 HOME FINAL INTEGRATION (2026-09-23) — append-only =====
+   HOME(.hero-panel) 한정. 다른 페이지의 .pagehead / .hero 는 건드리지 않는다.
+   HERO 4장 공통 우측 이미지 패널(기존 05-R 1번 슬라이드 방식을 4장으로 확장)
+   패널 40% — 보유 원본 해상도(아쿠아 700x1000 / 프래그런스 1376x768) 기준 업스케일 최소화 */
+.hero-panel{background:#121212}
+.hero-panel .slides img{left:auto;right:0;width:40%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.3) 9%,#000 26%);
+          mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.3) 9%,#000 26%)}
+.hero-panel .slides img:nth-child(1){object-position:42% 50%}
+.hero-panel .slides img:nth-child(2){object-position:50% 44%}
+.hero-panel .slides img:nth-child(3){object-position:52% 52%}
+.hero-panel .slides img:nth-child(4){object-position:54% 50%}
+.hero-panel:has(.slides img.on){background:#121212}
+.hero-panel:has(.slides img.on) .ov{background:linear-gradient(90deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.2) 42%,rgba(0,0,0,0) 62%)}
+.hero-panel .hcap .eyebrow{font-family:var(--serif);font-size:clamp(14px,1.4vw,18px);letter-spacing:.16em;
+  color:rgba(255,255,255,.82);font-weight:400;margin-bottom:22px;line-height:1.5}
+.hero-panel .hcap h2.en-d{letter-spacing:.04em}
+
+/* HERO 모바일 — 이미지 블록 / 카피 블록 분리(겹침 구조적으로 0) */
+@media(max-width:640px){
+  .hero-panel{padding:0;display:block}
+  .hero-panel .slides{position:relative;inset:auto;width:100%;aspect-ratio:4/3;overflow:hidden}
+  .hero-panel .slides img{position:absolute;inset:0;width:100%;height:100%;
+    -webkit-mask-image:none;mask-image:none}
+  .hero-panel .slides img:nth-child(1){object-position:62% 50%}
+  .hero-panel .slides img:nth-child(2){object-position:50% 40%}
+  .hero-panel .slides img:nth-child(3){object-position:52% 52%}
+  .hero-panel .slides img:nth-child(4){object-position:52% 50%}
+  .hero-panel .ov{display:none}
+  .hero-panel .in{position:relative;height:auto;padding:36px 20px 26px;background:#121212}
+  .hero-panel .hcap .eyebrow{margin-bottom:16px;font-size:13.5px}
+  .hero-panel .hcap h2{font-size:clamp(21px,5.6vw,25px);line-height:1.45;margin-bottom:14px}
+  .hero-panel .dots{position:static;margin:0;padding:0 0 30px;background:#121212}
+}
+
+/* TODAY — SKINCARE / TECHNOLOGY 진입 */
+.homepage #today .today-cta{margin-top:34px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media(max-width:640px){.homepage #today .today-cta .btn{width:100%}}
+
+/* AVAILABLE NOW — 제품 이미지 + 텍스트 */
+.homepage #now .pn-split{display:grid;grid-template-columns:minmax(0,300px) minmax(0,560px);
+  gap:clamp(40px,5vw,76px);align-items:center;justify-content:center}
+.homepage #now .pn-fig{background:#fff;padding:26px 18px}
+.homepage #now .pn-fig img{display:block;width:100%;aspect-ratio:3/4;object-fit:contain}
+.homepage #now .pn-tx{text-align:left}
+.homepage #now .pn-tx .pn-body{margin-left:0}
+.homepage #now .pn-cta{justify-content:flex-start}
+@media(max-width:860px){
+  .homepage #now .pn-split{grid-template-columns:minmax(0,420px);justify-items:center}
+  .homepage #now .pn-fig{max-width:250px}
+  .homepage #now .pn-tx{text-align:center}
+  .homepage #now .pn-tx .pn-body{margin-left:auto;margin-right:auto}
+  .homepage #now .pn-cta{justify-content:center}
+}
+
+/* ORIGIN — 피부 측정 장면(3:2 원본) */
+.homepage #customized .split .fig img{aspect-ratio:4/3}
+
+/* SKIN CODE — HOME 요약형(16타입 차트는 skin-code.html) */
+.homepage #skincode .axes.tight{margin-bottom:48px}
+.homepage #skincode .axes.tight ul{gap:8px}
+
+.dx-chips .ht{display:flex;flex-direction:column;gap:.18em}
+.dx-chips .hs{font-size:clamp(11px,1.9cqw,16px);color:#a6a6a6;font-weight:400;line-height:1.3}
+
+.dx-it .dx-ref{display:block;width:100%;height:auto}
