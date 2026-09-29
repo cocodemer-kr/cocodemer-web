@@ -22,17 +22,19 @@
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer=setInterval(next,6000);
 })();
 
-// 브랜드 필름
-document.querySelectorAll('.film .frame').forEach(function(f){
-  f.addEventListener('click',function(){
+// 브랜드 필름 · 콜라보 영상 (클릭 후 재생)
+document.querySelectorAll('.film .frame, .collabfilm .frame').forEach(function(f){
+  function play(){
     var v=f.dataset.video; if(!v) return;
     var ifr=document.createElement('iframe');
     ifr.src=v+'?autoplay=1&rel=0';
     ifr.setAttribute('allow','autoplay; encrypted-media');
     ifr.setAttribute('allowfullscreen','');
-    ifr.setAttribute('title','COCODEMER Brand Film');
+    ifr.setAttribute('title', f.closest('.collabfilm') ? 'COCODEMER Collaboration Film' : 'COCODEMER Brand Film');
     f.innerHTML=''; f.appendChild(ifr);
-  });
+  }
+  f.addEventListener('click',play);
+  f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
 });
 
 // 제품 상세 탭
