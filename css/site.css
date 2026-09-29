@@ -1473,3 +1473,23 @@ a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
 .dx-chips .hs{font-size:clamp(11px,1.9cqw,16px);color:#a6a6a6;font-weight:400;line-height:1.3}
 
 .dx-it .dx-ref{display:block;width:100%;height:auto}
+
+
+/* 2026-09-29 HOME COLLABORATION 영상 재생 (#collaboration 범위 한정) */
+#collaboration .collabfilm .frame{position:relative;cursor:pointer;background:#000;display:block}
+#collaboration .collabfilm .frame img{width:100%;height:auto;display:block;opacity:.72;transition:.4s}
+#collaboration .collabfilm .frame:hover img{opacity:.86}
+#collaboration .collabfilm .frame iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0}
+#collaboration .collabfilm .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;pointer-events:none}
+#collaboration .collabfilm .play i{width:72px;height:72px;border:1px solid rgba(255,255,255,.75);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+#collaboration .collabfilm .frame:hover .play i{background:rgba(255,255,255,.14)}
+#collaboration .collabfilm .play i::after{content:"";border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+#collaboration .collabfilm .play span{font-family:var(--serif);font-size:12px;letter-spacing:.18em;text-align:center;padding:0 12px}
+@media(max-width:640px){#collaboration .collabfilm .play i{width:54px;height:54px}#collaboration .collabfilm .play span{font-size:11px}}
+
+/* 2026-09-29 HOME 영상 직접보기 링크 (#film · #collaboration 범위 한정) */
+#film .ytlink,#collaboration .ytlink{margin:14px 0 0;text-align:center}
+#film .ytlink a,#collaboration .ytlink a{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.62);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:2px;transition:.3s}
+#film .ytlink a:hover,#collaboration .ytlink a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#collaboration .ytlink a{color:var(--muted);border-bottom-color:rgba(0,0,0,.2)}
+#collaboration .ytlink a:hover{color:var(--ink);border-bottom-color:rgba(0,0,0,.45)}
