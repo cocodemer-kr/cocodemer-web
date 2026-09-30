@@ -378,78 +378,27 @@ html[lang="en"] .px-hero-c h1{font-size:clamp(26px,2.5vw,38px)} /* step6: EN H1 
 .px-hero-c .hp-now-note{padding-left:0} /* step6: 썸네일 없는 구매 띠의 안내문 들여쓰기 제거 */
 
 /* =====================================================================
-   제품 이미지 전체 표시 (2026-09-30) — HOME 히어로 Aqua · 한·영 공통
-   원본 700×1000(0.70). 기존에는 화면 폭과 무관하게 object-fit:cover 라서
-   PC 70~92% · 모바일 51% 만 보였다(뚜껑·하단 잘림).
-   전 화면에서 contain 으로 전체를 보이고, 모바일은 원본 비율 틀을 함께 준다.
-   화면 높이가 낮을 때는 상한만 두며 contain 이라 잘리지 않는다.
-   기존 좌측 그라데이션(mask-image)은 그대로 둔다 — 제품이 아니라
-   배경 가장자리에만 걸쳐 어두운 문구 영역과 자연스럽게 이어진다.
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — HOME 히어로 Aqua · 한·영 공통
+   대상: 640px 이하(승인 디자인이 이미 1열 세로 배치로 바뀌는 구간)에만 적용.
+   문제: 승인 배치의 모바일 틀 height:clamp(180px,34svh,300px) 는 가로로 긴
+         상자(390×287, 1.36)라, 원본 700×1000(0.70)이 object-fit:cover 로
+         위(뚜껑)·아래가 잘려 51% 만 보였다.
+   조치: 틀을 원본 비율(7/10)로 두고 contain 을 안전망으로 둔다. 비율이 같아
+         여백 띠가 생기지 않는다. 화면 높이가 낮으면 높이를 제한하고 폭이
+         비율을 따라 줄어 가운데 정렬되며, 어느 경우에도 잘리지 않는다.
+   유지: 641px 이상 PC·태블릿 배치는 승인 디자인 그대로(cover·좌측 그라데이션·
+         기존 2열 그리드). 문구·원본 이미지·영상·섹션 순서 무변경.
+   대체: 이 블록은 위쪽 모바일 히어로 높이 규칙(34svh / 100svh-500 / 100svh-500)을
+         의도적으로 덮어쓴다. 구매 띠를 첫 화면에 넣기 위한 높이 제한이었고,
+         제품을 자르지 않는 쪽을 택했다. 세로 스크롤은 허용한다.
    ===================================================================== */
-.px-hero-c .hp-hero-fig.px-fig-light img{object-fit:contain;object-position:50% 50%}
-@media (max-width:640px){
-  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:62svh}
-}
-@media (max-width:640px) and (max-height:760px){
-  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:56svh}
-}
-@media (max-width:640px) and (max-height:680px){
-  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:52svh}
-}
-
-/* =====================================================================
-   HOME 히어로 배치 보정 (2026-09-30) — 한·영 공통 · 641px 이상
-   문제: 사진 영역이 원본(700×1000, 0.70)보다 넓어 contain 시 양옆에
-         밝은 띠가 생기고, 화면이 넓을수록 문구와 사진이 벌어졌다.
-   조치: 사진 영역의 높이를 정하고 폭은 원본 비율로 따라가게 해 띠를 없앤다.
-         문구+사진을 본문 최대 폭(1240px) 안에서 가운데로 묶는다.
-         좌측 그라데이션은 사진이 제 비율로 끝나 경계가 생기지 않으므로 제거한다.
-   유지: 원본 전체 표시(contain), 문구·이미지·영상 원본 무변경.
-   모바일(≤640px)은 아래 블록에서 틀 비율만 원본에 맞춰 다시 정리한다.
-   ===================================================================== */
-@media (min-width:641px){
-  .px-hero-c .hp-hero-main{
-    max-width:var(--max);
-    margin:0 auto;
-    grid-template-columns:auto auto;
-    justify-content:center;
-    align-items:center;
-    column-gap:clamp(28px,4vw,72px);
-    padding:clamp(40px,4.4vw,64px) clamp(24px,3vw,40px);
-    min-height:0;
-  }
-  .px-hero-c .hp-hero-copy{
-    padding:0;
-    max-width:34em;
-  }
-  .px-hero-c .hp-hero-fig{
-    height:clamp(320px,38vw,540px);
-    aspect-ratio:7/10;
-    width:auto;
-    background:transparent;
-    overflow:visible;
-  }
-  .px-hero-c .hp-hero-fig.px-fig-light{background:transparent}
-  .px-hero-c .hp-hero-fig.px-fig-light img{
-    object-fit:contain;
-    object-position:50% 50%;
-    -webkit-mask-image:none;
-    mask-image:none;
-  }
-}
-@media (min-width:1001px) and (max-height:820px){
-  .px-hero-c .hp-hero-main{min-height:0}
-}
-
-/* 모바일 히어로도 같은 원칙 — 틀 비율을 원본에 맞춰 옅은 띠를 없앤다.
-   기본(≤640px)은 폭을 꽉 채우고 높이를 비율로, 화면 높이가 낮을 때는
-   높이를 제한하고 폭이 비율을 따라 줄어 가운데 정렬된다. 잘림은 없다. */
 @media (max-width:640px){
   .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:none;width:100%}
+  .px-hero-c .hp-hero-fig.px-fig-light img{object-fit:contain;object-position:50% 50%}
 }
 @media (max-width:640px) and (max-height:760px){
-  .px-hero-c .hp-hero-fig{height:56svh;max-height:none;width:auto;aspect-ratio:7/10;margin:0 auto}
+  .px-hero-c .hp-hero-fig{height:56svh;width:auto;margin:0 auto}
 }
 @media (max-width:640px) and (max-height:680px){
-  .px-hero-c .hp-hero-fig{height:52svh;max-height:none;width:auto;aspect-ratio:7/10;margin:0 auto}
+  .px-hero-c .hp-hero-fig{height:52svh;width:auto;margin:0 auto}
 }
