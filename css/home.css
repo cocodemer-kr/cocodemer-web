@@ -396,3 +396,60 @@ html[lang="en"] .px-hero-c h1{font-size:clamp(26px,2.5vw,38px)} /* step6: EN H1 
 @media (max-width:640px) and (max-height:680px){
   .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:52svh}
 }
+
+/* =====================================================================
+   HOME 히어로 배치 보정 (2026-09-30) — 한·영 공통 · 641px 이상
+   문제: 사진 영역이 원본(700×1000, 0.70)보다 넓어 contain 시 양옆에
+         밝은 띠가 생기고, 화면이 넓을수록 문구와 사진이 벌어졌다.
+   조치: 사진 영역의 높이를 정하고 폭은 원본 비율로 따라가게 해 띠를 없앤다.
+         문구+사진을 본문 최대 폭(1240px) 안에서 가운데로 묶는다.
+         좌측 그라데이션은 사진이 제 비율로 끝나 경계가 생기지 않으므로 제거한다.
+   유지: 원본 전체 표시(contain), 문구·이미지·영상 원본 무변경.
+   모바일(≤640px)은 아래 블록에서 틀 비율만 원본에 맞춰 다시 정리한다.
+   ===================================================================== */
+@media (min-width:641px){
+  .px-hero-c .hp-hero-main{
+    max-width:var(--max);
+    margin:0 auto;
+    grid-template-columns:auto auto;
+    justify-content:center;
+    align-items:center;
+    column-gap:clamp(28px,4vw,72px);
+    padding:clamp(40px,4.4vw,64px) clamp(24px,3vw,40px);
+    min-height:0;
+  }
+  .px-hero-c .hp-hero-copy{
+    padding:0;
+    max-width:34em;
+  }
+  .px-hero-c .hp-hero-fig{
+    height:clamp(320px,38vw,540px);
+    aspect-ratio:7/10;
+    width:auto;
+    background:transparent;
+    overflow:visible;
+  }
+  .px-hero-c .hp-hero-fig.px-fig-light{background:transparent}
+  .px-hero-c .hp-hero-fig.px-fig-light img{
+    object-fit:contain;
+    object-position:50% 50%;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+}
+@media (min-width:1001px) and (max-height:820px){
+  .px-hero-c .hp-hero-main{min-height:0}
+}
+
+/* 모바일 히어로도 같은 원칙 — 틀 비율을 원본에 맞춰 옅은 띠를 없앤다.
+   기본(≤640px)은 폭을 꽉 채우고 높이를 비율로, 화면 높이가 낮을 때는
+   높이를 제한하고 폭이 비율을 따라 줄어 가운데 정렬된다. 잘림은 없다. */
+@media (max-width:640px){
+  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:none;width:100%}
+}
+@media (max-width:640px) and (max-height:760px){
+  .px-hero-c .hp-hero-fig{height:56svh;max-height:none;width:auto;aspect-ratio:7/10;margin:0 auto}
+}
+@media (max-width:640px) and (max-height:680px){
+  .px-hero-c .hp-hero-fig{height:52svh;max-height:none;width:auto;aspect-ratio:7/10;margin:0 auto}
+}
