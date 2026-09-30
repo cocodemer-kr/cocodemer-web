@@ -1,0 +1,136 @@
+/* =====================================================================
+   SKIN CODE — css/pages/skin-code.css (3단계 G1, 2026-09-30)
+   · site.css(DESIGN SYSTEM v1) 다음에 로드. 모든 선택자는 main.skincodepage 아래로 한정
+   · 역할: 과거에 운영한 분류·처방 시스템의 기록 페이지(16가지 타입 / 운영 기록). 현재 제품 효능 근거 아님
+   · 구조: 밝은 분할 히어로 → 만든 이유(4문장) → 네 가지 축(양극 막대) → 16 타입(글 | 분류표 + 4×4 매트릭스)
+           → 운영 방식(5단계 흐름) → 98,319(어두운 면, 수치 | 글) → 세럼 베이스(글 | 4칸)
+           → 운영 기록(어두운 면 + ARCHIVE) → 오늘로 연결(밝은 면) → HERITAGE(어두운 면)
+   · 16 타입 id(#drnt 등)는 제품 이동 안내 32페이지가 링크 — 유지, :target 강조
+   ===================================================================== */
+.skincodepage img{height:auto}
+.skincodepage .ds-fig>img{height:100%}
+.skincodepage :is(.ds-h1,.ds-h2)+:is(.ds-body,.ds-lead,p){margin-top:20px}
+.skincodepage p{text-wrap:pretty}
+.skincodepage .ds-label{color:var(--ds-text-2)}
+.skincodepage .ds-sec.is-dark .ds-label{color:var(--ds-on-dark-3)}
+.skincodepage .ds-lead+.ds-lead{margin-top:12px}
+.skincodepage section[id]{scroll-margin-top:72px}
+
+/* ---------- 01. 분할 히어로(밝은 면) — 440 / 모바일 사진 220 ---------- */
+.skincodepage .sp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);height:440px;padding:0 0 0 max(0px,calc((100% - var(--ds-max)) / 2));background:#EEF0EC;overflow:hidden}
+.skincodepage .sp-hero-tx{align-self:center;padding:40px clamp(24px,3.5vw,64px) 40px var(--ds-gutter);min-width:0}
+.skincodepage .sp-hero .ds-h1{color:var(--ds-ink)}
+.skincodepage .sp-hero-fig{position:relative;overflow:hidden;min-width:0}
+.skincodepage .sp-hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+
+/* ---------- 01-b. 만든 이유 ---------- */
+.skincodepage .sp-intro{padding:clamp(56px,7vw,104px) 0}
+.skincodepage .sp-intro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.skincodepage .sp-intro-grid p:not(.sp-intro-end){border-top:1px solid var(--ds-ink)}
+.skincodepage .sp-intro-grid p{padding:22px 24px 0 0;font-size:var(--ds-fs-body);line-height:1.8;color:var(--ds-ink-2)}
+.skincodepage .sp-intro-grid p+p{padding-left:24px;border-left:1px solid var(--ds-line)}
+.skincodepage .sp-intro-grid .sp-intro-end{grid-column:1/-1;border-left:0;padding:clamp(28px,3vw,44px) 0 0;font-size:clamp(22px,2.6vw,34px);font-weight:500;line-height:1.35;color:var(--ds-ink)}
+
+/* ---------- 02~03. 네 가지 축 ---------- */
+.skincodepage .sp-idea{background:var(--ds-paper-2)}
+.skincodepage .sp-axes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--ds-line);border:1px solid var(--ds-line)}
+.skincodepage .sp-axis{background:var(--ds-paper);padding:clamp(22px,2.4vw,32px) clamp(16px,1.8vw,24px);display:flex;flex-direction:column;gap:10px}
+.skincodepage .sp-axis .no{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.14em;color:var(--ds-text-2)}
+.skincodepage .sp-axis .en{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--ds-ink);line-height:1.5}
+.skincodepage .sp-axis .bar{position:relative;display:block;height:9px;margin:6px 0}
+.skincodepage .sp-axis .bar::before{content:"";position:absolute;left:0;right:0;top:4px;height:1px;background:var(--ds-ink)}
+.skincodepage .sp-axis .bar::after{content:"";position:absolute;left:0;right:0;top:0;height:9px;
+  background:radial-gradient(circle,var(--ds-ink) 3.5px,transparent 4px) left center/9px 9px no-repeat,radial-gradient(circle,var(--ds-paper) 2.5px,var(--ds-ink) 3px,var(--ds-ink) 3.5px,transparent 4px) right center/9px 9px no-repeat}
+.skincodepage .sp-axis .ko{font-size:clamp(16px,1.3vw,18px);font-weight:500;color:var(--ds-ink)}
+.skincodepage .sp-mid{max-width:40em;font-size:var(--ds-fs-body);line-height:1.85;color:var(--ds-ink-2)}
+.skincodepage .sp-axes+.sp-mid{margin-top:clamp(28px,3vw,44px)}
+.skincodepage .sp-mid+.sp-mid{margin-top:14px}
+
+/* ---------- 04. 16 타입 — 글 | 분류표 + 매트릭스 ---------- */
+.skincodepage .sp-types-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center;margin-bottom:clamp(40px,5vw,72px)}
+.skincodepage .sp-chart{max-width:none;margin:0;border:1px solid var(--ds-line);background:#fff}
+.skincodepage .sp-chart img{cursor:zoom-in}
+.skincodepage .sp-matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--ds-line);border:1px solid var(--ds-line)}
+.skincodepage .sp-matrix .sctype{background:var(--ds-paper);padding:clamp(18px,2vw,26px) 14px;text-align:left}
+.skincodepage .sp-matrix .sctype:nth-child(n+9){background:#FAFAFA}
+.skincodepage .sp-matrix .sctype .no{font-size:11px;margin-bottom:8px}
+.skincodepage .sp-matrix .sctype .code{font-size:clamp(18px,1.8vw,24px)}
+.skincodepage .sp-matrix .sctype .ax{font-size:15px;font-weight:400;margin-top:8px;line-height:1.6}
+.skincodepage .sp-matrix .sctype:target{background:var(--ds-ink);box-shadow:none}
+.skincodepage .sp-matrix .sctype:target :is(.no,.code,.ax){color:#fff}
+
+/* ---------- 05. 운영 방식 — 5단계 흐름 ---------- */
+.skincodepage .sp-how{background:var(--ds-paper-2)}
+.skincodepage .sp-steps{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);position:relative}
+.skincodepage .sp-steps li{position:relative;padding-top:30px;display:flex;flex-direction:column;gap:8px}
+.skincodepage .sp-steps li::before{content:"";position:absolute;left:0;right:calc(-1 * clamp(12px,1.6vw,24px));top:6px;height:1px;background:var(--ds-ink)}
+.skincodepage .sp-steps li:last-child::before{right:0}
+.skincodepage .sp-steps li::after{content:"";position:absolute;left:0;top:2px;width:9px;height:9px;border-radius:50%;background:var(--ds-ink)}
+.skincodepage .sp-steps .no{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.14em;color:var(--ds-text-2)}
+.skincodepage .sp-steps .en{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--ds-ink);line-height:1.5}
+.skincodepage .sp-steps .ko{font-size:15px;line-height:1.6;color:var(--ds-ink-2)}
+.skincodepage .sp-how-note{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);margin-top:clamp(40px,5vw,64px);padding-top:28px;border-top:1px solid var(--ds-line)}
+.skincodepage .sp-how-note p{font-size:var(--ds-fs-body);line-height:1.85;color:var(--ds-ink-2)}
+
+/* ---------- 06. 98,319 — 수치 | 글(어두운 면) ---------- */
+.skincodepage .sp-rx-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.skincodepage .sp-rx-num .n{font-family:var(--serif);font-size:clamp(48px,7vw,104px);line-height:1;color:var(--ds-on-dark);letter-spacing:.01em}
+.skincodepage .sp-rx-num .l{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.18em;color:var(--ds-on-dark-3);margin-top:18px}
+
+/* ---------- 07. 세럼 베이스 — 글 | 4칸 ---------- */
+.skincodepage .sp-bases-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.skincodepage .sp-base-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ds-line);border:1px solid var(--ds-line)}
+.skincodepage .sp-base-list .basecard{background:var(--ds-paper);padding:clamp(32px,4vw,56px) 14px;text-align:center;font-family:var(--serif);font-size:clamp(14px,1.2vw,17px);letter-spacing:.14em;color:var(--ds-ink)}
+
+/* ---------- 08. 운영 기록(어두운 면 + ARCHIVE) ---------- */
+.skincodepage .sp-records-head .badge{margin-top:18px}
+.skincodepage .sp-rec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,36px);align-items:start}
+.skincodepage .sp-rec-fig{aspect-ratio:3/2}
+.skincodepage .sp-rec-doc .ds-fig{aspect-ratio:1331/749}
+.skincodepage .sp-rec-doc .figcap{text-align:left;font-size:14px;color:var(--ds-on-dark-3);margin-top:14px}
+.skincodepage .sp-rec-note{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);margin-top:clamp(40px,5vw,64px);padding-top:28px;border-top:1px solid var(--ds-line-dark)}
+.skincodepage .sp-rec-note p{font-size:var(--ds-fs-body);line-height:1.85;color:var(--ds-on-dark-2)}
+
+/* ---------- 09. 오늘로 연결(밝은 면) ---------- */
+.skincodepage .sp-today{text-align:center}
+.skincodepage .sp-today-h{font-size:clamp(24px,3vw,40px);font-weight:500;line-height:1.4;color:var(--ds-ink);text-wrap:balance}
+.skincodepage .sp-today .ds-lead{margin:20px auto 0}
+.skincodepage .sp-today .ds-btns{justify-content:center}
+
+/* ---------- 10. HERITAGE(어두운 면) ---------- */
+.skincodepage .sp-cta{padding:clamp(56px,6vw,88px) 0}
+.skincodepage .sp-cta-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.skincodepage .sp-cta-p{font-size:clamp(17px,1.5vw,21px);line-height:1.7;color:var(--ds-on-dark)}
+.skincodepage .sp-cta .ds-btns{margin-top:0}
+
+/* ---------- 반응형 ---------- */
+@media(max-width:1000px){
+  .skincodepage .sp-axes{grid-template-columns:1fr 1fr}
+  .skincodepage .sp-steps{grid-template-columns:1fr;gap:0}
+  .skincodepage .sp-steps li{padding:0 0 22px 30px}
+  .skincodepage .sp-steps li::before{left:4px;right:auto;top:10px;bottom:0;width:1px;height:auto}
+  .skincodepage .sp-steps li:last-child::before{display:none}
+  .skincodepage .sp-steps li::after{top:6px}
+}
+@media(max-width:860px){
+  .skincodepage .sp-types-top,.skincodepage .sp-rx-grid,.skincodepage .sp-bases-grid,.skincodepage .sp-rec-grid{grid-template-columns:1fr}
+  .skincodepage .sp-intro-grid{grid-template-columns:1fr}
+  .skincodepage .sp-intro-grid p,.skincodepage .sp-intro-grid p+p{padding:16px 0;border-left:0;border-bottom:1px solid var(--ds-line)}
+  .skincodepage .sp-intro-grid p+p:not(.sp-intro-end){border-top:0}
+  .skincodepage .sp-intro-grid .sp-intro-end{border-bottom:0}
+}
+@media(max-width:640px){
+  .skincodepage .sp-hero{display:flex;flex-direction:column-reverse;height:auto;padding:0}
+  .skincodepage .sp-hero-fig{height:220px;flex:0 0 220px}
+  .skincodepage .sp-hero-fig img{object-position:62% 30%}
+  .skincodepage .sp-hero-tx{padding:28px var(--ds-gutter) 32px}
+  .skincodepage .sp-matrix{grid-template-columns:1fr 1fr}
+  .skincodepage .sp-matrix .sctype:nth-child(n+9){background:var(--ds-paper)}
+  .skincodepage .sp-matrix .sctype:nth-child(4n+3),.skincodepage .sp-matrix .sctype:nth-child(4n+4){background:#FAFAFA}
+  .skincodepage .sp-how-note,.skincodepage .sp-rec-note{grid-template-columns:1fr;gap:14px}
+  .skincodepage .sp-intro-grid br,.skincodepage .ds-lead br,.skincodepage .sp-mid br,.skincodepage .sp-how-note br,.skincodepage .sp-rec-note br{display:none}
+  .skincodepage .sp-cta-grid{flex-direction:column;align-items:flex-start}
+}
+
+/* step5 D1 contrast fix (2026-09-30): small labels #8A8A8A -> #6B6B6B */
+.skincodepage span.no,.skincodepage span.zoomhint{color:var(--muted-text,#6B6B6B)}

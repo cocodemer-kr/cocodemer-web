@@ -1,0 +1,101 @@
+/* css/pages/bio.css — COCODEMER BIO 페이지 전용 (3단계 G2, 2026-09-30)
+   · site.css 다음에 로드. 범위 = main.biopage 아래로 한정 (접두사 bi- : site.css 의 기존 .bio-* 와 충돌 방지)
+   · 목적: 소재에서 출발하는 독립 축 — 기원 → 연구·검토 영역 → 과정 → 두 시작점 → 초기 제품 기록(현재 판매하지 않음) → 방향 → B2B
+   · 패턴 순서: 분할 히어로 → 2단 글 → 5칸 목록 → 3단계 흐름 → 2칸 비교 → 어두운 분할(과거 제품 기록) → 가운데 글 → 어두운 최종 CTA
+   · 이미지: 기존 BIO 자산만(bio-hero-wide / bio-hero-mid / bio-set-card), 자르기는 object-fit/object-position 만 */
+
+.biopage h2,.biopage h3{font-size:inherit;font-weight:inherit}
+.biopage .ds-h1{font-size:var(--ds-fs-h1);font-weight:500}
+.biopage .ds-h2{font-size:var(--ds-fs-h2);font-weight:500}
+.biopage .ds-h3{font-size:var(--ds-fs-h3);font-weight:500}
+.biopage .ds-h3.en-d{font-weight:400}
+.biopage .ds-body+.ds-body{margin-top:16px}
+
+/* ---------- 01 HERO ---------- */
+.biopage .bi-hero{padding:0;background:var(--ds-paper-2);border-bottom:1px solid var(--ds-line)}
+.biopage .bi-hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);height:440px;
+  padding-left:max(0px,calc((100% - var(--ds-max)) / 2))}
+.biopage .bi-hero-tx{align-self:center;padding:48px clamp(24px,3.5vw,64px) 48px var(--ds-gutter)}
+.biopage .bi-h1{color:var(--ds-ink)}
+.biopage .bi-hero-p{margin-top:22px;font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);color:var(--ds-ink-2);max-width:32em}
+.biopage .bi-hero-p .p2{display:block;margin-top:10px;color:var(--ds-text-2)}
+.biopage .bi-hero-fig{position:relative;overflow:hidden;height:100%;background:#e9ecef}
+.biopage .bi-hero-fig picture,.biopage .bi-hero-fig img{display:block;width:100%;height:100%}
+.biopage .bi-hero-fig img{object-fit:cover;object-position:22% 50%}
+@media(max-width:1100px){.biopage .bi-hero-fig img{object-position:50% 50%}}
+@media(max-width:860px){
+  .biopage .bi-hero-in{grid-template-columns:1fr;height:auto;padding-left:0}
+  .biopage .bi-hero-fig{order:-1;height:320px}
+  .biopage .bi-hero-fig img{object-position:30% 50%}
+  .biopage .bi-hero-tx{padding:32px var(--ds-gutter) 36px}
+}
+@media(max-width:640px){
+  .biopage .bi-hero-fig{height:220px}
+  .biopage .bi-hero-tx{padding:26px var(--ds-gutter) 30px}
+  .biopage .bi-hero-p{margin-top:14px}
+}
+
+/* ---------- 02 ORIGIN · 08 CTA : 2단 ---------- */
+.biopage .bi-two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--ds-gap) clamp(32px,5vw,80px);align-items:start}
+@media(max-width:860px){.biopage .bi-two{grid-template-columns:1fr}}
+
+/* ---------- 03 MATERIAL TERRITORY : 5칸 ---------- */
+.biopage .bi-terr{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ds-ink)}
+.biopage .bi-terr li{display:flex;flex-direction:column;gap:8px;padding:22px 18px 26px 0;border-bottom:1px solid var(--ds-line)}
+.biopage .bi-terr li+li{padding-left:18px;border-left:1px solid var(--ds-line)}
+.biopage .bi-terr .no{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--ds-text-2)}
+.biopage .bi-terr .en{font-family:var(--serif);font-size:clamp(15px,1.25vw,18px);letter-spacing:.06em;line-height:1.35;color:var(--ds-ink)}
+.biopage .bi-terr .ko{font-size:14px;line-height:1.55;color:var(--ds-ink-2);overflow-wrap:anywhere}
+.biopage .bi-terr-note{margin-top:28px;max-width:46em}
+.biopage .bi-terr-foot{margin-top:12px;max-width:52em}
+@media(max-width:1000px){
+  .biopage .bi-terr{grid-template-columns:1fr}
+  .biopage .bi-terr li,.biopage .bi-terr li+li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:8px;row-gap:2px;padding:16px 0;border-left:0}
+  .biopage .bi-terr .ko{grid-column:2}
+
+}
+
+/* ---------- 04 APPROACH : 3단계 흐름 ---------- */
+.biopage .bi-steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-gap)}
+.biopage .bi-steps li{position:relative;padding-top:26px;border-top:1px solid var(--ds-line)}
+.biopage .bi-steps li::before{content:"";position:absolute;left:0;top:-1px;width:48px;height:1px;background:var(--ds-ink)}
+.biopage .bi-steps .k{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label);color:var(--ds-text-2);margin-bottom:14px}
+.biopage .bi-steps .ds-h3{color:var(--ds-ink);margin-bottom:10px}
+@media(max-width:860px){.biopage .bi-steps{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- 05 TWO STARTING POINTS : 2칸 비교 ---------- */
+.biopage .bi-vs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ds-line);border:1px solid var(--ds-line)}
+.biopage .bi-vs .side{background:var(--ds-paper);padding:clamp(26px,3.2vw,48px)}
+.biopage .bi-vs .side.is-bio{box-shadow:inset 0 3px 0 var(--ds-ink)}
+.biopage .bi-vs .brandnm{font-family:var(--serif);font-size:clamp(17px,1.4vw,20px);letter-spacing:.08em;color:var(--ds-ink)}
+.biopage .bi-vs .first{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label);color:var(--ds-text-2);margin:6px 0 22px}
+.biopage .bi-vs .ds-h3{color:var(--ds-ink);margin-bottom:10px}
+@media(max-width:760px){.biopage .bi-vs{grid-template-columns:1fr}}
+
+/* ---------- 06 FIRST PRODUCT : 어두운 분할(과거 제품 기록) ---------- */
+.biopage .bi-first{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
+.biopage .bi-first-fig{display:block;aspect-ratio:3/2}
+.biopage .bi-first-fig img{transition:transform .8s var(--ds-ease)}
+.biopage .bi-first-fig:hover img{transform:scale(1.03)}
+.biopage .bi-first-tx .yr{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label);color:var(--ds-on-dark-3);margin-bottom:12px}
+.biopage .bi-first-nm{font-size:clamp(20px,1.8vw,26px)}
+.biopage .bi-first-tx .nm-ko{font-size:14px;color:var(--ds-on-dark-3);margin:4px 0 18px}
+.biopage .bi-first-tx .spec{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;margin:22px 0 18px;padding:14px 0;border-top:1px solid var(--ds-line-dark);border-bottom:1px solid var(--ds-line-dark);font-family:var(--serif);font-size:14px;letter-spacing:.04em;color:var(--ds-on-dark)}
+.biopage .bi-first-tx .btn{min-width:180px}
+@media(max-width:860px){.biopage .bi-first{grid-template-columns:1fr;gap:28px}}
+@media(max-width:640px){.biopage .bi-first-tx .ds-btns{grid-template-columns:1fr}.biopage .bi-first-tx .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.biopage .bi-first-fig img{transition:none}}
+
+/* ---------- 07 FUTURE ---------- */
+.biopage .bi-future-head{margin-bottom:0}
+
+/* ---------- 08 B2B CTA : 어두운 최종 CTA ---------- */
+.biopage .bi-cta-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--ds-gap) clamp(32px,5vw,80px);align-items:end}
+.biopage .bi-cta .ds-lead{max-width:38em}
+.biopage .bi-cta-btns{margin-top:0}
+.biopage .bi-cta-btns .btn{min-width:220px}
+@media(max-width:860px){.biopage .bi-cta-in{grid-template-columns:1fr}}
+@media(max-width:640px){.biopage .bi-cta-btns{grid-template-columns:1fr}.biopage .bi-cta-btns .btn{width:100%}}
+
+/* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
+.biopage [id]{scroll-margin-top:88px}
