@@ -116,3 +116,14 @@
    전 화면에서 칸을 원본 비율로 두고 세로 가운데 정렬한다. */
 .skincarepage .sk-hero-fig{height:auto;align-self:center}
 .skincarepage .sk-hero-fig img{aspect-ratio:7/10;height:auto;object-fit:contain;background:#fff}
+
+/* SKINCARE 히어로 배치 보정 (2026-09-30) — 한·영 공통 · 861px 이상
+   문제: 히어로 틀이 440px 고정이라, 원본 비율(700×1000)로 표시한 4컷
+         (약 252px)과 높이가 맞지 않아 위아래 빈 공간이 크게 남았다.
+   조치: 틀 높이를 내용에 맞추고 문구 쪽 상하 여백을 줄여 제목과 4컷을
+         같은 높이에서 정렬한다. 4컷 전체 표시와 원본 비율은 유지한다. */
+@media(min-width:861px){
+  .skincarepage .sk-hero-in{height:auto;min-height:0;align-items:center}
+  .skincarepage .sk-hero-tx{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(28px,3vw,40px)}
+  .skincarepage .sk-hero-fig{align-self:stretch;display:grid;align-items:center}
+}
