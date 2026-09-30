@@ -376,3 +376,23 @@ html[lang="en"] .px-hero-c h1{max-width:15em}
 html[lang="en"] .px-hero-c h1{font-size:clamp(26px,2.5vw,38px)} /* step6: EN H1 끝 단어 외톨이 방지 */
 @media (max-width:640px){html[lang="en"] .px-hero-c h1{font-size:clamp(22px,6.1vw,26px)}}
 .px-hero-c .hp-now-note{padding-left:0} /* step6: 썸네일 없는 구매 띠의 안내문 들여쓰기 제거 */
+
+/* =====================================================================
+   제품 이미지 전체 표시 (2026-09-30) — HOME 히어로 Aqua · 한·영 공통
+   원본 700×1000(0.70). 기존에는 화면 폭과 무관하게 object-fit:cover 라서
+   PC 70~92% · 모바일 51% 만 보였다(뚜껑·하단 잘림).
+   전 화면에서 contain 으로 전체를 보이고, 모바일은 원본 비율 틀을 함께 준다.
+   화면 높이가 낮을 때는 상한만 두며 contain 이라 잘리지 않는다.
+   기존 좌측 그라데이션(mask-image)은 그대로 둔다 — 제품이 아니라
+   배경 가장자리에만 걸쳐 어두운 문구 영역과 자연스럽게 이어진다.
+   ===================================================================== */
+.px-hero-c .hp-hero-fig.px-fig-light img{object-fit:contain;object-position:50% 50%}
+@media (max-width:640px){
+  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:62svh}
+}
+@media (max-width:640px) and (max-height:760px){
+  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:56svh}
+}
+@media (max-width:640px) and (max-height:680px){
+  .px-hero-c .hp-hero-fig{aspect-ratio:7/10;height:auto;max-height:52svh}
+}
