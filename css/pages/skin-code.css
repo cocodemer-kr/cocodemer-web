@@ -134,3 +134,10 @@
 
 /* step5 D1 contrast fix (2026-09-30): small labels #8A8A8A -> #6B6B6B */
 .skincodepage span.no,.skincodepage span.zoomhint{color:var(--muted-text,#6B6B6B)}
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .skincodepage .sp-hero{padding-left:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .skincodepage .sp-hero-tx{padding:32px clamp(24px,3vw,56px) 32px clamp(32px,5.42vw,104px);min-width:0}
+  .skincodepage .sp-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}

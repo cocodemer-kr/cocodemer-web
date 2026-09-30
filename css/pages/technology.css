@@ -148,3 +148,10 @@ main.techpage .tk-arc div.sec-en{color:var(--ds-on-dark-3)}
 main.techpage .tk-arc .badge.is-archive{color:rgba(255,255,255,.82);border-color:rgba(255,255,255,.45)}
 main.techpage .pagehead.ph-tech2 .t .sec-en,main.techpage .tk-lib>summary .en{color:var(--muted-text,#6B6B6B)}
 .techpage .ing-tabs button span{color:var(--muted-text,#6B6B6B)} /* step6: 성분 탭 개수 대비 4.5:1 이상 */
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .techpage .pagehead.ph-tech2{padding-left:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .techpage .pagehead.ph-tech2 .t{padding:32px clamp(24px,3vw,56px) 32px clamp(32px,5.42vw,104px);min-width:0}
+  .techpage .pagehead.ph-tech2 .t h1{white-space:normal;overflow-wrap:break-word}
+}

@@ -123,3 +123,10 @@
   .skincarepage .sk-hero-fig{height:auto}
   .skincarepage .sk-hero-fig img{height:auto;aspect-ratio:7/10;object-fit:contain;background:#fff}
 }
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .skincarepage .sk-hero-in{padding-left:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .skincarepage .sk-hero-tx{padding:32px clamp(24px,3vw,56px) 32px clamp(32px,5.42vw,104px);min-width:0}
+  .skincarepage .sk-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}

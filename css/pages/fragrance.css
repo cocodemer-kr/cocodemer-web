@@ -89,3 +89,19 @@
   .fragrancepage .fr2-fig{aspect-ratio:389/649;height:auto;max-width:360px}
   .fragrancepage .fr2-fig>img{object-fit:contain;background:#fff}
 }
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .fragrancepage .fr2-hero-in{padding-left:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .fragrancepage .fr2-hero-tx{padding:32px clamp(24px,3vw,56px) 32px clamp(32px,5.42vw,104px);min-width:0}
+  .fragrancepage .fr2-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}
+
+/* Three portrait bottles require a stacked layout before they become narrow crops. */
+@media (min-width:861px) and (max-width:1024px){
+ .fragrancepage .fr2-hero-in{grid-template-columns:1fr;height:auto}
+ .fragrancepage .fr2-hero-fig{order:-1;height:auto}
+ .fragrancepage .fr2-hero-fig picture{height:auto}
+ .fragrancepage .fr2-hero-fig img{height:auto;object-fit:contain}
+ .fragrancepage .fr2-hero-tx{padding:32px var(--ds-gutter) 36px}
+}

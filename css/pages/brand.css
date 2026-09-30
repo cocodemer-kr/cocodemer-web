@@ -129,3 +129,10 @@
 @media(max-width:640px){
   .brandpage .bp-name-fig{aspect-ratio:4/5}
 }
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .brandpage .bp-hero{padding-left:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .brandpage .bp-hero-tx{padding:32px clamp(24px,3vw,56px) 32px clamp(32px,5.42vw,104px);min-width:0}
+  .brandpage .bp-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}
