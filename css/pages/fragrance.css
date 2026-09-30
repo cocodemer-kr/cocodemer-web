@@ -71,3 +71,14 @@
 
 /* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
 .fragrancepage [id]{scroll-margin-top:88px}
+
+/* 제품 이미지 전체 표시 (2026-09-30) — FRAGRANCE 히어로 3컷·제품 3컷 · 한·영 공통
+   EDP 원본 389×649(0.60)이 히어로 칸에서 57~90%, 제품컷(4/5)에서 75%만 보였다.
+   전 화면에서 원본 비율 + contain. 제품컷은 860px 이하에서 1열이 되어
+   본문 폭 전체를 차지하므로 최대 폭 상한을 둔다. */
+.fragrancepage .fr2-hero-fig{height:auto;align-self:center}
+.fragrancepage .fr2-hero-fig picture{height:auto}
+.fragrancepage .fr2-hero-fig img{aspect-ratio:389/649;height:auto;object-fit:contain;background:#fff}
+.fragrancepage .fr2-fig{aspect-ratio:389/649;height:auto}
+.fragrancepage .fr2-fig>img{object-fit:contain;background:#fff}
+@media(max-width:860px){.fragrancepage .fr2-fig{max-width:360px}}

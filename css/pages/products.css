@@ -109,3 +109,10 @@
 
 /* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
 .skincarepage [id]{scroll-margin-top:88px}
+
+/* 제품 이미지 전체 표시 (2026-09-30) — SKINCARE 히어로 4컷 · 한·영 공통
+   Aqua 원본 700×1000(0.70)이 PC 440px 고정 높이 칸(0.40)에서 57%,
+   모바일 220px 칸(0.59)에서 62%만 보였다.
+   전 화면에서 칸을 원본 비율로 두고 세로 가운데 정렬한다. */
+.skincarepage .sk-hero-fig{height:auto;align-self:center}
+.skincarepage .sk-hero-fig img{aspect-ratio:7/10;height:auto;object-fit:contain;background:#fff}
