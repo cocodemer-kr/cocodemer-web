@@ -82,8 +82,14 @@
 @media(max-width:640px){.b2bpage .b2b-contact .spec th{width:76px}}
 @media (prefers-reduced-motion:reduce){.b2bpage *{transition:none!important}}
 
-/* 제품 이미지 전체 표시 (2026-09-30) — B2B 제품 사진 · 한·영 공통
-   Aqua 원본 700×1000(0.70)이 4/5(0.80) 틀에서 PC·모바일 모두 87~88%만 보였다.
-   전 화면에서 원본 비율 + contain. 760px 이하는 1열이 되므로 폭 상한을 둔다. */
-.b2bpage .b2b-product .ph img{aspect-ratio:7/10;object-fit:contain;background:#fff;max-width:440px}
-@media(max-width:760px){.b2bpage .b2b-product .ph img{max-width:420px}}
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — B2B 제품 사진 · 한·영 공통
+   대상: 760px 이하(승인 디자인이 이미 1열로 바뀌는 구간)에만 적용.
+   문제: Aqua 원본 700×1000(0.70)이 4/5(0.80) 틀에서 cover 로 좌우가 잘렸다.
+   조치: 1열 구간에서만 원본 비율(7/10) + contain, 상자가 본문 폭 전체로
+         커지지 않도록 최대 폭 420px(승인 PC 열 폭 440px 이내)을 둔다.
+   유지: 761px 이상 2열 PC 배치는 승인 디자인 그대로.
+   ===================================================================== */
+@media(max-width:760px){
+  .b2bpage .b2b-product .ph img{aspect-ratio:7/10;object-fit:contain;background:#fff;max-width:420px}
+}

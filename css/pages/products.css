@@ -110,20 +110,16 @@
 /* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
 .skincarepage [id]{scroll-margin-top:88px}
 
-/* 제품 이미지 전체 표시 (2026-09-30) — SKINCARE 히어로 4컷 · 한·영 공통
-   Aqua 원본 700×1000(0.70)이 PC 440px 고정 높이 칸(0.40)에서 57%,
-   모바일 220px 칸(0.59)에서 62%만 보였다.
-   전 화면에서 칸을 원본 비율로 두고 세로 가운데 정렬한다. */
-.skincarepage .sk-hero-fig{height:auto;align-self:center}
-.skincarepage .sk-hero-fig img{aspect-ratio:7/10;height:auto;object-fit:contain;background:#fff}
-
-/* SKINCARE 히어로 배치 보정 (2026-09-30) — 한·영 공통 · 861px 이상
-   문제: 히어로 틀이 440px 고정이라, 원본 비율(700×1000)로 표시한 4컷
-         (약 252px)과 높이가 맞지 않아 위아래 빈 공간이 크게 남았다.
-   조치: 틀 높이를 내용에 맞추고 문구 쪽 상하 여백을 줄여 제목과 4컷을
-         같은 높이에서 정렬한다. 4컷 전체 표시와 원본 비율은 유지한다. */
-@media(min-width:861px){
-  .skincarepage .sk-hero-in{height:auto;min-height:0;align-items:center}
-  .skincarepage .sk-hero-tx{padding-top:clamp(28px,3vw,40px);padding-bottom:clamp(28px,3vw,40px)}
-  .skincarepage .sk-hero-fig{align-self:stretch;display:grid;align-items:center}
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — SKINCARE 히어로 4컷 · 한·영 공통
+   대상: 860px 이하(승인 디자인이 이미 1열 세로 배치로 바뀌는 구간)에만 적용.
+   문제: 승인 배치의 칸 높이 300px(≤860) · 220px(≤640) 에서 칸 비율이
+         원본 700×1000(0.70)과 어긋나 cover 로 잘렸다 — 390px 화면 62%.
+   조치: 칸 높이를 내용에 맞추고 각 컷을 원본 비율(7/10)로 표시한다.
+   유지: 861px 이상 PC 배치(440px 히어로 · 4열/3열 · cover)는 승인 디자인 그대로.
+         1200px 이하에서 4번째 컷을 숨기는 기존 반응형 규칙도 그대로 둔다.
+   ===================================================================== */
+@media(max-width:860px){
+  .skincarepage .sk-hero-fig{height:auto}
+  .skincarepage .sk-hero-fig img{height:auto;aspect-ratio:7/10;object-fit:contain;background:#fff}
 }

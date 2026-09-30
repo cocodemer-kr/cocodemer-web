@@ -72,13 +72,20 @@
 /* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
 .fragrancepage [id]{scroll-margin-top:88px}
 
-/* 제품 이미지 전체 표시 (2026-09-30) — FRAGRANCE 히어로 3컷·제품 3컷 · 한·영 공통
-   EDP 원본 389×649(0.60)이 히어로 칸에서 57~90%, 제품컷(4/5)에서 75%만 보였다.
-   전 화면에서 원본 비율 + contain. 제품컷은 860px 이하에서 1열이 되어
-   본문 폭 전체를 차지하므로 최대 폭 상한을 둔다. */
-.fragrancepage .fr2-hero-fig{height:auto;align-self:center}
-.fragrancepage .fr2-hero-fig picture{height:auto}
-.fragrancepage .fr2-hero-fig img{aspect-ratio:389/649;height:auto;object-fit:contain;background:#fff}
-.fragrancepage .fr2-fig{aspect-ratio:389/649;height:auto}
-.fragrancepage .fr2-fig>img{object-fit:contain;background:#fff}
-@media(max-width:860px){.fragrancepage .fr2-fig{max-width:360px}}
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — FRAGRANCE · 한·영 공통
+   대상: 860px 이하(승인 디자인이 이미 1열 세로 배치로 바뀌는 구간)에만 적용.
+   문제: EDP 원본 389×649(0.60). 승인 배치의 히어로 칸 320px(≤860)·240px(≤640)과
+         제품컷 높이 420px(≤860)·360px(≤640) 에서 비율이 어긋나 cover 로 잘렸다 —
+         제품컷은 1열이 되며 상자가 넓어져 잘림이 가장 컸다.
+   조치: 히어로 3컷과 제품 3컷을 원본 비율(389/649)로 표시한다.
+         제품컷은 1열에서 상자가 본문 폭 전체로 커지므로 최대 폭 360px 을 둔다.
+   유지: 861px 이상 PC 배치(3열 히어로 · 4/5 제품컷 · cover)는 승인 디자인 그대로.
+   ===================================================================== */
+@media(max-width:860px){
+  .fragrancepage .fr2-hero-fig{height:auto}
+  .fragrancepage .fr2-hero-fig picture{height:auto}
+  .fragrancepage .fr2-hero-fig img{height:auto;aspect-ratio:389/649;object-fit:contain;background:#fff}
+  .fragrancepage .fr2-fig{aspect-ratio:389/649;height:auto;max-width:360px}
+  .fragrancepage .fr2-fig>img{object-fit:contain;background:#fff}
+}
