@@ -1,0 +1,138 @@
+/* =====================================================================
+   BRAND — css/pages/brand.css (3단계 G1, 2026-09-30)
+   · site.css(DESIGN SYSTEM v1) 다음에 로드. 모든 선택자는 main.brandpage 아래로 한정
+   · 역할: WHY + MEANING — "COCODEMER는 어떤 생각을 하는 브랜드인가?"
+   · 구조: 분할 히어로 → 세 동사 → 관점(4가지 차이) → 이름(3단) → 과거 기록 구역(어두운 면)
+           → TODAY(제목 | 단계 목록) → 믿을 이유(큰 문장) → 원료 기록(글 | 사진) → 기록·필름(어두운 면)
+   ===================================================================== */
+.brandpage img{height:auto}
+.brandpage .ds-fig>img{height:100%}
+.brandpage :is(.ds-h1,.ds-h2)+:is(.ds-body,.ds-lead,p){margin-top:20px}
+.brandpage p{text-wrap:pretty}
+.brandpage .ds-label{color:var(--ds-text-2)}
+.brandpage .ds-sec.is-dark .ds-label{color:var(--ds-on-dark-3)}
+.brandpage .ds-body+.ds-body,.brandpage .ds-lead+.ds-lead{margin-top:16px}
+.brandpage .ds-lead{margin-top:16px}
+.brandpage .ds-body{color:var(--ds-ink-2)}
+
+/* ---------- 01. 분할 히어로(밝은 면) — 데스크톱·태블릿 440 / 모바일 사진 220 ---------- */
+.brandpage .bp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);height:440px;padding:0 max(0px,calc((100% - var(--ds-max)) / 2)) 0 0;background:var(--ds-paper-2);overflow:hidden}
+.brandpage .bp-hero-tx{align-self:center;padding:40px var(--ds-gutter) 40px clamp(24px,3.5vw,64px);min-width:0}
+.brandpage .bp-hero .ds-h1{color:var(--ds-ink)}
+.brandpage .bp-hero-fig{position:relative;overflow:hidden;min-width:0}
+.brandpage .bp-hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 55%}
+
+/* ---------- 01-b. 출발 문장 + 세 동사 ---------- */
+.brandpage .bp-intro{padding:clamp(56px,7vw,104px) 0 clamp(48px,6vw,88px)}
+.brandpage .bp-intro-p{font-size:clamp(17px,1.5vw,21px);line-height:1.75;color:var(--ds-ink);max-width:30em}
+.brandpage .bp-verbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(32px,4vw,56px);border-top:1px solid var(--ds-ink)}
+.brandpage .bp-verbs span{display:block;padding:22px 0 0 20px;font-size:clamp(18px,1.9vw,26px);font-weight:500;line-height:1.45;color:var(--ds-ink);position:relative}
+.brandpage .bp-verbs span+span{padding-right:20px;border-right:1px solid var(--ds-line)}
+
+/* ---------- 02. 관점 — 제목 | 네 가지 차이(2×2) ---------- */
+.brandpage .bp-pov{background:var(--ds-paper-2)}
+.brandpage .bp-pov-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.brandpage .bp-axes{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ds-line);border:1px solid var(--ds-line);margin-bottom:clamp(28px,3vw,40px)}
+.brandpage .bp-axes li{background:var(--ds-paper);padding:clamp(20px,2.2vw,30px) clamp(18px,2vw,26px);font-size:clamp(16px,1.3vw,19px);font-weight:500;color:var(--ds-ink);line-height:1.5}
+.brandpage .bp-strong{color:var(--ds-ink)!important;font-weight:500}
+
+/* ---------- 03. 이름 — 사진 | 기원 | 뜻 (3단) ---------- */
+.brandpage .bp-name-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,4fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.brandpage .bp-name-fig{aspect-ratio:4/5;max-width:460px}
+.brandpage .bp-name-fig img{object-position:50% 70%}
+.brandpage .bp-motto{font-size:clamp(15px,1.25vw,18px);letter-spacing:.08em;line-height:1.6;color:var(--ds-ink);padding:0 0 18px;margin-bottom:22px;border-bottom:1px solid var(--ds-ink)}
+
+/* ---------- 04~05. 과거 기록 구역(어두운 면) ---------- */
+.brandpage .bp-rec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.brandpage .bp-rec-fig{aspect-ratio:4/3}
+.brandpage .bp-rec-fig img{object-position:55% 50%}
+.brandpage .bp-rec-fig .badge,.brandpage .bp-more-fig .badge{position:absolute;right:14px;top:14px;background:rgba(10,10,10,.55)}
+.brandpage .bp-remains{margin-top:clamp(64px,8vw,120px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--ds-line-dark);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px);align-items:end}
+.brandpage .bp-remains .ds-label{grid-column:1/-1}
+.brandpage .bp-remains-h{font-size:clamp(24px,3vw,40px);font-weight:500;line-height:1.4;color:var(--ds-on-dark);text-wrap:balance}
+.brandpage .bp-remains-body .ds-lead:first-child{margin-top:0}
+
+/* ---------- 06. TODAY — 제목 | 단계 목록 ---------- */
+.brandpage .bp-today-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.brandpage .bp-today-head .ds-lead+.ds-lead{margin-top:6px}
+.brandpage .bp-stages{list-style:none;border-top:1px solid var(--ds-ink)}
+.brandpage .bp-stages li{display:grid;grid-template-columns:56px minmax(110px,160px) minmax(0,1fr);align-items:baseline;gap:12px;padding:22px 0;border-bottom:1px solid var(--ds-line)}
+.brandpage .bp-stages .n{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--ds-text-2)}
+.brandpage .bp-stages h3{font-size:clamp(18px,1.5vw,21px);font-weight:400;letter-spacing:.1em;color:var(--ds-ink)}
+.brandpage .bp-stages p{font-size:var(--ds-fs-body);color:var(--ds-ink-2);line-height:1.6}
+.brandpage .bp-closing{margin-top:clamp(28px,3vw,40px);font-size:var(--ds-fs-body);line-height:1.85;color:var(--ds-ink)}
+
+/* ---------- 07. 믿을 이유 — 큰 문장 ---------- */
+.brandpage .bp-next{background:var(--ds-paper-2)}
+.brandpage .bp-next-h{font-size:clamp(28px,4vw,56px);font-weight:500;line-height:1.3;letter-spacing:-.015em;color:var(--ds-ink);max-width:16em;text-wrap:balance}
+.brandpage .bp-next-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);margin-top:clamp(36px,4.4vw,64px);padding-top:28px;border-top:1px solid var(--ds-line);max-width:980px;margin-right:auto}
+.brandpage .bp-next-body .ds-body+.ds-body{margin-top:0}
+
+/* ---------- 08. 원료 기록 — 글 | 사진 ---------- */
+.brandpage .bp-leg-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:center}
+.brandpage .bp-leg-fig{aspect-ratio:644/783;max-width:420px;justify-self:end;width:100%;background:#0a0a0a}
+.brandpage .note{max-width:34em;margin-top:28px}
+.brandpage .note p{font-size:15px!important;line-height:1.75}
+
+/* ---------- 09. 기록·필름(어두운 면) ---------- */
+.brandpage .bp-more-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,36px)}
+.brandpage .bp-more-card{display:grid;grid-template-rows:auto 1fr;border:1px solid var(--ds-line-dark);color:var(--ds-on-dark-2);transition:border-color .25s var(--ds-ease)}
+.brandpage .bp-more-card:hover{border-color:rgba(255,255,255,.4)}
+.brandpage .bp-more-fig{aspect-ratio:16/10}
+.brandpage .bp-more-fig img{transition:transform .6s var(--ds-ease)}
+.brandpage .bp-more-card:hover .bp-more-fig img{transform:scale(1.02)}
+.brandpage .bp-more-tx{padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;align-items:flex-start}
+.brandpage .bp-more-p{font-size:var(--ds-fs-body);line-height:1.8;color:var(--ds-on-dark-2);margin-bottom:24px}
+.brandpage .bp-more-tx .btn{margin-top:auto;min-height:44px;display:inline-flex;align-items:center}
+.brandpage .bp-more-card:hover .btn{background:#fff;color:var(--ds-ink)}
+
+/* ---------- 반응형 ---------- */
+@media(max-width:1000px){
+  .brandpage .bp-name-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .brandpage .bp-name-fig{grid-row:span 2;max-width:none}
+}
+@media(max-width:860px){
+  .brandpage .bp-pov-grid,.brandpage .bp-today-grid,.brandpage .bp-rec-grid,.brandpage .bp-leg-grid,.brandpage .bp-remains{grid-template-columns:1fr}
+  .brandpage .bp-remains-body{margin-top:20px}
+  .brandpage .bp-leg-fig{justify-self:start;max-width:360px}
+  .brandpage .bp-next-body{grid-template-columns:1fr;gap:16px;margin-right:0}
+}
+@media(max-width:640px){
+  /* 사진 위 · 글 아래. 사진 높이 220 */
+  .brandpage .bp-hero{display:flex;flex-direction:column-reverse;height:auto;padding:0}
+  .brandpage .bp-hero-fig{height:220px;flex:0 0 220px}
+  .brandpage .bp-hero-tx{padding:28px var(--ds-gutter) 32px}
+  .brandpage .bp-verbs{grid-template-columns:1fr}
+  .brandpage .bp-verbs span,.brandpage .bp-verbs span+span{padding:16px 0;border-right:0;border-bottom:1px solid var(--ds-line)}
+  .brandpage .bp-axes li{padding:18px 16px}
+  .brandpage .bp-name-grid{grid-template-columns:1fr}
+  .brandpage .bp-name-fig{grid-row:auto;aspect-ratio:4/3}
+  .brandpage .bp-rec-fig{order:-1}
+  .brandpage .bp-stages li{grid-template-columns:40px minmax(0,1fr);row-gap:4px}
+  .brandpage .bp-stages p{grid-column:2}
+  .brandpage .bp-more-grid{grid-template-columns:1fr}
+  .brandpage .ds-br-m br,.brandpage .bp-intro-p br,.brandpage .ds-lead br,.brandpage .ds-body br{display:none}
+}
+@media(prefers-reduced-motion:reduce){.brandpage *{transition:none!important}}
+
+/* step5 D1 contrast fix (2026-09-30) */
+.brandpage span.note-lb{color:var(--muted-text,#6B6B6B)}
+
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — BRAND 코코 드 메르 사진
+   대상: 640px 이하에만 적용.
+   문제: origin-cocodemer.jpg 원본 576×720(0.80). PC 틀은 4/5 라 이미 전체가
+         보였는데, 모바일에서만 4/3(1.33) 으로 바뀌며 좌우가 잘려 60% 만 보였다.
+   조치: 모바일 틀을 PC 와 같은 원본 비율 4/5 로 되돌린다. contain 은 쓰지 않는다.
+   유지: PC 배치와 .bp-hero-fig(원본 1.778)·.bp-leg-fig(원본 0.822)는 무변경.
+   ===================================================================== */
+@media(max-width:640px){
+  .brandpage .bp-name-fig{aspect-ratio:4/5}
+}
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .brandpage .bp-hero{padding-right:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .brandpage .bp-hero-tx{padding:32px clamp(32px,5.42vw,104px) 32px clamp(24px,3vw,56px);min-width:0}
+  .brandpage .bp-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}

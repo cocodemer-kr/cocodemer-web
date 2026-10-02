@@ -1,0 +1,132 @@
+/* css/pages/products.css — SKINCARE 페이지 전용 (3단계 G2, 2026-09-30)
+   · site.css 다음에 로드. 범위 = main.skincarepage 아래로 한정(제품 상세·공통 선택자 재정의 없음)
+   · 목적: "그래서 지금과 앞으로 무엇을 만드는가?" — 시스템(지금 1 · 앞으로 4) → 현재 판매 제품 → 기술 → 다른 컬렉션 → 구매처
+   · 패턴 순서: 분할 히어로 → 제품 3단 목록 → 분할(사진|글) → 2단 글 → 2칸 타일 → 어두운 최종 CTA (연속 반복 없음)
+   · 이미지: 기존 자산만, 자르기는 object-fit/object-position 만 */
+
+.skincarepage h2,.skincarepage h3{font-size:inherit;font-weight:inherit}
+.skincarepage .ds-h2{font-size:var(--ds-fs-h2);font-weight:500}
+.skincarepage .ds-h2.en-d{font-weight:400}
+.skincarepage .ds-h3{font-size:var(--ds-fs-h3);font-weight:500}
+.skincarepage .ds-h3.en-d{font-weight:400}
+
+/* ---------- 01 HERO: 문구 | Aqua 실사 4컷 (밝은 면 = 현재 제품) ---------- */
+.skincarepage .sk-hero{padding:0;background:var(--ds-paper-2);border-bottom:1px solid var(--ds-line)}
+.skincarepage .sk-hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);height:440px;
+  padding-right:max(0px,calc((100% - var(--ds-max)) / 2))}
+.skincarepage .sk-hero-tx{align-self:center;padding:48px var(--ds-gutter) 48px clamp(24px,3.5vw,64px)}
+.skincarepage .sk-h1{font-family:var(--serif);font-size:var(--ds-fs-h1);font-weight:400;letter-spacing:.06em;line-height:1.3;color:var(--ds-ink);white-space:nowrap}
+.skincarepage .sk-hero-p{margin-top:22px;font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);color:var(--ds-ink-2)}
+.skincarepage .sk-hero-fig{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;height:100%;overflow:hidden;background:#fff}
+.skincarepage .sk-hero-fig img{width:100%;height:100%;object-fit:cover}
+.skincarepage .sk-hero-fig img:nth-child(1){object-position:50% 46%}
+.skincarepage .sk-hero-fig img:nth-child(2){object-position:52% 40%}
+.skincarepage .sk-hero-fig img:nth-child(3){object-position:38% 34%}
+.skincarepage .sk-hero-fig img:nth-child(4){object-position:44% 44%}
+@media(max-width:1200px) and (min-width:861px){
+  .skincarepage .sk-hero-fig{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .skincarepage .sk-hero-fig img:nth-child(4){display:none}
+}
+@media(max-width:860px){
+  .skincarepage .sk-hero-in{grid-template-columns:1fr;height:auto;padding-right:0}
+  .skincarepage .sk-hero-fig{order:-1;height:300px}
+  .skincarepage .sk-hero-tx{padding:32px var(--ds-gutter) 36px}
+}
+@media(max-width:640px){
+  .skincarepage .sk-hero-fig{height:220px}
+  .skincarepage .sk-hero-tx{padding:26px var(--ds-gutter) 30px}
+  .skincarepage .sk-hero-p{margin-top:14px}
+}
+@media(max-width:400px){.skincarepage .sk-h1{white-space:normal}}
+
+/* ---------- 머리말 2단(제목 | 설명) — SYSTEM · THE SYSTEM 공용 ---------- */
+.skincarepage .sk-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--ds-gap) clamp(32px,5vw,80px);align-items:start;margin-bottom:var(--ds-stack)}
+.skincarepage .sk-head-lead{font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);color:var(--ds-text-2);max-width:34em}
+.skincarepage .sk-head-tech{margin-bottom:0}
+.skincarepage .sk-tech-link{margin-top:20px}
+@media(max-width:860px){.skincarepage .sk-head{grid-template-columns:1fr}}
+
+/* ---------- 02 SKINCARE SYSTEM: 제품 3단 목록 ---------- */
+.skincarepage .sk-col{display:flex;flex-direction:column}
+.skincarepage .sk-fig{margin-bottom:20px;background:#fff}
+.skincarepage .sk-stage{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.skincarepage .sk-stage .n{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--ds-text-2)}
+.skincarepage .sk-stage .k{font-family:var(--serif);font-size:20px;letter-spacing:.08em;color:var(--ds-ink);font-weight:400}
+.skincarepage .sk-d{font-size:15px;line-height:1.7;color:var(--ds-ink-2);margin-bottom:16px}
+.skincarepage .sk-items{list-style:none}
+.skincarepage .sk-item{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;row-gap:5px;align-items:center;
+  border-top:1px solid var(--ds-line);padding:13px 0;font-size:15px;color:var(--ds-ink)}
+.skincarepage .sk-item .tech{grid-column:1 / -1;font-size:14px;color:var(--ds-ink-2);line-height:1.5}
+.skincarepage .sk-item .tl{display:inline-block;font-family:var(--serif);font-size:10.5px;letter-spacing:.14em;color:var(--ds-text-2);margin-left:8px}
+.skincarepage a.sk-item .nm{justify-self:start;border-bottom:1px solid var(--ds-ink);transition:border-color .2s var(--ds-ease)}
+.skincarepage a.sk-item:hover .nm{border-bottom-color:transparent}
+@media(max-width:860px){.skincarepage .sk-fig.r-43{aspect-ratio:16/9}}
+
+/* ---------- 03 AVAILABLE NOW: 사진 | 글 ---------- */
+.skincarepage .sk-now .ds-split{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+.skincarepage .sk-now-fig{aspect-ratio:4/5;background:var(--ds-paper-2)}
+.skincarepage .sk-now-fig img{object-fit:contain;padding:8% 0}
+.skincarepage .sk-now-h{margin-bottom:8px}
+.skincarepage .sk-now-stage{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label);color:var(--ds-text-2);margin-bottom:22px}
+.skincarepage .sk-now-tx .ds-body{margin-bottom:14px}
+.skincarepage .sk-spec{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:22px;padding:14px 0;
+  border-top:1px solid var(--ds-line);border-bottom:1px solid var(--ds-line);font-family:var(--serif);font-size:14px;letter-spacing:.06em;color:var(--ds-ink)}
+.skincarepage .sk-now-btns .btn{min-width:180px}
+.skincarepage .sk-partner{margin-top:14px;max-width:36em}
+@media(max-width:860px){
+  .skincarepage .sk-now .ds-split{grid-template-columns:1fr;gap:28px}
+  .skincarepage .sk-now-fig{aspect-ratio:auto;height:360px}
+}
+@media(max-width:640px){
+  .skincarepage .sk-now-fig{height:300px}
+  .skincarepage .sk-now-btns .btn{min-width:0}
+}
+@media(max-width:640px) and (max-height:700px){.skincarepage .sk-now-fig{height:240px}}
+
+/* ---------- 05 OTHER COLLECTIONS: 2칸 타일 (HERITAGE = 어두운 면 + ARCHIVE) ---------- */
+.skincarepage .sk-tile{background:var(--ds-paper-2)}
+.skincarepage .sk-tile .ds-fig img{transition:transform .8s var(--ds-ease)}
+.skincarepage .sk-tile:hover .ds-fig img{transform:scale(1.03)}
+.skincarepage .sk-tile .ds-h3{margin-bottom:4px}
+.skincarepage .sk-tile-p{font-size:15px;line-height:1.8;color:var(--ds-ink-2);margin:10px 0 14px}
+.skincarepage .sk-tile .ds-link{margin-top:auto}
+.skincarepage .sk-tile.dark{background:var(--ds-black);color:var(--ds-on-dark-2)}
+.skincarepage .sk-tile.dark .ds-fig{background:#161616}
+.skincarepage .sk-tile.dark .ds-label{color:var(--ds-on-dark-3)}
+.skincarepage .sk-tile.dark .ds-h3{color:var(--ds-on-dark)}
+.skincarepage .sk-tile.dark .sk-tile-p{color:var(--ds-on-dark-2)}
+.skincarepage .sk-tile-badge{margin:6px 0 0;align-self:flex-start}
+.skincarepage .sk-tile.dark:focus-visible{outline-color:var(--ds-ink)}
+@media(prefers-reduced-motion:reduce){.skincarepage .sk-tile .ds-fig img{transition:none}}
+
+/* ---------- 06 STORE: 어두운 최종 CTA ---------- */
+.skincarepage .sk-store-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--ds-gap) clamp(32px,5vw,80px);align-items:end}
+.skincarepage .sk-store .ds-lead{max-width:38em}
+.skincarepage .sk-store-btns{margin-top:0}
+.skincarepage .sk-store-btns .btn{min-width:220px}
+@media(max-width:860px){.skincarepage .sk-store-in{grid-template-columns:1fr}}
+@media(max-width:640px){.skincarepage .sk-store-btns{grid-template-columns:1fr}.skincarepage .sk-store-btns .btn{width:100%}}
+
+/* 앵커 이동 시 고정 헤더(80px)에 가리지 않도록 */
+.skincarepage [id]{scroll-margin-top:88px}
+
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — SKINCARE 히어로 4컷 · 한·영 공통
+   대상: 860px 이하(승인 디자인이 이미 1열 세로 배치로 바뀌는 구간)에만 적용.
+   문제: 승인 배치의 칸 높이 300px(≤860) · 220px(≤640) 에서 칸 비율이
+         원본 700×1000(0.70)과 어긋나 cover 로 잘렸다 — 390px 화면 62%.
+   조치: 칸 높이를 내용에 맞추고 각 컷을 원본 비율(7/10)로 표시한다.
+   유지: 861px 이상 PC 배치(440px 히어로 · 4열/3열 · cover)는 승인 디자인 그대로.
+         1200px 이하에서 4번째 컷을 숨기는 기존 반응형 규칙도 그대로 둔다.
+   ===================================================================== */
+@media(max-width:860px){
+  .skincarepage .sk-hero-fig{height:auto}
+  .skincarepage .sk-hero-fig img{height:auto;aspect-ratio:7/10;object-fit:contain;background:#fff}
+}
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .skincarepage .sk-hero-in{padding-right:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .skincarepage .sk-hero-tx{padding:32px clamp(32px,5.42vw,104px) 32px clamp(24px,3vw,56px);min-width:0}
+  .skincarepage .sk-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}

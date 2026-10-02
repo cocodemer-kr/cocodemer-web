@@ -1,0 +1,72 @@
+/* COCODEMER — rules for the 15 added languages only (not loaded by Korean / English pages). */
+
+/* ---------- fonts ---------- */
+html[lang="ja"]{--sans:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,-apple-system,BlinkMacSystemFont,sans-serif;--serif:"Noto Serif","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif}
+html[lang="zh-Hant"]{--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,sans-serif;--serif:"Noto Serif","Noto Serif TC","Songti TC","PMingLiU",serif}
+html[lang="zh-Hans"]{--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC","Helvetica Neue",Arial,sans-serif;--serif:"Noto Serif","Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun","Times New Roman",serif}
+html[lang="ar"]{--sans:"Noto Sans Arabic","Noto Sans KR",Tahoma,Arial,sans-serif;--serif:"Noto Naskh Arabic","Noto Serif","Times New Roman",serif}
+html[lang="th"]{--sans:"Noto Sans Thai","Noto Sans KR",Tahoma,sans-serif;--serif:"Noto Serif Thai","Noto Serif","Noto Sans Thai",serif}
+html[lang="de"],html[lang="nl"],html[lang="cs"],html[lang="fr"],html[lang="it"],html[lang="es"],html[lang="vi"],html[lang="id"],html[lang="ms"],html[lang="ru"]{--sans:"Noto Sans KR","Noto Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;--serif:"Noto Serif","Noto Sans","Times New Roman",Times,serif}
+/* cs: Noto Sans KR lacks Č č ď Ř ř Š š Ť ť Ů Ž ž (verified with live Google Fonts) — use Noto Sans first so words are not split across two typefaces */
+html[lang="cs"]{--sans:"Noto Sans","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+
+/* ---------- line breaking ---------- */
+/* Korean pages use keep-all; scripts without spaces between words need normal breaking */
+html[lang="ja"] body *,html[lang="zh-Hans"] body *,html[lang="zh-Hant"] body *,html[lang="th"] body *{word-break:normal !important}
+html[lang="ja"] body{line-break:strict}
+/* long words in German, Dutch, Czech, Russian etc. may break with hyphens instead of overflowing */
+html[lang="de"] body,html[lang="nl"] body,html[lang="cs"] body,html[lang="ru"] body,html[lang="fr"] body,html[lang="it"] body,html[lang="es"] body,html[lang="vi"] body,html[lang="id"] body,html[lang="ms"] body{overflow-wrap:break-word}
+html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3,html[lang="nl"] h1,html[lang="nl"] h2,html[lang="nl"] h3,html[lang="cs"] h1,html[lang="cs"] h2,html[lang="ru"] h1,html[lang="ru"] h2{hyphens:auto;-webkit-hyphens:auto}
+
+/* ---------- Arabic ---------- */
+html[lang="ar"] body *{letter-spacing:0 !important}
+html[lang="ar"] body{line-height:1.85}
+/* Latin-only labels kept in English keep their own direction inside right-to-left text */
+html[lang="ar"] [lang="en"]{unicode-bidi:isolate}
+/* photos, logos and video are never mirrored */
+html[lang="ar"] img,html[lang="ar"] video,html[lang="ar"] picture{direction:ltr}
+
+/* ---------- translated text for text-bearing images / video ---------- */
+.i18n-imgtext{font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--muted-text,#666);margin:10px 0 0;text-align:start}
+.i18n-imgtext p{margin:0 0 6px}
+.i18n-imgtext ul,.i18n-imgtext ol{margin:4px 0 6px;padding-inline-start:1.2em}
+.i18n-imgtext li{margin:0 0 3px}
+.i18n-imgtext b,.i18n-imgtext strong{color:var(--ink,#111);font-weight:500}
+
+/* Arabic: the off-screen skip link must sit off the right edge (left:-9999px would widen a right-to-left page) */
+html[dir="rtl"] .skip{left:auto;right:-9999px}
+html[dir="rtl"] .skip:focus{left:auto;right:8px}
+
+/* product specification table: longer labels in other languages may widen the label column instead of running into the value */
+.spec th{width:auto;min-width:96px;max-width:42%;padding-inline-end:16px;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+
+/* placement next to each image / video */
+.i18n-imgtext-lb{font-size:11px;letter-spacing:.06em;color:var(--muted,#999);margin:0 0 6px !important}
+.i18n-imgtext.is-slide{background:#f6f5f3;padding:16px 22px 12px;margin:0}
+.i18n-imgtext.is-band{margin:-32px 0 48px}
+.i18n-imgtext.is-elixir{max-width:52%;margin:-32px auto 48px}
+@media (max-width:640px){.i18n-imgtext.is-elixir{max-width:none}.i18n-imgtext.is-slide{padding:14px 16px 10px}}
+.sp-chart .i18n-imgtext{padding:14px 18px 10px;border-top:1px solid var(--ds-line,#e5e5e5);margin:0;background:#fff}
+.sp-rec-doc .i18n-imgtext{color:var(--ds-on-dark-3,rgba(255,255,255,.62))}
+.sp-rec-doc .i18n-imgtext b,.sp-rec-doc .i18n-imgtext strong{color:var(--ds-on-dark-2,rgba(255,255,255,.76))}
+.sp-rec-doc .i18n-imgtext .i18n-imgtext-lb{color:var(--ds-on-dark-3,rgba(255,255,255,.62))}
+.ap-sc-fig{aspect-ratio:auto;overflow:visible}
+.ap-sc-fig>img{height:auto;aspect-ratio:1410/1162}
+.ap-sc-fig .i18n-imgtext{padding:14px 18px 10px;border-top:1px solid var(--ds-line,#e5e5e5);margin:0;background:#fff}
+
+/* BRAND: the L-CODEMAR ELIXIR figure keeps its image ratio and grows to show the translated labels */
+.bp-leg-fig{aspect-ratio:auto;overflow:visible;background:transparent}
+.bp-leg-fig>img{aspect-ratio:644/783;height:auto;background:#0a0a0a}
+.bp-leg-fig .i18n-imgtext{padding:12px 2px 0;margin:0}
+
+/* B2B hero: the fixed 440px hero grows only when the translated copy needs more room */
+@media (min-width:861px){.b2bpage .pagehead.ph-b2b2{height:auto;min-height:440px}}
+
+/* narrow phones: long single words in grid cells may wrap instead of widening the page */
+@media (max-width:640px){
+  .ap-intro-tx,.ap-numbers,.b2bi,.sp-axis{min-width:0;overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto}
+}
+/* product detail tabs: long single-word labels (e.g. de "Produktinformationen") must not push the page past 360px — tighten only on narrow screens, never break inside a word */
+@media (max-width:400px){.tabs2 button{padding-left:2px;padding-right:2px;font-size:13px;letter-spacing:0}}
+/* narrow screens: long single words (e.g. ru "Пигментированная") in 2-column grids must not widen the page */
+@media (max-width:640px){.archivepage .ap-sc-axes li,.skincodepage .sp-matrix .sctype{min-width:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}}

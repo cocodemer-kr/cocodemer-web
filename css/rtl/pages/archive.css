@@ -1,0 +1,132 @@
+/* =====================================================================
+   HERITAGE — css/pages/archive.css (3단계 G1, 2026-09-30)
+   · site.css(DESIGN SYSTEM v1) 다음에 로드. 모든 선택자는 main.archivepage 아래로 한정
+   · 역할: EVIDENCE + DEPTH — "그렇게 말할 수 있는 실제 경험이 있는가?"
+   · 과거 = 어두운 기록 구역 + ARCHIVE. 효능 근거로 쓰지 않음(문구 변경 0)
+   · 구조: 어두운 분할 히어로 → 소개 | 기록 수치(증거 먼저) → 01 맞춤 조제(고정 머리말 | 기록 3건)
+           → 02 완제품 17종(사진 | 글 + 카테고리별 기록 목록) → 03 Skin Code(글 | 분류표, 밝은 면)
+           → 남은 기준(현재로 연결, 밝은 면) → BIO의 시작
+   ===================================================================== */
+.archivepage img{height:auto}
+.archivepage .ds-fig>img{height:100%}
+.archivepage :is(.ds-h1,.ds-h2)+:is(.ds-body,.ds-lead,p){margin-top:20px}
+.archivepage p{text-wrap:pretty}
+.archivepage .ds-label{color:var(--ds-text-2)}
+.archivepage .ds-sec.is-dark .ds-label{color:var(--ds-on-dark-3)}
+.archivepage .badge{background:transparent}
+.archivepage section[id]{scroll-margin-top:72px}
+
+/* ---------- 01. 어두운 분할 히어로 — 440 / 모바일 사진 220 ---------- */
+.archivepage .ap-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);height:440px;padding:0 max(0px,calc((100% - var(--ds-max)) / 2)) 0 0;background:var(--ds-hero);color:var(--ds-on-dark);overflow:hidden}
+.archivepage .ap-hero-tx{align-self:center;padding:40px var(--ds-gutter) 40px clamp(24px,3.5vw,64px);min-width:0}
+.archivepage .ap-hero .ds-label{color:var(--ds-on-dark-3)}
+.archivepage .ap-hero .ds-h1{color:var(--ds-on-dark)}
+.archivepage .ap-hero-fig{position:relative;overflow:hidden;min-width:0}
+.archivepage .ap-hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.archivepage .ap-hero-fig .badge,.archivepage .ap-entry .badge{position:absolute;left:16px;bottom:16px;border-color:rgba(255,255,255,.6);color:rgba(255,255,255,.9);background:rgba(10,10,10,.5)}
+
+/* ---------- 01-b. 소개 | 기록 수치 ---------- */
+.archivepage .ap-intro{background:var(--ds-paper-2)}
+.archivepage .ap-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.archivepage .ap-intro-tx p{font-size:clamp(16px,1.25vw,18px);line-height:1.85;color:var(--ds-ink)}
+.archivepage .ap-intro-tx p+p{margin-top:18px}
+.archivepage .ap-ev{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ds-line);border:1px solid var(--ds-line)}
+.archivepage .ap-ev .ev{background:var(--ds-paper);padding:clamp(20px,2.2vw,30px) clamp(16px,1.8vw,24px)}
+.archivepage .ap-ev .n{font-family:var(--serif);font-size:clamp(30px,3.2vw,46px);line-height:1.1;color:var(--ds-ink);letter-spacing:.01em}
+.archivepage .ap-ev .l{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.14em;color:var(--ds-text-2);margin-top:12px}
+.archivepage .ap-ev .lk{font-size:15px;line-height:1.6;color:var(--ds-ink-2);margin-top:6px}
+
+/* ---------- 02. 01 CUSTOMIZED — 고정 머리말 | 기록 3건 ---------- */
+.archivepage .ap-chap-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,80px);align-items:start}
+.archivepage .ap-chap-head{position:sticky;top:110px}
+.archivepage .ap-chap-head .badge,.archivepage .ap-fp-tx>.badge{margin-top:22px}
+.archivepage .ap-entry{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center;padding:clamp(28px,3vw,40px) 0;border-top:1px solid var(--ds-line-dark)}
+.archivepage .ap-entry:first-child{padding-top:0;border-top:0}
+.archivepage .ap-entry .ds-fig{aspect-ratio:4/3}
+.archivepage .ap-entry:nth-child(2) .ds-fig img{object-position:50% 60%}
+.archivepage .ap-entry:nth-child(3) .ds-fig img{object-position:50% 45%}
+.archivepage .ap-entry-tx p,.archivepage .ap-fp-tx p,.archivepage .ap-bio-tx p{font-size:var(--ds-fs-body);line-height:1.85}
+.archivepage .ap-entry-tx p+p{margin-top:14px}
+.archivepage .ap-entry-tx p:first-child{color:var(--ds-on-dark)}
+.archivepage .ap-note{margin-top:clamp(28px,3vw,40px);background:rgba(255,255,255,.04);border-right-color:rgba(255,255,255,.3)}
+.archivepage .ap-note .note-lb{color:var(--ds-on-dark-3)}
+.archivepage .note p{font-size:15px!important;line-height:1.75}
+.archivepage .ap-note p{color:var(--ds-on-dark-2)!important}
+
+/* ---------- 03. 02 FINISHED PRODUCTS — 사진 | 글 + 기록 목록 ---------- */
+.archivepage .ap-fp{background:var(--ds-hero);border-top:1px solid var(--ds-line-dark)}
+.archivepage .ap-fp-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.archivepage .ap-fp-fig{aspect-ratio:3/2}
+.archivepage .ap-fp-tx p{margin-top:12px}
+.archivepage .ap-fp-tx .ds-h2{margin-bottom:10px}
+.archivepage .ap-coll{margin-top:clamp(56px,7vw,104px)}
+.archivepage .ap-cat{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(20px,3vw,48px);padding:clamp(24px,2.6vw,36px) 0;border-top:1px solid var(--ds-line-dark)}
+.archivepage .ap-cat-h{font-weight:400;display:flex;flex-direction:column;gap:6px}
+.archivepage .ap-cat-h .no{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.16em;color:var(--ds-on-dark-3)}
+.archivepage .ap-cat-h .ln{font-family:var(--serif);font-size:clamp(16px,1.3vw,19px);letter-spacing:.1em;color:var(--ds-on-dark)}
+.archivepage .ap-items{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,20px)}
+.archivepage .ap-item{display:flex;flex-direction:column;color:var(--ds-on-dark-2)}
+.archivepage .ap-item .ph{aspect-ratio:1/1;background:#fff;overflow:hidden}
+.archivepage .ap-item .ph img{width:100%;height:100%;object-fit:contain;transition:transform .5s var(--ds-ease)}
+.archivepage .ap-item:hover .ph img{transform:scale(1.03)}
+.archivepage .ap-item .tx{padding-top:12px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;flex:1}
+.archivepage .ap-item .cat{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--ds-on-dark-3)}
+.archivepage .ap-item .nm{font-size:15px;line-height:1.5;color:var(--ds-on-dark);margin-bottom:8px}
+.archivepage .ap-item .badge{margin-top:auto}
+.archivepage .ap-item:hover .nm{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- 04. 03 SKIN CODE — 글 | 분류표(밝은 면) ---------- */
+.archivepage .ap-sc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.archivepage .ap-sc-tx p{font-size:var(--ds-fs-body);line-height:1.85;color:var(--ds-ink-2);margin-top:12px}
+.archivepage .ap-sc-axes{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ds-line);border:1px solid var(--ds-line);margin:24px 0 8px}
+.archivepage .ap-sc-axes li{background:var(--ds-paper);padding:14px 16px;font-size:15px;letter-spacing:.04em;color:var(--ds-ink)}
+.archivepage .ap-sc-fig{aspect-ratio:1410/1162;border:1px solid var(--ds-line)}
+
+/* ---------- 06. 남은 기준(현재 — 밝은 면) ---------- */
+.archivepage .ap-forward{background:var(--ds-paper-2);text-align:center}
+.archivepage .ap-forward-h{font-size:clamp(26px,3.4vw,46px);font-weight:500;line-height:1.35;color:var(--ds-ink);text-wrap:balance}
+.archivepage .ap-forward .ds-lead{margin:20px auto 0}
+.archivepage .ap-forward .ds-btns{justify-content:center}
+
+/* ---------- 07. BIO의 시작 ---------- */
+.archivepage .ap-bio-box{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border:1px solid var(--ds-line);color:var(--ds-ink);transition:border-color .25s var(--ds-ease)}
+.archivepage .ap-bio-box:hover{border-color:var(--ds-ink)}
+.archivepage .ap-bio-fig{aspect-ratio:3/2}
+.archivepage .ap-bio-tx{padding:clamp(24px,3vw,48px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.archivepage .ap-bio-tx .yr{font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:.16em;color:var(--ds-text-2)}
+.archivepage .ap-bio-tx .cat{font-size:clamp(18px,1.6vw,22px);letter-spacing:.04em;margin:8px 0 12px}
+.archivepage .ap-bio-tx p+p{margin-top:10px}
+.archivepage .ap-bio-tx p:not(.yr):not(.cat){color:var(--ds-ink-2)}
+.archivepage .ap-bio-tx .btn{margin-top:24px;min-height:44px;display:inline-flex;align-items:center}
+.archivepage .ap-bio-box:hover .btn{background:var(--ds-ink);color:#fff}
+
+/* ---------- 반응형 ---------- */
+@media(max-width:1100px){.archivepage .ap-items{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){
+  .archivepage .ap-chap-grid{grid-template-columns:1fr}
+  .archivepage .ap-chap-head{position:static}
+  .archivepage .ap-cat{grid-template-columns:1fr}
+  .archivepage .ap-cat-h{flex-direction:row;align-items:baseline;gap:14px}
+}
+@media(max-width:860px){
+  .archivepage .ap-intro-grid,.archivepage .ap-fp-top,.archivepage .ap-sc-grid,.archivepage .ap-bio-box{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .archivepage .ap-hero{display:flex;flex-direction:column-reverse;height:auto;padding:0}
+  .archivepage .ap-hero-fig{height:220px;flex:0 0 220px}
+  .archivepage .ap-hero-tx{padding:28px var(--ds-gutter) 32px}
+  .archivepage .ap-entry{grid-template-columns:1fr;gap:18px}
+  .archivepage .ap-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .archivepage .ap-item .nm{font-size:15px}
+  .archivepage .ap-ev .n{font-size:30px}
+  .archivepage .ap-intro-tx br,.archivepage .ap-entry-tx br,.archivepage .ap-fp-tx br,.archivepage .ap-sc-tx p br,.archivepage .ds-lead br,.archivepage .ap-bio-tx br{display:none}
+  .archivepage .ap-sc-axes li{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){.archivepage *{transition:none!important}}
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .archivepage .ap-hero{padding-right:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .archivepage .ap-hero-tx{padding:32px clamp(32px,5.42vw,104px) 32px clamp(24px,3vw,56px);min-width:0}
+  .archivepage .ap-hero-tx h1{white-space:normal;overflow-wrap:break-word}
+}

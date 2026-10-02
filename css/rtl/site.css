@@ -1,0 +1,1641 @@
+:root{
+  --ink:#111111; --ink-2:#3A3A3A; --muted:#8A8A8A; --muted-text:#6B6B6B;
+  --line:#E6E6E6; --line-2:#F0F0F0;
+  --paper:#FFFFFF; --paper-2:#F6F6F6; --black:#0A0A0A;
+  --max:1240px;
+  --sans:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Noto Serif","Noto Serif KR","Times New Roman",Times,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-weight:400;font-size:15px;line-height:1.7;letter-spacing:normal;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.en-d{font-family:var(--serif);letter-spacing:.02em}
+.skip{position:absolute;right:-9999px}
+.skip:focus{right:8px;top:8px;background:#000;color:#fff;padding:10px 16px;z-index:999}
+
+/* header */
+.hdr{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:100}
+.hdr-in{max-width:var(--max);margin:0 auto;padding:0 32px;height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.wm{height:19px;width:auto}
+.wm-f{height:17px;width:auto}
+.gnb{display:flex;gap:32px}
+.gnb a{font-family:var(--serif);font-size:14px;letter-spacing:.04em;color:var(--ink-2);padding:8px 0;border-bottom:1px solid transparent;transition:.25s;white-space:nowrap}
+.gnb a:hover,.gnb a.cur{border-bottom-color:var(--ink);color:var(--ink)}
+.gnb a.ext::after{content:"↗";font-family:var(--sans);font-size:10px;margin-right:4px;vertical-align:2px;color:var(--muted)}
+.util{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted)}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0}
+.mnav{display:none;border-bottom:1px solid var(--line);background:#fff}
+.mnav.on{display:block}
+.mnav a{display:block;padding:15px 32px;border-top:1px solid var(--line-2);font-family:var(--serif);letter-spacing:.04em}
+
+/* quick */
+.quick{border-bottom:1px solid var(--line)}
+.quick-in{max-width:var(--max);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr)}
+.quick-in a{padding:28px 14px;text-align:center;border-right:1px solid var(--line-2);transition:.25s}
+.quick-in a:first-child{border-right:0}
+.quick-in a:hover{background:var(--paper-2)}
+.quick-in .qe{font-family:var(--serif);font-size:12px;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:6px}
+.quick-in .qk{font-size:15px;color:var(--ink)}
+
+.notice-strip{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.notice-strip .wrap{display:flex;align-items:center;gap:18px;height:52px;font-size:14px}
+.notice-strip .lb{font-family:var(--serif);font-size:12px;letter-spacing:.1em;color:var(--muted);flex:none}
+.notice-strip .tx{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* page head */
+.pagehead{position:relative;height:440px;overflow:hidden;background:var(--black);display:flex;align-items:center;justify-content:center;text-align:center}
+.pagehead img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.pagehead .t{position:relative;color:#fff;padding:0 20px}
+.pagehead h1{font-family:var(--serif);font-size:clamp(24px,3.4vw,34px);font-weight:400;letter-spacing:.06em}
+.pagehead p{font-size:14px;font-weight:300;color:rgba(255,255,255,.8);margin-top:10px}
+
+/* hero */
+.hero{position:relative;width:100%;aspect-ratio:16/9;max-height:calc(100vh - 80px);min-height:420px;overflow:hidden;background:var(--black)}
+.hero .slides{position:absolute;inset:0}
+.hero .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease}
+.hero .slides img.on{opacity:1}
+.hero .slides img:nth-child(4){object-position:64% center}
+.hero .ov{position:absolute;inset:0;background:linear-gradient(-90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.84) 42%,rgba(0,0,0,.6) 62%,rgba(0,0,0,.34) 80%,rgba(0,0,0,.48) 100%)}
+.hero .in{position:relative;height:100%;max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.hero .eyebrow{font-family:var(--serif);font-size:clamp(15px,1.5vw,19px);letter-spacing:.16em;color:rgba(255,255,255,.82);margin-bottom:24px}
+.hero h2{font-size:clamp(22px,2.4vw,34px);font-weight:400;line-height:1.5;margin-bottom:20px}
+.hero h2 b{font-weight:500}
+.hero p{font-size:15px;color:rgba(255,255,255,.78);max-width:34em;font-weight:300;line-height:1.75}
+.hero .cta{margin-top:36px;display:flex;gap:10px;flex-wrap:wrap}
+.hero .dots{position:absolute;right:0;left:0;bottom:32px;display:flex;justify-content:center;gap:9px;z-index:3}
+.hero .dots button{width:26px;height:2px;border:0;padding:0;background:rgba(255,255,255,.32);cursor:pointer;transition:.3s}
+.hero .dots button.on{background:#fff}
+@media(prefers-reduced-motion:reduce){.hero .slides img{transition:none}}
+
+.btn{display:inline-block;font-size:14px;padding:14px 30px;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:.25s;cursor:pointer;font-family:inherit;text-align:center}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.fill{background:var(--ink);color:#fff}
+.btn.fill:hover{background:transparent;color:var(--ink)}
+.btn.onblack{border-color:rgba(255,255,255,.55);color:#fff}
+.btn.onblack:hover{background:#fff;color:var(--ink)}
+.btn.onblack.fill{background:#fff;color:var(--ink);border-color:#fff}
+.btn.onblack.fill:hover{background:transparent;color:#fff}
+.btn.sm{padding:11px 22px;font-size:13px}
+
+/* sections */
+section{padding:clamp(72px,9vw,128px) 0}
+.sec-top{text-align:center;margin-bottom:56px}
+.sec-en{font-family:var(--serif);font-size:13px;letter-spacing:.16em;color:var(--muted);margin-bottom:14px}
+.sec-top h3{font-size:clamp(20px,2.2vw,26px);font-weight:500;line-height:1.5}
+.sec-top h3.en-d{font-weight:400;letter-spacing:.05em}
+.sec-top .lead{margin-top:18px;color:var(--muted-text);font-size:15px;font-weight:300;max-width:40em;margin-right:auto;margin-left:auto}
+.alt{background:var(--paper-2)}
+.dark{background:var(--black);color:rgba(255,255,255,.78)}
+.dark .sec-en{color:rgba(255,255,255,.42)}
+.dark .sec-top h3{color:#fff}
+.dark .sec-top .lead{color:rgba(255,255,255,.6)}
+.rule{width:28px;height:1px;background:var(--ink);margin:0 auto 26px}
+.dark .rule{background:rgba(255,255,255,.5)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.split .fig img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.split.wide .fig img{aspect-ratio:1/1}
+.split .fig.sq img{aspect-ratio:1/1}
+/* 흰 배경 제품컷을 흰 지면에 그대로 올리면 '상품 DB 썸네일'로 읽힌다.
+   아주 연한 톤 패널 위에 multiply 로 얹어 흰 배경을 지운다.
+   원본 배경이 순백이라 정확히 사라지고 제품 자체 그림자만 남는다.
+   합성·그림자 추가 없이 접지감을 만든다. */
+.split .fig.prodplate{background:linear-gradient(-176deg,#FBFAF8 0%,#F2EFEC 66%,#EBE7E3 100%)}
+.split .fig.prodplate img{object-fit:contain;mix-blend-mode:multiply;
+  padding:clamp(18px,3.2vw,44px);box-sizing:border-box}
+/* 누끼(알파 PNG) 전용.
+   ① multiply 금지 — 걸면 흰 용기 본체에 패널 톤이 비쳐 회색으로 죽는다.
+   ② 톤 패널 해제 — 배경이 이미 투명해서 흰 사각형이 생기지 않는다.
+      톤을 깔면 오히려 지면 위에 회색 카드가 얹힌 것처럼 보인다.
+   ③ 여백 최소 — 제품을 셀 높이만큼 크게 쓴다.                      */
+.split .fig.prodplate.cutout{background:#fff}
+.split .fig.prodplate.cutout img{mix-blend-mode:normal;padding:clamp(6px,1vw,14px)}
+.copy h4{font-size:19px;font-weight:500;margin-bottom:14px}
+.copy .en{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
+.copy p{color:var(--ink-2);font-size:15px;font-weight:300;margin-bottom:15px}
+.dark .copy p{color:rgba(255,255,255,.68)}
+.dark .copy h4{color:#fff}
+
+/* brand film */
+.film{background:var(--black);padding:clamp(72px,9vw,116px) 0}
+.film .sec-en,.film h3,.film .lead{text-align:center}
+.film h3{color:#fff;font-size:clamp(20px,2.2vw,26px);font-weight:500;margin-bottom:12px}
+.film .lead{color:rgba(255,255,255,.6);font-size:15px;font-weight:300;max-width:40em;margin:0 auto 44px}
+.film .frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;cursor:pointer}
+.film .frame img{width:100%;height:100%;object-fit:cover;opacity:.62;transition:.4s}
+.film .frame:hover img{opacity:.75;transform:scale(1.02)}
+.film .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;pointer-events:none}
+.film .play i{width:72px;height:72px;border:1px solid rgba(255,255,255,.75);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+.film .frame:hover .play i{background:rgba(255,255,255,.14)}
+.film .play i::after{content:"";border-right:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-right:4px}
+.film .play span{font-family:var(--serif);font-size:12px;letter-spacing:.18em}
+
+/* product grid */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.pcard{background:#fff;padding:0 0 26px;transition:.3s;display:block}
+.pcard:hover{box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.pcard .ph{aspect-ratio:1/1;overflow:hidden;background:#fff}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.pcard:hover .ph img{transform:scale(1.04)}
+.pcard .tx{text-align:center;padding:16px 16px 0}
+.pcard .cat{font-family:var(--serif);font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+.pcard .nm{font-size:15px;font-weight:400;line-height:1.5}
+.pcard .nm-en{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:4px;line-height:1.5}
+.pcard .tag{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.pcard .tag.store{color:var(--ink);border-color:#cfcfcf}
+
+.filters{display:flex;flex-wrap:wrap;gap:0;justify-content:center;border-bottom:1px solid var(--line);margin-bottom:44px}
+.filters button{font-family:inherit;background:none;border:0;font-size:15px;padding:14px 18px;color:var(--muted);border-bottom:1px solid transparent;margin-bottom:-1px;cursor:pointer}
+.filters button.on,.filters button:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.listbar{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px;font-size:14px;color:var(--muted)}
+
+/* store band */
+.storeband{background:var(--black);color:#fff}
+.storeband .wrap{display:flex;align-items:center;gap:30px;padding-top:54px;padding-bottom:54px;flex-wrap:wrap}
+.storeband .t{flex:1;min-width:260px}
+.storeband .se{font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:rgba(255,255,255,.45);margin-bottom:10px}
+.storeband h3{font-size:20px;font-weight:400;line-height:1.55}
+.storeband p{font-size:14px;font-weight:300;color:rgba(255,255,255,.6);margin-top:8px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);padding:22px 0 0}
+.crumb a:hover{color:var(--ink)}
+.crumb span{margin:0 7px;color:#cfcfcf}
+
+/* product detail */
+.pd{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);padding-top:36px}
+.pd .gal img{width:100%;background:var(--paper-2)}
+.pd-info{position:sticky;top:100px;align-self:start}
+.pd-code{font-family:var(--serif);font-size:12px;letter-spacing:.12em;color:var(--muted);margin-bottom:12px}
+.pd-info h1{font-size:clamp(21px,2.2vw,26px);font-weight:500;line-height:1.45}
+.pd-info .en{font-family:var(--serif);font-size:14px;color:var(--muted);font-weight:400;margin-top:7px}
+.pd-lead{color:var(--ink-2);font-size:15px;font-weight:300;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0}
+.spec{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:26px}
+.spec th{text-align:right;font-weight:400;color:var(--muted);padding:9px 0;width:104px;vertical-align:top}
+.spec td{padding:9px 0;color:var(--ink-2)}
+.pd-cta{display:flex;gap:8px;flex-wrap:wrap}
+.pd-cta .btn{flex:1;min-width:150px}
+.pd-note{font-size:12px;color:var(--muted);margin-top:14px;font-weight:300}
+
+.tabs2{display:flex;border-bottom:1px solid var(--line);margin-top:76px}
+.tabs2 button{flex:1;background:none;border:0;border-bottom:2px solid transparent;padding:17px 8px;font-family:inherit;font-size:15px;color:var(--muted);cursor:pointer;margin-bottom:-1px}
+.tabs2 button.on{color:var(--ink);border-bottom-color:var(--ink)}
+.pane{display:none;padding:44px 0}
+.pane.on{display:block}
+.detail-img{max-width:900px;margin:0 auto}
+.detail-img img{width:100%}
+.detail-img video{width:100%;display:block;background:#fff}
+/* 세로형 실사용 영상 — 풀와이드 확대 없이 가운데 정렬 */
+.detail-demo{max-width:560px;margin:clamp(26px,4vw,48px) auto;padding:0}
+.detail-demo video{width:100%;display:block;background:#fff}
+.detail-demo figcaption{margin-top:12px;text-align:center;font-size:12.5px;font-weight:300;letter-spacing:.02em;color:var(--muted)}
+@media(max-width:640px){.detail-demo{max-width:100%}}
+
+.info-blocks{max-width:860px;margin:0 auto}
+.ib{border-top:1px solid var(--line);padding:30px 0}
+.ib:first-child{border-top:0;padding-top:0}
+.ib .lb{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.ib h4{font-size:18px;font-weight:500;margin-bottom:12px;line-height:1.5}
+.ib p{color:var(--ink-2);font-size:15px;font-weight:300;white-space:pre-line}
+.ib .pt{margin-bottom:22px}
+.ib .pt b{display:block;font-weight:500;font-size:15px;margin-bottom:5px}
+.ib .ing{font-size:13px;color:var(--muted);margin-bottom:8px}
+.ib ol{padding-right:18px;color:var(--ink-2);font-weight:300}
+
+.notice{max-width:860px;margin:0 auto}
+.notice table{width:100%;border-collapse:collapse;font-size:14px}
+.notice th,.notice td{border:1px solid var(--line);padding:13px 16px;text-align:right;vertical-align:top}
+.notice th{background:var(--paper-2);font-weight:400;color:var(--ink-2);width:210px}
+.notice td{color:var(--ink-2);white-space:pre-line}
+.notice td.ing{font-size:13px;color:var(--muted);line-height:1.9;font-weight:300;white-space:normal}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:50px 0 42px;font-size:14px;color:var(--muted-text);margin-top:0}
+.f-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid var(--line-2)}
+.f-nav{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+.f-nav a:hover{color:var(--ink)}
+.f-biz{padding-top:24px;line-height:2;font-size:13px;font-weight:300;color:var(--muted-text)}
+.f-biz span{display:inline-block;margin-left:16px}
+.f-copy{margin-top:18px;font-size:12px;color:var(--muted-text)}
+
+@media(max-width:1000px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .split,.pd{grid-template-columns:1fr}
+  .pd-info{position:static}
+  .gnb,.util{display:none}
+  .burger{display:block}
+  .quick-in{grid-template-columns:repeat(2,1fr)}
+  .quick-in a:nth-child(3){border-right:0}
+}
+@media(max-width:640px){
+  .wrap,.hdr-in,.quick-in,.mnav a{padding-right:20px;padding-left:20px}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .hdr-in{height:64px}
+  .hero{aspect-ratio:auto;max-height:none;height:auto;min-height:0;padding:64px 0 84px}
+  .hero .in{height:auto}
+  .pagehead{height:220px}
+  .notice-strip .wrap{height:auto;padding-top:14px;padding-bottom:14px}
+  .notice th,.notice td{display:block;width:auto;border-top:0}
+  .notice tr{display:block;border-top:1px solid var(--line)}
+  .notice th{background:var(--paper-2)}
+  .tabs2 button{font-size:13.5px;padding:15px 4px}
+  .pcard .tx{padding:14px 10px 0}
+  .pcard .nm{font-size:14px}
+}
+
+/* ===== HOME 2026 — sections ===== */
+
+/* hero per-slide caption */
+.hero .hcaps{display:grid}
+.hero .hcap{grid-area:1/1;opacity:0;transform:translateY(10px);transition:opacity .35s ease,transform 0s linear .35s;pointer-events:none}
+.hero .hcap.on{opacity:1;transform:none;transition:opacity .7s ease .4s,transform .7s ease .4s;pointer-events:auto}
+.hero .hcap h2{font-size:clamp(23px,2.6vw,36px);font-weight:500;line-height:1.45;margin-bottom:18px}
+.hero .hcap p{font-size:15px;color:rgba(255,255,255,.9);max-width:36em;font-weight:400;line-height:1.75}
+
+/* quick nav — 6 items, english only */
+.quick.q6 .quick-in{grid-template-columns:repeat(6,1fr)}
+.quick.q6 .quick-in a{padding:22px 8px}
+.quick.q6 .qe{margin-bottom:0;font-size:12.5px;letter-spacing:.12em;color:var(--ink-2)}
+.quick.q6 .quick-in a:hover .qe{color:var(--ink)}
+
+/* notice — two lines allowed */
+.notice-strip .wrap{height:auto;padding-top:15px;padding-bottom:15px;align-items:flex-start}
+.notice-strip .lb{padding-top:2px}
+.notice-strip .tx{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.8;font-weight:300}
+
+/* archive cards */
+.arcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
+.arc{background:var(--black);display:flex;flex-direction:column;transition:.3s}
+.arc:hover{background:#141414}
+.arc .ph{aspect-ratio:3/2;overflow:hidden;background:#fff}
+.arc .ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.arc:hover .ph img{transform:scale(1.03)}
+.arc .tx{padding:24px 24px 28px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.arc .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.arc .ln{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.62);margin-bottom:8px}
+.arc .nm{font-size:17px;color:#fff;font-weight:400;line-height:1.5}
+.arc .sub{font-size:13px;color:rgba(255,255,255,.55);font-weight:300;margin-top:5px}
+.arc .st{display:inline-block;margin-top:auto;font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.28);padding:4px 10px}
+
+/* skincare system */
+.sysgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sys{background:#fff;padding:44px 32px 46px;text-align:center}
+.sys .step{font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:16px}
+.sys h4{font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:.08em;margin-bottom:20px}
+.sys ul{list-style:none;padding:0;border-top:1px solid var(--line-2);padding-top:18px}
+.sys li{font-size:14.5px;color:var(--ink-2);font-weight:300;line-height:2}
+
+/* collections */
+.colgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+/* 상태 chip(COMING SOON / ARCHIVE) 제거 후 카드 하단이 비지 않도록
+   CTA 를 카드 바닥에 정렬하고 최소 높이를 chip 한 줄만큼 줄인다. */
+.col{background:#fff;padding:36px 24px 34px;display:flex;flex-direction:column;align-items:flex-start;min-height:206px}
+.col .ln{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.col .nm{font-size:16px;font-weight:400;line-height:1.5;color:var(--ink)}
+.col .sub{font-size:13px;color:var(--muted);font-weight:300;margin-top:5px}
+.col .st{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;padding:4px 10px;border:1px solid var(--line);color:var(--muted);margin-top:14px;margin-bottom:auto}
+.col .st.now{color:var(--ink);border-color:var(--ink)}
+.col .st.soon{color:var(--ink-2);border-color:#cfcfcf}
+.col .btn{margin-top:auto;width:100%}
+
+/* b2b partnership */
+.b2bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
+.b2bi{background:var(--black);padding:36px 28px 40px}
+.b2bi .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-bottom:16px}
+.b2bi h4{font-size:17px;font-weight:400;color:#fff;margin-bottom:12px;line-height:1.5}
+.b2bi p{font-size:14px;font-weight:300;color:rgba(255,255,255,.62);line-height:1.75}
+
+/* skin code 16 type chart */
+.chartwrap{max-width:1000px;margin:0 auto;overflow-x:auto}
+.chartwrap img{width:100%;display:block}
+@media(max-width:700px){.chartwrap img{min-width:620px}}
+
+/* collaboration */
+.collabfig{max-width:900px;margin:0 auto}
+.collabfig img{width:100%}
+
+/* disabled cta */
+.btn.is-off{cursor:default;color:var(--muted);border-color:var(--line);background:transparent}
+.btn.is-off:hover{background:transparent;color:var(--muted)}
+
+@media(max-width:1000px){
+  .quick.q6 .quick-in{grid-template-columns:repeat(3,1fr)}
+  .quick.q6 .quick-in a:nth-child(4){border-right:0}
+  .arcgrid,.colgrid,.b2bgrid,.sysgrid{grid-template-columns:repeat(2,1fr)}
+  .col{min-height:0}
+}
+@media(max-width:640px){
+  .quick.q6 .quick-in{grid-template-columns:repeat(2,1fr)}
+  .quick.q6 .quick-in a:nth-child(3),.quick.q6 .quick-in a:nth-child(5){border-right:0}
+  .arcgrid,.colgrid,.b2bgrid,.sysgrid{grid-template-columns:1fr}
+  .hero .hcap p{font-size:14.5px}
+}
+
+/* ===== HOME 2026 revision — 서사 재구성 ===== */
+
+/* CUSTOMIZED 본문: 짧은 문단 + 여백 */
+.copy.lead-copy p{margin-bottom:22px;line-height:1.85;font-size:15.5px;color:var(--ink-2)}
+.copy.lead-copy p:last-of-type{margin-bottom:0}
+
+/* 완제품 17종 짧은 블록 */
+.noteband{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.noteband .wrap{padding-top:clamp(52px,6vw,78px);padding-bottom:clamp(52px,6vw,78px);text-align:center}
+.noteband p{font-size:clamp(17px,1.7vw,20px);font-weight:400;line-height:1.75;color:var(--ink)}
+.noteband p.sub{margin-top:18px;font-size:15px;font-weight:300;color:var(--muted);line-height:1.8}
+
+/* SKIN CODE — 네 가지 축 */
+.axes{text-align:center;margin-bottom:56px}
+.axes .ax-t{font-size:15px;color:var(--muted);font-weight:300;margin-bottom:18px}
+.axes ul{list-style:none;padding:0;display:inline-flex;flex-direction:column;gap:10px}
+.axes li{font-family:var(--serif);font-size:clamp(17px,1.8vw,21px);letter-spacing:.04em;color:var(--ink);
+  border-bottom:1px solid var(--line);padding-bottom:10px;min-width:190px}
+.axes li:last-child{border-bottom:0}
+.axes .ax-b{margin-top:26px;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85}
+
+/* SKIN CODE — 숫자 증거 */
+.evid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:56px}
+.evid .ev{background:var(--paper-2);padding:44px 20px 46px;text-align:center}
+.evid .n{font-family:var(--serif);font-size:clamp(38px,5.4vw,66px);font-weight:400;line-height:1;letter-spacing:.01em;color:var(--ink)}
+.evid .l{margin-top:14px;font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:var(--muted)}
+
+.midcopy{text-align:center;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85;
+  max-width:40em;margin:0 auto 52px}
+
+/* TODAY — 단계별 한 줄 설명 */
+.sys .sysline{font-size:15px;color:var(--ink-2);font-weight:400;margin-bottom:18px;line-height:1.7}
+.sys ul{border-top:1px solid var(--line-2);padding-top:16px}
+.closing{text-align:center;margin-top:52px;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.9}
+.closing b{display:block;font-family:var(--serif);font-size:clamp(17px,1.9vw,22px);font-weight:400;
+  letter-spacing:.08em;color:var(--ink);margin-bottom:14px}
+
+/* CURRENT PRODUCT */
+.product-now .wrap{text-align:center}
+.product-now .pn-top{margin-bottom:34px}
+.product-now .sec-en{font-family:var(--serif);font-size:13px;letter-spacing:.18em;color:rgba(255,255,255,.5);margin-bottom:18px}
+.product-now h3{font-family:var(--serif);font-size:clamp(24px,3.6vw,44px);font-weight:400;letter-spacing:.06em;color:#fff;line-height:1.3}
+.product-now .stage{display:inline-block;margin-top:20px;font-family:var(--serif);font-size:11px;letter-spacing:.16em;
+  color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.4);padding:6px 16px}
+.product-now .pn-body{font-size:15.5px;font-weight:300;color:rgba(255,255,255,.72);line-height:1.9;max-width:38em;margin:0 auto}
+.product-now .pn-cta{margin-top:40px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.product-now .pn-cta .btn{min-width:190px}
+.btn.onblack.is-off{color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.22)}
+.btn.onblack.is-off:hover{background:transparent;color:rgba(255,255,255,.4)}
+
+/* COLLECTIONS 4단 */
+.colgrid.c4{grid-template-columns:repeat(4,1fr)}
+
+/* NOTICE 여러 줄 */
+.notice-strip .tx{line-height:1.8}
+
+@media(max-width:1000px){
+  .colgrid.c4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .evid{grid-template-columns:1fr}
+  .colgrid.c4{grid-template-columns:1fr}
+  .product-now .pn-cta .btn{width:100%}
+}
+
+/* BRAND 2026 — 01 BRAND PAGE */
+.pagehead.tall{height:440px}
+@media(max-width:640px){.pagehead.tall{height:220px}}
+.pagehead.tall img{opacity:.62}
+.pagehead.tall::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(-180deg,rgba(10,10,10,.30) 0%,rgba(10,10,10,.62) 100%)}
+.pagehead.tall .t{z-index:2}
+.pagehead .t .sec-en{color:rgba(255,255,255,.72);margin-bottom:16px}
+.pagehead .t h1{line-height:1.55;text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.split.rev{direction:ltr}
+.split.rev>*{direction:rtl}
+.split+.split{margin-top:clamp(48px,6vw,80px)}
+.evid.four{grid-template-columns:repeat(4,1fr)}
+.evid .lk{margin-top:8px;font-size:12.5px;font-weight:300;color:var(--ink-2);line-height:1.6}
+.dark .evid .ev{background:transparent}
+.dark .evid .n{color:#fff}
+.tnote{font-size:13px;font-weight:300;color:var(--muted-text);line-height:1.7}
+.dark .tnote{color:var(--muted)}
+.endgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.endcard{display:block;background:var(--paper-2);text-decoration:none;color:inherit}
+.endcard .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.endcard .tx{padding:30px 28px 34px;text-align:center}
+.endcard .tx p{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.8;margin:12px 0 22px}
+.endcard:hover .ph img{opacity:.88}
+@media (max-width:860px){
+  .evid.four{grid-template-columns:repeat(2,1fr)}
+  .split.rev{direction:rtl}
+  .endgrid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .evid.four{grid-template-columns:1fr}
+}
+
+/* BRAND 2026 — 크로스체크 2 반영 */
+/* §10 본문 한 단계 확대 (BRAND 페이지 한정) */
+.brandpage .sec-top .lead{font-size:clamp(15px,1.06vw,16.5px);line-height:1.88}
+.brandpage .copy p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.85;margin-bottom:17px}
+.brandpage .midcopy{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9}
+.brandpage .closing{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9}
+.brandpage .sys .sysline{font-size:clamp(15px,1.02vw,16px)}
+.brandpage .evid .lk{font-size:13.5px;line-height:1.7}
+/* §11 텍스트 중심 섹션 여백 15~20% 축소 */
+.brandpage #pov,.brandpage #next{padding-top:clamp(52px,6vw,78px);padding-bottom:clamp(52px,6vw,78px)}
+/* §8 NOTE 블록 */
+.note{margin-top:26px;padding:16px 18px;border-right:2px solid var(--line);background:var(--paper-2)}
+.note-lb{display:block;font-family:var(--serif);font-size:11px;letter-spacing:.18em;color:var(--muted);margin-bottom:7px}
+.note p{font-size:13.5px!important;font-weight:300;color:var(--muted-text);line-height:1.75;margin:0!important}
+/* §13 비활성 CTA */
+.btn.is-off{opacity:.42;cursor:default;pointer-events:none}
+/* §9 CSTI 이미지 — 잘리지 않게 + 탭 확대 */
+.chartwrap.zoom{position:relative;overflow:visible}
+.chartwrap.zoom img{width:100%!important;min-width:0!important;max-width:100%;height:auto;
+  object-fit:contain;cursor:zoom-in;display:block}
+.zoomhint{display:none;margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+.imgzoom{position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,.94);display:none;
+  align-items:center;justify-content:center;padding:14px;overflow:auto}
+.imgzoom.on{display:flex}
+.imgzoom img{max-width:none;width:auto;height:auto;min-width:760px;cursor:zoom-out}
+.imgzoom .x{position:fixed;top:14px;left:16px;z-index:10000;color:#fff;font-size:26px;line-height:1;
+  background:none;border:0;cursor:pointer;padding:8px}
+@media (max-width:860px){
+  .zoomhint{display:block}
+  .imgzoom img{min-width:900px}
+}
+
+/* ===== ARCHIVE 2026 — archive.html / skin-code.html ===== */
+
+/* 본문 크기: BRAND와 동일 기준 */
+.archivepage .sec-top .lead,.skincodepage .sec-top .lead{font-size:clamp(15px,1.06vw,16.5px);line-height:1.88}
+.archivepage .copy p,.skincodepage .copy p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.85;margin-bottom:17px}
+.archivepage .midcopy,.skincodepage .midcopy{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9}
+
+/* ARCHIVE COLLECTION — 쇼핑 그리드가 아닌 기록 목록 */
+.arccat{margin-bottom:clamp(52px,6vw,78px)}
+.arccat:last-child{margin-bottom:0}
+.arccat-h{display:flex;align-items:baseline;gap:16px;padding-bottom:14px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.arccat-h .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.arccat-h .ln{font-family:var(--serif);font-size:clamp(14px,1.4vw,16px);letter-spacing:.12em;color:var(--ink)}
+.arcitems{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.arcitem{display:block;background:#fff;padding:0 0 22px;border:1px solid var(--line)}
+.arcitem .ph{aspect-ratio:1/1;overflow:hidden;background:#fff}
+.arcitem .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s}
+a.arcitem:hover .ph img{transform:scale(1.04)}
+a.dermobox:hover .ph img{transform:scale(1.03)}
+.arcitem .tx{text-align:center;padding:16px 14px 0}
+.arcitem .cat{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+.arcitem .nm{font-size:14px;font-weight:400;line-height:1.55;color:var(--ink)}
+.arcitem .st{display:inline-block;margin-top:12px;font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;
+  color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+
+/* DERMOCOSMETICS ARCHIVE — 메인 3축과 시각적으로 분리 */
+.dermobox{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:880px;margin:0 auto;
+  border:1px solid var(--line);background:#fff}
+.dermobox .ph{overflow:hidden}
+.dermobox .ph img{width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform .55s}
+.dermobox .tx{padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.dermobox .cat{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--ink);margin-bottom:16px}
+.dermobox .tx p{font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.85;margin-bottom:14px}
+.dermobox .st{margin-top:8px;font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;
+  color:var(--muted);border:1px solid var(--line);padding:4px 10px}
+
+/* SKIN CODE — 네 가지 축 카드 */
+.axgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:clamp(40px,5vw,56px)}
+.axcard{background:var(--paper);padding:clamp(28px,3vw,40px) 18px;text-align:center;display:flex;flex-direction:column}
+.axcard .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:16px}
+.axcard .en{font-family:var(--serif);font-size:12.5px;letter-spacing:.09em;color:var(--ink);line-height:1.6;margin-bottom:10px}
+.axcard .ko{font-size:15px;font-weight:300;color:var(--ink-2)}
+
+/* SKIN CODE — 16 타입 카드 */
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:clamp(40px,5vw,56px)}
+.sctype{background:var(--paper);padding:26px 16px 28px;text-align:center;scroll-margin-top:96px}
+.sctype .no{display:block;font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:12px}
+.sctype .code{display:block;font-family:var(--serif);font-size:clamp(17px,1.8vw,21px);letter-spacing:.1em;color:var(--ink)}
+.sctype .ax{display:block;margin-top:12px;font-size:13px;font-weight:300;color:var(--ink-2);line-height:1.7}
+.sctype:target{background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--ink)}
+
+/* SKIN CODE — 운영 단계 */
+.stepgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:clamp(40px,5vw,56px)}
+.step{background:var(--paper);padding:clamp(26px,3vw,36px) 14px;text-align:center;display:flex;flex-direction:column}
+.step .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:16px}
+.step .en{font-family:var(--serif);font-size:11.5px;letter-spacing:.09em;color:var(--ink);line-height:1.6;margin-bottom:10px}
+.step .ko{font-size:13.5px;font-weight:300;color:var(--ink-2);line-height:1.7}
+
+/* SKIN CODE — 세럼 베이스 */
+.basegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.basecard{background:var(--paper);padding:clamp(32px,3.4vw,44px) 14px;text-align:center;
+  font-family:var(--serif);font-size:clamp(14px,1.5vw,17px);letter-spacing:.11em;color:var(--ink)}
+
+/* 단일 통계 블록 */
+.evid.one{grid-template-columns:1fr;background:none;border-top:0;border-bottom:0}
+.evid.one .ev{background:none;padding:0}
+.evid.one .n{font-size:clamp(46px,7vw,86px)}
+.evid.one .l{margin-top:16px;letter-spacing:.2em}
+
+/* Skin Code redirect 안내 페이지 */
+.redir{max-width:34em;margin:0 auto;text-align:center;padding:clamp(70px,11vw,140px) 0}
+.redir .sec-en{margin-bottom:20px}
+.redir h1{font-size:clamp(19px,2.1vw,25px);font-weight:500;line-height:1.55;margin-bottom:22px}
+.redir p{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85;margin-bottom:30px}
+
+@media (max-width:1024px){
+  .arcitems{grid-template-columns:repeat(3,1fr)}
+  .axgrid,.tgrid{grid-template-columns:repeat(2,1fr)}
+  .stepgrid{grid-template-columns:repeat(3,1fr)}
+  .basegrid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .arcitems{grid-template-columns:repeat(2,1fr)}
+  .stepgrid{grid-template-columns:1fr}
+  .dermobox{grid-template-columns:1fr}
+  .arccat-h{flex-direction:column;gap:6px}
+  .sctype{scroll-margin-top:72px}
+}
+
+/* 차트 이미지: width/height 속성이 있어도 반응형 유지 */
+.chartwrap.zoom img{height:auto!important}
+
+/* ===== 복구: 2026-09-15 HOME 개편(6bf2cd1) 때 유실된 규칙 — 6a6d421 원본 그대로 ===== */
+.hero-cap{position:absolute;right:0;left:0;bottom:46px;text-align:center;z-index:3;font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.66);transition:opacity .4s ease}
+/* 판매중 품목이 아직 한둘일 때 — 빈 칸이 회색으로 남지 않게 칸 수를 내용에 맞춘다 */
+.pgrid.few{grid-template-columns:repeat(auto-fit,minmax(220px,300px));justify-content:center;
+  gap:20px;background:transparent;border:0}
+.pgrid.few .pcard{border:1px solid var(--line)}
+.pd .gal-main{background:#fff;border:1px solid var(--line)}
+.pd .gal-main img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block}
+.pd .gal-thumbs{display:flex;gap:8px;margin-top:8px}
+.pd .gal-thumbs button{width:78px;height:78px;padding:0;background:#fff;border:1px solid var(--line);cursor:pointer;transition:border-color .2s}
+.pd .gal-thumbs button.on{border-color:var(--ink)}
+.pd .gal-thumbs button img{width:100%;height:100%;object-fit:contain;display:block}
+.privacy-link{font-weight:500;color:var(--ink)}
+.privacy-link:hover{border-bottom:1px solid var(--ink)}
+/* 언어 전환 / language switch */
+.util .lang{display:flex;gap:8px;align-items:center;letter-spacing:.04em}
+.util .lang a{color:var(--muted-text);text-decoration:none;transition:color .2s}
+.util .lang a:hover{color:var(--ink)}
+.util .lang .on{color:var(--ink);font-weight:500}
+.util .lang .sep{opacity:.4}
+.mnav .lang{display:flex;gap:10px;padding:14px 0 2px;font-size:13px;letter-spacing:.04em;border-top:1px solid var(--line);margin-top:8px}
+.mnav .lang a{color:var(--muted-text)}
+.mnav .lang .on{color:var(--ink);font-weight:500}
+.mnav .lang .sep{opacity:.4}
+/* 영문 제품 상세 (한글이 박힌 상세 이미지를 대신하는 재구성 레이아웃) */
+/* 표지·하이라이트 판은 한글판 아트워크를 그대로 쓰고 글자만 영문으로 얹는다.
+   글자 크기는 판의 너비(900px 기준)에 맞춰 같이 줄고 늘어야 해서 cqw 를 쓴다. */
+.dx-art,.dx-hl{position:relative;container-type:inline-size;background:#fff}
+.dx-art img,.dx-hl img{width:100%;display:block}
+.dx-hero.dx-art{padding:0;margin-bottom:10px}
+.dx-hero.dx-art img{max-width:none;margin:0}
+.dx-hero.dx-art h2,.dx-hero.dx-art .dx-tag{position:absolute;right:0;left:0;
+  text-align:center;padding:0 6%;margin:0;color:#2b2b2b;max-width:none}
+.dx-hero.dx-art h2{font-size:21px;font-size:clamp(15px,2.4cqw,22px);font-weight:500;
+  letter-spacing:.02em;line-height:1.45;font-family:inherit}
+.dx-hero.dx-art .dx-tag{font-size:23px;font-size:clamp(13px,2.55cqw,23px);
+  font-weight:500;line-height:1.6;color:#2f2f2f}
+.dx-hero.dx-art.on-dark h2,.dx-hero.dx-art.on-dark .dx-tag{color:#fff}
+.dx-hl{margin:10px 0 0;padding:0}
+.dx-hl .in{position:absolute;right:5%;top:var(--t);width:var(--w);text-align:right}
+.dx-hl.dx-stack .in{position:static;width:auto;text-align:right;
+  background-size:100% 100%;background-repeat:no-repeat;padding:2.5cqw 5% 5cqw}
+.dx-hl h3{font-size:clamp(19px,5.1cqw,46px);font-weight:700;line-height:1.42;
+  letter-spacing:-.015em;margin:-.4cqw 0 0;color:#111}
+.dx-hl .pt{margin-top:6.9cqw}
+.dx-hl .pt b{display:block;font-size:clamp(12px,2.55cqw,23px);font-weight:700;
+  margin-bottom:1.5cqw;color:#111}
+.dx-hl .pt p{font-size:clamp(11px,2.45cqw,22px);font-weight:400;line-height:1.78;
+  color:#6d6d6d;margin:0}
+.dx{max-width:900px;margin:0 auto;text-align:center;container-type:inline-size}
+.dx img{width:100%;display:block}
+.dx-band,.dx-elixir{margin:0 0 7cqw}
+.dx-elixir{max-width:52%;margin-right:auto;margin-left:auto}
+.dx-hero{background:#fff;padding:0 0 58px;margin-bottom:72px}
+.dx-hero img{max-width:560px;margin:0 auto 4px}
+.dx-hero h2{font-family:var(--serif);font-size:clamp(26px,3.6vw,38px);font-weight:400;letter-spacing:.02em;line-height:1.3;padding:0 24px}
+.dx-hero .dx-tag{margin:18px auto 0;max-width:34em;padding:0 24px;color:var(--ink-2);font-size:15.5px;font-weight:300;line-height:1.8}
+/* 본문도 한글 상세 이미지와 같은 크기로 — 900px 기준 치수를 cqw 로 옮겼다 */
+.dx-sec{text-align:right;padding:0 5%;margin-bottom:8.2cqw}
+.dx-sec .dx-lb{font-family:var(--serif);font-size:clamp(11px,1.5cqw,13px);letter-spacing:.16em;color:var(--muted);margin-bottom:2cqw}
+.dx-sec h3{font-size:clamp(20px,4.4cqw,40px);font-weight:700;line-height:1.4;letter-spacing:-.012em;margin-bottom:4.8cqw}
+.dx-it{margin-bottom:6.8cqw}
+.dx-it:last-child{margin-bottom:0}
+.dx-it b{display:block;font-size:clamp(15px,3.2cqw,29px);font-weight:700;margin-bottom:1.4cqw;line-height:1.4}
+.dx-it .dx-ing{display:block;font-size:clamp(12px,2cqw,18px);color:#a2a2a2;margin-bottom:2.4cqw;line-height:1.6}
+.dx-it p,.dx-sec>p{color:#6d6d6d;font-size:clamp(13px,2.45cqw,22px);font-weight:400;line-height:1.78}
+.dx-num{display:grid;grid-template-columns:9.8cqw 1fr}
+.dx-num .n{font-size:clamp(24px,5.8cqw,52px);font-weight:300;line-height:1;color:#111}
+figure.dx-it{margin:0 0 6.4cqw}
+figure.dx-it img{margin-bottom:3.8cqw}
+.dx-sec .dx-note{font-size:clamp(11px,1.8cqw,16px);color:#a6a6a6;margin-top:2cqw;font-weight:400}
+.dx-code h3{text-align:right}
+.dx-chips{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:3.8cqw 2.7cqw;margin:0 0 6cqw;padding:0}
+.dx-chips li{display:flex;align-items:center;gap:1.8cqw}
+.dx-chips .hx{flex:none;width:6.2cqw;height:6.9cqw;min-width:34px;min-height:38px;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:clamp(13px,2.3cqw,21px);letter-spacing:.02em;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.dx-chips .hl{font-size:clamp(13px,2.45cqw,22px);font-weight:700;line-height:1.3}
+.dx-sec ol{padding-right:2.2cqw;text-align:right;color:#2f2f2f;font-weight:400;font-size:clamp(13px,2.45cqw,22px)}
+.dx-sec ol li{margin-bottom:2.4cqw;line-height:1.72}
+/* 원료 페이지 */
+.ing-lead{max-width:44em;color:var(--ink-2);font-size:15.5px;font-weight:300;line-height:1.85;margin-bottom:34px}
+.ing-tabs{display:flex;flex-wrap:wrap;gap:0;justify-content:center;border-bottom:1px solid var(--line);margin-bottom:38px}
+.ing-tabs button{font-family:inherit;background:none;border:0;font-size:15px;padding:13px 17px;color:var(--muted-text);border-bottom:1px solid transparent;margin-bottom:-1px;cursor:pointer}
+.ing-tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
+.ing-tabs button span{font-size:12px;color:var(--muted);margin-right:3px}
+.ing-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:52px;align-items:start}
+.ing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.ing-card{display:flex;flex-direction:column;align-items:center;gap:10px;background:#fff;border:0;cursor:pointer;padding:22px 10px;font-family:inherit;text-align:center;transition:background .2s}
+/* display:flex 가 [hidden] 기본 스타일을 덮으므로 명시적으로 숨긴다 (그룹 필터) */
+.ing-card[hidden]{display:none}
+.ing-card:hover{background:var(--paper-2)}
+.ing-card.on{background:var(--black)}
+.ing-card .hx{width:46px;height:52px;flex:none;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.ing-card.on .hx{background:#fff;color:var(--black)}
+.ing-card .nm{font-size:12.5px;line-height:1.5;color:var(--ink-2);font-weight:400;word-break:keep-all}
+.ing-card.on .nm{color:#fff}
+.ing-pane{position:sticky;top:100px;border-top:2px solid var(--ink);padding-top:26px;min-height:240px}
+.ing-empty{color:var(--muted-text);font-size:14px;font-weight:400}
+.ing-detail .ing-lb{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:12px}
+.ing-detail h2{font-size:clamp(20px,2.4vw,26px);font-weight:500;line-height:1.45}
+.ing-detail .ing-inci{font-size:13.5px;color:var(--muted);margin-top:6px;font-weight:400}
+.ing-lb2{font-family:var(--serif);font-size:11.5px;letter-spacing:.14em;color:var(--muted);margin:24px 0 9px;text-transform:uppercase}
+.ing-detail p{color:var(--ink-2);font-size:14.5px;font-weight:300;line-height:1.85}
+.ing-detail ul{padding-right:17px;color:var(--ink-2);font-weight:300;font-size:14.5px}
+.ing-detail li{margin-bottom:7px;line-height:1.75}
+.ing-src{border-bottom:1px solid var(--line);color:var(--ink-2);font-size:13.5px}
+.ing-src:hover{border-bottom-color:var(--ink);color:var(--ink)}
+.ing-note{margin-top:46px;font-size:13px;color:var(--muted-text);font-weight:400;max-width:46em}
+.ing-cta{margin-top:22px}
+.ing-link{margin-top:16px}
+.ing-link a{font-size:13.5px;color:var(--ink-2);border-bottom:1px solid var(--line)}
+.ing-link a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.dx-chips li a{display:flex;align-items:center;gap:13px;color:inherit}
+.dx-chips li a:hover .hl{border-bottom:1px solid var(--ink)}
+.sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sys-col{background:#fff;padding:34px 28px 30px}
+.sys-col .st{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:15px;letter-spacing:.14em}
+.sys-col .st .n{font-size:12px;color:var(--muted)}
+.sys-col .sd{font-size:13.5px;color:var(--muted-text);font-weight:400;line-height:1.7;margin:12px 0 22px;min-height:3.4em}
+.sys-col ul{list-style:none}
+.sys-col li{border-top:1px solid var(--line-2);padding:15px 0 14px}
+.sys-col li:last-child{padding-bottom:0}
+.sys-col .pn{display:block;font-size:15px;line-height:1.5}
+.sys-col .pe{display:block;font-size:12.5px;color:var(--muted-text);font-weight:400;margin-top:3px}
+.sys-col .tag{display:block;width:max-content;margin-top:9px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.sys-col a.on-sale .pn{border-bottom:1px solid var(--ink);display:inline-block}
+.sys-col a.on-sale .tag{color:var(--ink);border-color:#cfcfcf}
+.sys-col a.on-sale:hover .pn{border-bottom-color:transparent}
+.archive-note{font-size:13.5px;color:var(--muted);font-weight:400;line-height:1.8;margin-top:-28px;margin-bottom:34px}
+.sys-grid.g4{grid-template-columns:repeat(4,1fr)}
+.sys-grid.g4 .sys-col{padding:32px 24px 28px}
+/* 프래그런스 — 하나의 숲, 여러 개의 상태 */
+.fr-lead{max-width:44em;margin:0 auto;text-align:center;color:var(--ink-2);font-size:16px;font-weight:300;line-height:1.95}
+.fr-lead .q{display:block;font-family:var(--serif);font-size:clamp(19px,2.2vw,25px);color:var(--ink);letter-spacing:.02em;margin-bottom:26px;line-height:1.5}
+.fr-origin{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.fr-origin img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.fr-origin .geo{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:18px}
+.fr-states{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-states .st{background:#fff;padding:30px 26px 28px}
+.fr-states .st .k{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.fr-states .st h4{font-size:17px;font-weight:500;margin:10px 0 12px}
+.fr-states .st p{font-size:14px;color:var(--ink-2);font-weight:300;line-height:1.8}
+.fr-scent + .fr-scent{border-top:1px solid var(--line);
+  padding-top:clamp(48px,6vw,78px);margin-top:clamp(48px,6vw,78px)}
+.fr-scent .in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.fr-scent.alt .in{direction:ltr}
+.fr-scent.alt .in > *{direction:rtl}
+.fr-scent img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.fr-scent .no{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.fr-scent h3{font-size:clamp(21px,2.4vw,27px);font-weight:400;font-family:var(--serif);letter-spacing:.02em;margin-bottom:8px}
+.fr-scent .kr{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:20px}
+.fr-scent .quote{font-size:15px;color:var(--ink);font-weight:300;line-height:1.85;padding-right:16px;border-right:1px solid var(--line);margin-bottom:20px}
+.fr-scent > .in p.desc{font-size:15px;color:var(--ink-2);font-weight:300;line-height:1.9}
+.fr-notes{width:100%;border-collapse:collapse;margin-top:26px;font-size:14px}
+.fr-notes th{text-align:right;font-family:var(--serif);font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:400;padding:11px 0;width:86px;vertical-align:top;border-top:1px solid var(--line-2)}
+.fr-notes td{padding:11px 0;color:var(--ink-2);font-weight:300;border-top:1px solid var(--line-2);line-height:1.7}
+.fr-cfg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-cfg .c{background:#fff;padding:34px 30px}
+.fr-cfg .c h4{font-family:var(--serif);font-size:19px;font-weight:400;letter-spacing:.02em}
+.fr-cfg .c .vol{font-size:13px;color:var(--muted);margin:6px 0 18px}
+.fr-cfg .c li{list-style:none;font-size:14px;color:var(--ink-2);font-weight:300;line-height:1.8;padding-right:13px;position:relative}
+.fr-cfg .c li::before{content:"·";position:absolute;right:0;color:var(--muted)}
+.fr-diff{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.fr-diff .d{background:#fff;padding:26px 20px}
+.fr-diff .n{font-family:var(--serif);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.fr-diff p{font-size:14px;font-weight:300;line-height:1.75;margin-top:12px;color:var(--ink-2)}
+/* 컬렉션 소개 블록 — 카테고리 하나를 통째로 안내하는 가로형 카드 */
+.coll{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);transition:.3s}
+.coll:hover{box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.coll .ph{background:#fff;overflow:hidden}
+.coll .ph img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .55s}
+.coll:hover .ph img{transform:scale(1.03)}
+.coll .tx{background:#fff;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:center}
+.coll .k{font-family:var(--serif);font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:14px}
+.coll h4{font-size:clamp(16px,1.7vw,19px);font-weight:400;font-family:var(--serif);letter-spacing:.01em;line-height:1.6;margin-bottom:14px}
+.coll p{font-size:14.5px;color:var(--ink-2);font-weight:300;line-height:1.85}
+.coll .tag{display:inline-block;width:max-content;margin-top:22px;font-size:12px;letter-spacing:.04em;color:var(--ink);border:1px solid #cfcfcf;padding:7px 14px}
+/* 테크놀로지 — 단계 흐름 */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:clamp(38px,5vw,58px)}
+.flow .fs{background:#0e0e0e;padding:26px 22px 24px}
+.flow .fn{font-family:var(--serif);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
+.flow .ft{font-size:15px;color:#fff;margin:11px 0 8px;line-height:1.5}
+.flow .fd{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.78)}
+section:not(.dark) .flow{background:var(--line);border-color:var(--line)}
+section:not(.dark) .flow .fs{background:#fff}
+section:not(.dark) .flow .fn{color:var(--muted)}
+section:not(.dark) .flow .ft{color:var(--ink)}
+section:not(.dark) .flow .fd{color:var(--ink-2)}
+.tcard .tt{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.tcard .tk{display:block;width:max-content;margin:12px 0 16px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.tcard .tw{font-size:12.5px;color:var(--muted-text);font-weight:300;border-top:1px solid var(--line-2);padding-top:12px;margin-top:4px}
+/* 브랜드 스토리 */
+.brand-story{max-width:780px;margin:0 auto;text-align:center;color:var(--ink-2);font-weight:300;font-size:16px;line-height:2}
+.brand-story p+p{margin-top:26px}
+.brand-story .q{font-family:var(--serif);font-size:clamp(18px,2vw,22px);line-height:1.8;color:var(--ink);margin-bottom:34px}
+/* 브랜드 영상 — 협업 영상 2편 */
+.film-sub{margin-top:clamp(56px,7vw,90px);padding-top:clamp(46px,5vw,66px);border-top:1px solid rgba(255,255,255,.16);text-align:center}
+.film-sub h4{color:#fff;font-size:clamp(17px,1.9vw,21px);font-weight:500;margin:12px 0 10px}
+.film-sub p{color:rgba(255,255,255,.78);font-size:14.5px;font-weight:300;max-width:38em;margin:0 auto}
+.filmrow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,30px);margin-top:clamp(30px,4vw,44px)}
+.filmrow figcaption{margin-top:14px;color:rgba(255,255,255,.78);font-size:13.5px;font-weight:400;line-height:1.6}
+.filmrow figcaption .d{display:block;color:rgba(255,255,255,.55);font-size:12.5px;margin-top:3px}
+.filmrow .play i{width:54px;height:54px}
+.filmrow .play span{display:none}
+.lineup-note{margin-top:clamp(28px,3.5vw,40px);text-align:center;font-size:14px;font-weight:400;color:var(--muted);line-height:1.8}
+/* 제품 라인 탭 — PRODUCT 페이지 상단 */
+.ltabs{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:80px;z-index:90}
+.ltabs-in{max-width:var(--max);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr)}
+.ltabs button,.ltabs-in>a{appearance:none;background:none;border:0;border-right:1px solid var(--line-2);border-bottom:2px solid transparent;
+  padding:22px 12px 20px;cursor:pointer;font-family:var(--serif);font-size:16px;letter-spacing:.02em;color:var(--muted-text);
+  transition:.22s;display:block;width:100%;text-align:center}
+.ltabs button:first-child,.ltabs-in>a:first-child{border-right:0}
+.ltabs button .c,.ltabs-in>a .c{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.04em;font-weight:400;color:var(--muted-text);margin-top:7px}
+.ltabs button:hover,.ltabs-in>a:hover{color:var(--ink);background:var(--paper-2)}
+.ltabs button.on,.ltabs-in>a.on{color:var(--ink);border-bottom-color:var(--ink)}
+.ltabs button.on .c,.ltabs-in>a.on .c{color:var(--ink-2)}
+.ltabs-in.n2{grid-template-columns:repeat(2,1fr);max-width:720px}
+.ltabs-in.n3{grid-template-columns:repeat(3,1fr);max-width:960px}
+.lpane{display:none}
+.lpane.on{display:block}
+@media(max-width:760px){
+  /* 좁은 화면에선 글이 판보다 길어진다 — 겹치지 않게 사진 아래로 흘려보낸다 */
+  .dx-hero.dx-art{padding-bottom:7%}
+  .dx-hl .in{position:static;width:auto;padding:5% 5% 9%}
+  .dx-hero{margin-bottom:52px;padding-bottom:44px}
+  .dx-band,.dx-elixir{margin-bottom:48px}
+  .dx-sec{margin-bottom:52px}
+  .dx-chips{grid-template-columns:1fr;gap:16px}
+  .filmrow{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+  .ing-layout{grid-template-columns:1fr;gap:34px}
+  .ing-pane{position:static}
+  .ing-grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+  .flow{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1100px){
+  .sys-grid.g4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .sys-grid,.sys-grid.g4{grid-template-columns:1fr}
+  .sys-col .sd{min-height:0}
+  .fr-origin,.fr-scent .in,.fr-cfg{grid-template-columns:1fr}
+  .fr-scent.alt .in{direction:rtl}
+  .fr-states,.fr-diff{grid-template-columns:1fr}
+  .coll{grid-template-columns:1fr}
+  .ltabs{top:60px}
+  .ltabs-in{grid-template-columns:repeat(2,1fr);padding:0}
+  .ltabs-in.n3{grid-template-columns:1fr}
+  .ltabs-in.n2{grid-template-columns:repeat(2,1fr)}
+  .ltabs button,.ltabs-in>a{padding:16px 8px 14px;font-size:15px;border-top:1px solid var(--line-2)}
+  .ltabs button:nth-child(-n+2){border-top:0}
+  .ltabs button:nth-child(odd){border-right:0}
+}
+@media(max-width:560px){
+  .flow{grid-template-columns:1fr}
+}
+
+/* ARCHIVE MATERIAL 캡션 */
+.figcap{margin-top:12px;font-size:12.5px;font-weight:300;color:var(--muted-text);line-height:1.7;text-align:center}
+
+/* ===== SKINCARE 2026 — products.html 전용 ===== */
+
+.skincarepage .sec-top .lead,.skincarepage .copy p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.88}
+.skincarepage .copy p{margin-bottom:17px}
+
+/* PAGEHEAD 부제 */
+.pagehead.tall .t p{margin-top:18px;font-size:clamp(14px,1.1vw,16px);font-weight:300;line-height:1.8;color:rgba(255,255,255,.82)}
+
+/* AVAILABLE NOW — 단계 배지 */
+.skincarepage .copy .stage{display:inline-block;margin-bottom:20px;font-family:var(--serif);font-size:11px;
+  letter-spacing:.16em;color:var(--ink);border:1px solid var(--ink);padding:5px 14px}
+
+/* 간단 사양 */
+.minispec{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px;
+  padding-top:20px;border-top:1px solid var(--line)}
+.minispec span{font-size:13px;font-weight:300;color:var(--ink-2)}
+.minispec span+span:before{content:"·";margin-left:10px;color:var(--muted)}
+.minispec .st{font-family:var(--serif);font-size:10.5px;letter-spacing:.12em;color:var(--ink);
+  border:1px solid var(--line);padding:4px 10px}
+.minispec .st:before{content:none}
+
+/* RESET · BOOST · KEEP — 타이포그래피 카드 (제품 이미지 없음) */
+.rbk{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.rbk-col{background:var(--paper);padding:clamp(28px,3vw,40px) clamp(20px,2.2vw,30px);scroll-margin-top:96px;
+  display:flex;flex-direction:column}
+.rbk-h{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.rbk-h .n{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.rbk-h .k{font-family:var(--serif);font-size:clamp(15px,1.5vw,18px);letter-spacing:.14em;color:var(--ink)}
+.rbk-d{margin:18px 0 26px;font-size:14px;font-weight:300;color:var(--ink-2);line-height:1.8}
+.rbk-item{display:block;text-decoration:none;color:inherit;padding:20px 0;border-top:1px solid var(--line-2)}
+.rbk-item:first-of-type{border-top:0}
+.rbk-item .nm{font-size:15.5px;font-weight:400;line-height:1.5;color:var(--ink)}
+.rbk-item .st{display:inline-block;margin-top:11px;font-family:var(--serif);font-size:10.5px;
+  letter-spacing:.12em;color:var(--ink);border:1px solid var(--ink);padding:3px 9px}
+.rbk-item .st.soon{color:var(--muted);border-color:var(--line)}
+.rbk-item .tech{margin-top:14px;font-size:13px;font-weight:300;color:var(--ink-2)}
+.rbk-item .tech .tl{display:block;font-family:var(--serif);font-size:10px;letter-spacing:.14em;
+  color:var(--muted);margin-bottom:5px}
+a.rbk-item.is-now:hover .nm{text-decoration:underline;text-underline-offset:4px}
+
+/* OTHER COLLECTIONS — 3단 */
+.colgrid.c3{grid-template-columns:repeat(3,1fr)}
+.endcard .tx h4{font-size:16px;font-weight:400;line-height:1.5;margin-top:4px}
+.endcard .tx .st{display:inline-block;margin-bottom:18px;font-family:var(--serif);font-size:10.5px;
+  letter-spacing:.12em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+
+/* 제품 상세 하단 네비 블록 */
+.pdnav{border-top:1px solid var(--line);background:var(--paper-2)}
+.pdnav .wrap{padding-top:clamp(52px,6vw,78px);padding-bottom:clamp(52px,6vw,78px);text-align:center}
+.pdnav .sec-en{margin-bottom:14px}
+.pdnav h3{font-size:clamp(18px,2vw,23px);font-weight:500;line-height:1.5}
+.pdnav p{margin:16px auto 26px;max-width:34em;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.8}
+
+@media (max-width:1024px){
+  .rbk{grid-template-columns:1fr}
+  .colgrid.c3{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .rbk-col{scroll-margin-top:72px}
+}
+
+/* 제품 상세 — HERO 보조 문장 */
+.pd-body{margin-top:12px;font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.8}
+
+/* 제품 상세 — HOW TO USE 4단계 */
+.usesteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:6px}
+.ustep{background:var(--paper);padding:22px 14px;text-align:center;display:flex;flex-direction:column}
+.ustep .n{font-family:var(--serif);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:12px}
+.ustep .k{font-family:var(--serif);font-size:12px;letter-spacing:.1em;color:var(--ink);margin-bottom:9px}
+.ustep .d{font-size:13px;font-weight:300;color:var(--ink-2);line-height:1.65}
+@media (max-width:860px){ .usesteps{grid-template-columns:repeat(2,1fr)} }
+
+/* RESET · BOOST · KEEP — 제품 렌더 이미지 레이어 */
+/* RESET·BOOST 는 배경이 연회색(약 240), KEEP 은 순백(약 252) 촬영본이라
+   흰 패널 위에 나란히 두면 세 칸의 바탕이 서로 달라 보인다.
+   패널을 사진 배경값에 맞추고, 순백인 KEEP 만 multiply 로 얹어 이음매를 없앤다. */
+.rbk-fig{aspect-ratio:3/2;background:#F0EFF2;border:1px solid var(--line-2);margin-bottom:22px;overflow:hidden}
+.rbk-fig img{width:100%;height:100%;object-fit:contain;display:block}
+#keep .rbk-fig img{mix-blend-mode:multiply}
+@media (max-width:1024px){ .rbk-fig{aspect-ratio:16/9} }
+
+/* HOME OUR HERITAGE — 03 SKIN CODE 카드 톤 정합 (01·02와 배경 계열 맞춤) */
+#archive .arc .ph.tone{background:#ccceD8}
+#archive .arc .ph.tone img{mix-blend-mode:multiply}
+
+/* ── GLOBAL VISUAL QUALITY STANDARD (2026-09-17) ───────────────────────
+   내부 HERO 기본 규격 : Desktop/Tablet 340px · Mobile(<=640) 220px
+   (HOME main hero `.hero` 는 별도 시스템으로 유지)
+   아래는 이미지별 개별 조정. 이미지 파일 자체는 수정하지 않음.        */
+
+/* BRAND — 측정기와 모니터를 모두 프레임에 유지 + 모니터 그래프 위 타이틀 가독성 */
+.pagehead.ph-brand img{object-position:50% 24%;opacity:.50}
+.pagehead.ph-brand::after{background:linear-gradient(-180deg,rgba(10,10,10,.42) 0%,rgba(10,10,10,.68) 100%)}
+
+/* SKIN CODE — 모바일 220px에서 인물 머리 상단 잘림 완화 (overlay 현행 유지) */
+.pagehead.ph-skincode img{object-position:50% 39%}
+
+/* FRAGRANCE — 코코 드 메르 열매 노출 + 밝은 숲 배경 위 타이틀 가독성 */
+.pagehead.ph-fragrance img{object-position:50% 35%;opacity:.45}
+
+/* ── GLOBAL IMAGE COMPOSITION PASS (2026-09-18) ─────────────────────────
+   내부 HERO 슬롯은 1440x440 = 3.27:1 인데 원본은 1.5~1.79:1 이다.
+   기본값(50% 50%)이면 세로 45~55%가 브라우저 자동 crop으로 잘려 나가
+   여러 페이지에서 "빈 벽만 남는" 밴드가 표시되고 있었다.
+   원본 전체를 밴드 단위로 훑어 페이지마다 피사체가 살아나는 구간을 지정한다.
+   원본 파일은 수정하지 않는다 — 표시 구간만 바꾼다.                       */
+
+/* TECHNOLOGY — 작업대·계측 장비 밴드 (기술) */
+.pagehead.ph-tech img{object-position:50% 60%}
+/* INGREDIENTS — 같은 원본에서 원료 병 선반 밴드 (원료). 두 페이지 화면이 갈라진다 */
+.pagehead.ph-ingr img{object-position:50% 35%}
+/* HERITAGE — 기본값에서는 빈 벽만 남았다. 구·맞춤 용기·드로퍼가 들어오는 하단 밴드 */
+/* HERITAGE — 원본 1920x1280 에서 대표님 지정 구간(y 504~1041)을 잘라낸
+   1920x537 밴드 자산. 자산 자체가 표시 구간이라 object-position 불필요. */
+.pagehead.ph-heritage img{object-position:50% 50%}
+/* B2B — 기본값에서는 회색 벽과 링 상단만 남았다. 제품군이 서 있는 하단 밴드 */
+.pagehead.ph-b2b img{object-position:50% 50%}
+/* BIO — 기본값에서는 빈 벽이었다. 모빌·용기·링이 함께 들어오는 하단 밴드 */
+.pagehead.ph-bio img{object-position:50% 80%}
+
+/* HERITAGE 01·CUSTOMIZED — compounding.jpg(682x512) 원본 비율 유지.
+   4/5 강제 시 1.33x 업스케일 + 가로 40% 잘림 → 4/3 로 0.80x 다운스케일, 잘림 0.
+   같은 섹션의 다른 이미지에는 적용하지 않음.                            */
+
+
+/* ── IMAGE FIT PASS (2026-09-17) ─────────────────────────────────────
+   `.split .fig img` 기본값 4/5 는 세로 원본(origin-cocodemer 576x720,
+   elixir 644x783)에 맞는 값이므로 그대로 둔다.
+   아래는 원본이 가로형인 섹션만 프레임 비율을 원본에 맞춘 것.        */
+
+/* HERITAGE 01 · CUSTOMIZED — csti-station 1920x1280 / compounding 682x512 /
+   home-customized 1400x1400. 4/5 강제 시 가로 47%·20% 잘림 → 4/3 로 통일 */
+.archivepage #customized .split .fig img{aspect-ratio:4/3}
+
+/* HERITAGE 02 · 17 FINISHED PRODUCTS — arc-finished17 1800x1200(3:2).
+   4/5 강제 시 가로 47% 잘림 = 17종 중 절반이 사라짐 → 3/2, 잘림 0 */
+.archivepage #finished-products .split .fig img{aspect-ratio:3/2}
+
+/* SKIN CODE · ORIGINAL RECORDS — skincode-wall 1400x933(3:2) /
+   skincode 1331x749(16:9). 1/1 강제 시 사이니지·라벨이 가로 33% 잘림 → 3/2 */
+.skincodepage #records .split .fig.sq img{aspect-ratio:3/2}
+
+/* FRAGRANCE · ORIGIN — forest.jpg 880x768(≈8:7). 4/5 강제 시 가로 30% 잘림 */
+.fr-origin img{aspect-ratio:1/1}
+
+/* SKINCARE HERO — 밴드 자산 직접 크롭 방식으로 전환 (2026-09-18)
+   이전: 흰 배경 스튜디오 제품컷을 contain 으로 가운데 두는 구조.
+         비주얼 폭이 고정이라 화면이 넓어질수록 좌우 흰 여백이 커졌다.
+   현재: 원본 1920x1080 에서 제품 라인업 구간만 가로 전폭으로 잘라낸
+         1920x539 밴드 자산을 쓴다. 이미지가 밴드 끝에서 끝까지 채우므로
+         좌우 빈 곳이 구조적으로 생기지 않는다.
+   밴드 구간은 대표님이 지정한 크롭(원본 y 429~968)과 동일하다.          */
+.pagehead.ph-skincare img{object-position:50% 50%;opacity:.62}
+.pagehead.ph-skincare::after{background:linear-gradient(-180deg,rgba(10,10,10,.30) 0%,rgba(10,10,10,.58) 100%)}
+
+/* SKINCARE HERO — Aqua 4컷 스트립 (2026-09-21)
+   상세페이지 원본(코코드메르인터내셔널/상세페이지)에서 잘라낸 실사 4컷:
+   제품+버블 / 분사·제형 / 사용 / 피부 위 버블. 사진은 crop·축소만, 합성 없음.
+   카피 칸 = 사이트 본문 왼쪽 선 + 카피 폭. 사진이 나머지를 끝까지 채운다.   */
+.pagehead.ph-aqua{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr);grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:right;
+  background:linear-gradient(-170deg,#F4F6FA 0%,#E6EBF3 100%)}
+.pagehead.ph-aqua::after{display:none !important}
+.pagehead.ph-aqua .t{align-self:center;color:var(--ink);padding:0 var(--lx) 0 32px;z-index:2}
+.pagehead.ph-aqua .t .sec-en{color:var(--muted)}
+.pagehead.ph-aqua .t h1{color:var(--ink);text-shadow:none;white-space:nowrap}
+.pagehead.ph-aqua .t p{color:var(--ink-2)}
+.pagehead.ph-aqua .aq{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:100%;min-width:0;background:#fff}
+.pagehead.ph-aqua .aq img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;opacity:1;display:block;min-width:0}
+@media(max-width:1024px){.pagehead.ph-aqua{grid-template-columns:calc(var(--lx) + 440px) minmax(0,1fr)}
+  .pagehead.ph-aqua .aq{grid-template-columns:repeat(3,1fr)}.pagehead.ph-aqua .aq img:nth-child(4){display:none}}
+@media(max-width:640px){.pagehead.ph-aqua{height:220px;grid-template-columns:56% minmax(0,1fr)}
+  .pagehead.ph-aqua .t{padding:0 18px 0 10px}
+  .pagehead.ph-aqua .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-aqua .t h1{font-size:15px;line-height:1.42;letter-spacing:.02em}
+  .pagehead.ph-aqua .t p{font-size:11px;margin-top:8px;line-height:1.7}
+  .pagehead.ph-aqua .aq{grid-template-columns:1fr 1fr;gap:2px}
+  .pagehead.ph-aqua .aq img:nth-child(n+3){display:none}}
+
+/* ── 03 FRAGRANCE (2026-09-21) ─────────────────────────────────────
+   HERO: 왼쪽 톤 카피 칸 + 3개 향 EDP crop 3분할 (SKINCARE .ph-aqua 와 같은 구조).
+   EDP crop = 원본 렌더에서 병만 잘라낸 파생본(389x649). crop·축소만, 합성 없음.
+   톤은 사이트에서 이미 쓰는 웜 오프화이트(.prodplate 와 동일 값).        */
+.pagehead.ph-frag{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:minmax(calc(var(--lx) + 430px),1fr) auto;grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:right;
+  background:linear-gradient(-176deg,#FBFAF8 0%,#F2EFEC 66%,#EBE7E3 100%)}
+/* 칸 폭 상한 310px: 넓은 화면에서 칸이 넓어지면 cover 가 병의 위아래를 자른다.
+   310px 이면 원본 세로의 85% 이상이 보여 캡·바닥이 온전하다.                */
+.pagehead.ph-frag::after{display:none !important}
+.pagehead.ph-frag .t{align-self:center;color:var(--ink);padding:0 var(--lx) 0 32px;z-index:2}
+.pagehead.ph-frag .t .sec-en{color:var(--muted);margin-bottom:14px}
+.pagehead.ph-frag .t h1{color:var(--ink);text-shadow:none;line-height:1.3;font-size:clamp(22px,2.3vw,30px)}
+.pagehead.ph-frag .t p{color:var(--ink-2)}
+.pagehead.ph-frag .frs{display:grid;grid-template-columns:repeat(3,minmax(0,310px));grid-template-rows:100%;gap:2px;height:100%;min-width:0;min-height:0;overflow:hidden;background:#EBE7E3}
+.pagehead.ph-frag .frs img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:1;display:block;min-width:0}
+@media(max-width:1024px){.pagehead.ph-frag{grid-template-columns:minmax(calc(var(--lx) + 380px),1fr) auto}}
+@media(max-width:640px){.pagehead.ph-frag{height:220px;grid-template-columns:58% minmax(0,1fr)}
+  .pagehead.ph-frag .t{padding:0 18px 0 12px}
+  .pagehead.ph-frag .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-frag .t h1{font-size:16px;line-height:1.4;letter-spacing:.02em}
+  .pagehead.ph-frag .t p{font-size:11px;margin-top:8px;line-height:1.6}
+  .pagehead.ph-frag .frs{grid-template-columns:1fr;width:100%}
+  .pagehead.ph-frag .frs img:nth-child(n+2){display:none}}
+/* 본문 공통 — 사이트 .sec-top h3 와 같은 크기 체계를 h2 에 적용 */
+.fragrancepage .sec-top h2{font-size:clamp(20px,2.2vw,26px);font-weight:500;line-height:1.5}
+.fragrancepage .sec-top h2.en-d{font-weight:400;letter-spacing:.05em}
+.fragrancepage .fr-body{max-width:36em;margin:0 auto 18px;text-align:center;color:var(--ink-2);font-size:16px;font-weight:300;line-height:1.95}
+.fragrancepage .geo{text-align:center;font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:34px}
+/* 향 3종 — EDP crop 은 389px 원본이라 표시 폭을 360px 로 묶어 확대를 막는다 */
+.fragrancepage .fr-scent{padding:clamp(40px,5vw,64px) 0}
+.fragrancepage .fr-scent:first-of-type{padding-top:0}
+.fragrancepage .fr-edp{display:flex;justify-content:center;align-items:center}
+/* 교차 배치 — 전역 .alt 는 섹션 회색 배경 클래스라 쓰지 않고 .rev 로 방향만 뒤집는다 */
+.fragrancepage .fr-scent.rev .in{direction:ltr}
+.fragrancepage .fr-scent.rev .in > *{direction:rtl}
+.fragrancepage .fr-scent img{width:100%;max-width:360px;height:auto;aspect-ratio:389/649;object-fit:contain;display:block}
+.fragrancepage .fr-scent h2{font-size:clamp(22px,2.5vw,28px);font-weight:400;font-family:var(--serif);letter-spacing:.02em}
+.fragrancepage .fr-badge{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.12em;color:var(--ink);border:1px solid #cfcfcf;padding:4px 10px}
+.fragrancepage .fr-scent .lead{margin-top:18px;font-size:16px;color:var(--ink);font-weight:300;line-height:1.85}
+/* TWO FORMATS — 이미지 없이 타이포 블록 2개 */
+.fr-fmt{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);max-width:880px;margin:0 auto}
+.fr-fmt .f{background:#fff;padding:clamp(30px,4vw,48px) 30px;text-align:center}
+.fr-fmt .n{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.fr-fmt h3{font-family:var(--serif);font-size:clamp(18px,1.8vw,21px);font-weight:400;letter-spacing:.1em;margin-top:14px}
+.fr-fmt .v{font-size:15px;color:var(--ink);margin-top:10px}
+.fr-fmt .b{font-size:12px;letter-spacing:.1em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+.fr-close .fr-cta{text-align:center;margin-top:34px}
+@media(max-width:640px){.fr-fmt{grid-template-columns:1fr}}
+@media(max-width:860px){.fragrancepage .fr-scent.rev .in{direction:rtl}}
+
+/* ── 04 TECHNOLOGY (2026-09-21) ──────────────────────────────────────
+   HERO: 왼쪽 톤 카피 칸 + 오른쪽 조제 장면 1컷 (.ph-aqua / .ph-frag 와 같은 구조).
+   사진 = img/home-hero-02-compound.jpg 에서 crop(0,0,1920,820) 한 파생본. 축소·crop 만.
+   모든 규칙은 .techpage / .ph-tech2 로 한정 (append-only).                    */
+.pagehead.ph-tech2{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr);grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:right;
+  background:linear-gradient(-176deg,#FBFAF8 0%,#F2EFEC 66%,#EBE7E3 100%)}
+.pagehead.ph-tech2::after{display:none !important}
+.pagehead.ph-tech2 .t{align-self:center;color:var(--ink);padding:0 var(--lx) 0 32px;z-index:2}
+.pagehead.ph-tech2 .t .sec-en{color:var(--muted);margin-bottom:14px}
+.pagehead.ph-tech2 .t h1{color:var(--ink);text-shadow:none;line-height:1.4;font-size:clamp(24px,2.3vw,32px);font-family:var(--sans);font-weight:500;letter-spacing:-.01em}
+.pagehead.ph-tech2 .t p{color:var(--ink-2);line-height:1.75}
+.pagehead.ph-tech2 .tc{height:100%;min-width:0;min-height:0;overflow:hidden}
+.pagehead.ph-tech2 .tc img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;object-position:62% 30%;opacity:1;display:block}
+@media(max-width:1024px){.pagehead.ph-tech2{grid-template-columns:calc(var(--lx) + 400px) minmax(0,1fr)}}
+@media(max-width:640px){.pagehead.ph-tech2{height:220px;grid-template-columns:56% minmax(0,1fr)}
+  .pagehead.ph-tech2 .t{padding:0 18px 0 10px}
+  .pagehead.ph-tech2 .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-tech2 .t h1{font-size:16px;line-height:1.45;letter-spacing:0}
+  .pagehead.ph-tech2 .t p{font-size:11px;margin-top:8px;line-height:1.6}
+  .pagehead.ph-tech2 .tc img{object-position:59% 30%}}
+.techpage .tk-sec{scroll-margin-top:150px}
+@media(max-width:1024px){.techpage .tk-sec{scroll-margin-top:130px}}
+/* 02 CUSTOMIZED FORMULATION SYSTEM */
+.techpage .tk-cfs{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,90px);align-items:center}
+.techpage .tk-body p{font-size:clamp(15px,1.06vw,16.5px);line-height:1.9;font-weight:300;color:var(--ink-2)}
+.techpage .tk-body p+p{margin-top:18px}
+.techpage .tk-nums{border:1px solid var(--line)}
+.techpage .tk-n3{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.techpage .tk-n{padding:26px 14px 22px;text-align:center}
+.techpage .tk-n+.tk-n{border-right:1px solid var(--line)}
+.techpage .tk-n b,.techpage .tk-total b{display:block;font-family:var(--serif);font-weight:400;line-height:1;color:var(--ink)}
+.techpage .tk-n b{font-size:clamp(34px,3.2vw,44px)}
+.techpage .tk-n span,.techpage .tk-total span{display:block;font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-top:14px}
+.techpage .tk-n em,.techpage .tk-total em{display:block;font-style:normal;font-size:13px;color:var(--ink-2);margin-top:6px}
+.techpage .tk-total{background:var(--black);color:#fff;text-align:center;padding:34px 16px 30px}
+.techpage .tk-total b{color:#fff;font-size:clamp(46px,5vw,68px);letter-spacing:.02em}
+.techpage .tk-total span{color:rgba(255,255,255,.62)}
+.techpage .tk-total em{color:rgba(255,255,255,.82)}
+/* 03 FROM CUSTOMIZED TO SKIN CODE */
+.techpage .tk-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.techpage .tk-step{background:#fff;padding:30px 26px 28px}
+.techpage .tk-step .k{font-family:var(--serif);font-size:12.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.techpage .tk-step p{font-size:14.5px;line-height:1.85;font-weight:300;color:var(--ink-2)}
+.techpage .tk-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+.techpage .tk-cta .btn{flex:none;width:auto;min-width:0;margin-top:0}
+/* 04 FORMULATION TECHNOLOGY */
+.techpage .tk-elx{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,60px);align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:34px 0}
+.techpage .tk-elx-h .en{font-family:var(--serif);font-size:15px;letter-spacing:.12em;margin-bottom:12px}
+.techpage .tk-elx-h p{font-size:14.5px;line-height:1.85;font-weight:300;color:var(--ink-2)}
+.techpage .tk-elx-g{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.techpage .tk-elx-g li{border:1px solid var(--line);border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px}
+.techpage .tk-elx-g b{font-family:var(--serif);font-weight:400;font-size:clamp(11.5px,1vw,14px);letter-spacing:.04em;line-height:1.35}
+.techpage .tk-elx-g span{font-size:11.5px;color:var(--muted);margin-top:6px}
+.techpage .tk-ft{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.techpage .tk-f{background:#fff;padding:28px 24px 26px}
+.techpage .tk-f .n{font-family:var(--serif);font-size:12px;color:var(--muted);letter-spacing:.12em}
+.techpage .tk-f h4{font-size:16px;font-weight:500;margin:10px 0 10px;line-height:1.5}
+.techpage .tk-f p{font-size:14px;line-height:1.8;font-weight:300;color:var(--ink-2)}
+.techpage .tk-note{margin-top:22px}
+/* 05 HISTORICAL INGREDIENT LIBRARY — 기본 접힘 */
+.techpage .tk-hier{text-align:center;font-size:14px;line-height:1.85;color:var(--ink-2);font-weight:400;border:1px solid var(--line);background:#fff;max-width:560px;margin:0 auto 30px;padding:18px 20px}
+.techpage .tk-lib{max-width:var(--max);margin:0 auto}
+.techpage .tk-lib>summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;padding:6px 0}
+.techpage .tk-lib>summary::-webkit-details-marker{display:none}
+.techpage .tk-lib>summary .en{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.techpage .tk-lib>summary .op,.techpage .tk-lib>summary .cl{display:inline-block;font-size:14px;padding:13px 30px;border:1px solid var(--ink);color:var(--ink);background:#fff}
+.techpage .tk-lib>summary:hover .op,.techpage .tk-lib>summary:hover .cl{background:var(--ink);color:#fff}
+.techpage .tk-lib>summary .cl{display:none}
+.techpage .tk-lib[open]>summary .op{display:none}
+.techpage .tk-lib[open]>summary .cl{display:inline-block}
+.techpage .tk-lib-in{background:#fff;border:1px solid var(--line);margin-top:30px;padding:clamp(22px,3vw,40px)}
+.techpage .tk-lib-in .ing-tabs{margin-bottom:30px}
+.techpage .tk-lib-in .ing-note{margin-top:32px}
+/* 07 관련 CTA */
+.techpage .tk-end{padding:clamp(56px,6vw,84px) 0;border-top:1px solid var(--line)}
+.techpage .tk-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.techpage .tk-links a{background:#fff;padding:26px 22px;display:flex;flex-direction:column;gap:8px;transition:background .2s}
+.techpage .tk-links a:hover{background:var(--paper-2)}
+.techpage .tk-links .en{font-family:var(--serif);font-size:13px;letter-spacing:.14em}
+.techpage .tk-links .ko{font-size:13.5px;color:var(--muted-text)}
+@media(max-width:860px){
+  .techpage .tk-cfs{grid-template-columns:1fr;gap:34px}
+  .techpage .tk-flow,.techpage .tk-ft,.techpage .tk-links{grid-template-columns:1fr}
+  .techpage .tk-elx{grid-template-columns:1fr;gap:22px}
+}
+@media(max-width:560px){
+  .techpage .tk-elx-g{grid-template-columns:repeat(2,1fr);max-width:320px;margin:0 auto}
+  .techpage .tk-n{padding:22px 6px 18px}
+  .techpage .tk-n span{font-size:9.5px;letter-spacing:.08em}
+  .techpage .tk-hier{font-size:13.5px}
+}
+/* 06 TODAY — 개발 중 기술 카드 (.tgrid 는 SKIN CODE 16타입용 4열 그리드라 이 페이지에서만 3열·흰 카드로 한정) */
+.techpage .tgrid{grid-template-columns:repeat(3,1fr)}
+.techpage .tcard{background:#fff;padding:26px 24px 24px}
+@media(max-width:860px){
+  .techpage .tgrid{grid-template-columns:1fr}
+  .techpage .tk-step p br,.techpage .tk-f p br{display:none}
+}
+@media(max-width:560px){.techpage .tk-hier br{display:none}}
+.techpage .ing-pane{top:170px}
+.techpage .tk-step p br{display:none}
+/* 05 원료 기록 — 긴 원료명이 카드 폭을 넘지 않도록 (예: 하이드록시프로필트라이모늄하이알루로네이트) */
+.techpage .ing-card{min-width:0}
+.techpage .ing-card .nm{max-width:100%;overflow-wrap:anywhere}
+.techpage .ing-pane,.techpage .ing-layout>*{min-width:0}
+.techpage .ing-detail h2,.techpage .ing-detail .ing-inci,.techpage .ing-detail p,.techpage .ing-detail li{overflow-wrap:anywhere}
+
+/* ===== 05 COCODEMER BIO (2026-09-22) — append-only =====
+   HERO 사진: img/bio/bio-hero.jpg = 첨부2 crop(2600,1500,6720,4480) → 1800px
+              img/bio/bio-hero-m.jpg = 첨부1 crop(1067,1934,3736,5356) → 600px
+   규칙은 .biopage / .ph-bio2 / .skincarepage .colgrid.c2 / .dermobox .yr / .f-b2b / .pdnav-cta 로 한정. */
+.pagehead.ph-bio2{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr);grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:right;
+  background:linear-gradient(-176deg,#FAFAFB 0%,#F0F0F3 66%,#E8E8EC 100%)}
+.pagehead.ph-bio2::after{display:none !important}
+.pagehead.ph-bio2 .t{align-self:center;color:var(--ink);padding:0 var(--lx) 0 32px;z-index:2}
+.pagehead.ph-bio2 .t .sec-en{color:var(--muted);margin-bottom:14px}
+.pagehead.ph-bio2 .t h1{color:var(--ink);text-shadow:none;line-height:1.4;font-size:clamp(24px,2.3vw,32px);font-family:var(--sans);font-weight:500;letter-spacing:-.01em}
+.pagehead.ph-bio2 .t p{color:var(--ink-2);line-height:1.75}
+.pagehead.ph-bio2 .bc{height:100%;min-width:0;min-height:0;overflow:hidden}
+.pagehead.ph-bio2 .bc picture{display:block;height:100%}
+.pagehead.ph-bio2 .bc img{position:static;inset:auto;width:100%;height:100%;object-fit:cover;object-position:50% 60%;opacity:1;display:block}
+@media(max-width:1024px){.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 400px) minmax(0,1fr)}
+  .pagehead.ph-bio2 .bc img{object-position:58% 60%}}
+@media(max-width:640px){.pagehead.ph-bio2{height:220px;grid-template-columns:56% minmax(0,1fr)}
+  .pagehead.ph-bio2 .t{padding:0 18px 0 10px}
+  .pagehead.ph-bio2 .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-bio2 .t h1{font-size:16px;line-height:1.45;letter-spacing:0}
+  .pagehead.ph-bio2 .t p{font-size:11px;margin-top:8px;line-height:1.6}
+  .pagehead.ph-bio2 .bc img{object-position:50% 50%}}
+.biopage .bio-gap{display:block;height:1.1em}
+.biopage .fr-lead{font-size:16px}
+.biopage .bio-terr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.biopage .bio-terr li{background:#fff;padding:34px 22px 32px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.biopage .bio-terr .no{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.biopage .bio-terr .en{font-family:var(--serif);font-size:15px;letter-spacing:.08em;color:var(--ink);line-height:1.45;min-height:2.9em}
+.biopage .bio-terr .ko{font-size:14px;font-weight:300;color:var(--ink-2)}
+.biopage .bio-terr-note{margin:clamp(34px,4vw,48px) auto 0;max-width:44em;text-align:center;font-size:15px;font-weight:400;color:var(--ink);line-height:1.9}
+.biopage .bio-terr-foot{text-align:center;margin-top:16px}
+.biopage .bio-steps .st .k{letter-spacing:.12em}
+.biopage .bio-vs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);max-width:960px;margin:0 auto}
+.biopage .bio-vs .side{background:#fff;padding:clamp(34px,4vw,52px) clamp(24px,3.4vw,44px);text-align:center}
+.biopage .bio-vs .brandnm{font-family:var(--serif);font-size:13px;letter-spacing:.16em;color:var(--muted)}
+.biopage .bio-vs .first{font-family:var(--serif);font-size:clamp(20px,2vw,24px);letter-spacing:.1em;color:var(--ink);margin:14px 0 18px}
+.biopage .bio-vs h4{font-size:17px;font-weight:500;margin-bottom:12px}
+.biopage .bio-vs p{font-size:14.5px;font-weight:300;color:var(--ink-2);line-height:1.85}
+.biopage .bio-vs-note{text-align:center;margin-top:30px;font-size:15px;color:var(--ink-2);font-weight:300}
+.biopage .bio-first{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;max-width:1080px;margin:0 auto}
+.biopage .bio-first .ph{display:block;overflow:hidden;background:var(--paper-2)}
+.biopage .bio-first .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform .55s}
+.biopage .bio-first .ph:hover img{transform:scale(1.03)}
+.biopage .bio-first .yr{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.biopage .bio-first h4{font-family:var(--serif);font-size:clamp(20px,2vw,24px);font-weight:400;letter-spacing:.04em;margin:12px 0 6px}
+.biopage .bio-first .nm-ko{font-size:14px;color:var(--ink-2);font-weight:300}
+.biopage .bio-first p{margin:20px 0 18px;font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85}
+.biopage .bio-first .spec{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.biopage .bio-first .spec li{font-size:12.5px;letter-spacing:.04em;color:var(--ink);border:1px solid var(--line);padding:5px 11px}
+.biopage .bio-first .stline{margin-bottom:22px}
+.biopage .bio-first .tag{display:inline-block;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);padding:3px 9px}
+.biopage #future .sec-top{margin-bottom:0}
+@media(max-width:1000px){.biopage .bio-terr{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.biopage .bio-first{grid-template-columns:1fr}}
+@media(max-width:640px){.biopage br.pc{display:none}
+  .biopage .fr-lead{font-size:15px}
+  .biopage .bio-terr{grid-template-columns:repeat(2,1fr)}
+  .biopage .bio-terr li{padding:24px 16px 22px}
+  .biopage .bio-terr .en{font-size:13px}
+  .biopage .bio-vs{grid-template-columns:1fr}}
+/* SKINCARE OTHER COLLECTIONS 2단 (BIO 분리) */
+.skincarepage .colgrid.c2{grid-template-columns:repeat(2,1fr);max-width:960px;margin:0 auto}
+@media(max-width:640px){.skincarepage .colgrid.c2{grid-template-columns:1fr}}
+/* HERITAGE #dermo → COCODEMER BIO의 시작 */
+.dermobox .yr{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
+.dermobox .btn{margin-top:10px}
+/* footer B2B 문의 (사업자 정보 이메일 옆) */
+.f-biz a.f-b2b{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.f-biz a.f-b2b:hover{color:var(--ink)}
+/* 제품 상세 하단 버튼 2개 */
+.pdnav-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pagehead.ph-bio2 .t p .p2{display:block;margin-top:10px}
+.biopage .bio-terr .ko{overflow-wrap:anywhere}
+.biopage #future{padding:clamp(56px,7vw,96px) 0}
+@media(max-width:640px){.pagehead.ph-bio2 .t p .p2{display:none}}
+@media(min-width:641px){.pagehead.ph-bio2 .t p{font-size:14px}}
+@media(max-width:1000px){.biopage .bio-terr{grid-template-columns:repeat(6,1fr)}
+  .biopage .bio-terr li{grid-column:span 2}.biopage .bio-terr li:nth-child(n+4){grid-column:span 3}}
+@media(max-width:640px){.biopage .bio-terr{grid-template-columns:repeat(2,1fr)}
+  .biopage .bio-terr li,.biopage .bio-terr li:nth-child(n+4){grid-column:auto}.biopage .bio-terr li:last-child{grid-column:1/-1}}
+
+/* ===== 05-R FINAL POLISH (2026-09-22) — append-only =====
+   HOME 1번 슬라이드 = img/home-hero-01-custom.jpg (세럼 맞춤형 라벨수정.jpg crop 1500,250,5300,3450)
+   BIO HERO = bio-hero-wide.jpg (첨부2 crop 600,1450,6720,4480) / bio-hero-mid.jpg (첨부2 crop 3620,1700,6720,4480) */
+.hero .slides img:nth-child(1){right:auto;left:0;width:49%;object-position:42% 50%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.hero:has(.slides img:nth-child(1).on){background:#121212}
+.hero:has(.slides img:nth-child(1).on) .ov{background:linear-gradient(-90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,0) 60%)}
+@media(max-width:640px){
+  .hero .slides img:nth-child(1){width:100%;object-position:66% 50%;-webkit-mask-image:none;mask-image:none}
+  .hero:has(.slides img:nth-child(1).on) .ov{background:linear-gradient(-90deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.35) 100%)}}
+.pagehead.ph-brand img{object-position:50% 56%;opacity:.58}
+.pagehead.ph-brand::after{background:linear-gradient(-180deg,rgba(10,10,10,.34) 0%,rgba(10,10,10,.6) 100%)}
+.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 360px) minmax(0,1fr)}
+.pagehead.ph-bio2 .bc img{object-position:0% 60%}
+@media(max-width:1100px){.pagehead.ph-bio2 .bc img{object-position:50% 62%}}
+@media(max-width:640px){.pagehead.ph-bio2{grid-template-columns:56% minmax(0,1fr)}.pagehead.ph-bio2 .bc img{object-position:50% 50%}}
+
+/* ===== 06-H HERO WIDE FIX (2026-09-22) — append-only =====
+   원인: split HERO 4종(.ph-aqua/.ph-frag/.ph-tech2/.ph-bio2)의 --lx 가
+   max(32px,(100vw-1240px)/2+32px) 라 1440 초과부터 화면이 넓어질수록 문구 칸만 커졌다.
+   → 1441px 이상에서 --lx 를 고정해 문구 칸 폭을 멈추고, 사진 칸이 나머지를 채운다.
+     (문구 폭 자체 = 칸 − lx − 32px 는 1440 과 동일. 1440 이하는 기존 규칙 그대로.)
+   FRAGRANCE 는 칸 폭 상한 310px(병 위아래 잘림 방지)을 1441+ 에서 풀고,
+   같은 원본 렌더(1376x768)에서 병 중심 700x768 로 넓게 자른 *-edp-wide.jpg 를 쓴다.
+   BRAND 는 object-position 대신 전용 crop img/brand/brand-hero-wide.jpg
+   (home-hero-01-measure.jpg crop 0,180,1920,800 → 1920x620) 사용. 1100px 이하는 기존 원본 컷(05-R 과 동일 50% 56%).
+   1500px 초과에서는 사진을 1500px 로 멈추고 가장자리를 배경색으로 페이드 — 440px 높이에서
+   측정기 전체(원본 y200~740)를 담으려면 사진 폭이 약 1500px 를 넘을 수 없다.           */
+.pagehead.ph-frag .frs picture{display:block;min-width:0;min-height:0;height:100%}
+@media(max-width:640px){
+  .pagehead.ph-frag .frs picture:nth-child(n+2){display:none}
+  .pagehead.ph-frag .frs picture img:nth-child(n){display:block}}
+@media(min-width:1441px){
+  .pagehead.ph-aqua,.pagehead.ph-frag,.pagehead.ph-tech2,.pagehead.ph-bio2{--lx:104px}
+  .pagehead.ph-frag{grid-template-columns:calc(var(--lx) + 430px) minmax(0,1fr)}
+  .pagehead.ph-frag .frs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pagehead.ph-aqua .aq{grid-template-rows:100%;min-height:0;overflow:hidden}
+  .pagehead.ph-tech2 .tc img{object-position:62% 6%}}
+.pagehead.ph-brand img{object-position:50% 20%}
+@media(max-width:1100px){.pagehead.ph-brand img{object-position:50% 56%}}
+@media(min-width:1501px){
+  .pagehead.ph-brand img{right:50%;left:auto;width:1500px;transform:translateX(50%);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 70px,rgba(0,0,0,.5) 160px,rgba(0,0,0,.82) 250px,#000 330px,#000 calc(100% - 330px),rgba(0,0,0,.82) calc(100% - 250px),rgba(0,0,0,.5) calc(100% - 160px),rgba(0,0,0,.18) calc(100% - 70px),transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.18) 70px,rgba(0,0,0,.5) 160px,rgba(0,0,0,.82) 250px,#000 330px,#000 calc(100% - 330px),rgba(0,0,0,.82) calc(100% - 250px),rgba(0,0,0,.5) calc(100% - 160px),rgba(0,0,0,.18) calc(100% - 70px),transparent 100%)}}
+/* BRAND 1501+ 바깥 배경: 순검정 대신 사진 좌·우 가장자리 평균색(#a9a69f / #acaa98)을 깔아
+   사진이 배경 속으로 녹아들게 한다. 위의 어두운 층(::after)은 그대로 덮여 명암은 사진부와 같다. */
+@media(min-width:1501px){.pagehead.ph-brand{background:linear-gradient(-90deg,#a9a69f 0%,#acaa98 100%)}}
+/* BIO 1441+ 문구 칸: 공통(lx+430)보다 조금 넓게 — 두 문단 카피의 시각 무게 보정 */
+@media(min-width:1441px){.pagehead.ph-bio2{grid-template-columns:calc(var(--lx) + 456px) minmax(0,1fr)}}
+
+/* ===== 06 B2B REDESIGN (2026-09-22) — append-only, .b2bpage / .ph-b2b2 한정 =====
+   HERO 사진 = img/hero/b2b-hero-sign.jpg (원본 647A0042.jpg 5760x3840 → 2400x1600 리사이즈만, 06-R 교체).
+   HERO 배경 = 사진 외벽·하늘에 맞춘 밝은 쿨그레이 단색. 사진은 이미지 칸을 cover로 꽉 채우고 왼쪽만 단계 페이드. */
+.pagehead.ph-b2b2{--lx:max(32px,calc((100vw - var(--max))/2 + 32px));
+  display:grid;grid-template-columns:calc(var(--lx) + 600px) minmax(0,1fr);grid-template-rows:100%;
+  height:440px;align-items:stretch;justify-content:stretch;text-align:right;
+  background:#e4e6e8}
+.pagehead.ph-b2b2::after{display:none !important}
+.pagehead.ph-b2b2 .t{align-self:center;color:var(--ink);padding:0 var(--lx) 0 32px;z-index:2}
+.pagehead.ph-b2b2 .t .sec-en{color:#3f3f3f;margin-bottom:14px}
+.pagehead.ph-b2b2 .t h1{color:var(--ink);text-shadow:none;font-family:var(--sans);font-weight:500;font-size:clamp(22px,2.1vw,30px);line-height:1.45;letter-spacing:-.01em}
+.pagehead.ph-b2b2 .t p{color:#232323;font-size:15px;line-height:1.8;margin-top:16px}
+.pagehead.ph-b2b2 .t .btn{margin-top:26px}
+.pagehead.ph-b2b2 .bc{height:100%;min-width:0;min-height:0;overflow:hidden;display:block}
+.pagehead.ph-b2b2 .bc img{position:static;inset:auto;width:100%;height:100%;max-width:none;object-fit:cover;object-position:62% 42%;opacity:1;display:block;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.25) 7%,rgba(0,0,0,.7) 15%,#000 24%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.25) 7%,rgba(0,0,0,.7) 15%,#000 24%)}
+@media(min-width:1441px){.pagehead.ph-b2b2{--lx:104px}}
+@media(max-width:1024px){.pagehead.ph-b2b2{grid-template-columns:calc(var(--lx) + 560px) minmax(0,1fr)}}
+@media(max-width:860px){.pagehead.ph-b2b2{grid-template-columns:60% minmax(0,1fr)}.pagehead.ph-b2b2 .t p{font-size:14px}}
+@media(max-width:640px){.pagehead.ph-b2b2{height:220px;grid-template-columns:62% minmax(0,1fr)}
+  .pagehead.ph-b2b2 .t{padding:0 18px 0 8px}
+  .pagehead.ph-b2b2 .t .sec-en{font-size:10px;margin-bottom:7px}
+  .pagehead.ph-b2b2 .t h1{font-size:15px;line-height:1.5;letter-spacing:0}
+  .pagehead.ph-b2b2 .t p{display:none}
+  .pagehead.ph-b2b2 .t .btn{margin-top:14px;padding:8px 16px;font-size:12px}
+  .pagehead.ph-b2b2 .bc img{object-position:72% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.5) 14%,#000 32%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.5) 14%,#000 32%)}}
+
+/* 본문 공통 */
+.b2bpage .b2b-sec{padding:clamp(56px,6.5vw,96px) 0;scroll-margin-top:64px}
+.b2bpage .b2b-tint{background:var(--paper-2)}
+.b2bpage .sec-top{margin-bottom:44px}
+.b2bpage .sec-top h2{font-size:clamp(20px,2.2vw,26px);font-weight:500;line-height:1.5}
+.b2bpage .sec-top .lead{font-size:clamp(15px,1.06vw,16px);line-height:1.85;color:var(--ink-2)}
+.b2bpage .no{font-family:var(--serif);font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.b2bpage .en{font-family:var(--serif);font-size:11.5px;letter-spacing:.12em;color:var(--muted)}
+@media(max-width:640px){.b2bpage br.pc{display:none}}
+
+/* 02 PARTNERSHIP AREAS — 5칸 (3+2 배치: 05 ARCHIVE 설명이 길어 1줄 5칸이면 칸 높이가 크게 벌어짐) */
+.b2b-areas{list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.b2b-areas li{grid-column:span 2}.b2b-areas li:nth-child(n+4){grid-column:span 3}
+.b2b-areas li{background:#fff;padding:30px 24px 32px;scroll-margin-top:110px}
+.b2b-areas .no{margin-bottom:16px}
+.b2b-areas .en{margin-bottom:8px}
+.b2b-areas h3{font-size:17px;font-weight:500;line-height:1.45;margin-bottom:12px}
+.b2b-areas p{font-size:14px;font-weight:300;color:var(--ink-2);line-height:1.75}
+@media(max-width:1100px){.b2b-areas .en{min-height:0}}
+@media(max-width:640px){.b2b-areas{grid-template-columns:1fr}.b2b-areas li,.b2b-areas li:nth-child(n+4){grid-column:auto;padding:24px 20px 26px}}
+
+/* 03 AVAILABLE NOW */
+.b2b-product{display:grid;grid-template-columns:minmax(0,400px) minmax(0,460px);gap:64px;justify-content:center;align-items:center}
+.b2b-product .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;background:#fff}
+.b2b-product .tag{display:inline-block;font-family:var(--serif);font-size:11.5px;letter-spacing:.12em;color:var(--ink-2);border:1px solid #cfcfcf;padding:4px 10px;margin-bottom:18px}
+.b2b-product h3{font-size:clamp(20px,1.8vw,24px);font-weight:500;line-height:1.4}
+.b2b-product .pe{font-size:14px;color:var(--muted-text);margin:6px 0 22px;letter-spacing:.02em}
+.b2b-product p{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.85;margin-bottom:10px}
+.b2b-product .more{display:inline-block;margin-top:14px;font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.b2b-product .more:hover{border-bottom-color:transparent}
+.b2b-note{text-align:center;margin-top:44px;font-size:14px;font-weight:300;color:var(--muted-text);line-height:1.8}
+@media(max-width:760px){.b2b-product{grid-template-columns:minmax(0,420px);gap:30px}}
+
+/* 04 WHY COCODEMER */
+.b2b-why{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:64px;align-items:center}
+.b2b-why .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 55%}
+.b2b-why .sec-en{margin-bottom:12px}
+.b2b-why h2{font-size:clamp(20px,2.2vw,26px);font-weight:500;line-height:1.5;margin-bottom:22px}
+.b2b-why p{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.9;margin-bottom:14px}
+.b2b-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.b2b-links a{background:#fff;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:14px;row-gap:6px;padding:26px 24px;transition:background .2s}
+.b2b-links a:hover{background:var(--paper-2)}
+.b2b-links .no{grid-row:1/3;padding-top:2px}
+.b2b-links .en{letter-spacing:.14em;color:var(--ink)}
+.b2b-links .ko{grid-column:2;font-size:14px;color:var(--ink-2)}
+.b2b-links .ar{grid-column:3;grid-row:1/3;align-self:center;color:var(--muted)}
+@media(max-width:900px){.b2b-why{grid-template-columns:1fr;gap:32px}}
+@media(max-width:760px){.b2b-links{grid-template-columns:1fr}}
+
+/* 05 HOW WE WORK */
+.b2b-how{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.b2b-how li{background:#fff;padding:30px 26px 32px}
+.b2b-how .no{margin-bottom:16px}
+.b2b-how .en{margin-bottom:8px;min-height:2.9em}
+.b2b-how h3{font-size:17px;font-weight:500;line-height:1.45;margin-bottom:12px}
+.b2b-how p{font-size:14px;font-weight:300;color:var(--ink-2);line-height:1.75}
+@media(max-width:1024px){.b2b-how{grid-template-columns:repeat(2,minmax(0,1fr))}.b2b-how .en{min-height:0}}
+@media(max-width:640px){.b2b-how{grid-template-columns:1fr}.b2b-how li{padding:24px 20px 26px}}
+
+/* 06 PROCESS */
+.b2b-process{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:none}
+.b2b-process li{border-top:1px solid var(--ink);padding-top:22px}
+.b2b-process .no{margin-bottom:12px}
+.b2b-process .en{color:var(--ink);letter-spacing:.14em;margin-bottom:10px}
+.b2b-process p{font-size:15px;color:var(--ink-2);line-height:1.7}
+@media(max-width:1024px){.b2b-process{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}}
+@media(max-width:640px){.b2b-process{grid-template-columns:1fr;row-gap:26px}}
+
+/* 07 CONTACT */
+.b2b-contact{display:grid;grid-template-columns:minmax(0,300px) minmax(0,500px);gap:64px;justify-content:center;align-items:start}
+.b2b-contact .need{border:1px solid var(--line);padding:26px 28px 24px;background:#fff}
+.b2b-contact .need .st{font-size:15px;font-weight:500;margin-bottom:14px}
+.b2b-contact .need ul{list-style:none}
+.b2b-contact .need li{font-size:14px;color:var(--ink-2);padding:9px 0;border-top:1px solid var(--line-2)}
+.b2b-contact .need li:first-child{border-top:0}
+.b2b-contact .spec{font-size:15px;margin-bottom:26px}
+.b2b-contact .spec th{width:96px}
+.b2b-contact .spec a{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.b2b-contact{grid-template-columns:minmax(0,500px);gap:32px}}
+
+/* ===== 07 HOME B2B SYNC (2026-09-22) — HOME #b2b 한정 ===== */
+@media(max-width:640px){#b2b br.pc{display:none}}
+
+/* ===== STEP 2 HOME FINAL INTEGRATION (2026-09-23) — append-only =====
+   HOME(.hero-panel) 한정. 다른 페이지의 .pagehead / .hero 는 건드리지 않는다.
+   HERO 4장 공통 우측 이미지 패널(기존 05-R 1번 슬라이드 방식을 4장으로 확장)
+   패널 40% — 보유 원본 해상도(아쿠아 700x1000 / 프래그런스 1376x768) 기준 업스케일 최소화 */
+.hero-panel{background:#121212}
+.hero-panel .slides img{right:auto;left:0;width:40%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.3) 9%,#000 26%);
+          mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.3) 9%,#000 26%)}
+.hero-panel .slides img:nth-child(1){object-position:42% 50%}
+.hero-panel .slides img:nth-child(2){object-position:50% 44%}
+.hero-panel .slides img:nth-child(3){object-position:52% 52%}
+.hero-panel .slides img:nth-child(4){object-position:54% 50%}
+.hero-panel:has(.slides img.on){background:#121212}
+.hero-panel:has(.slides img.on) .ov{background:linear-gradient(-90deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.2) 42%,rgba(0,0,0,0) 62%)}
+.hero-panel .hcap .eyebrow{font-family:var(--serif);font-size:clamp(14px,1.4vw,18px);letter-spacing:.16em;
+  color:rgba(255,255,255,.82);font-weight:400;margin-bottom:22px;line-height:1.5}
+.hero-panel .hcap h2.en-d{letter-spacing:.04em}
+
+/* HERO 모바일 — 이미지 블록 / 카피 블록 분리(겹침 구조적으로 0) */
+@media(max-width:640px){
+  .hero-panel{padding:0;display:block}
+  .hero-panel .slides{position:relative;inset:auto;width:100%;aspect-ratio:4/3;overflow:hidden}
+  .hero-panel .slides img{position:absolute;inset:0;width:100%;height:100%;
+    -webkit-mask-image:none;mask-image:none}
+  .hero-panel .slides img:nth-child(1){object-position:62% 50%}
+  .hero-panel .slides img:nth-child(2){object-position:50% 40%}
+  .hero-panel .slides img:nth-child(3){object-position:52% 52%}
+  .hero-panel .slides img:nth-child(4){object-position:52% 50%}
+  .hero-panel .ov{display:none}
+  .hero-panel .in{position:relative;height:auto;padding:36px 20px 26px;background:#121212}
+  .hero-panel .hcap .eyebrow{margin-bottom:16px;font-size:13.5px}
+  .hero-panel .hcap h2{font-size:clamp(21px,5.6vw,25px);line-height:1.45;margin-bottom:14px}
+  .hero-panel .dots{position:static;margin:0;padding:0 0 30px;background:#121212}
+}
+
+/* TODAY — SKINCARE / TECHNOLOGY 진입 */
+.homepage #today .today-cta{margin-top:34px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media(max-width:640px){.homepage #today .today-cta .btn{width:100%}}
+
+/* AVAILABLE NOW — 제품 이미지 + 텍스트 */
+.homepage #now .pn-split{display:grid;grid-template-columns:minmax(0,300px) minmax(0,560px);
+  gap:clamp(40px,5vw,76px);align-items:center;justify-content:center}
+.homepage #now .pn-fig{background:#fff;padding:26px 18px}
+.homepage #now .pn-fig img{display:block;width:100%;aspect-ratio:3/4;object-fit:contain}
+.homepage #now .pn-tx{text-align:right}
+.homepage #now .pn-tx .pn-body{margin-right:0}
+.homepage #now .pn-cta{justify-content:flex-start}
+@media(max-width:860px){
+  .homepage #now .pn-split{grid-template-columns:minmax(0,420px);justify-items:center}
+  .homepage #now .pn-fig{max-width:250px}
+  .homepage #now .pn-tx{text-align:center}
+  .homepage #now .pn-tx .pn-body{margin-right:auto;margin-left:auto}
+  .homepage #now .pn-cta{justify-content:center}
+}
+
+/* ORIGIN — 피부 측정 장면(3:2 원본) */
+.homepage #customized .split .fig img{aspect-ratio:4/3}
+
+/* SKIN CODE — HOME 요약형(16타입 차트는 skin-code.html) */
+.homepage #skincode .axes.tight{margin-bottom:48px}
+.homepage #skincode .axes.tight ul{gap:8px}
+
+.dx-chips .ht{display:flex;flex-direction:column;gap:.18em}
+.dx-chips .hs{font-size:clamp(11px,1.9cqw,16px);color:#a6a6a6;font-weight:400;line-height:1.3}
+
+.dx-it .dx-ref{display:block;width:100%;height:auto}
+
+
+/* 2026-09-29 HOME COLLABORATION 영상 재생 (#collaboration 범위 한정) */
+#collaboration .collabfilm .frame{position:relative;cursor:pointer;background:#000;display:block}
+#collaboration .collabfilm .frame img{width:100%;height:auto;display:block;opacity:.72;transition:.4s}
+#collaboration .collabfilm .frame:hover img{opacity:.86}
+#collaboration .collabfilm .frame iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0}
+#collaboration .collabfilm .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;pointer-events:none}
+#collaboration .collabfilm .play i{width:72px;height:72px;border:1px solid rgba(255,255,255,.75);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+#collaboration .collabfilm .frame:hover .play i{background:rgba(255,255,255,.14)}
+#collaboration .collabfilm .play i::after{content:"";border-right:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-right:4px}
+#collaboration .collabfilm .play span{font-family:var(--serif);font-size:12px;letter-spacing:.18em;text-align:center;padding:0 12px}
+@media(max-width:640px){#collaboration .collabfilm .play i{width:54px;height:54px}#collaboration .collabfilm .play span{font-size:11px}}
+
+/* 2026-09-29 HOME 영상 직접보기 링크 (#film · #collaboration 범위 한정) */
+#film .ytlink,#collaboration .ytlink{margin:14px 0 0;text-align:center}
+#film .ytlink a,#collaboration .ytlink a{font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.62);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:2px;transition:.3s}
+#film .ytlink a:hover,#collaboration .ytlink a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#collaboration .ytlink a{color:var(--muted-text);border-bottom-color:rgba(0,0,0,.2)}
+#collaboration .ytlink a:hover{color:var(--ink);border-bottom-color:rgba(0,0,0,.45)}
+
+
+/* =====================================================================
+   DESIGN SYSTEM v1 — 전체 리뉴얼 방향 C (2026-09-29, 2단계) · 추가 전용 블록
+   원칙: 기존 규칙·기존 클래스는 수정하지 않음. 새 토큰(--ds-*)과 새 클래스(.ds-*, .badge)만 추가.
+   전역에 바로 적용되는 것은 ① 포커스 링 ② 공통 GNB·모바일 메뉴·푸터 디자인 보정 뿐
+   (제품 상세 본문 main 영역에는 자동 적용 규칙 없음 — 회귀 검사로 확인)
+   ===================================================================== */
+:root{
+  /* 색 — 강조색 없음. 어두운 면 = 과거 기록·브랜드 기록·최종 CTA / 밝은 면 = 현재 제품·시스템 */
+  --ds-ink:var(--ink); --ds-ink-2:var(--ink-2); --ds-text-2:var(--muted-text); --ds-line:var(--line); --ds-line-2:var(--line-2);
+  --ds-paper:var(--paper); --ds-paper-2:var(--paper-2); --ds-black:var(--black); --ds-hero:#121212; --ds-band:#0C0C0C;
+  --ds-on-dark:#fff; --ds-on-dark-2:rgba(255,255,255,.76); --ds-on-dark-3:rgba(255,255,255,.62); --ds-line-dark:rgba(255,255,255,.14);
+  /* 글자 */
+  --ds-fs-h1:clamp(26px,2.9vw,44px); --ds-fs-h2:clamp(20px,2.2vw,28px); --ds-fs-h3:clamp(17px,1.4vw,20px);
+  --ds-fs-body:clamp(15px,1.05vw,16.5px); --ds-fs-small:14px; --ds-fs-label:12px; --ds-fs-badge:10.5px;
+  --ds-lh-head:1.42; --ds-lh-body:1.8; --ds-ls-label:.16em;
+  /* 여백 */
+  --ds-max:var(--max); --ds-gutter:32px; --ds-sec-y:clamp(72px,9vw,128px); --ds-gap:clamp(16px,2.4vw,36px); --ds-stack:clamp(28px,3vw,44px);
+  --ds-ease:cubic-bezier(.22,.61,.36,1);
+}
+@media(max-width:640px){:root{--ds-gutter:20px}}
+
+/* ---------- 레이아웃 ---------- */
+.ds-wrap{max-width:var(--ds-max);margin:0 auto;padding:0 var(--ds-gutter)}
+.ds-sec{padding:var(--ds-sec-y) 0}
+.ds-sec.is-alt{background:var(--ds-paper-2)}
+.ds-sec.is-dark{background:var(--ds-black);color:var(--ds-on-dark-2)}
+.ds-sec.is-dark :is(.ds-h1,.ds-h2,.ds-h3){color:var(--ds-on-dark)}
+.ds-head{margin-bottom:var(--ds-stack)}
+.ds-head.is-center{text-align:center}
+.ds-head.is-center .ds-lead{margin-right:auto;margin-left:auto}
+
+/* ---------- 글자 ---------- */
+.ds-label{display:block;font-family:var(--serif);font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label);color:var(--ds-text-2);margin-bottom:14px;text-transform:uppercase}
+.ds-sec.is-dark .ds-label{color:var(--ds-on-dark-3)}
+.ds-h1{font-size:var(--ds-fs-h1);font-weight:500;line-height:1.38;letter-spacing:-.01em;text-wrap:balance}
+.ds-h2{font-size:var(--ds-fs-h2);font-weight:500;line-height:1.5;text-wrap:balance}
+.ds-h3{font-size:var(--ds-fs-h3);font-weight:500;line-height:1.5}
+.ds-h2.en-d,.ds-h3.en-d{font-family:var(--serif);font-weight:400;letter-spacing:.04em}
+.ds-body{font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);color:var(--ds-ink-2);text-wrap:pretty}
+.ds-lead{font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);color:var(--ds-text-2);max-width:40em;margin-top:16px;text-wrap:pretty}
+.ds-sec.is-dark :is(.ds-body,.ds-lead){color:var(--ds-on-dark-2)}
+.ds-small{font-size:var(--ds-fs-small);line-height:1.7;color:var(--ds-text-2)}
+/* 모바일에서 <br>를 숨길 때는 마크업에서 <br> 앞에 공백을 둔다(단어 붙음 방지) */
+@media(max-width:640px){.ds-br-m br{display:none}}
+
+/* ---------- 섹션 패턴 ---------- */
+/* 1) 분할: 글 | 사진 (.is-rev 로 좌우 반전) */
+.ds-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.ds-split.is-rev>:first-child{order:2}
+@media(max-width:860px){.ds-split{grid-template-columns:1fr}.ds-split.is-rev>:first-child{order:0}}
+/* 2) 제품 목록 3단(사진 + 단계 + 품목·상태) */
+.ds-list3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-gap)}
+.ds-list3>*{border-top:1px solid var(--ds-ink);padding-top:22px}
+.ds-list3>.is-current{border-top-width:3px;padding-top:20px}
+.ds-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--ds-line);padding:13px 0;font-size:15px;color:var(--ds-ink)}
+@media(max-width:860px){.ds-list3{grid-template-columns:1fr;gap:40px}}
+/* 3) 이미지 타일 2칸 */
+.ds-tiles{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
+.ds-tile{display:grid;grid-template-rows:auto 1fr;background:var(--ds-paper);color:var(--ds-ink)}
+.ds-tile>.ds-tx{padding:clamp(22px,2.4vw,34px);display:flex;flex-direction:column;align-items:flex-start}
+@media(max-width:640px){.ds-tiles{grid-template-columns:1fr}}
+/* 4) 증거·기록 카드 3개(어두운 면). 같은 카드 반복은 증거·기록에만 사용. 모바일 가로 스냅 */
+.ds-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--ds-line-dark);border:1px solid var(--ds-line-dark)}
+.ds-cards>*{background:var(--ds-black)}
+@media(max-width:640px){
+  .ds-cards,.ds-snap{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;gap:12px;background:none;border:0;margin-left:calc(-1 * var(--ds-gutter));padding-left:var(--ds-gutter)}
+  .ds-cards>*,.ds-snap>*{scroll-snap-align:start;border:1px solid var(--ds-line-dark)}
+  .ds-cards::-webkit-scrollbar,.ds-snap::-webkit-scrollbar{display:none}
+}
+/* 5) 최종 이중 CTA(구매 | B2B) */
+.ds-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:1px;background:var(--ds-line-dark);border:1px solid var(--ds-line-dark)}
+.ds-duo>*{background:var(--ds-black);padding:clamp(32px,4vw,56px);display:flex;flex-direction:column;align-items:flex-start}
+.ds-duo .btn{margin-top:auto;min-width:200px}
+@media(max-width:1000px){.ds-duo{grid-template-columns:1fr}}
+@media(max-width:640px){.ds-duo .btn{width:100%}}
+/* 규칙: 같은 패턴을 연속 2번 쓰지 않는다 */
+
+/* ---------- 이미지 ---------- */
+/* 기존 자산만, 자르기는 object-fit/position 으로만. 문구를 사진 위에 올리지 않는다(분할 배치) */
+.ds-fig{position:relative;overflow:hidden;background:var(--ds-paper-2)}
+.ds-fig>img{width:100%;height:100%;object-fit:cover}
+.ds-fig.is-contain>img{object-fit:contain;background:#fff}
+.ds-fig.r-43{aspect-ratio:4/3}.ds-fig.r-45{aspect-ratio:4/5}.ds-fig.r-169{aspect-ratio:16/9}.ds-fig.r-11{aspect-ratio:1/1}.ds-fig.r-1610{aspect-ratio:16/10}
+.ds-sec.is-dark .ds-fig{background:#161616}
+
+/* ---------- 상태 표시(한 카드에 1개) ---------- */
+.badge{display:inline-block;font-family:var(--serif);font-size:var(--ds-fs-badge);letter-spacing:.12em;line-height:1.4;padding:4px 10px;border:1px solid var(--ds-ink);color:var(--ds-ink);white-space:nowrap;vertical-align:middle}
+.badge.is-now{border-color:var(--ds-ink);color:var(--ds-ink)}                 /* 판매 중 · AVAILABLE NOW */
+.badge.is-soon{border-color:#cfcfcf;color:var(--ds-text-2)}                   /* COMING SOON */
+.badge.is-archive,.badge.is-off{border-color:#bdbdbd;color:var(--ds-text-2)}  /* ARCHIVE · 현재 판매하지 않음 */
+.ds-sec.is-dark .badge,.dark .badge{border-color:rgba(255,255,255,.6);color:rgba(255,255,255,.86)}
+.ds-sec.is-dark .badge.is-soon,.dark .badge.is-soon,.ds-sec.is-dark .badge.is-archive,.dark .badge.is-archive,.ds-sec.is-dark .badge.is-off,.dark .badge.is-off{border-color:rgba(255,255,255,.38);color:rgba(255,255,255,.72)}
+
+/* ---------- 버튼·CTA ---------- */
+/* 기존 .btn 을 그대로 쓰고, 묶음(.ds-btns) 안에서만 터치 높이 44px·전환 효과를 준다 */
+.ds-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.ds-btns .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;transition:background-color .25s var(--ds-ease),color .25s var(--ds-ease),border-color .25s var(--ds-ease)}
+.ds-btns .btn:active{transform:translateY(1px)}
+@media(max-width:640px){.ds-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ds-btns .btn{min-width:0;padding-right:8px;padding-left:8px}}
+.ds-link{display:inline-flex;align-items:flex-end;min-height:44px;font-size:14px;color:var(--ds-ink);border-bottom:1px solid currentColor;padding-bottom:3px;transition:opacity .25s var(--ds-ease)}
+.ds-link:hover{opacity:.7}
+.ds-sec.is-dark .ds-link,.dark .ds-link{color:var(--ds-on-dark)}
+/* 규칙: 스토어 = 흰/검정 채움 주 버튼 + ↗ + 새 창, 제품 상세 = 테두리 보조, B2B = 텍스트 링크(.ds-link). 스토어 근처엔 유통 파트너 안내 1줄 */
+
+/* ---------- 공통: 포커스 링 ---------- */
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--ds-ink);outline-offset:3px}
+.dark a:focus-visible,.dark [role="button"]:focus-visible,.ds-sec.is-dark a:focus-visible,.film a:focus-visible,.film [role="button"]:focus-visible,.storeband a:focus-visible{outline-color:#fff}
+
+/* ---------- 공통 GNB·모바일 메뉴·푸터 디자인 보정(링크·라벨 변경 없음) ---------- */
+.gnb a{transition:color .2s var(--ds-ease),border-color .2s var(--ds-ease)}
+.gnb a.ext::after{color:var(--ds-text-2)}
+.burger{min-width:44px;min-height:44px}
+footer .f-nav a{color:var(--ds-text-2);transition:color .2s var(--ds-ease)}
+footer .f-nav a:hover{color:var(--ds-ink)}
+footer .f-copy{color:#707070}
+@media(max-width:640px){footer .f-nav{gap:4px 18px}footer .f-nav a{display:inline-flex;align-items:center;min-height:40px}}
+
+/* =====================================================================
+   STEP 4 일관성 보정 (2026-09-30) — 추가 전용
+   ===================================================================== */
+/* (b) 줄바꿈 품질: 제목은 균형, 문단은 외톨이 단어 방지. 제품 상세(main 에 class 없음)는 제외 */
+main[class] :is(h1,h2,h3){text-wrap:balance}
+main[class] :is(p,li){text-wrap:pretty}
+
+/* 히어로 체계 통일: TECHNOLOGY·B2B 의 옛 사진형 머리(.pagehead.ph-tech2/.ph-b2b2)를
+   다른 페이지 분할 히어로와 같은 글자 크기·모바일 구조(사진 위, 글 아래)로 맞춤 */
+.pagehead.ph-tech2 .t h1,.pagehead.ph-b2b2 .t h1{font-size:var(--ds-fs-h1);line-height:1.38}
+.pagehead.ph-tech2 .t .sec-en,.pagehead.ph-b2b2 .t .sec-en{font-size:var(--ds-fs-label);letter-spacing:var(--ds-ls-label)}
+.pagehead.ph-tech2 .t p,.pagehead.ph-b2b2 .t p{font-size:var(--ds-fs-body)}
+.pagehead.ph-tech2,.pagehead.ph-b2b2{background:var(--ds-paper-2)}
+@media(max-width:640px){
+  .pagehead.ph-tech2,.pagehead.ph-b2b2{height:auto;display:flex;flex-direction:column-reverse;align-items:stretch;text-align:right}
+  .pagehead.ph-tech2 .tc,.pagehead.ph-b2b2 .bc{height:200px;flex:0 0 auto}
+  .pagehead.ph-tech2 .t,.pagehead.ph-b2b2 .t{padding:26px 20px 30px}
+  .pagehead.ph-tech2 .t .sec-en,.pagehead.ph-b2b2 .t .sec-en{font-size:12px;margin-bottom:12px}
+  .pagehead.ph-tech2 .t h1,.pagehead.ph-b2b2 .t h1{font-size:26px;line-height:1.4;letter-spacing:-.01em}
+  .pagehead.ph-tech2 .t p,.pagehead.ph-b2b2 .t p{font-size:15px;margin-top:12px;line-height:1.75}
+}
+
+/* step5 O1 (2026-09-30): skip-link landing below fixed header */
+#main{scroll-margin-top:81px}
+@media(max-width:640px){#main{scroll-margin-top:65px}}

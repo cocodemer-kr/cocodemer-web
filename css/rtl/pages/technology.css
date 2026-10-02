@@ -1,0 +1,157 @@
+/* css/pages/technology.css — technology 페이지 전용 스타일 (3단계 G3, 2026-09-30)
+   · site.css 다음에 로드. 모든 선택자는 main.techpage 아래로 한정(제품 상세 영향 0)
+   · 페이지 질문: "그 제품을 어떤 방식으로 설계하는가?"
+     순서 = 현재 시스템(TODAY · Reset/Boost/Keep) → 판매 중 기술(Air-in System™) → 개발 중 기술
+           → 기록 구역(어두운 면 · ARCHIVE: 맞춤 처방 시스템 · Skin Code · 제형 기술) → 원료 기록(밝은 면, 긴 규제 문구 가독성) → 관련 링크
+   · 밝은 면 = 현재 제품·시스템 / 어두운 면 = 과거 기록 (디자인 시스템 §2)
+   · 이미지: 기존 자산만. 자르기는 object-fit/object-position 만 */
+
+/* ---------- 공통: 섹션 머리(왼쪽 정렬 · 로고와 같은 시작선) ---------- */
+.techpage .tk-sec{padding:var(--ds-sec-y) 0}
+.techpage .sec-top{text-align:right;margin-bottom:var(--ds-stack);max-width:760px}
+.techpage .sec-top .rule{margin:0 0 22px}
+.techpage .sec-top h2{font-size:var(--ds-fs-h2);font-weight:500;line-height:1.5;color:var(--ds-ink);text-wrap:balance}
+.techpage .sec-top .lead{margin:16px 0 0;max-width:40em;font-size:var(--ds-fs-body);line-height:var(--ds-lh-body);font-weight:400;color:var(--ds-text-2);text-wrap:pretty}
+.techpage .sec-en{color:var(--ds-text-2)}
+.techpage .sec-top .badge{margin-bottom:18px}
+
+/* ---------- 01 TODAY — Reset · Boost · Keep (페이지 첫 섹션) ---------- */
+.techpage .tk-now{padding-top:clamp(64px,7vw,104px)}
+.techpage .tk-now .sys-grid{background:none;border:0;gap:var(--ds-gap)}
+.techpage .tk-now .sys-col{background:none;border-top:1px solid var(--ds-ink);padding:24px 0 0}
+.techpage .tk-now .sys-col:nth-child(2){border-top-width:3px;padding-top:22px}   /* 판매 중 기술이 있는 단계 */
+.techpage .tk-now .sys-col .st{font-size:16px}
+.techpage .tk-now .sys-col .st .n{color:var(--ds-text-2)}
+.techpage .tk-now .sys-col .sd{font-size:15px;color:var(--ds-ink-2);margin:12px 0 18px;min-height:0}
+.techpage .tk-now .sys-col li{border-top:1px solid var(--ds-line);padding:16px 0 15px}
+.techpage .tk-now .sys-col li:last-child{padding-bottom:15px;border-bottom:1px solid var(--ds-line)}
+.techpage .tk-now .sys-col .pn{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.techpage .tk-now .sys-col .pe{font-size:14px;color:var(--ds-text-2);margin-top:4px}
+.techpage .tk-now .sys-col a.on-sale{display:block;min-height:44px}
+.techpage .tk-now .sys-col .tag{margin-top:12px} /* step4: 상태 표시를 공통 .badge.is-now 로 통일 */
+.techpage .tk-now .sys-col a.on-sale:hover .pn{border-bottom-color:transparent}
+@media(max-width:860px){.techpage .tk-now .sys-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- 02 AIR-IN SYSTEM™ — 판매 중 기술(밝은 면, 사진 | 글) ---------- */
+.techpage .tk-air{background:var(--ds-paper-2)}
+.techpage .tk-air .split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px)}
+.techpage .tk-air .fig{overflow:hidden;background:#fff}
+.techpage .tk-air .fig img{aspect-ratio:4/3;object-fit:cover;object-position:50% 50%}
+.techpage .tk-air .copy .en{color:var(--ds-text-2);margin-bottom:18px}
+.techpage .tk-air .copy p{font-size:var(--ds-fs-body);line-height:1.85;font-weight:400;color:var(--ds-ink-2);margin-bottom:0;padding:16px 0;border-top:1px solid var(--ds-line)}
+.techpage .tk-air .copy p:last-of-type{border-bottom:1px solid var(--ds-line)}
+.techpage .tk-air .tk-term{display:block;font-family:var(--serif);font-weight:400;font-size:13px;letter-spacing:.12em;color:var(--ds-ink);margin-bottom:4px}
+.techpage .tk-air .copy .btn{margin-top:26px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.techpage .tk-air .tnote{margin-top:var(--ds-stack);color:var(--ds-text-2)}
+@media(max-width:860px){.techpage .tk-air .split{grid-template-columns:1fr;gap:28px}}
+@media(max-width:640px){.techpage .tk-air .copy .btn{width:100%}}
+
+/* ---------- 03 NEXT IN THE SYSTEM — 개발 중 기술(상태 표시 1개씩) ---------- */
+.techpage .tk-next .tgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--ds-gap);background:none;border:0;margin-top:0}
+.techpage .tk-next .tcard{background:none;border:1px solid var(--ds-line);padding:26px 24px 24px}
+.techpage .tk-next .tcard .tt{font-size:18px}
+.techpage .tk-next .tcard .tk{font-family:var(--serif);font-size:11.5px;letter-spacing:.06em;line-height:1.4;padding:4px 10px;border-color:#cfcfcf;color:var(--ds-text-2);margin:14px 0 18px}
+.techpage .tk-next .tcard .tw{font-size:14px;font-weight:400;color:var(--ds-ink-2);border-top-color:var(--ds-line);padding-top:14px}
+@media(max-width:860px){.techpage .tk-next .tgrid{grid-template-columns:1fr;gap:12px}}
+
+/* ---------- 기록 구역 탭 (기록 구역 위에서 시작해 원료 기록까지 따라옴) ---------- */
+.techpage .tk-tabs{border-top:1px solid var(--ds-line)}
+.techpage .tk-tabs .ltabs-in>a{min-height:44px}
+.techpage .tk-sec{scroll-margin-top:150px}
+@media(max-width:1024px){.techpage .tk-sec{scroll-margin-top:130px}}
+
+/* ---------- 04 기록 구역(어두운 면): 맞춤 처방 시스템 · Skin Code · 제형 기술 ---------- */
+.techpage .tk-arc{background:var(--ds-black);color:var(--ds-on-dark-2);padding:clamp(56px,6.5vw,96px) 0}
+.techpage .tk-arc-first{padding-top:var(--ds-sec-y)}
+.techpage .tk-arc+.tk-arc>.wrap::before{content:"";display:block;border-top:1px solid var(--ds-line-dark);margin-bottom:clamp(56px,6.5vw,96px)}
+.techpage .tk-arc+.tk-arc{padding-top:0}
+.techpage #formulation-technology{padding-bottom:var(--ds-sec-y)}
+.techpage .tk-arc .sec-en{color:var(--ds-on-dark-3)}
+.techpage .tk-arc .rule{background:rgba(255,255,255,.5)}
+.techpage .tk-arc .sec-top h2{color:var(--ds-on-dark)}
+.techpage .tk-arc .sec-top .lead{color:var(--ds-on-dark-2)}
+/* 맞춤 처방 시스템: 글 | 숫자 */
+.techpage .tk-arc .tk-body p{color:var(--ds-on-dark-2);font-weight:400}
+.techpage .tk-arc .tk-nums{border-color:var(--ds-line-dark)}
+.techpage .tk-arc .tk-n3{border-bottom-color:var(--ds-line-dark)}
+.techpage .tk-arc .tk-n+.tk-n{border-right-color:var(--ds-line-dark)}
+.techpage .tk-arc .tk-n b{color:#fff}
+.techpage .tk-arc .tk-n span{color:var(--ds-on-dark-3)}
+.techpage .tk-arc .tk-n em{color:var(--ds-on-dark-2)}
+.techpage .tk-arc .tk-total{background:#fff;color:var(--ds-ink)}
+.techpage .tk-arc .tk-total b{color:var(--ds-ink)}
+.techpage .tk-arc .tk-total span{color:var(--ds-text-2)}
+.techpage .tk-arc .tk-total em{color:var(--ds-ink-2)}
+/* Skin Code 연결: 칸 대신 01→02→03 가로 흐름(상단 선 + 점) */
+.techpage .tk-arc .tk-flow{background:none;border:0;gap:clamp(20px,3vw,48px)}
+.techpage .tk-arc .tk-step{position:relative;background:none;border-top:1px solid rgba(255,255,255,.34);padding:26px 0 0}
+.techpage .tk-arc .tk-step::before{content:"";position:absolute;right:0;top:-4px;width:7px;height:7px;border-radius:50%;background:#fff}
+.techpage .tk-arc .tk-step .k{color:#fff;font-size:13px}
+.techpage .tk-arc .tk-step p{color:var(--ds-on-dark-2);font-size:15px;font-weight:400}
+.techpage .tk-arc .tk-step p br{display:inline}   /* site.css 가 br 을 숨겨 단어가 붙던 문제(예: "측정하고고객별") 보정 — 문구 변경 없음 */
+.techpage .tk-arc .tk-cta{justify-content:flex-start;margin-top:var(--ds-stack)}
+.techpage .tk-arc .tk-cta .btn{border-color:rgba(255,255,255,.55);color:#fff;min-height:44px;display:inline-flex;align-items:center}
+.techpage .tk-arc .tk-cta .btn:hover{background:#fff;color:var(--ds-ink)}
+.techpage .tk-arc a:focus-visible{outline-color:#fff}
+/* 제형 기술 */
+.techpage .tk-arc .tk-elx{border-top-color:rgba(255,255,255,.5);border-bottom-color:var(--ds-line-dark)}
+.techpage .tk-arc .tk-elx-h .en{color:#fff}
+.techpage .tk-arc .tk-elx-h p{color:var(--ds-on-dark-2);font-size:15px;font-weight:400}
+.techpage .tk-arc .tk-elx-g li{border-color:rgba(255,255,255,.26)}
+.techpage .tk-arc .tk-elx-g b{color:#fff}
+.techpage .tk-arc .tk-elx-g span{color:var(--ds-on-dark-3)}
+.techpage .tk-arc .tk-ft{background:var(--ds-line-dark);border-color:var(--ds-line-dark)}
+.techpage .tk-arc .tk-f{background:var(--ds-black)}
+.techpage .tk-arc .tk-f .n{color:var(--ds-on-dark-3)}
+.techpage .tk-arc .tk-f h3{font-size:var(--ds-fs-h3);font-weight:500;margin:10px 0;line-height:1.5;color:#fff}
+.techpage .tk-arc .tk-f p{color:var(--ds-on-dark-2);font-size:15px;font-weight:400}
+.techpage .tk-arc .tnote{color:var(--ds-on-dark-3);font-size:14px}
+@media(max-width:860px){
+  .techpage .tk-arc .tk-flow{grid-template-columns:1fr;gap:30px}
+}
+
+/* ---------- 05 원료 기록(밝은 면) — 패널은 URL 해시 + data-code 로 열림(마크업·스크립트 동작 유지) ---------- */
+.techpage .tk-libsec{background:var(--ds-paper-2)}
+.techpage .tk-lib>summary{align-items:flex-start}
+.techpage .tk-lib>summary .op,.techpage .tk-lib>summary .cl{min-height:44px;display:inline-flex;align-items:center}
+.techpage .tk-lib[open]>summary .op{display:none}
+.techpage .tk-lib>summary .cl{display:none}
+.techpage .tk-lib[open]>summary .cl{display:inline-flex}
+.techpage .tk-lib>summary:focus-visible{outline:2px solid var(--ds-ink);outline-offset:3px}
+.techpage .tk-lib-in .ing-tabs{justify-content:flex-start}
+.techpage .tk-lib-in .ing-tabs button{min-height:44px}
+.techpage .ing-detail h3{font-size:clamp(20px,2.4vw,26px);font-weight:500;line-height:1.45;overflow-wrap:anywhere}
+.techpage .ing-detail p,.techpage .ing-detail ul{font-size:15px;font-weight:400}
+.techpage .ing-card .nm{font-size:13px}
+.techpage .ing-lb2,.techpage .ing-detail .ing-lb{color:var(--ds-text-2)}
+.techpage .ing-detail .ing-inci{color:var(--ds-text-2)}
+.techpage .ing-note{font-size:14px}
+
+/* ---------- 06 관련 링크 — 텍스트 링크 한 줄 ---------- */
+.techpage .tk-end{padding:clamp(48px,5vw,72px) 0;border-top:0}
+.techpage .tk-links{background:none;border:0;border-top:1px solid var(--ds-ink);gap:0 var(--ds-gap)}
+.techpage .tk-links a{background:none;padding:22px 0;border-bottom:1px solid var(--ds-line);position:relative;padding-left:28px}
+.techpage .tk-links a::after{content:"→";position:absolute;left:2px;top:50%;transform:translateY(-50%);color:var(--ds-text-2);transition:transform .25s var(--ds-ease)}
+.techpage .tk-links a:hover{background:none}
+.techpage .tk-links a:hover::after{transform:translate(-4px,-50%)}
+.techpage .tk-links .ko{font-size:15px;color:var(--ds-ink-2)}
+
+@media(max-width:640px){
+  .techpage .sec-top{margin-bottom:28px}
+  .techpage .tk-now .sys-col .pn{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){.techpage *{transition:none!important}}
+
+/* step5 D1 contrast fix (2026-09-30): light-bg labels -> #6B6B6B; dark-zone labels/badge stay light */
+main.techpage div.sec-en,main.techpage summary span.en{color:var(--muted-text,#6B6B6B)}
+main.techpage .tk-arc div.sec-en{color:var(--ds-on-dark-3)}
+main.techpage .tk-arc .badge.is-archive{color:rgba(255,255,255,.82);border-color:rgba(255,255,255,.45)}
+main.techpage .pagehead.ph-tech2 .t .sec-en,main.techpage .tk-lib>summary .en{color:var(--muted-text,#6B6B6B)}
+.techpage .ing-tabs button span{color:var(--muted-text,#6B6B6B)} /* step6: 성분 탭 개수 대비 4.5:1 이상 */
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .techpage .pagehead.ph-tech2{padding-right:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .techpage .pagehead.ph-tech2 .t{padding:32px clamp(32px,5.42vw,104px) 32px clamp(24px,3vw,56px);min-width:0}
+  .techpage .pagehead.ph-tech2 .t h1{white-space:normal;overflow-wrap:break-word}
+}

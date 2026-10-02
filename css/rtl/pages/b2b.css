@@ -1,0 +1,102 @@
+/* css/pages/b2b.css — B2B 페이지 전용 스타일 (3단계 G3, 2026-09-30)
+   · site.css 다음에 로드. 모든 선택자는 main.b2bpage 아래로 한정(제품 상세 영향 0)
+   · 페이지 목적: 해외 유통 파트너십 문의. 순서 = 지금 공급 가능한 제품 → 협력 영역 → 일하는 방법 → 문의 과정
+     → 브랜드 근거(어두운 면: 맞춤형 경험·조제실 사진 = 브랜드 기록) → 문의(mailto 흐름 유지)
+   · 문구·링크·mailto 변경 0. 섹션 순서와 배치만 변경 */
+
+.b2bpage .b2b-sec{padding:var(--ds-sec-y) 0}
+.b2bpage .sec-top{text-align:right;margin-bottom:var(--ds-stack);max-width:760px}
+.b2bpage .sec-top .rule{margin:0 0 22px}
+.b2bpage .sec-top h2{font-size:var(--ds-fs-h2)}
+.b2bpage .sec-top .lead{margin:16px 0 0;color:var(--ds-text-2);font-weight:400;font-size:var(--ds-fs-body);line-height:var(--ds-lh-body)}
+.b2bpage .sec-en,.b2bpage .no,.b2bpage .en{color:var(--ds-text-2)}
+.b2bpage .pagehead .t .btn{min-height:44px;display:inline-flex;align-items:center}
+
+/* 배경 순서(밝은 면 = 현재 제품·협력 / 어두운 면 = 브랜드 기록) */
+.b2bpage #available{background:var(--ds-paper)}
+.b2bpage #partnership{background:var(--ds-paper-2)}
+.b2bpage #how{background:var(--ds-paper)}
+.b2bpage #process{background:var(--ds-paper);padding-top:0}
+.b2bpage #process>.wrap::before{content:"";display:block;border-top:1px solid var(--ds-line);margin-bottom:var(--ds-sec-y)}
+.b2bpage #contact{background:var(--ds-paper-2)}
+
+/* 01 AVAILABLE NOW — 제품 사진 | 정보 */
+.b2bpage .b2b-product{grid-template-columns:minmax(0,440px) minmax(0,1fr);justify-content:start;gap:clamp(32px,5vw,80px)}
+.b2bpage .b2b-product .tag{font-size:var(--ds-fs-badge);border-color:var(--ds-ink);color:var(--ds-ink)}
+.b2bpage .b2b-product h3{font-size:var(--ds-fs-h2)}
+.b2bpage .b2b-product p{font-size:var(--ds-fs-body);font-weight:400}
+.b2bpage .b2b-product .more{display:inline-flex;align-items:flex-end;min-height:44px}
+.b2bpage .b2b-note{text-align:right;margin-top:var(--ds-stack);padding-top:18px;border-top:1px solid var(--ds-line);font-size:15px;font-weight:400}
+@media(max-width:760px){.b2bpage .b2b-product{grid-template-columns:minmax(0,1fr)}}
+
+/* 02 PARTNERSHIP — 번호 목록(행) */
+.b2bpage .b2b-areas{display:block;background:none;border:0;border-top:1px solid var(--ds-ink)}
+.b2bpage .b2b-areas li{display:grid;grid-template-columns:56px minmax(0,.9fr) minmax(0,1.3fr);column-gap:clamp(16px,3vw,48px);align-items:baseline;
+  background:none;padding:26px 0;border-bottom:1px solid var(--ds-line)}
+.b2bpage .b2b-areas li .no{grid-row:1/3;margin:0}
+.b2bpage .b2b-areas li .en{grid-column:2;margin:0 0 6px}
+.b2bpage .b2b-areas li h3{grid-column:2;margin:0;font-size:var(--ds-fs-h3)}
+.b2bpage .b2b-areas li p{grid-column:3;grid-row:1/3;font-size:15px;font-weight:400;align-self:center}
+@media(max-width:760px){
+  .b2bpage .b2b-areas li{grid-template-columns:40px minmax(0,1fr);padding:22px 0}
+  .b2bpage .b2b-areas li p{grid-column:2;grid-row:auto;margin-top:10px}
+}
+
+/* 03 HOW WE WORK — 2×2 카드 */
+.b2bpage .b2b-how{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--ds-gap);background:none;border:0}
+.b2bpage .b2b-how li{background:var(--ds-paper-2);padding:clamp(24px,3vw,40px)}
+.b2bpage .b2b-how .en{min-height:0}
+.b2bpage .b2b-how h3{font-size:var(--ds-fs-h3)}
+.b2bpage .b2b-how p{font-size:15px;font-weight:400}
+@media(max-width:640px){.b2bpage .b2b-how{grid-template-columns:1fr;gap:12px}}
+
+/* 04 PROCESS — 가로 단계선(점 + 선) */
+.b2bpage .b2b-process{gap:clamp(16px,2.4vw,36px)}
+.b2bpage .b2b-process li{position:relative;border-top:1px solid var(--ds-line);padding-top:28px}
+.b2bpage .b2b-process li::before{content:"";position:absolute;right:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ds-ink)}
+.b2bpage .b2b-process li:first-child{border-top-color:var(--ds-ink)}
+
+/* 05 WHY COCODEMER — 브랜드 기록(어두운 면) */
+.b2bpage #why{background:var(--ds-black);color:var(--ds-on-dark-2)}
+.b2bpage #why .sec-en{color:var(--ds-on-dark-3)}
+.b2bpage #why h2{color:#fff}
+.b2bpage #why .b2b-why p{color:var(--ds-on-dark-2);font-weight:400;font-size:var(--ds-fs-body)}
+.b2bpage #why .b2b-why .ph{background:#161616}
+.b2bpage #why .b2b-links{background:var(--ds-line-dark);border-color:var(--ds-line-dark)}
+.b2bpage #why .b2b-links a{background:var(--ds-black);min-height:44px}
+.b2bpage #why .b2b-links a:hover{background:#161616}
+.b2bpage #why .b2b-links .no,.b2bpage #why .b2b-links .ar{color:var(--ds-on-dark-3)}
+.b2bpage #why .b2b-links .en{color:#fff}
+.b2bpage #why .b2b-links .ko{color:var(--ds-on-dark-2)}
+.b2bpage #why a:focus-visible{outline-color:#fff}
+
+/* 06 CONTACT — mailto 흐름 유지 */
+.b2bpage .b2b-contact{grid-template-columns:minmax(0,340px) minmax(0,1fr);justify-content:start;gap:clamp(32px,5vw,80px)}
+.b2bpage .b2b-contact .need{border-color:var(--ds-line)}
+.b2bpage .b2b-contact .need li{font-size:15px}
+.b2bpage .b2b-contact .spec{font-size:15px}
+.b2bpage .b2b-contact .spec th{color:var(--ds-text-2)}
+.b2bpage .b2b-contact .spec a{border-bottom-color:var(--ds-ink-2)}
+.b2bpage .b2b-contact .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;min-width:240px}
+@media(max-width:760px){.b2bpage .b2b-contact{grid-template-columns:minmax(0,1fr)}.b2bpage .b2b-contact .btn{width:100%}}
+@media(max-width:640px){.b2bpage .b2b-contact .spec th{width:76px}}
+@media (prefers-reduced-motion:reduce){.b2bpage *{transition:none!important}}
+
+/* =====================================================================
+   모바일 제품 이미지 전체 표시 (2026-09-30 최종) — B2B 제품 사진 · 한·영 공통
+   대상: 760px 이하(승인 디자인이 이미 1열로 바뀌는 구간)에만 적용.
+   문제: Aqua 원본 700×1000(0.70)이 4/5(0.80) 틀에서 cover 로 좌우가 잘렸다.
+   조치: 1열 구간에서만 원본 비율(7/10) + contain, 상자가 본문 폭 전체로
+         커지지 않도록 최대 폭 420px(승인 PC 열 폭 440px 이내)을 둔다.
+   유지: 761px 이상 2열 PC 배치는 승인 디자인 그대로.
+   ===================================================================== */
+@media(max-width:760px){
+  .b2bpage .b2b-product .ph img{aspect-ratio:7/10;object-fit:contain;background:#fff;max-width:420px}
+}
+
+/* FINAL REVIEW 2026-09-30: consistent hero alignment */
+@media (min-width:861px){
+  .b2bpage .pagehead.ph-b2b2{padding-right:0;grid-template-columns:minmax(430px,40%) minmax(0,1fr);height:440px}
+  .b2bpage .pagehead.ph-b2b2 .t{padding:32px clamp(32px,5.42vw,104px) 32px clamp(24px,3vw,56px);min-width:0}
+  .b2bpage .pagehead.ph-b2b2 .t h1{white-space:normal;overflow-wrap:break-word}
+}

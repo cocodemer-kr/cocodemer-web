@@ -1,0 +1,23 @@
+/* COCODEMER — language menu (17 languages). Shared by every language version. */
+.util .lang-dd{position:relative;display:flex;align-items:center}
+.lang-btn{font:inherit;font-size:13px;color:var(--ink);background:none;border:0;margin:0;padding:6px 0;cursor:pointer;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.lang-btn:hover{color:var(--ink)}
+.lang-btn:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.lang-caret{display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.lang-btn[aria-expanded="true"] .lang-caret{transform:translateY(1px) rotate(225deg)}
+.lang-list{position:absolute;right:0;top:100%;margin:10px 0 0;padding:6px 0;list-style:none;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.08);min-width:190px;max-height:min(70vh,640px);overflow:auto;z-index:300}
+.lang-list[hidden]{display:none}
+[dir="rtl"] .lang-list{right:auto;left:0}
+.lang-list li{margin:0}
+.lang-list a{display:block;padding:8px 18px;font-size:13px;line-height:1.5;letter-spacing:.02em;color:var(--muted-text);text-decoration:none;white-space:nowrap}
+.lang-list a:hover,.lang-list a:focus{color:var(--ink);background:#f6f5f3;outline:none}
+.lang-list a[aria-current]{color:var(--ink);font-weight:500}
+.mnav .lang.lang-m{display:flex;flex-wrap:wrap;gap:4px 18px;padding:14px 32px 10px}
+.mnav .lang.lang-m a{display:inline-block;padding:6px 0;border-top:0;font-family:var(--sans);font-size:13px;letter-spacing:.02em;color:var(--muted-text)}
+.mnav .lang.lang-m a[aria-current]{color:var(--ink);font-weight:500}
+@media (max-width:640px){.mnav .lang.lang-m{padding-left:20px;padding-right:20px}}
+html:not([dir="rtl"]) .lang-list a[dir="rtl"]{text-align:left}
+html[dir="rtl"] .lang-list a:not([dir="rtl"]){text-align:right}
+/* menu names with letters missing from the page font: keep each name in one typeface */
+.lang-list a[lang="cs"],.mnav .lang.lang-m a[lang="cs"]{font-family:"Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.lang-list a[lang="vi"],.mnav .lang.lang-m a[lang="vi"]{font-family:"Noto Sans KR","Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
